@@ -20,4 +20,6 @@ class Episode extends Model
     {
         return $this->hasMany(Lesson::class);
     }
+
+    
 }
