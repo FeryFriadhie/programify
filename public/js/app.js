@@ -17137,10 +17137,10 @@ function DropdownMenu() {
   }, react_1["default"].createElement("div", {
     className: "block px-4 py-2 text-xs text-gray-400"
   }, "Manage Account"), react_1["default"].createElement(DropdownLink_1["default"], {
-    href: route('dashboard', {
+    href: route('user.show', {
       username: page.props.user.username
     }),
-    active: route().current('dashboard', {
+    active: route().current('user.show', {
       username: page.props.user.username
     })
   }, "View Profile"), react_1["default"].createElement(DropdownLink_1["default"], {
@@ -17298,10 +17298,10 @@ function DropdownMenuResponsive() {
   }, page.props.user.email))), react_1["default"].createElement("div", {
     className: "mt-3 space-y-1"
   }, react_1["default"].createElement(DropdownLink_1["default"], {
-    href: route('dashboard', {
+    href: route('user.show', {
       username: page.props.user.username
     }),
-    active: route().current('dashboard', {
+    active: route().current('user.show', {
       username: page.props.user.username
     })
   }, "View Profile"), react_1["default"].createElement(DropdownLink_1["default"], {
@@ -17418,6 +17418,71 @@ function FormSection(_a) {
 }
 
 exports["default"] = FormSection;
+
+/***/ }),
+
+/***/ "./resources/js/Components/Headerbar.tsx":
+/*!***********************************************!*\
+  !*** ./resources/js/Components/Headerbar.tsx ***!
+  \***********************************************/
+/***/ (function(__unused_webpack_module, exports, __webpack_require__) {
+
+"use strict";
+
+
+var __importDefault = this && this.__importDefault || function (mod) {
+  return mod && mod.__esModule ? mod : {
+    "default": mod
+  };
+};
+
+Object.defineProperty(exports, "__esModule", ({
+  value: true
+}));
+
+var react_1 = __importDefault(__webpack_require__(/*! react */ "./node_modules/react/index.js"));
+
+function Headerbar(_a) {
+  var data = _a.data,
+      section = _a.section,
+      child = _a.child;
+  return react_1["default"].createElement("div", {
+    className: "mx-auto max-w-screen-lg lg:max-w-screen-2xl xl:max-w-screen-xl"
+  }, react_1["default"].createElement("div", {
+    className: "flex items-center gap-x-2"
+  }, react_1["default"].createElement("a", {
+    className: "flex items-center",
+    href: "/".concat(data.props.user.username)
+  }, react_1["default"].createElement("img", {
+    className: "w-7 h-7 rounded-full sm:mr-2",
+    src: data.props.user.profile_photo_url,
+    alt: "Anto Wiranto"
+  }), react_1["default"].createElement("span", {
+    className: "hidden sm:inline"
+  }, data.props.user.name)), react_1["default"].createElement("svg", {
+    xmlns: "http://www.w3.org/2000/svg",
+    className: "inline w-4 h-4",
+    viewBox: "0 0 20 20",
+    fill: "currentColor"
+  }, react_1["default"].createElement("path", {
+    fillRule: "evenodd",
+    d: "M7.293 14.707a1 1 0 010-1.414L10.586 10 7.293 6.707a1 1 0 011.414-1.414l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414 0z",
+    clipRule: "evenodd"
+  })), section, react_1["default"].createElement("svg", {
+    xmlns: "http://www.w3.org/2000/svg",
+    className: "inline w-4 h-4",
+    viewBox: "0 0 20 20",
+    fill: "currentColor"
+  }, react_1["default"].createElement("path", {
+    fillRule: "evenodd",
+    d: "M7.293 14.707a1 1 0 010-1.414L10.586 10 7.293 6.707a1 1 0 011.414-1.414l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414 0z",
+    clipRule: "evenodd"
+  })), react_1["default"].createElement("span", {
+    className: "text-gray-400 capitalize"
+  }, child)));
+}
+
+exports["default"] = Headerbar;
 
 /***/ }),
 
@@ -17887,7 +17952,7 @@ var Hits = function Hits(_a) {
       className: "group flex mb-1.5 items-center -mx-2 justify-between px-3 py-2.5 bg-white hover:border-primary-500 rounded-lg hover:bg-primary-500 hover:text-white transition-colors duration-3000",
       key: hit.objectID
     }, react_2["default"].createElement("span", {
-      className: "font-medium space-y-1"
+      className: "space-y-1"
     }, react_2["default"].createElement("h4", null, hit.title)));
   }), hits.length === 0 ? react_2["default"].createElement("p", {
     className: "p-10 text-lg text-center text-gray-400"
@@ -18003,9 +18068,7 @@ function Search() {
   }, react_2["default"].createElement("a", {
     className: "bg-gray-100 hover:bg-primary-500 hover:text-white rounded-lg text-black px-2.5 transition duration-300 py-1",
     href: "/series?filter=popular"
-  }, "Lihat semua"), react_2["default"].createElement("div", {
-    className: "shadow-undersky"
-  }, "Hello"), react_2["default"].createElement("a", {
+  }, "Lihat semua"), react_2["default"].createElement("a", {
     href: "http://algolia.com?ref=programify.tech",
     target: "_blank",
     rel: "noopener noreferrer"
@@ -18589,6 +18652,8 @@ var APITokenManager_1 = __importDefault(__webpack_require__(/*! @/Partials/API/A
 
 var AppLayout_1 = __importDefault(__webpack_require__(/*! @/Layouts/AppLayout */ "./resources/js/Layouts/AppLayout.tsx"));
 
+var Headerbar_1 = __importDefault(__webpack_require__(/*! @/Components/Headerbar */ "./resources/js/Components/Headerbar.tsx"));
+
 function ApiTokenIndex(_a) {
   var tokens = _a.tokens,
       availablePermissions = _a.availablePermissions,
@@ -18609,40 +18674,11 @@ ApiTokenIndex.layout = function (page) {
     children: page,
     title: 'API Tokens',
     renderHeader: function renderHeader() {
-      return react_1["default"].createElement("div", {
-        className: "mx-auto max-w-screen-lg lg:max-w-screen-2xl xl:max-w-screen-xl"
-      }, react_1["default"].createElement("div", {
-        className: "flex items-center gap-x-2"
-      }, react_1["default"].createElement("a", {
-        className: "flex items-center",
-        href: "/antowiranto"
-      }, react_1["default"].createElement("img", {
-        className: "w-7 h-7 rounded-full sm:mr-2",
-        src: page.props.user.profile_photo_url,
-        alt: "Anto Wiranto"
-      }), react_1["default"].createElement("span", {
-        className: "hidden sm:inline"
-      }, page.props.user.name)), react_1["default"].createElement("svg", {
-        xmlns: "http://www.w3.org/2000/svg",
-        className: "inline w-4 h-4",
-        viewBox: "0 0 20 20",
-        fill: "currentColor"
-      }, react_1["default"].createElement("path", {
-        fillRule: "evenodd",
-        d: "M7.293 14.707a1 1 0 010-1.414L10.586 10 7.293 6.707a1 1 0 011.414-1.414l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414 0z",
-        clipRule: "evenodd"
-      })), "API", react_1["default"].createElement("svg", {
-        xmlns: "http://www.w3.org/2000/svg",
-        className: "inline w-4 h-4",
-        viewBox: "0 0 20 20",
-        fill: "currentColor"
-      }, react_1["default"].createElement("path", {
-        fillRule: "evenodd",
-        d: "M7.293 14.707a1 1 0 010-1.414L10.586 10 7.293 6.707a1 1 0 011.414-1.414l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414 0z",
-        clipRule: "evenodd"
-      })), react_1["default"].createElement("span", {
-        className: "text-gray-400 capitalize"
-      }, "Create API Token")));
+      return react_1["default"].createElement(Headerbar_1["default"], {
+        data: page,
+        section: "API",
+        child: "Create API Token"
+      });
     }
   });
 };
@@ -19457,184 +19493,6 @@ exports["default"] = VerifyEmail;
 
 /***/ }),
 
-/***/ "./resources/js/Pages/Dashboard.tsx":
-/*!******************************************!*\
-  !*** ./resources/js/Pages/Dashboard.tsx ***!
-  \******************************************/
-/***/ (function(__unused_webpack_module, exports, __webpack_require__) {
-
-"use strict";
-
-
-var __importDefault = this && this.__importDefault || function (mod) {
-  return mod && mod.__esModule ? mod : {
-    "default": mod
-  };
-};
-
-Object.defineProperty(exports, "__esModule", ({
-  value: true
-}));
-
-var react_1 = __importDefault(__webpack_require__(/*! react */ "./node_modules/react/index.js"));
-
-var AppLayout_1 = __importDefault(__webpack_require__(/*! @/Layouts/AppLayout */ "./resources/js/Layouts/AppLayout.tsx"));
-
-var react_2 = __webpack_require__(/*! @headlessui/react */ "./node_modules/@headlessui/react/dist/index.esm.js");
-
-function Dashboard(_a) {
-  var userData = _a.userData;
-  return react_1["default"].createElement("div", null, react_1["default"].createElement("div", {
-    className: "bg-banner md:rounded-b-[3rem] print:hidden"
-  }, react_1["default"].createElement("div", {
-    className: "z-20 pb-10 mb-5 text-gray-200 shadow selection:bg-gray-700 selection:text-white"
-  }, react_1["default"].createElement("div", {
-    className: "max-w-screen-lg px-4 mx-auto lg:max-w-screen-2xl xl:max-w-screen-xl lg:px-8 xl:px-4"
-  }, react_1["default"].createElement("div", {
-    className: "flex flex-col gap-4 py-4 sm:py-4 md:py-16 md:px-10 lg:px-0 lg:py-20 md:flex-row md:gap-8 xl:gap-16"
-  }, react_1["default"].createElement("div", {
-    className: "w-full"
-  }, react_1["default"].createElement("div", {
-    className: "flex flex-col justify-center w-full gap-8 md:flex-row"
-  }, react_1["default"].createElement("div", {
-    className: "w-full lg:w-3/5"
-  }, react_1["default"].createElement("div", {
-    className: "flex flex-col items-center text-center lg:flex-row lg:items-start gap-x-6 lg:text-left"
-  }, react_1["default"].createElement("div", {
-    className: "flex-shrink-0"
-  }, react_1["default"].createElement("img", {
-    src: userData.profile_photo_url,
-    alt: "antowiranto",
-    className: "rounded-xl h-[7rem] w-[7rem] lg:h-[10rem] lg:w-[10rem] mb-4"
-  })), react_1["default"].createElement("div", null, react_1["default"].createElement("h1", {
-    className: "flex items-center justify-center mt-2 font-semibold text-white sm:text-lg lg:text-2xl lg:justify-start lg:mt-0"
-  }, userData.name), react_1["default"].createElement("p", {
-    className: "text-sm text-gray-400 sm:text-base lg:text-lg lg:mb-2"
-  }, userData.username), react_1["default"].createElement("div", {
-    className: "my-1 text-xs text-gray-200 md:text-sm"
-  }, react_1["default"].createElement("div", {
-    className: "text-center lg:text-left"
-  }, "Joined", ' ', new Date(userData.created_at).toDateString())), react_1["default"].createElement("div", {
-    className: "text-xs leading-relaxed text-white md:text-base md:leading-6 md:pt-2"
-  }, react_1["default"].createElement("span", null, !userData.bio ? "We don't know much about them, but we're sure ".concat(userData.name, " is great someone.") : userData.bio))))), react_1["default"].createElement("div", {
-    className: "w-full lg:w-2/5"
-  }, react_1["default"].createElement("div", {
-    className: "flex flex-row items-center gap-2 md:flex-col lg:flex-row md:gap-4"
-  }, react_1["default"].createElement("div", {
-    className: "flex items-center justify-center w-1/3 h-40 text-center bg-gray-500 rounded-lg bg-opacity-10 md:w-1/2 lg:w-1/3 lg:h-56"
-  }, react_1["default"].createElement("div", {
-    className: "flex flex-col justify-between py-10 lg:h-full"
-  }, react_1["default"].createElement("div", {
-    className: "flex items-center justify-center w-full"
-  }, react_1["default"].createElement("img", {
-    src: "https://laracasts.com/images/profiles/xp-level.svg?id=2",
-    alt: ""
-  })), react_1["default"].createElement("div", null, react_1["default"].createElement("div", {
-    className: "font-bold text-white text-md lg:text-2xl"
-  }, "200"), react_1["default"].createElement("div", {
-    className: "text-gray-300 text-xxs lg:text-sm"
-  }, "Total Experience")))), react_1["default"].createElement("div", {
-    className: "flex items-center justify-center w-1/3 h-40 text-center bg-gray-500 rounded-lg bg-opacity-10 md:w-1/2 lg:w-1/3 lg:h-56"
-  }, react_1["default"].createElement("div", {
-    className: "flex flex-col justify-between py-10 lg:h-full"
-  }, react_1["default"].createElement("div", {
-    className: "flex items-center justify-center w-full"
-  }, react_1["default"].createElement("img", {
-    src: "https://laracasts.com/images/profiles/xp-lesson.svg?id=2",
-    alt: ""
-  })), react_1["default"].createElement("div", null, react_1["default"].createElement("div", {
-    className: "font-bold text-white text-md lg:text-2xl"
-  }, "56"), react_1["default"].createElement("div", {
-    className: "text-gray-300 text-xxs lg:text-sm"
-  }, "Lessons Completed")))), react_1["default"].createElement("div", {
-    className: "flex items-center justify-center w-1/3 h-40 text-center bg-gray-500 rounded-lg bg-opacity-10 md:w-1/2 lg:w-1/3 lg:h-56"
-  }, react_1["default"].createElement("div", {
-    className: "flex flex-col justify-between py-10 lg:h-full"
-  }, react_1["default"].createElement("div", {
-    className: "flex items-center justify-center w-full"
-  }, react_1["default"].createElement("img", {
-    src: "https://laracasts.com/images/profiles/xp-stars.svg?id=2",
-    alt: ""
-  })), react_1["default"].createElement("div", null, react_1["default"].createElement("div", {
-    className: "font-bold text-white text-md lg:text-2xl"
-  }, "3"), react_1["default"].createElement("div", {
-    className: "text-gray-300 text-xxs lg:text-sm"
-  }, "Best Quiz Awards")))))))))))), react_1["default"].createElement("div", null, react_1["default"].createElement(react_2.Tab.Group, {
-    as: 'div'
-  }, react_1["default"].createElement(react_2.Tab.List, {
-    className: "flex justify-center mb-4 -mt-[4rem] font-poppins"
-  }, react_1["default"].createElement(react_2.Tab, {
-    as: "div",
-    className: function className(_a) {
-      var selected = _a.selected;
-      return selected ? 'pb-1 mx-4 mb-1 lg:px-4 after:h-1 after:w-full after:block after:rounded-full after:bg-blue transition-colors duration-100' : 'pb-1 mx-4 mb-1 lg:px-4 after:h-1 after:w-full after:block after:rounded-full after:bg-transparent transition-colors duration-100';
-    }
-  }, react_1["default"].createElement("button", {
-    className: "focus:outline-none font-medium text-white h-full pb-[12px]",
-    role: "tab",
-    "aria-selected": "false"
-  }, "My Activity")), react_1["default"].createElement(react_2.Tab, {
-    as: "div",
-    className: function className(_a) {
-      var selected = _a.selected;
-      return selected ? 'pb-1 mx-4 mb-1 lg:px-4 after:h-1 after:w-full after:block after:rounded-full after:bg-blue transition-colors duration-100' : 'pb-1 mx-4 mb-1 lg:px-4 after:h-1 after:w-full after:block after:rounded-full after:bg-transparent transition-colors duration-100';
-    }
-  }, react_1["default"].createElement("button", {
-    className: "focus:outline-none font-medium text-white h-full pb-[12px]",
-    role: "tab",
-    "aria-selected": "true"
-  }, "My Experience"))), react_1["default"].createElement(react_2.Tab.Panels, null, react_1["default"].createElement(react_2.Tab.Panel, null, react_1["default"].createElement("div", {
-    className: "container"
-  }, react_1["default"].createElement("div", {
-    className: "lg:w-2/3 lg:mx-auto"
-  }, react_1["default"].createElement("div", {
-    className: "py-6 text-center"
-  }, react_1["default"].createElement("h2", {
-    className: "mb-8 text-4xl font-medium text-gray-800 font-poppins"
-  }, react_1["default"].createElement("a", {
-    className: "inherits-color",
-    href: "/discuss"
-  }, "Start your first discussion")), react_1["default"].createElement("a", {
-    href: "/discuss"
-  }, react_1["default"].createElement("img", {
-    className: "mx-auto",
-    src: "https://laracasts.com/images/profiles/start-first-discussion@2x.png",
-    alt: "Start Your First Discussion",
-    width: 529,
-    height: 272
-  })))))), react_1["default"].createElement(react_2.Tab.Panel, null, react_1["default"].createElement("div", {
-    className: "container"
-  }, react_1["default"].createElement("div", {
-    className: "lg:w-2/3 lg:mx-auto"
-  }, react_1["default"].createElement("div", {
-    className: "py-6 text-center"
-  }, react_1["default"].createElement("h2", {
-    className: "mb-8 text-4xl font-medium text-gray-800 font-poppins"
-  }, react_1["default"].createElement("a", {
-    className: "inherits-color",
-    href: "/discuss"
-  }, "No Activity Yet")), react_1["default"].createElement("a", {
-    href: "/discuss"
-  }, react_1["default"].createElement("img", {
-    className: "mx-auto",
-    src: "https://laracasts.com/images/profiles/start-first-discussion@2x.png",
-    alt: "Start Your First Discussion",
-    width: 529,
-    height: 272
-  }))))))))));
-}
-
-exports["default"] = Dashboard;
-
-Dashboard.layout = function (page) {
-  return react_1["default"].createElement(AppLayout_1["default"], {
-    children: page,
-    title: "Dashboard"
-  });
-};
-
-/***/ }),
-
 /***/ "./resources/js/Pages/PrivacyPolicy.tsx":
 /*!**********************************************!*\
   !*** ./resources/js/Pages/PrivacyPolicy.tsx ***!
@@ -19721,6 +19579,8 @@ var AppLayout_1 = __importDefault(__webpack_require__(/*! @/Layouts/AppLayout */
 var react_2 = __webpack_require__(/*! @headlessui/react */ "./node_modules/@headlessui/react/dist/index.esm.js");
 
 var react_3 = __webpack_require__(/*! react */ "./node_modules/react/index.js");
+
+var Headerbar_1 = __importDefault(__webpack_require__(/*! @/Components/Headerbar */ "./resources/js/Components/Headerbar.tsx"));
 
 function Show(_a) {
   var sessions = _a.sessions;
@@ -19897,40 +19757,11 @@ Show.layout = function (page) {
     children: page,
     title: 'Update Profile Information',
     renderHeader: function renderHeader() {
-      return react_1["default"].createElement("div", {
-        className: "max-w-screen-lg mx-auto lg:max-w-screen-2xl xl:max-w-screen-xl"
-      }, react_1["default"].createElement("div", {
-        className: "flex items-center gap-x-2"
-      }, react_1["default"].createElement("a", {
-        className: "flex items-center",
-        href: "/".concat(page.props.user.username)
-      }, react_1["default"].createElement("img", {
-        className: "rounded-full w-7 h-7 sm:mr-2",
-        src: page.props.user.profile_photo_url,
-        alt: "Anto Wiranto"
-      }), react_1["default"].createElement("span", {
-        className: "hidden sm:inline"
-      }, page.props.user.name)), react_1["default"].createElement("svg", {
-        xmlns: "http://www.w3.org/2000/svg",
-        className: "inline w-4 h-4",
-        viewBox: "0 0 20 20",
-        fill: "currentColor"
-      }, react_1["default"].createElement("path", {
-        fillRule: "evenodd",
-        d: "M7.293 14.707a1 1 0 010-1.414L10.586 10 7.293 6.707a1 1 0 011.414-1.414l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414 0z",
-        clipRule: "evenodd"
-      })), "Settings", react_1["default"].createElement("svg", {
-        xmlns: "http://www.w3.org/2000/svg",
-        className: "inline w-4 h-4",
-        viewBox: "0 0 20 20",
-        fill: "currentColor"
-      }, react_1["default"].createElement("path", {
-        fillRule: "evenodd",
-        d: "M7.293 14.707a1 1 0 010-1.414L10.586 10 7.293 6.707a1 1 0 011.414-1.414l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414 0z",
-        clipRule: "evenodd"
-      })), react_1["default"].createElement("span", {
-        className: "text-gray-400 capitalize"
-      }, "Profile Information")));
+      return react_1["default"].createElement(Headerbar_1["default"], {
+        data: page,
+        section: "Profile",
+        child: "Update Profile Information"
+      });
     }
   });
 };
@@ -19962,6 +19793,8 @@ var AppLayout_1 = __importDefault(__webpack_require__(/*! @/Layouts/AppLayout */
 
 var react_1 = __importDefault(__webpack_require__(/*! react */ "./node_modules/react/index.js"));
 
+var Headerbar_1 = __importDefault(__webpack_require__(/*! @/Components/Headerbar */ "./resources/js/Components/Headerbar.tsx"));
+
 function Create() {
   return react_1["default"].createElement("div", null, react_1["default"].createElement("div", {
     className: "max-w-7xl mx-auto py-10 sm:px-6 lg:px-8"
@@ -19975,40 +19808,11 @@ Create.layout = function (page) {
     children: page,
     title: "Create Team",
     renderHeader: function renderHeader() {
-      return react_1["default"].createElement("div", {
-        className: "mx-auto max-w-screen-lg lg:max-w-screen-2xl xl:max-w-screen-xl"
-      }, react_1["default"].createElement("div", {
-        className: "flex items-center gap-x-2"
-      }, react_1["default"].createElement("a", {
-        className: "flex items-center",
-        href: "/antowiranto"
-      }, react_1["default"].createElement("img", {
-        className: "w-7 h-7 rounded-full sm:mr-2",
-        src: page.props.user.profile_photo_url,
-        alt: "Anto Wiranto"
-      }), react_1["default"].createElement("span", {
-        className: "hidden sm:inline"
-      }, page.props.user.name)), react_1["default"].createElement("svg", {
-        xmlns: "http://www.w3.org/2000/svg",
-        className: "inline w-4 h-4",
-        viewBox: "0 0 20 20",
-        fill: "currentColor"
-      }, react_1["default"].createElement("path", {
-        fillRule: "evenodd",
-        d: "M7.293 14.707a1 1 0 010-1.414L10.586 10 7.293 6.707a1 1 0 011.414-1.414l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414 0z",
-        clipRule: "evenodd"
-      })), "Teams", react_1["default"].createElement("svg", {
-        xmlns: "http://www.w3.org/2000/svg",
-        className: "inline w-4 h-4",
-        viewBox: "0 0 20 20",
-        fill: "currentColor"
-      }, react_1["default"].createElement("path", {
-        fillRule: "evenodd",
-        d: "M7.293 14.707a1 1 0 010-1.414L10.586 10 7.293 6.707a1 1 0 011.414-1.414l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414 0z",
-        clipRule: "evenodd"
-      })), react_1["default"].createElement("span", {
-        className: "text-gray-400 capitalize"
-      }, "Craete Team")));
+      return react_1["default"].createElement(Headerbar_1["default"], {
+        data: page,
+        section: "Teams",
+        child: "Create Team"
+      });
     }
   });
 };
@@ -20160,6 +19964,184 @@ function TermsOfService(_a) {
 }
 
 exports["default"] = TermsOfService;
+
+/***/ }),
+
+/***/ "./resources/js/Pages/User.tsx":
+/*!*************************************!*\
+  !*** ./resources/js/Pages/User.tsx ***!
+  \*************************************/
+/***/ (function(__unused_webpack_module, exports, __webpack_require__) {
+
+"use strict";
+
+
+var __importDefault = this && this.__importDefault || function (mod) {
+  return mod && mod.__esModule ? mod : {
+    "default": mod
+  };
+};
+
+Object.defineProperty(exports, "__esModule", ({
+  value: true
+}));
+
+var react_1 = __importDefault(__webpack_require__(/*! react */ "./node_modules/react/index.js"));
+
+var AppLayout_1 = __importDefault(__webpack_require__(/*! @/Layouts/AppLayout */ "./resources/js/Layouts/AppLayout.tsx"));
+
+var react_2 = __webpack_require__(/*! @headlessui/react */ "./node_modules/@headlessui/react/dist/index.esm.js");
+
+function Dashboard(_a) {
+  var userData = _a.userData;
+  return react_1["default"].createElement("div", null, react_1["default"].createElement("div", {
+    className: "bg-banner md:rounded-b-[3rem] print:hidden"
+  }, react_1["default"].createElement("div", {
+    className: "z-20 pb-10 mb-5 text-gray-200 shadow selection:bg-gray-700 selection:text-white"
+  }, react_1["default"].createElement("div", {
+    className: "max-w-screen-lg px-4 mx-auto lg:max-w-screen-2xl xl:max-w-screen-xl lg:px-8 xl:px-4"
+  }, react_1["default"].createElement("div", {
+    className: "flex flex-col gap-4 py-4 sm:py-4 md:py-16 md:px-10 lg:px-0 lg:py-20 md:flex-row md:gap-8 xl:gap-16"
+  }, react_1["default"].createElement("div", {
+    className: "w-full"
+  }, react_1["default"].createElement("div", {
+    className: "flex flex-col justify-center w-full gap-8 md:flex-row"
+  }, react_1["default"].createElement("div", {
+    className: "w-full lg:w-3/5"
+  }, react_1["default"].createElement("div", {
+    className: "flex flex-col items-center text-center lg:flex-row lg:items-start gap-x-6 lg:text-left"
+  }, react_1["default"].createElement("div", {
+    className: "flex-shrink-0"
+  }, react_1["default"].createElement("img", {
+    src: userData.profile_photo_url,
+    alt: "antowiranto",
+    className: "rounded-xl h-[7rem] w-[7rem] lg:h-[10rem] lg:w-[10rem] mb-4"
+  })), react_1["default"].createElement("div", null, react_1["default"].createElement("h1", {
+    className: "flex items-center justify-center mt-2 font-semibold text-white sm:text-lg lg:text-2xl lg:justify-start lg:mt-0"
+  }, userData.name), react_1["default"].createElement("p", {
+    className: "text-sm text-gray-400 sm:text-base lg:text-lg lg:mb-2"
+  }, userData.username), react_1["default"].createElement("div", {
+    className: "my-1 text-xs text-gray-200 md:text-sm"
+  }, react_1["default"].createElement("div", {
+    className: "text-center lg:text-left"
+  }, "Joined", ' ', new Date(userData.created_at).toDateString())), react_1["default"].createElement("div", {
+    className: "text-xs leading-relaxed text-white md:text-base md:leading-6 md:pt-2"
+  }, react_1["default"].createElement("span", null, !userData.bio ? "We don't know much about them, but we're sure ".concat(userData.name, " is great someone.") : userData.bio))))), react_1["default"].createElement("div", {
+    className: "w-full lg:w-2/5"
+  }, react_1["default"].createElement("div", {
+    className: "flex flex-row items-center gap-2 md:flex-col lg:flex-row md:gap-4"
+  }, react_1["default"].createElement("div", {
+    className: "flex items-center justify-center w-1/3 h-40 text-center bg-gray-500 rounded-lg bg-opacity-10 md:w-1/2 lg:w-1/3 lg:h-56"
+  }, react_1["default"].createElement("div", {
+    className: "flex flex-col justify-between py-10 lg:h-full"
+  }, react_1["default"].createElement("div", {
+    className: "flex items-center justify-center w-full"
+  }, react_1["default"].createElement("img", {
+    src: "https://laracasts.com/images/profiles/xp-level.svg?id=2",
+    alt: ""
+  })), react_1["default"].createElement("div", null, react_1["default"].createElement("div", {
+    className: "font-bold text-white text-md lg:text-2xl"
+  }, "200"), react_1["default"].createElement("div", {
+    className: "text-gray-300 text-xxs lg:text-sm"
+  }, "Total Experience")))), react_1["default"].createElement("div", {
+    className: "flex items-center justify-center w-1/3 h-40 text-center bg-gray-500 rounded-lg bg-opacity-10 md:w-1/2 lg:w-1/3 lg:h-56"
+  }, react_1["default"].createElement("div", {
+    className: "flex flex-col justify-between py-10 lg:h-full"
+  }, react_1["default"].createElement("div", {
+    className: "flex items-center justify-center w-full"
+  }, react_1["default"].createElement("img", {
+    src: "https://laracasts.com/images/profiles/xp-lesson.svg?id=2",
+    alt: ""
+  })), react_1["default"].createElement("div", null, react_1["default"].createElement("div", {
+    className: "font-bold text-white text-md lg:text-2xl"
+  }, "56"), react_1["default"].createElement("div", {
+    className: "text-gray-300 text-xxs lg:text-sm"
+  }, "Lessons Completed")))), react_1["default"].createElement("div", {
+    className: "flex items-center justify-center w-1/3 h-40 text-center bg-gray-500 rounded-lg bg-opacity-10 md:w-1/2 lg:w-1/3 lg:h-56"
+  }, react_1["default"].createElement("div", {
+    className: "flex flex-col justify-between py-10 lg:h-full"
+  }, react_1["default"].createElement("div", {
+    className: "flex items-center justify-center w-full"
+  }, react_1["default"].createElement("img", {
+    src: "https://laracasts.com/images/profiles/xp-stars.svg?id=2",
+    alt: ""
+  })), react_1["default"].createElement("div", null, react_1["default"].createElement("div", {
+    className: "font-bold text-white text-md lg:text-2xl"
+  }, "3"), react_1["default"].createElement("div", {
+    className: "text-gray-300 text-xxs lg:text-sm"
+  }, "Best Quiz Awards")))))))))))), react_1["default"].createElement("div", null, react_1["default"].createElement(react_2.Tab.Group, {
+    as: 'div'
+  }, react_1["default"].createElement(react_2.Tab.List, {
+    className: "flex justify-center mb-4 -mt-[4rem] font-poppins"
+  }, react_1["default"].createElement(react_2.Tab, {
+    as: "div",
+    className: function className(_a) {
+      var selected = _a.selected;
+      return selected ? 'pb-1 mx-4 mb-1 lg:px-4 after:h-1 after:w-full after:block after:rounded-full after:bg-blue transition-colors duration-100' : 'pb-1 mx-4 mb-1 lg:px-4 after:h-1 after:w-full after:block after:rounded-full after:bg-transparent transition-colors duration-100';
+    }
+  }, react_1["default"].createElement("button", {
+    className: "focus:outline-none font-medium text-white h-full pb-[12px]",
+    role: "tab",
+    "aria-selected": "false"
+  }, "My Activity")), react_1["default"].createElement(react_2.Tab, {
+    as: "div",
+    className: function className(_a) {
+      var selected = _a.selected;
+      return selected ? 'pb-1 mx-4 mb-1 lg:px-4 after:h-1 after:w-full after:block after:rounded-full after:bg-blue transition-colors duration-100' : 'pb-1 mx-4 mb-1 lg:px-4 after:h-1 after:w-full after:block after:rounded-full after:bg-transparent transition-colors duration-100';
+    }
+  }, react_1["default"].createElement("button", {
+    className: "focus:outline-none font-medium text-white h-full pb-[12px]",
+    role: "tab",
+    "aria-selected": "true"
+  }, "My Experience"))), react_1["default"].createElement(react_2.Tab.Panels, null, react_1["default"].createElement(react_2.Tab.Panel, null, react_1["default"].createElement("div", {
+    className: "container"
+  }, react_1["default"].createElement("div", {
+    className: "lg:w-2/3 lg:mx-auto"
+  }, react_1["default"].createElement("div", {
+    className: "py-6 text-center"
+  }, react_1["default"].createElement("h2", {
+    className: "mb-8 text-4xl font-medium text-gray-800 font-poppins"
+  }, react_1["default"].createElement("a", {
+    className: "inherits-color",
+    href: "/discuss"
+  }, "Start your first discussion")), react_1["default"].createElement("a", {
+    href: "/discuss"
+  }, react_1["default"].createElement("img", {
+    className: "mx-auto",
+    src: "https://laracasts.com/images/profiles/start-first-discussion@2x.png",
+    alt: "Start Your First Discussion",
+    width: 529,
+    height: 272
+  })))))), react_1["default"].createElement(react_2.Tab.Panel, null, react_1["default"].createElement("div", {
+    className: "container"
+  }, react_1["default"].createElement("div", {
+    className: "lg:w-2/3 lg:mx-auto"
+  }, react_1["default"].createElement("div", {
+    className: "py-6 text-center"
+  }, react_1["default"].createElement("h2", {
+    className: "mb-8 text-4xl font-medium text-gray-800 font-poppins"
+  }, react_1["default"].createElement("a", {
+    className: "inherits-color",
+    href: "/discuss"
+  }, "No Activity Yet")), react_1["default"].createElement("a", {
+    href: "/discuss"
+  }, react_1["default"].createElement("img", {
+    className: "mx-auto",
+    src: "https://laracasts.com/images/profiles/start-first-discussion@2x.png",
+    alt: "Start Your First Discussion",
+    width: 529,
+    height: 272
+  }))))))))));
+}
+
+exports["default"] = Dashboard;
+
+Dashboard.layout = function (page) {
+  return react_1["default"].createElement(AppLayout_1["default"], {
+    children: page,
+    title: "Dashboard"
+  });
+};
 
 /***/ }),
 
@@ -21372,7 +21354,7 @@ var Checkbox_1 = __importDefault(__webpack_require__(/*! @/Components/Checkbox *
 var InputIcon_1 = __importDefault(__webpack_require__(/*! @/Components/InputIcon */ "./resources/js/Components/InputIcon.tsx"));
 
 function UpdateProfileInformationForm(_a) {
-  var _b, _c, _d, _e, _f, _g, _h, _j;
+  var _b, _c, _d, _e, _f, _g, _h, _j, _k;
 
   var user = _a.user;
   var form = (0, inertia_react_1.useForm)({
@@ -21393,13 +21375,12 @@ function UpdateProfileInformationForm(_a) {
   });
   var route = (0, useRoute_1["default"])();
 
-  var _k = (0, react_1.useState)(null),
-      photoPreview = _k[0],
-      setPhotoPreview = _k[1];
+  var _l = (0, react_1.useState)(null),
+      photoPreview = _l[0],
+      setPhotoPreview = _l[1];
 
   var photoRef = (0, react_1.useRef)(null);
   var page = (0, inertia_react_1.usePage)();
-  var activateChcekbox = form.data.is_private ? 'checked' : 'unchacked';
 
   function updateProfileInformation() {
     form.post(route('user-profile-information.update'), {
@@ -21572,10 +21553,11 @@ function UpdateProfileInformationForm(_a) {
     placeholder: "Tell us about your self . . .",
     name: "bio",
     id: "bio",
+    defaultValue: (_b = form.data.bio) !== null && _b !== void 0 ? _b : '',
     onInput: function onInput(e) {
       return form.setData('bio', e.currentTarget.value);
     }
-  }, form.data.bio)), react_1["default"].createElement("div", {
+  })), react_1["default"].createElement("div", {
     className: "col-span-7"
   }, react_1["default"].createElement("div", {
     className: "grid md:grid-cols-2 gap-x-6"
@@ -21601,7 +21583,7 @@ function UpdateProfileInformationForm(_a) {
     placeholder: "Software Engineer",
     name: "job_title",
     id: "job_title",
-    value: (_b = form.data.job_title) !== null && _b !== void 0 ? _b : '',
+    value: (_c = form.data.job_title) !== null && _c !== void 0 ? _c : '',
     onChange: function onChange(e) {
       return form.setData('job_title', e.currentTarget.value);
     }
@@ -21627,7 +21609,7 @@ function UpdateProfileInformationForm(_a) {
     placeholder: "Somewhere",
     name: "at_job",
     id: "at_job",
-    value: (_c = form.data.at_job) !== null && _c !== void 0 ? _c : '',
+    value: (_d = form.data.at_job) !== null && _d !== void 0 ? _d : '',
     onChange: function onChange(e) {
       return form.setData('at_job', e.currentTarget.value);
     }
@@ -21647,7 +21629,7 @@ function UpdateProfileInformationForm(_a) {
     placeholder: "programify.tech",
     name: "personal_website",
     id: "personal_website",
-    value: (_d = form.data.website_personal) !== null && _d !== void 0 ? _d : '',
+    value: (_e = form.data.website_personal) !== null && _e !== void 0 ? _e : '',
     onChange: function onChange(e) {
       return form.setData('website_personal', e.currentTarget.value);
     }
@@ -21672,7 +21654,7 @@ function UpdateProfileInformationForm(_a) {
     placeholder: "janedoe",
     name: "github",
     id: "github",
-    value: (_e = form.data.github) !== null && _e !== void 0 ? _e : '',
+    value: (_f = form.data.github) !== null && _f !== void 0 ? _f : '',
     onChange: function onChange(e) {
       return form.setData('github', e.currentTarget.value);
     }
@@ -21701,7 +21683,7 @@ function UpdateProfileInformationForm(_a) {
     placeholder: "janedoe",
     name: "twitter",
     id: "twitter",
-    value: (_f = form.data.twitter) !== null && _f !== void 0 ? _f : '',
+    value: (_g = form.data.twitter) !== null && _g !== void 0 ? _g : '',
     onChange: function onChange(e) {
       return form.setData('twitter', e.currentTarget.value);
     }
@@ -21730,7 +21712,7 @@ function UpdateProfileInformationForm(_a) {
     placeholder: "janedoe",
     name: "instagram",
     id: "instagram",
-    value: (_g = form.data.instagram) !== null && _g !== void 0 ? _g : '',
+    value: (_h = form.data.instagram) !== null && _h !== void 0 ? _h : '',
     onChange: function onChange(e) {
       return form.setData('instagram', e.currentTarget.value);
     }
@@ -21755,7 +21737,7 @@ function UpdateProfileInformationForm(_a) {
     placeholder: "janedoe",
     name: "facebook",
     id: "facebook",
-    value: (_h = form.data.facebook) !== null && _h !== void 0 ? _h : '',
+    value: (_j = form.data.facebook) !== null && _j !== void 0 ? _j : '',
     onChange: function onChange(e) {
       return form.setData('facebook', e.currentTarget.value);
     }
@@ -21765,7 +21747,7 @@ function UpdateProfileInformationForm(_a) {
     className: "flex items-center mb-2 gap-x-3"
   }, react_1["default"].createElement(Checkbox_1["default"], {
     name: "is_private",
-    checked: (_j = form.data.is_private) !== null && _j !== void 0 ? _j : 'checked',
+    checked: (_k = form.data.is_private) !== null && _k !== void 0 ? _k : 'checked',
     onChange: function onChange(e) {
       return form.setData('is_private', e.currentTarget.checked);
     }
@@ -88062,12 +88044,12 @@ var map = {
 	"./Auth/ResetPassword.tsx": "./resources/js/Pages/Auth/ResetPassword.tsx",
 	"./Auth/TwoFactorChallenge.tsx": "./resources/js/Pages/Auth/TwoFactorChallenge.tsx",
 	"./Auth/VerifyEmail.tsx": "./resources/js/Pages/Auth/VerifyEmail.tsx",
-	"./Dashboard.tsx": "./resources/js/Pages/Dashboard.tsx",
 	"./PrivacyPolicy.tsx": "./resources/js/Pages/PrivacyPolicy.tsx",
 	"./Profile/Show.tsx": "./resources/js/Pages/Profile/Show.tsx",
 	"./Teams/Create.tsx": "./resources/js/Pages/Teams/Create.tsx",
 	"./Teams/Show.tsx": "./resources/js/Pages/Teams/Show.tsx",
 	"./TermsOfService.tsx": "./resources/js/Pages/TermsOfService.tsx",
+	"./User.tsx": "./resources/js/Pages/User.tsx",
 	"./Welcome.tsx": "./resources/js/Pages/Welcome.tsx"
 };
 

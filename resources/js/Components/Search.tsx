@@ -79,7 +79,7 @@ const Hits = ({ hits }: any) => (
         className="group flex mb-1.5 items-center -mx-2 justify-between px-3 py-2.5 bg-white hover:border-primary-500 rounded-lg hover:bg-primary-500 hover:text-white transition-colors duration-3000"
         key={hit.objectID}
       >
-        <span className="font-medium space-y-1">
+        <span className="space-y-1">
           <h4>{hit.title}</h4>
         </span>
       </a>
@@ -212,7 +212,6 @@ export default function Search() {
                   >
                     Lihat semua
                   </a>
-                  <div className="shadow-undersky">Hello</div>
                   <a
                     href="http://algolia.com?ref=programify.tech"
                     target="_blank"

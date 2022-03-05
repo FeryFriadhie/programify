@@ -39,7 +39,6 @@ export default function UpdateProfileInformationForm({ user }: Props) {
     const [photoPreview, setPhotoPreview] = useState<string | null>(null);
     const photoRef = useRef<HTMLInputElement>(null);
     const page = usePage<any>();
-    let activateChcekbox = form.data.is_private ? 'checked' : 'unchacked';
 
     function updateProfileInformation() {
         form.post(route('user-profile-information.update'), {
@@ -58,19 +57,14 @@ export default function UpdateProfileInformationForm({ user }: Props) {
 
     function updatePhotoPreview() {
         const photo = photoRef.current?.files?.[0];
-
         if (!photo) {
             return;
         }
-
         form.setData('photo', photo);
-
         const reader = new FileReader();
-
         reader.onload = e => {
             setPhotoPreview(e.target?.result as string);
         };
-
         reader.readAsDataURL(photo);
     }
 
@@ -222,12 +216,11 @@ export default function UpdateProfileInformationForm({ user }: Props) {
                     placeholder="Tell us about your self . . ."
                     name="bio"
                     id="bio"
+                    defaultValue={form.data.bio ?? ''}
                     onInput={e =>
                         form.setData('bio', e.currentTarget.value as string)
                     }
-                >
-                    {form.data.bio}
-                </textarea>
+                />
             </div>
 
             <div className="col-span-7">
