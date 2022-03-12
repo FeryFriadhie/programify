@@ -31,7 +31,7 @@ export default function FormSection({
         >
           <div
             className={classNames(
-              'px-4 py-5 bg-white shadow',
+              'px-4 py-5 bg-white',
               hasActions
                 ? 'sm:rounded-tl-md sm:rounded-tr-md'
                 : 'sm:rounded-md',
@@ -40,9 +40,7 @@ export default function FormSection({
             <div className="grid grid-cols-6 gap-6">{children}</div>
           </div>
 
-          {hasActions && (
-            <div className="px-4 py-3 sm:px-6">{renderActions?.()}</div>
-          )}
+          {hasActions && <div className="px-4 py-3">{renderActions?.()}</div>}
         </form>
       </div>
     </div>

@@ -1197,6 +1197,9 @@ select {
 .h-20 {
   height: 5rem;
 }
+.h-7 {
+  height: 1.75rem;
+}
 .h-11 {
   height: 2.75rem;
 }
@@ -1208,9 +1211,6 @@ select {
 }
 .h-full {
   height: 100%;
-}
-.h-7 {
-  height: 1.75rem;
 }
 .h-px {
   height: 1px;
@@ -1260,14 +1260,14 @@ select {
 .w-20 {
   width: 5rem;
 }
+.w-7 {
+  width: 1.75rem;
+}
 .w-\[7rem\] {
   width: 7rem;
 }
 .w-1\/3 {
   width: 33.333333%;
-}
-.w-7 {
-  width: 1.75rem;
 }
 .min-w-0 {
   min-width: 0px;
@@ -1284,11 +1284,11 @@ select {
 .max-w-6xl {
   max-width: 72rem;
 }
-.max-w-sm {
-  max-width: 24rem;
-}
 .max-w-screen-lg {
   max-width: 1024px;
+}
+.max-w-sm {
+  max-width: 24rem;
 }
 .flex-1 {
   flex: 1 1 0%;
@@ -2035,6 +2035,14 @@ select {
   --tw-text-opacity: 1 !important;
   color: rgb(255 255 255 / var(--tw-text-opacity)) !important;
 }
+.text-rose-600 {
+  --tw-text-opacity: 1;
+  color: rgb(225 29 72 / var(--tw-text-opacity));
+}
+.text-rose-500 {
+  --tw-text-opacity: 1;
+  color: rgb(244 63 94 / var(--tw-text-opacity));
+}
 .underline {
   -webkit-text-decoration-line: underline;
           text-decoration-line: underline;
@@ -2673,12 +2681,12 @@ section {
     margin-left: 1.5rem;
   }
 
-  .sm\:ml-7 {
-    margin-left: 1.75rem;
-  }
-
   .sm\:mr-2 {
     margin-right: 0.5rem;
+  }
+
+  .sm\:ml-7 {
+    margin-left: 1.75rem;
   }
 
   .sm\:block {
@@ -3157,12 +3165,12 @@ section {
     width: 66.666667%;
   }
 
-  .lg\:max-w-full {
-    max-width: 100%;
-  }
-
   .lg\:max-w-screen-2xl {
     max-width: 1536px;
+  }
+
+  .lg\:max-w-full {
+    max-width: 100%;
   }
 
   .lg\:flex-row {

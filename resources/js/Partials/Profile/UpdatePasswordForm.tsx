@@ -55,7 +55,7 @@ export default function UpdatePasswordForm() {
             className={classNames({ 'opacity-25': form.processing })}
             disabled={form.processing}
           >
-            Save
+            Update Password
           </Button>
         </>
       )}

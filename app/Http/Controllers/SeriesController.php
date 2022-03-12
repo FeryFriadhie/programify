@@ -17,6 +17,8 @@ class SeriesController extends Controller
     {
         $this->authorize('series.index');
         // TODO: Create some amazing
+        $series = Series::get();
+        dd($series);
     }
 
     /**

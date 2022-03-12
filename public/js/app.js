@@ -17409,11 +17409,11 @@ function FormSection(_a) {
       _onSubmit();
     }
   }, react_1["default"].createElement("div", {
-    className: (0, classnames_1["default"])('px-4 py-5 bg-white shadow', hasActions ? 'sm:rounded-tl-md sm:rounded-tr-md' : 'sm:rounded-md')
+    className: (0, classnames_1["default"])('px-4 py-5 bg-white', hasActions ? 'sm:rounded-tl-md sm:rounded-tr-md' : 'sm:rounded-md')
   }, react_1["default"].createElement("div", {
     className: "grid grid-cols-6 gap-6"
   }, children)), hasActions && react_1["default"].createElement("div", {
-    className: "px-4 py-3 sm:px-6"
+    className: "px-4 py-3"
   }, renderActions === null || renderActions === void 0 ? void 0 : renderActions()))));
 }
 
@@ -17602,7 +17602,7 @@ function InputError(_a) {
   return react_1["default"].createElement("div", {
     className: className
   }, react_1["default"].createElement("p", {
-    className: "text-sm mt-1 text-red-600"
+    className: "text-sm mt-1 text-rose-500"
   }, message || children));
 }
 
@@ -21213,7 +21213,7 @@ function UpdatePasswordForm() {
           'opacity-25': form.processing
         }),
         disabled: form.processing
-      }, "Save"));
+      }, "Update Password"));
     }
   }, react_1["default"].createElement("div", {
     className: "col-span-7"
@@ -21450,7 +21450,7 @@ function UpdateProfileInformationForm(_a) {
           'opacity-25': form.processing
         }),
         disabled: form.processing
-      }, "Save"));
+      }, "Update Profile"));
     }
   }, page.props.jetstream.managesProfilePhotos ? react_1["default"].createElement("div", {
     className: "col-span-6 sm:col-span-4"

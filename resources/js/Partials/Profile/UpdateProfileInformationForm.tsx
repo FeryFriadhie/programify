@@ -99,7 +99,7 @@ export default function UpdateProfileInformationForm({ user }: Props) {
                         })}
                         disabled={form.processing}
                     >
-                        Save
+                        Update Profile
                     </Button>
                 </>
             )}
