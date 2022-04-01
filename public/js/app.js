@@ -313,6440 +313,6 @@ function isUndefined(arg) {
 
 /***/ }),
 
-/***/ "./node_modules/@headlessui/react/dist/_virtual/_rollupPluginBabelHelpers.js":
-/*!***********************************************************************************!*\
-  !*** ./node_modules/@headlessui/react/dist/_virtual/_rollupPluginBabelHelpers.js ***!
-  \***********************************************************************************/
-/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
-
-"use strict";
-__webpack_require__.r(__webpack_exports__);
-/* harmony export */ __webpack_require__.d(__webpack_exports__, {
-/* harmony export */   "arrayLikeToArray": () => (/* binding */ _arrayLikeToArray),
-/* harmony export */   "createForOfIteratorHelperLoose": () => (/* binding */ _createForOfIteratorHelperLoose),
-/* harmony export */   "extends": () => (/* binding */ _extends),
-/* harmony export */   "objectWithoutPropertiesLoose": () => (/* binding */ _objectWithoutPropertiesLoose),
-/* harmony export */   "unsupportedIterableToArray": () => (/* binding */ _unsupportedIterableToArray)
-/* harmony export */ });
-function _extends() {
-  _extends = Object.assign || function (target) {
-    for (var i = 1; i < arguments.length; i++) {
-      var source = arguments[i];
-
-      for (var key in source) {
-        if (Object.prototype.hasOwnProperty.call(source, key)) {
-          target[key] = source[key];
-        }
-      }
-    }
-
-    return target;
-  };
-
-  return _extends.apply(this, arguments);
-}
-
-function _objectWithoutPropertiesLoose(source, excluded) {
-  if (source == null) return {};
-  var target = {};
-  var sourceKeys = Object.keys(source);
-  var key, i;
-
-  for (i = 0; i < sourceKeys.length; i++) {
-    key = sourceKeys[i];
-    if (excluded.indexOf(key) >= 0) continue;
-    target[key] = source[key];
-  }
-
-  return target;
-}
-
-function _unsupportedIterableToArray(o, minLen) {
-  if (!o) return;
-  if (typeof o === "string") return _arrayLikeToArray(o, minLen);
-  var n = Object.prototype.toString.call(o).slice(8, -1);
-  if (n === "Object" && o.constructor) n = o.constructor.name;
-  if (n === "Map" || n === "Set") return Array.from(o);
-  if (n === "Arguments" || /^(?:Ui|I)nt(?:8|16|32)(?:Clamped)?Array$/.test(n)) return _arrayLikeToArray(o, minLen);
-}
-
-function _arrayLikeToArray(arr, len) {
-  if (len == null || len > arr.length) len = arr.length;
-
-  for (var i = 0, arr2 = new Array(len); i < len; i++) arr2[i] = arr[i];
-
-  return arr2;
-}
-
-function _createForOfIteratorHelperLoose(o, allowArrayLike) {
-  var it;
-
-  if (typeof Symbol === "undefined" || o[Symbol.iterator] == null) {
-    if (Array.isArray(o) || (it = _unsupportedIterableToArray(o)) || allowArrayLike && o && typeof o.length === "number") {
-      if (it) o = it;
-      var i = 0;
-      return function () {
-        if (i >= o.length) return {
-          done: true
-        };
-        return {
-          done: false,
-          value: o[i++]
-        };
-      };
-    }
-
-    throw new TypeError("Invalid attempt to iterate non-iterable instance.\nIn order to be iterable, non-array objects must have a [Symbol.iterator]() method.");
-  }
-
-  it = o[Symbol.iterator]();
-  return it.next.bind(it);
-}
-
-
-//# sourceMappingURL=_rollupPluginBabelHelpers.js.map
-
-
-/***/ }),
-
-/***/ "./node_modules/@headlessui/react/dist/components/description/description.esm.js":
-/*!***************************************************************************************!*\
-  !*** ./node_modules/@headlessui/react/dist/components/description/description.esm.js ***!
-  \***************************************************************************************/
-/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
-
-"use strict";
-__webpack_require__.r(__webpack_exports__);
-/* harmony export */ __webpack_require__.d(__webpack_exports__, {
-/* harmony export */   "Description": () => (/* binding */ Description),
-/* harmony export */   "useDescriptions": () => (/* binding */ useDescriptions)
-/* harmony export */ });
-/* harmony import */ var _virtual_rollupPluginBabelHelpers_js__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../../_virtual/_rollupPluginBabelHelpers.js */ "./node_modules/@headlessui/react/dist/_virtual/_rollupPluginBabelHelpers.js");
-/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
-/* harmony import */ var _utils_render_esm_js__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ../../utils/render.esm.js */ "./node_modules/@headlessui/react/dist/utils/render.esm.js");
-/* harmony import */ var _hooks_use_iso_morphic_effect_esm_js__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../../hooks/use-iso-morphic-effect.esm.js */ "./node_modules/@headlessui/react/dist/hooks/use-iso-morphic-effect.esm.js");
-/* harmony import */ var _hooks_use_id_esm_js__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../../hooks/use-id.esm.js */ "./node_modules/@headlessui/react/dist/hooks/use-id.esm.js");
-
-
-
-
-
-
-var DescriptionContext = /*#__PURE__*/(0,react__WEBPACK_IMPORTED_MODULE_0__.createContext)(null);
-
-function useDescriptionContext() {
-  var context = (0,react__WEBPACK_IMPORTED_MODULE_0__.useContext)(DescriptionContext);
-
-  if (context === null) {
-    var err = new Error('You used a <Description /> component, but it is not inside a relevant parent.');
-    if (Error.captureStackTrace) Error.captureStackTrace(err, useDescriptionContext);
-    throw err;
-  }
-
-  return context;
-}
-
-function useDescriptions() {
-  var _useState = (0,react__WEBPACK_IMPORTED_MODULE_0__.useState)([]),
-      descriptionIds = _useState[0],
-      setDescriptionIds = _useState[1];
-
-  return [// The actual id's as string or undefined
-  descriptionIds.length > 0 ? descriptionIds.join(' ') : undefined, // The provider component
-  (0,react__WEBPACK_IMPORTED_MODULE_0__.useMemo)(function () {
-    return function DescriptionProvider(props) {
-      var register = (0,react__WEBPACK_IMPORTED_MODULE_0__.useCallback)(function (value) {
-        setDescriptionIds(function (existing) {
-          return [].concat(existing, [value]);
-        });
-        return function () {
-          return setDescriptionIds(function (existing) {
-            var clone = existing.slice();
-            var idx = clone.indexOf(value);
-            if (idx !== -1) clone.splice(idx, 1);
-            return clone;
-          });
-        };
-      }, []);
-      var contextBag = (0,react__WEBPACK_IMPORTED_MODULE_0__.useMemo)(function () {
-        return {
-          register: register,
-          slot: props.slot,
-          name: props.name,
-          props: props.props
-        };
-      }, [register, props.slot, props.name, props.props]);
-      return react__WEBPACK_IMPORTED_MODULE_0__.createElement(DescriptionContext.Provider, {
-        value: contextBag
-      }, props.children);
-    };
-  }, [setDescriptionIds])];
-} // ---
-
-var DEFAULT_DESCRIPTION_TAG = 'p';
-function Description(props) {
-  var context = useDescriptionContext();
-  var id = "headlessui-description-" + (0,_hooks_use_id_esm_js__WEBPACK_IMPORTED_MODULE_1__.useId)();
-  (0,_hooks_use_iso_morphic_effect_esm_js__WEBPACK_IMPORTED_MODULE_2__.useIsoMorphicEffect)(function () {
-    return context.register(id);
-  }, [id, context.register]);
-  var passThroughProps = props;
-
-  var propsWeControl = (0,_virtual_rollupPluginBabelHelpers_js__WEBPACK_IMPORTED_MODULE_3__["extends"])({}, context.props, {
-    id: id
-  });
-
-  return (0,_utils_render_esm_js__WEBPACK_IMPORTED_MODULE_4__.render)({
-    props: (0,_virtual_rollupPluginBabelHelpers_js__WEBPACK_IMPORTED_MODULE_3__["extends"])({}, passThroughProps, propsWeControl),
-    slot: context.slot || {},
-    defaultTag: DEFAULT_DESCRIPTION_TAG,
-    name: context.name || 'Description'
-  });
-}
-
-
-//# sourceMappingURL=description.esm.js.map
-
-
-/***/ }),
-
-/***/ "./node_modules/@headlessui/react/dist/components/dialog/dialog.esm.js":
-/*!*****************************************************************************!*\
-  !*** ./node_modules/@headlessui/react/dist/components/dialog/dialog.esm.js ***!
-  \*****************************************************************************/
-/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
-
-"use strict";
-__webpack_require__.r(__webpack_exports__);
-/* harmony export */ __webpack_require__.d(__webpack_exports__, {
-/* harmony export */   "Dialog": () => (/* binding */ Dialog)
-/* harmony export */ });
-/* harmony import */ var _virtual_rollupPluginBabelHelpers_js__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../../_virtual/_rollupPluginBabelHelpers.js */ "./node_modules/@headlessui/react/dist/_virtual/_rollupPluginBabelHelpers.js");
-/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
-/* harmony import */ var _utils_match_esm_js__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../../utils/match.esm.js */ "./node_modules/@headlessui/react/dist/utils/match.esm.js");
-/* harmony import */ var _utils_render_esm_js__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../../utils/render.esm.js */ "./node_modules/@headlessui/react/dist/utils/render.esm.js");
-/* harmony import */ var _hooks_use_sync_refs_esm_js__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ../../hooks/use-sync-refs.esm.js */ "./node_modules/@headlessui/react/dist/hooks/use-sync-refs.esm.js");
-/* harmony import */ var _keyboard_esm_js__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(/*! ../keyboard.esm.js */ "./node_modules/@headlessui/react/dist/components/keyboard.esm.js");
-/* harmony import */ var _utils_bugs_esm_js__WEBPACK_IMPORTED_MODULE_16__ = __webpack_require__(/*! ../../utils/bugs.esm.js */ "./node_modules/@headlessui/react/dist/utils/bugs.esm.js");
-/* harmony import */ var _hooks_use_server_handoff_complete_esm_js__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ../../hooks/use-server-handoff-complete.esm.js */ "./node_modules/@headlessui/react/dist/hooks/use-server-handoff-complete.esm.js");
-/* harmony import */ var _hooks_use_id_esm_js__WEBPACK_IMPORTED_MODULE_12__ = __webpack_require__(/*! ../../hooks/use-id.esm.js */ "./node_modules/@headlessui/react/dist/hooks/use-id.esm.js");
-/* harmony import */ var _hooks_use_window_event_esm_js__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! ../../hooks/use-window-event.esm.js */ "./node_modules/@headlessui/react/dist/hooks/use-window-event.esm.js");
-/* harmony import */ var _hooks_use_focus_trap_esm_js__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ../../hooks/use-focus-trap.esm.js */ "./node_modules/@headlessui/react/dist/hooks/use-focus-trap.esm.js");
-/* harmony import */ var _hooks_use_inert_others_esm_js__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! ../../hooks/use-inert-others.esm.js */ "./node_modules/@headlessui/react/dist/hooks/use-inert-others.esm.js");
-/* harmony import */ var _internal_portal_force_root_esm_js__WEBPACK_IMPORTED_MODULE_14__ = __webpack_require__(/*! ../../internal/portal-force-root.esm.js */ "./node_modules/@headlessui/react/dist/internal/portal-force-root.esm.js");
-/* harmony import */ var _portal_portal_esm_js__WEBPACK_IMPORTED_MODULE_15__ = __webpack_require__(/*! ../portal/portal.esm.js */ "./node_modules/@headlessui/react/dist/components/portal/portal.esm.js");
-/* harmony import */ var _description_description_esm_js__WEBPACK_IMPORTED_MODULE_11__ = __webpack_require__(/*! ../description/description.esm.js */ "./node_modules/@headlessui/react/dist/components/description/description.esm.js");
-/* harmony import */ var _internal_open_closed_esm_js__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ../../internal/open-closed.esm.js */ "./node_modules/@headlessui/react/dist/internal/open-closed.esm.js");
-/* harmony import */ var _internal_stack_context_esm_js__WEBPACK_IMPORTED_MODULE_13__ = __webpack_require__(/*! ../../internal/stack-context.esm.js */ "./node_modules/@headlessui/react/dist/internal/stack-context.esm.js");
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-var _reducers;
-var DialogStates;
-
-(function (DialogStates) {
-  DialogStates[DialogStates["Open"] = 0] = "Open";
-  DialogStates[DialogStates["Closed"] = 1] = "Closed";
-})(DialogStates || (DialogStates = {}));
-
-var ActionTypes;
-
-(function (ActionTypes) {
-  ActionTypes[ActionTypes["SetTitleId"] = 0] = "SetTitleId";
-})(ActionTypes || (ActionTypes = {}));
-
-var reducers = (_reducers = {}, _reducers[ActionTypes.SetTitleId] = function (state, action) {
-  if (state.titleId === action.id) return state;
-  return (0,_virtual_rollupPluginBabelHelpers_js__WEBPACK_IMPORTED_MODULE_1__["extends"])({}, state, {
-    titleId: action.id
-  });
-}, _reducers);
-var DialogContext = /*#__PURE__*/(0,react__WEBPACK_IMPORTED_MODULE_0__.createContext)(null);
-DialogContext.displayName = 'DialogContext';
-
-function useDialogContext(component) {
-  var context = (0,react__WEBPACK_IMPORTED_MODULE_0__.useContext)(DialogContext);
-
-  if (context === null) {
-    var err = new Error("<" + component + " /> is missing a parent <" + Dialog.displayName + " /> component.");
-    if (Error.captureStackTrace) Error.captureStackTrace(err, useDialogContext);
-    throw err;
-  }
-
-  return context;
-}
-
-function stateReducer(state, action) {
-  return (0,_utils_match_esm_js__WEBPACK_IMPORTED_MODULE_2__.match)(action.type, reducers, state, action);
-} // ---
-
-
-var DEFAULT_DIALOG_TAG = 'div';
-var DialogRenderFeatures = _utils_render_esm_js__WEBPACK_IMPORTED_MODULE_3__.Features.RenderStrategy | _utils_render_esm_js__WEBPACK_IMPORTED_MODULE_3__.Features.Static;
-var DialogRoot = /*#__PURE__*/(0,_utils_render_esm_js__WEBPACK_IMPORTED_MODULE_3__.forwardRefWithAs)(function Dialog(props, ref) {
-  var open = props.open,
-      onClose = props.onClose,
-      initialFocus = props.initialFocus,
-      rest = (0,_virtual_rollupPluginBabelHelpers_js__WEBPACK_IMPORTED_MODULE_1__.objectWithoutPropertiesLoose)(props, ["open", "onClose", "initialFocus"]);
-
-  var _useState = (0,react__WEBPACK_IMPORTED_MODULE_0__.useState)(0),
-      nestedDialogCount = _useState[0],
-      setNestedDialogCount = _useState[1];
-
-  var usesOpenClosedState = (0,_internal_open_closed_esm_js__WEBPACK_IMPORTED_MODULE_4__.useOpenClosed)();
-
-  if (open === undefined && usesOpenClosedState !== null) {
-    var _match;
-
-    // Update the `open` prop based on the open closed state
-    open = (0,_utils_match_esm_js__WEBPACK_IMPORTED_MODULE_2__.match)(usesOpenClosedState, (_match = {}, _match[_internal_open_closed_esm_js__WEBPACK_IMPORTED_MODULE_4__.State.Open] = true, _match[_internal_open_closed_esm_js__WEBPACK_IMPORTED_MODULE_4__.State.Closed] = false, _match));
-  }
-
-  var containers = (0,react__WEBPACK_IMPORTED_MODULE_0__.useRef)(new Set());
-  var internalDialogRef = (0,react__WEBPACK_IMPORTED_MODULE_0__.useRef)(null);
-  var dialogRef = (0,_hooks_use_sync_refs_esm_js__WEBPACK_IMPORTED_MODULE_5__.useSyncRefs)(internalDialogRef, ref); // Validations
-
-  var hasOpen = props.hasOwnProperty('open') || usesOpenClosedState !== null;
-  var hasOnClose = props.hasOwnProperty('onClose');
-
-  if (!hasOpen && !hasOnClose) {
-    throw new Error("You have to provide an `open` and an `onClose` prop to the `Dialog` component.");
-  }
-
-  if (!hasOpen) {
-    throw new Error("You provided an `onClose` prop to the `Dialog`, but forgot an `open` prop.");
-  }
-
-  if (!hasOnClose) {
-    throw new Error("You provided an `open` prop to the `Dialog`, but forgot an `onClose` prop.");
-  }
-
-  if (typeof open !== 'boolean') {
-    throw new Error("You provided an `open` prop to the `Dialog`, but the value is not a boolean. Received: " + open);
-  }
-
-  if (typeof onClose !== 'function') {
-    throw new Error("You provided an `onClose` prop to the `Dialog`, but the value is not a function. Received: " + onClose);
-  }
-
-  var dialogState = open ? DialogStates.Open : DialogStates.Closed;
-
-  var visible = function () {
-    if (usesOpenClosedState !== null) {
-      return usesOpenClosedState === _internal_open_closed_esm_js__WEBPACK_IMPORTED_MODULE_4__.State.Open;
-    }
-
-    return dialogState === DialogStates.Open;
-  }();
-
-  var _useReducer = (0,react__WEBPACK_IMPORTED_MODULE_0__.useReducer)(stateReducer, {
-    titleId: null,
-    descriptionId: null
-  }),
-      state = _useReducer[0],
-      dispatch = _useReducer[1];
-
-  var close = (0,react__WEBPACK_IMPORTED_MODULE_0__.useCallback)(function () {
-    return onClose(false);
-  }, [onClose]);
-  var setTitleId = (0,react__WEBPACK_IMPORTED_MODULE_0__.useCallback)(function (id) {
-    return dispatch({
-      type: ActionTypes.SetTitleId,
-      id: id
-    });
-  }, [dispatch]);
-  var ready = (0,_hooks_use_server_handoff_complete_esm_js__WEBPACK_IMPORTED_MODULE_6__.useServerHandoffComplete)();
-  var enabled = ready && dialogState === DialogStates.Open;
-  var hasNestedDialogs = nestedDialogCount > 1; // 1 is the current dialog
-
-  var hasParentDialog = (0,react__WEBPACK_IMPORTED_MODULE_0__.useContext)(DialogContext) !== null; // If there are multiple dialogs, then you can be the root, the leaf or one
-  // in between. We only care abou whether you are the top most one or not.
-
-  var position = !hasNestedDialogs ? 'leaf' : 'parent';
-  (0,_hooks_use_focus_trap_esm_js__WEBPACK_IMPORTED_MODULE_7__.useFocusTrap)(internalDialogRef, enabled ? (0,_utils_match_esm_js__WEBPACK_IMPORTED_MODULE_2__.match)(position, {
-    parent: _hooks_use_focus_trap_esm_js__WEBPACK_IMPORTED_MODULE_7__.Features.RestoreFocus,
-    leaf: _hooks_use_focus_trap_esm_js__WEBPACK_IMPORTED_MODULE_7__.Features.All
-  }) : _hooks_use_focus_trap_esm_js__WEBPACK_IMPORTED_MODULE_7__.Features.None, {
-    initialFocus: initialFocus,
-    containers: containers
-  });
-  (0,_hooks_use_inert_others_esm_js__WEBPACK_IMPORTED_MODULE_8__.useInertOthers)(internalDialogRef, hasNestedDialogs ? enabled : false); // Handle outside click
-
-  (0,_hooks_use_window_event_esm_js__WEBPACK_IMPORTED_MODULE_9__.useWindowEvent)('mousedown', function (event) {
-    var _internalDialogRef$cu;
-
-    var target = event.target;
-    if (dialogState !== DialogStates.Open) return;
-    if (hasNestedDialogs) return;
-    if ((_internalDialogRef$cu = internalDialogRef.current) == null ? void 0 : _internalDialogRef$cu.contains(target)) return;
-    close();
-  }); // Handle `Escape` to close
-
-  (0,_hooks_use_window_event_esm_js__WEBPACK_IMPORTED_MODULE_9__.useWindowEvent)('keydown', function (event) {
-    if (event.key !== _keyboard_esm_js__WEBPACK_IMPORTED_MODULE_10__.Keys.Escape) return;
-    if (dialogState !== DialogStates.Open) return;
-    if (hasNestedDialogs) return;
-    event.preventDefault();
-    event.stopPropagation();
-    close();
-  }); // Scroll lock
-
-  (0,react__WEBPACK_IMPORTED_MODULE_0__.useEffect)(function () {
-    if (dialogState !== DialogStates.Open) return;
-    if (hasParentDialog) return;
-    var overflow = document.documentElement.style.overflow;
-    var paddingRight = document.documentElement.style.paddingRight;
-    var scrollbarWidth = window.innerWidth - document.documentElement.clientWidth;
-    document.documentElement.style.overflow = 'hidden';
-    document.documentElement.style.paddingRight = scrollbarWidth + "px";
-    return function () {
-      document.documentElement.style.overflow = overflow;
-      document.documentElement.style.paddingRight = paddingRight;
-    };
-  }, [dialogState, hasParentDialog]); // Trigger close when the FocusTrap gets hidden
-
-  (0,react__WEBPACK_IMPORTED_MODULE_0__.useEffect)(function () {
-    if (dialogState !== DialogStates.Open) return;
-    if (!internalDialogRef.current) return;
-    var observer = new IntersectionObserver(function (entries) {
-      for (var _iterator = (0,_virtual_rollupPluginBabelHelpers_js__WEBPACK_IMPORTED_MODULE_1__.createForOfIteratorHelperLoose)(entries), _step; !(_step = _iterator()).done;) {
-        var entry = _step.value;
-
-        if (entry.boundingClientRect.x === 0 && entry.boundingClientRect.y === 0 && entry.boundingClientRect.width === 0 && entry.boundingClientRect.height === 0) {
-          close();
-        }
-      }
-    });
-    observer.observe(internalDialogRef.current);
-    return function () {
-      return observer.disconnect();
-    };
-  }, [dialogState, internalDialogRef, close]);
-
-  var _useDescriptions = (0,_description_description_esm_js__WEBPACK_IMPORTED_MODULE_11__.useDescriptions)(),
-      describedby = _useDescriptions[0],
-      DescriptionProvider = _useDescriptions[1];
-
-  var id = "headlessui-dialog-" + (0,_hooks_use_id_esm_js__WEBPACK_IMPORTED_MODULE_12__.useId)();
-  var contextBag = (0,react__WEBPACK_IMPORTED_MODULE_0__.useMemo)(function () {
-    return [{
-      dialogState: dialogState,
-      close: close,
-      setTitleId: setTitleId
-    }, state];
-  }, [dialogState, state, close, setTitleId]);
-  var slot = (0,react__WEBPACK_IMPORTED_MODULE_0__.useMemo)(function () {
-    return {
-      open: dialogState === DialogStates.Open
-    };
-  }, [dialogState]);
-  var propsWeControl = {
-    ref: dialogRef,
-    id: id,
-    role: 'dialog',
-    'aria-modal': dialogState === DialogStates.Open ? true : undefined,
-    'aria-labelledby': state.titleId,
-    'aria-describedby': describedby,
-    onClick: function onClick(event) {
-      event.stopPropagation();
-    }
-  };
-  var passthroughProps = rest;
-  return react__WEBPACK_IMPORTED_MODULE_0__.createElement(_internal_stack_context_esm_js__WEBPACK_IMPORTED_MODULE_13__.StackProvider, {
-    type: "Dialog",
-    element: internalDialogRef,
-    onUpdate: (0,react__WEBPACK_IMPORTED_MODULE_0__.useCallback)(function (message, type, element) {
-      var _match2;
-
-      if (type !== 'Dialog') return;
-      (0,_utils_match_esm_js__WEBPACK_IMPORTED_MODULE_2__.match)(message, (_match2 = {}, _match2[_internal_stack_context_esm_js__WEBPACK_IMPORTED_MODULE_13__.StackMessage.Add] = function () {
-        containers.current.add(element);
-        setNestedDialogCount(function (count) {
-          return count + 1;
-        });
-      }, _match2[_internal_stack_context_esm_js__WEBPACK_IMPORTED_MODULE_13__.StackMessage.Remove] = function () {
-        containers.current.add(element);
-        setNestedDialogCount(function (count) {
-          return count - 1;
-        });
-      }, _match2));
-    }, [])
-  }, react__WEBPACK_IMPORTED_MODULE_0__.createElement(_internal_portal_force_root_esm_js__WEBPACK_IMPORTED_MODULE_14__.ForcePortalRoot, {
-    force: true
-  }, react__WEBPACK_IMPORTED_MODULE_0__.createElement(_portal_portal_esm_js__WEBPACK_IMPORTED_MODULE_15__.Portal, null, react__WEBPACK_IMPORTED_MODULE_0__.createElement(DialogContext.Provider, {
-    value: contextBag
-  }, react__WEBPACK_IMPORTED_MODULE_0__.createElement(_portal_portal_esm_js__WEBPACK_IMPORTED_MODULE_15__.Portal.Group, {
-    target: internalDialogRef
-  }, react__WEBPACK_IMPORTED_MODULE_0__.createElement(_internal_portal_force_root_esm_js__WEBPACK_IMPORTED_MODULE_14__.ForcePortalRoot, {
-    force: false
-  }, react__WEBPACK_IMPORTED_MODULE_0__.createElement(DescriptionProvider, {
-    slot: slot,
-    name: "Dialog.Description"
-  }, (0,_utils_render_esm_js__WEBPACK_IMPORTED_MODULE_3__.render)({
-    props: (0,_virtual_rollupPluginBabelHelpers_js__WEBPACK_IMPORTED_MODULE_1__["extends"])({}, passthroughProps, propsWeControl),
-    slot: slot,
-    defaultTag: DEFAULT_DIALOG_TAG,
-    features: DialogRenderFeatures,
-    visible: visible,
-    name: 'Dialog'
-  }))))))));
-}); // ---
-
-var DEFAULT_OVERLAY_TAG = 'div';
-var Overlay = /*#__PURE__*/(0,_utils_render_esm_js__WEBPACK_IMPORTED_MODULE_3__.forwardRefWithAs)(function Overlay(props, ref) {
-  var _useDialogContext = useDialogContext([Dialog.displayName, Overlay.name].join('.')),
-      _useDialogContext$ = _useDialogContext[0],
-      dialogState = _useDialogContext$.dialogState,
-      close = _useDialogContext$.close;
-
-  var overlayRef = (0,_hooks_use_sync_refs_esm_js__WEBPACK_IMPORTED_MODULE_5__.useSyncRefs)(ref);
-  var id = "headlessui-dialog-overlay-" + (0,_hooks_use_id_esm_js__WEBPACK_IMPORTED_MODULE_12__.useId)();
-  var handleClick = (0,react__WEBPACK_IMPORTED_MODULE_0__.useCallback)(function (event) {
-    if (event.target !== event.currentTarget) return;
-    if ((0,_utils_bugs_esm_js__WEBPACK_IMPORTED_MODULE_16__.isDisabledReactIssue7711)(event.currentTarget)) return event.preventDefault();
-    event.preventDefault();
-    event.stopPropagation();
-    close();
-  }, [close]);
-  var slot = (0,react__WEBPACK_IMPORTED_MODULE_0__.useMemo)(function () {
-    return {
-      open: dialogState === DialogStates.Open
-    };
-  }, [dialogState]);
-  var propsWeControl = {
-    ref: overlayRef,
-    id: id,
-    'aria-hidden': true,
-    onClick: handleClick
-  };
-  var passthroughProps = props;
-  return (0,_utils_render_esm_js__WEBPACK_IMPORTED_MODULE_3__.render)({
-    props: (0,_virtual_rollupPluginBabelHelpers_js__WEBPACK_IMPORTED_MODULE_1__["extends"])({}, passthroughProps, propsWeControl),
-    slot: slot,
-    defaultTag: DEFAULT_OVERLAY_TAG,
-    name: 'Dialog.Overlay'
-  });
-}); // ---
-
-var DEFAULT_TITLE_TAG = 'h2';
-
-function Title(props) {
-  var _useDialogContext2 = useDialogContext([Dialog.displayName, Title.name].join('.')),
-      _useDialogContext2$ = _useDialogContext2[0],
-      dialogState = _useDialogContext2$.dialogState,
-      setTitleId = _useDialogContext2$.setTitleId;
-
-  var id = "headlessui-dialog-title-" + (0,_hooks_use_id_esm_js__WEBPACK_IMPORTED_MODULE_12__.useId)();
-  (0,react__WEBPACK_IMPORTED_MODULE_0__.useEffect)(function () {
-    setTitleId(id);
-    return function () {
-      return setTitleId(null);
-    };
-  }, [id, setTitleId]);
-  var slot = (0,react__WEBPACK_IMPORTED_MODULE_0__.useMemo)(function () {
-    return {
-      open: dialogState === DialogStates.Open
-    };
-  }, [dialogState]);
-  var propsWeControl = {
-    id: id
-  };
-  var passthroughProps = props;
-  return (0,_utils_render_esm_js__WEBPACK_IMPORTED_MODULE_3__.render)({
-    props: (0,_virtual_rollupPluginBabelHelpers_js__WEBPACK_IMPORTED_MODULE_1__["extends"])({}, passthroughProps, propsWeControl),
-    slot: slot,
-    defaultTag: DEFAULT_TITLE_TAG,
-    name: 'Dialog.Title'
-  });
-} // ---
-
-
-var Dialog = /*#__PURE__*/Object.assign(DialogRoot, {
-  Overlay: Overlay,
-  Title: Title,
-  Description: _description_description_esm_js__WEBPACK_IMPORTED_MODULE_11__.Description
-});
-
-
-//# sourceMappingURL=dialog.esm.js.map
-
-
-/***/ }),
-
-/***/ "./node_modules/@headlessui/react/dist/components/disclosure/disclosure.esm.js":
-/*!*************************************************************************************!*\
-  !*** ./node_modules/@headlessui/react/dist/components/disclosure/disclosure.esm.js ***!
-  \*************************************************************************************/
-/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
-
-"use strict";
-__webpack_require__.r(__webpack_exports__);
-/* harmony export */ __webpack_require__.d(__webpack_exports__, {
-/* harmony export */   "Disclosure": () => (/* binding */ Disclosure)
-/* harmony export */ });
-/* harmony import */ var _virtual_rollupPluginBabelHelpers_js__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../../_virtual/_rollupPluginBabelHelpers.js */ "./node_modules/@headlessui/react/dist/_virtual/_rollupPluginBabelHelpers.js");
-/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
-/* harmony import */ var _utils_match_esm_js__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../../utils/match.esm.js */ "./node_modules/@headlessui/react/dist/utils/match.esm.js");
-/* harmony import */ var _utils_render_esm_js__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ../../utils/render.esm.js */ "./node_modules/@headlessui/react/dist/utils/render.esm.js");
-/* harmony import */ var _hooks_use_sync_refs_esm_js__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ../../hooks/use-sync-refs.esm.js */ "./node_modules/@headlessui/react/dist/hooks/use-sync-refs.esm.js");
-/* harmony import */ var _keyboard_esm_js__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ../keyboard.esm.js */ "./node_modules/@headlessui/react/dist/components/keyboard.esm.js");
-/* harmony import */ var _utils_bugs_esm_js__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! ../../utils/bugs.esm.js */ "./node_modules/@headlessui/react/dist/utils/bugs.esm.js");
-/* harmony import */ var _hooks_use_id_esm_js__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../../hooks/use-id.esm.js */ "./node_modules/@headlessui/react/dist/hooks/use-id.esm.js");
-/* harmony import */ var _internal_open_closed_esm_js__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ../../internal/open-closed.esm.js */ "./node_modules/@headlessui/react/dist/internal/open-closed.esm.js");
-/* harmony import */ var _hooks_use_resolve_button_type_esm_js__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! ../../hooks/use-resolve-button-type.esm.js */ "./node_modules/@headlessui/react/dist/hooks/use-resolve-button-type.esm.js");
-
-
-
-
-
-
-
-
-
-
-
-var _reducers;
-var DisclosureStates;
-
-(function (DisclosureStates) {
-  DisclosureStates[DisclosureStates["Open"] = 0] = "Open";
-  DisclosureStates[DisclosureStates["Closed"] = 1] = "Closed";
-})(DisclosureStates || (DisclosureStates = {}));
-
-var ActionTypes;
-
-(function (ActionTypes) {
-  ActionTypes[ActionTypes["ToggleDisclosure"] = 0] = "ToggleDisclosure";
-  ActionTypes[ActionTypes["CloseDisclosure"] = 1] = "CloseDisclosure";
-  ActionTypes[ActionTypes["SetButtonId"] = 2] = "SetButtonId";
-  ActionTypes[ActionTypes["SetPanelId"] = 3] = "SetPanelId";
-  ActionTypes[ActionTypes["LinkPanel"] = 4] = "LinkPanel";
-  ActionTypes[ActionTypes["UnlinkPanel"] = 5] = "UnlinkPanel";
-})(ActionTypes || (ActionTypes = {}));
-
-var reducers = (_reducers = {}, _reducers[ActionTypes.ToggleDisclosure] = function (state) {
-  var _match;
-
-  return (0,_virtual_rollupPluginBabelHelpers_js__WEBPACK_IMPORTED_MODULE_1__["extends"])({}, state, {
-    disclosureState: (0,_utils_match_esm_js__WEBPACK_IMPORTED_MODULE_2__.match)(state.disclosureState, (_match = {}, _match[DisclosureStates.Open] = DisclosureStates.Closed, _match[DisclosureStates.Closed] = DisclosureStates.Open, _match))
-  });
-}, _reducers[ActionTypes.CloseDisclosure] = function (state) {
-  if (state.disclosureState === DisclosureStates.Closed) return state;
-  return (0,_virtual_rollupPluginBabelHelpers_js__WEBPACK_IMPORTED_MODULE_1__["extends"])({}, state, {
-    disclosureState: DisclosureStates.Closed
-  });
-}, _reducers[ActionTypes.LinkPanel] = function (state) {
-  if (state.linkedPanel === true) return state;
-  return (0,_virtual_rollupPluginBabelHelpers_js__WEBPACK_IMPORTED_MODULE_1__["extends"])({}, state, {
-    linkedPanel: true
-  });
-}, _reducers[ActionTypes.UnlinkPanel] = function (state) {
-  if (state.linkedPanel === false) return state;
-  return (0,_virtual_rollupPluginBabelHelpers_js__WEBPACK_IMPORTED_MODULE_1__["extends"])({}, state, {
-    linkedPanel: false
-  });
-}, _reducers[ActionTypes.SetButtonId] = function (state, action) {
-  if (state.buttonId === action.buttonId) return state;
-  return (0,_virtual_rollupPluginBabelHelpers_js__WEBPACK_IMPORTED_MODULE_1__["extends"])({}, state, {
-    buttonId: action.buttonId
-  });
-}, _reducers[ActionTypes.SetPanelId] = function (state, action) {
-  if (state.panelId === action.panelId) return state;
-  return (0,_virtual_rollupPluginBabelHelpers_js__WEBPACK_IMPORTED_MODULE_1__["extends"])({}, state, {
-    panelId: action.panelId
-  });
-}, _reducers);
-var DisclosureContext = /*#__PURE__*/(0,react__WEBPACK_IMPORTED_MODULE_0__.createContext)(null);
-DisclosureContext.displayName = 'DisclosureContext';
-
-function useDisclosureContext(component) {
-  var context = (0,react__WEBPACK_IMPORTED_MODULE_0__.useContext)(DisclosureContext);
-
-  if (context === null) {
-    var err = new Error("<" + component + " /> is missing a parent <" + Disclosure.name + " /> component.");
-    if (Error.captureStackTrace) Error.captureStackTrace(err, useDisclosureContext);
-    throw err;
-  }
-
-  return context;
-}
-
-var DisclosureAPIContext = /*#__PURE__*/(0,react__WEBPACK_IMPORTED_MODULE_0__.createContext)(null);
-DisclosureAPIContext.displayName = 'DisclosureAPIContext';
-
-function useDisclosureAPIContext(component) {
-  var context = (0,react__WEBPACK_IMPORTED_MODULE_0__.useContext)(DisclosureAPIContext);
-
-  if (context === null) {
-    var err = new Error("<" + component + " /> is missing a parent <" + Disclosure.name + " /> component.");
-    if (Error.captureStackTrace) Error.captureStackTrace(err, useDisclosureAPIContext);
-    throw err;
-  }
-
-  return context;
-}
-
-var DisclosurePanelContext = /*#__PURE__*/(0,react__WEBPACK_IMPORTED_MODULE_0__.createContext)(null);
-DisclosurePanelContext.displayName = 'DisclosurePanelContext';
-
-function useDisclosurePanelContext() {
-  return (0,react__WEBPACK_IMPORTED_MODULE_0__.useContext)(DisclosurePanelContext);
-}
-
-function stateReducer(state, action) {
-  return (0,_utils_match_esm_js__WEBPACK_IMPORTED_MODULE_2__.match)(action.type, reducers, state, action);
-} // ---
-
-
-var DEFAULT_DISCLOSURE_TAG = react__WEBPACK_IMPORTED_MODULE_0__.Fragment;
-function Disclosure(props) {
-  var _match2;
-
-  var _props$defaultOpen = props.defaultOpen,
-      defaultOpen = _props$defaultOpen === void 0 ? false : _props$defaultOpen,
-      passthroughProps = (0,_virtual_rollupPluginBabelHelpers_js__WEBPACK_IMPORTED_MODULE_1__.objectWithoutPropertiesLoose)(props, ["defaultOpen"]);
-
-  var buttonId = "headlessui-disclosure-button-" + (0,_hooks_use_id_esm_js__WEBPACK_IMPORTED_MODULE_3__.useId)();
-  var panelId = "headlessui-disclosure-panel-" + (0,_hooks_use_id_esm_js__WEBPACK_IMPORTED_MODULE_3__.useId)();
-  var reducerBag = (0,react__WEBPACK_IMPORTED_MODULE_0__.useReducer)(stateReducer, {
-    disclosureState: defaultOpen ? DisclosureStates.Open : DisclosureStates.Closed,
-    linkedPanel: false,
-    buttonId: buttonId,
-    panelId: panelId
-  });
-  var disclosureState = reducerBag[0].disclosureState,
-      dispatch = reducerBag[1];
-  (0,react__WEBPACK_IMPORTED_MODULE_0__.useEffect)(function () {
-    return dispatch({
-      type: ActionTypes.SetButtonId,
-      buttonId: buttonId
-    });
-  }, [buttonId, dispatch]);
-  (0,react__WEBPACK_IMPORTED_MODULE_0__.useEffect)(function () {
-    return dispatch({
-      type: ActionTypes.SetPanelId,
-      panelId: panelId
-    });
-  }, [panelId, dispatch]);
-  var close = (0,react__WEBPACK_IMPORTED_MODULE_0__.useCallback)(function (focusableElement) {
-    dispatch({
-      type: ActionTypes.CloseDisclosure
-    });
-
-    var restoreElement = function () {
-      if (!focusableElement) return document.getElementById(buttonId);
-      if (focusableElement instanceof HTMLElement) return focusableElement;
-      if (focusableElement.current instanceof HTMLElement) return focusableElement.current;
-      return document.getElementById(buttonId);
-    }();
-
-    restoreElement == null ? void 0 : restoreElement.focus();
-  }, [dispatch, buttonId]);
-  var api = (0,react__WEBPACK_IMPORTED_MODULE_0__.useMemo)(function () {
-    return {
-      close: close
-    };
-  }, [close]);
-  var slot = (0,react__WEBPACK_IMPORTED_MODULE_0__.useMemo)(function () {
-    return {
-      open: disclosureState === DisclosureStates.Open,
-      close: close
-    };
-  }, [disclosureState, close]);
-  return react__WEBPACK_IMPORTED_MODULE_0__.createElement(DisclosureContext.Provider, {
-    value: reducerBag
-  }, react__WEBPACK_IMPORTED_MODULE_0__.createElement(DisclosureAPIContext.Provider, {
-    value: api
-  }, react__WEBPACK_IMPORTED_MODULE_0__.createElement(_internal_open_closed_esm_js__WEBPACK_IMPORTED_MODULE_4__.OpenClosedProvider, {
-    value: (0,_utils_match_esm_js__WEBPACK_IMPORTED_MODULE_2__.match)(disclosureState, (_match2 = {}, _match2[DisclosureStates.Open] = _internal_open_closed_esm_js__WEBPACK_IMPORTED_MODULE_4__.State.Open, _match2[DisclosureStates.Closed] = _internal_open_closed_esm_js__WEBPACK_IMPORTED_MODULE_4__.State.Closed, _match2))
-  }, (0,_utils_render_esm_js__WEBPACK_IMPORTED_MODULE_5__.render)({
-    props: passthroughProps,
-    slot: slot,
-    defaultTag: DEFAULT_DISCLOSURE_TAG,
-    name: 'Disclosure'
-  }))));
-} // ---
-
-var DEFAULT_BUTTON_TAG = 'button';
-var Button = /*#__PURE__*/(0,_utils_render_esm_js__WEBPACK_IMPORTED_MODULE_5__.forwardRefWithAs)(function Button(props, ref) {
-  var _useDisclosureContext = useDisclosureContext([Disclosure.name, Button.name].join('.')),
-      state = _useDisclosureContext[0],
-      dispatch = _useDisclosureContext[1];
-
-  var internalButtonRef = (0,react__WEBPACK_IMPORTED_MODULE_0__.useRef)(null);
-  var buttonRef = (0,_hooks_use_sync_refs_esm_js__WEBPACK_IMPORTED_MODULE_6__.useSyncRefs)(internalButtonRef, ref);
-  var panelContext = useDisclosurePanelContext();
-  var isWithinPanel = panelContext === null ? false : panelContext === state.panelId;
-  var handleKeyDown = (0,react__WEBPACK_IMPORTED_MODULE_0__.useCallback)(function (event) {
-    var _document$getElementB;
-
-    if (isWithinPanel) {
-      if (state.disclosureState === DisclosureStates.Closed) return;
-
-      switch (event.key) {
-        case _keyboard_esm_js__WEBPACK_IMPORTED_MODULE_7__.Keys.Space:
-        case _keyboard_esm_js__WEBPACK_IMPORTED_MODULE_7__.Keys.Enter:
-          event.preventDefault();
-          event.stopPropagation();
-          dispatch({
-            type: ActionTypes.ToggleDisclosure
-          });
-          (_document$getElementB = document.getElementById(state.buttonId)) == null ? void 0 : _document$getElementB.focus();
-          break;
-      }
-    } else {
-      switch (event.key) {
-        case _keyboard_esm_js__WEBPACK_IMPORTED_MODULE_7__.Keys.Space:
-        case _keyboard_esm_js__WEBPACK_IMPORTED_MODULE_7__.Keys.Enter:
-          event.preventDefault();
-          event.stopPropagation();
-          dispatch({
-            type: ActionTypes.ToggleDisclosure
-          });
-          break;
-      }
-    }
-  }, [dispatch, isWithinPanel, state.disclosureState]);
-  var handleKeyUp = (0,react__WEBPACK_IMPORTED_MODULE_0__.useCallback)(function (event) {
-    switch (event.key) {
-      case _keyboard_esm_js__WEBPACK_IMPORTED_MODULE_7__.Keys.Space:
-        // Required for firefox, event.preventDefault() in handleKeyDown for
-        // the Space key doesn't cancel the handleKeyUp, which in turn
-        // triggers a *click*.
-        event.preventDefault();
-        break;
-    }
-  }, []);
-  var handleClick = (0,react__WEBPACK_IMPORTED_MODULE_0__.useCallback)(function (event) {
-    if ((0,_utils_bugs_esm_js__WEBPACK_IMPORTED_MODULE_8__.isDisabledReactIssue7711)(event.currentTarget)) return;
-    if (props.disabled) return;
-
-    if (isWithinPanel) {
-      var _document$getElementB2;
-
-      dispatch({
-        type: ActionTypes.ToggleDisclosure
-      });
-      (_document$getElementB2 = document.getElementById(state.buttonId)) == null ? void 0 : _document$getElementB2.focus();
-    } else {
-      dispatch({
-        type: ActionTypes.ToggleDisclosure
-      });
-    }
-  }, [dispatch, props.disabled, state.buttonId, isWithinPanel]);
-  var slot = (0,react__WEBPACK_IMPORTED_MODULE_0__.useMemo)(function () {
-    return {
-      open: state.disclosureState === DisclosureStates.Open
-    };
-  }, [state]);
-  var type = (0,_hooks_use_resolve_button_type_esm_js__WEBPACK_IMPORTED_MODULE_9__.useResolveButtonType)(props, internalButtonRef);
-  var passthroughProps = props;
-  var propsWeControl = isWithinPanel ? {
-    ref: buttonRef,
-    type: type,
-    onKeyDown: handleKeyDown,
-    onClick: handleClick
-  } : {
-    ref: buttonRef,
-    id: state.buttonId,
-    type: type,
-    'aria-expanded': props.disabled ? undefined : state.disclosureState === DisclosureStates.Open,
-    'aria-controls': state.linkedPanel ? state.panelId : undefined,
-    onKeyDown: handleKeyDown,
-    onKeyUp: handleKeyUp,
-    onClick: handleClick
-  };
-  return (0,_utils_render_esm_js__WEBPACK_IMPORTED_MODULE_5__.render)({
-    props: (0,_virtual_rollupPluginBabelHelpers_js__WEBPACK_IMPORTED_MODULE_1__["extends"])({}, passthroughProps, propsWeControl),
-    slot: slot,
-    defaultTag: DEFAULT_BUTTON_TAG,
-    name: 'Disclosure.Button'
-  });
-}); // ---
-
-var DEFAULT_PANEL_TAG = 'div';
-var PanelRenderFeatures = _utils_render_esm_js__WEBPACK_IMPORTED_MODULE_5__.Features.RenderStrategy | _utils_render_esm_js__WEBPACK_IMPORTED_MODULE_5__.Features.Static;
-var Panel = /*#__PURE__*/(0,_utils_render_esm_js__WEBPACK_IMPORTED_MODULE_5__.forwardRefWithAs)(function Panel(props, ref) {
-  var _useDisclosureContext2 = useDisclosureContext([Disclosure.name, Panel.name].join('.')),
-      state = _useDisclosureContext2[0],
-      dispatch = _useDisclosureContext2[1];
-
-  var _useDisclosureAPICont = useDisclosureAPIContext([Disclosure.name, Panel.name].join('.')),
-      close = _useDisclosureAPICont.close;
-
-  var panelRef = (0,_hooks_use_sync_refs_esm_js__WEBPACK_IMPORTED_MODULE_6__.useSyncRefs)(ref, function () {
-    if (state.linkedPanel) return;
-    dispatch({
-      type: ActionTypes.LinkPanel
-    });
-  });
-  var usesOpenClosedState = (0,_internal_open_closed_esm_js__WEBPACK_IMPORTED_MODULE_4__.useOpenClosed)();
-
-  var visible = function () {
-    if (usesOpenClosedState !== null) {
-      return usesOpenClosedState === _internal_open_closed_esm_js__WEBPACK_IMPORTED_MODULE_4__.State.Open;
-    }
-
-    return state.disclosureState === DisclosureStates.Open;
-  }(); // Unlink on "unmount" myself
-
-
-  (0,react__WEBPACK_IMPORTED_MODULE_0__.useEffect)(function () {
-    return function () {
-      return dispatch({
-        type: ActionTypes.UnlinkPanel
-      });
-    };
-  }, [dispatch]); // Unlink on "unmount" children
-
-  (0,react__WEBPACK_IMPORTED_MODULE_0__.useEffect)(function () {
-    var _props$unmount;
-
-    if (state.disclosureState === DisclosureStates.Closed && ((_props$unmount = props.unmount) != null ? _props$unmount : true)) {
-      dispatch({
-        type: ActionTypes.UnlinkPanel
-      });
-    }
-  }, [state.disclosureState, props.unmount, dispatch]);
-  var slot = (0,react__WEBPACK_IMPORTED_MODULE_0__.useMemo)(function () {
-    return {
-      open: state.disclosureState === DisclosureStates.Open,
-      close: close
-    };
-  }, [state, close]);
-  var propsWeControl = {
-    ref: panelRef,
-    id: state.panelId
-  };
-  var passthroughProps = props;
-  return react__WEBPACK_IMPORTED_MODULE_0__.createElement(DisclosurePanelContext.Provider, {
-    value: state.panelId
-  }, (0,_utils_render_esm_js__WEBPACK_IMPORTED_MODULE_5__.render)({
-    props: (0,_virtual_rollupPluginBabelHelpers_js__WEBPACK_IMPORTED_MODULE_1__["extends"])({}, passthroughProps, propsWeControl),
-    slot: slot,
-    defaultTag: DEFAULT_PANEL_TAG,
-    features: PanelRenderFeatures,
-    visible: visible,
-    name: 'Disclosure.Panel'
-  }));
-}); // ---
-
-Disclosure.Button = Button;
-Disclosure.Panel = Panel;
-
-
-//# sourceMappingURL=disclosure.esm.js.map
-
-
-/***/ }),
-
-/***/ "./node_modules/@headlessui/react/dist/components/focus-trap/focus-trap.esm.js":
-/*!*************************************************************************************!*\
-  !*** ./node_modules/@headlessui/react/dist/components/focus-trap/focus-trap.esm.js ***!
-  \*************************************************************************************/
-/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
-
-"use strict";
-__webpack_require__.r(__webpack_exports__);
-/* harmony export */ __webpack_require__.d(__webpack_exports__, {
-/* harmony export */   "FocusTrap": () => (/* binding */ FocusTrap)
-/* harmony export */ });
-/* harmony import */ var _virtual_rollupPluginBabelHelpers_js__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../../_virtual/_rollupPluginBabelHelpers.js */ "./node_modules/@headlessui/react/dist/_virtual/_rollupPluginBabelHelpers.js");
-/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
-/* harmony import */ var _utils_render_esm_js__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ../../utils/render.esm.js */ "./node_modules/@headlessui/react/dist/utils/render.esm.js");
-/* harmony import */ var _hooks_use_server_handoff_complete_esm_js__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../../hooks/use-server-handoff-complete.esm.js */ "./node_modules/@headlessui/react/dist/hooks/use-server-handoff-complete.esm.js");
-/* harmony import */ var _hooks_use_focus_trap_esm_js__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../../hooks/use-focus-trap.esm.js */ "./node_modules/@headlessui/react/dist/hooks/use-focus-trap.esm.js");
-
-
-
-
-
-
-var DEFAULT_FOCUS_TRAP_TAG = 'div';
-function FocusTrap(props) {
-  var container = (0,react__WEBPACK_IMPORTED_MODULE_0__.useRef)(null);
-
-  var initialFocus = props.initialFocus,
-      passthroughProps = (0,_virtual_rollupPluginBabelHelpers_js__WEBPACK_IMPORTED_MODULE_1__.objectWithoutPropertiesLoose)(props, ["initialFocus"]);
-
-  var ready = (0,_hooks_use_server_handoff_complete_esm_js__WEBPACK_IMPORTED_MODULE_2__.useServerHandoffComplete)();
-  (0,_hooks_use_focus_trap_esm_js__WEBPACK_IMPORTED_MODULE_3__.useFocusTrap)(container, ready ? _hooks_use_focus_trap_esm_js__WEBPACK_IMPORTED_MODULE_3__.Features.All : _hooks_use_focus_trap_esm_js__WEBPACK_IMPORTED_MODULE_3__.Features.None, {
-    initialFocus: initialFocus
-  });
-  var propsWeControl = {
-    ref: container
-  };
-  return (0,_utils_render_esm_js__WEBPACK_IMPORTED_MODULE_4__.render)({
-    props: (0,_virtual_rollupPluginBabelHelpers_js__WEBPACK_IMPORTED_MODULE_1__["extends"])({}, passthroughProps, propsWeControl),
-    defaultTag: DEFAULT_FOCUS_TRAP_TAG,
-    name: 'FocusTrap'
-  });
-}
-
-
-//# sourceMappingURL=focus-trap.esm.js.map
-
-
-/***/ }),
-
-/***/ "./node_modules/@headlessui/react/dist/components/keyboard.esm.js":
-/*!************************************************************************!*\
-  !*** ./node_modules/@headlessui/react/dist/components/keyboard.esm.js ***!
-  \************************************************************************/
-/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
-
-"use strict";
-__webpack_require__.r(__webpack_exports__);
-/* harmony export */ __webpack_require__.d(__webpack_exports__, {
-/* harmony export */   "Keys": () => (/* binding */ Keys)
-/* harmony export */ });
-// TODO: This must already exist somewhere, right? 🤔
-// Ref: https://www.w3.org/TR/uievents-key/#named-key-attribute-values
-var Keys;
-
-(function (Keys) {
-  Keys["Space"] = " ";
-  Keys["Enter"] = "Enter";
-  Keys["Escape"] = "Escape";
-  Keys["Backspace"] = "Backspace";
-  Keys["ArrowLeft"] = "ArrowLeft";
-  Keys["ArrowUp"] = "ArrowUp";
-  Keys["ArrowRight"] = "ArrowRight";
-  Keys["ArrowDown"] = "ArrowDown";
-  Keys["Home"] = "Home";
-  Keys["End"] = "End";
-  Keys["PageUp"] = "PageUp";
-  Keys["PageDown"] = "PageDown";
-  Keys["Tab"] = "Tab";
-})(Keys || (Keys = {}));
-
-
-//# sourceMappingURL=keyboard.esm.js.map
-
-
-/***/ }),
-
-/***/ "./node_modules/@headlessui/react/dist/components/label/label.esm.js":
-/*!***************************************************************************!*\
-  !*** ./node_modules/@headlessui/react/dist/components/label/label.esm.js ***!
-  \***************************************************************************/
-/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
-
-"use strict";
-__webpack_require__.r(__webpack_exports__);
-/* harmony export */ __webpack_require__.d(__webpack_exports__, {
-/* harmony export */   "Label": () => (/* binding */ Label),
-/* harmony export */   "useLabels": () => (/* binding */ useLabels)
-/* harmony export */ });
-/* harmony import */ var _virtual_rollupPluginBabelHelpers_js__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../../_virtual/_rollupPluginBabelHelpers.js */ "./node_modules/@headlessui/react/dist/_virtual/_rollupPluginBabelHelpers.js");
-/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
-/* harmony import */ var _utils_render_esm_js__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ../../utils/render.esm.js */ "./node_modules/@headlessui/react/dist/utils/render.esm.js");
-/* harmony import */ var _hooks_use_iso_morphic_effect_esm_js__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../../hooks/use-iso-morphic-effect.esm.js */ "./node_modules/@headlessui/react/dist/hooks/use-iso-morphic-effect.esm.js");
-/* harmony import */ var _hooks_use_id_esm_js__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../../hooks/use-id.esm.js */ "./node_modules/@headlessui/react/dist/hooks/use-id.esm.js");
-
-
-
-
-
-
-var LabelContext = /*#__PURE__*/(0,react__WEBPACK_IMPORTED_MODULE_0__.createContext)(null);
-
-function useLabelContext() {
-  var context = (0,react__WEBPACK_IMPORTED_MODULE_0__.useContext)(LabelContext);
-
-  if (context === null) {
-    var err = new Error('You used a <Label /> component, but it is not inside a relevant parent.');
-    if (Error.captureStackTrace) Error.captureStackTrace(err, useLabelContext);
-    throw err;
-  }
-
-  return context;
-}
-
-function useLabels() {
-  var _useState = (0,react__WEBPACK_IMPORTED_MODULE_0__.useState)([]),
-      labelIds = _useState[0],
-      setLabelIds = _useState[1];
-
-  return [// The actual id's as string or undefined.
-  labelIds.length > 0 ? labelIds.join(' ') : undefined, // The provider component
-  (0,react__WEBPACK_IMPORTED_MODULE_0__.useMemo)(function () {
-    return function LabelProvider(props) {
-      var register = (0,react__WEBPACK_IMPORTED_MODULE_0__.useCallback)(function (value) {
-        setLabelIds(function (existing) {
-          return [].concat(existing, [value]);
-        });
-        return function () {
-          return setLabelIds(function (existing) {
-            var clone = existing.slice();
-            var idx = clone.indexOf(value);
-            if (idx !== -1) clone.splice(idx, 1);
-            return clone;
-          });
-        };
-      }, []);
-      var contextBag = (0,react__WEBPACK_IMPORTED_MODULE_0__.useMemo)(function () {
-        return {
-          register: register,
-          slot: props.slot,
-          name: props.name,
-          props: props.props
-        };
-      }, [register, props.slot, props.name, props.props]);
-      return react__WEBPACK_IMPORTED_MODULE_0__.createElement(LabelContext.Provider, {
-        value: contextBag
-      }, props.children);
-    };
-  }, [setLabelIds])];
-} // ---
-
-var DEFAULT_LABEL_TAG = 'label';
-function Label(props) {
-  var _props$passive = props.passive,
-      passive = _props$passive === void 0 ? false : _props$passive,
-      passThroughProps = (0,_virtual_rollupPluginBabelHelpers_js__WEBPACK_IMPORTED_MODULE_1__.objectWithoutPropertiesLoose)(props, ["passive"]);
-
-  var context = useLabelContext();
-  var id = "headlessui-label-" + (0,_hooks_use_id_esm_js__WEBPACK_IMPORTED_MODULE_2__.useId)();
-  (0,_hooks_use_iso_morphic_effect_esm_js__WEBPACK_IMPORTED_MODULE_3__.useIsoMorphicEffect)(function () {
-    return context.register(id);
-  }, [id, context.register]);
-
-  var propsWeControl = (0,_virtual_rollupPluginBabelHelpers_js__WEBPACK_IMPORTED_MODULE_1__["extends"])({}, context.props, {
-    id: id
-  });
-
-  var allProps = (0,_virtual_rollupPluginBabelHelpers_js__WEBPACK_IMPORTED_MODULE_1__["extends"])({}, passThroughProps, propsWeControl); // @ts-expect-error props are dynamic via context, some components will
-  //                  provide an onClick then we can delete it.
-
-
-  if (passive) delete allProps['onClick'];
-  return (0,_utils_render_esm_js__WEBPACK_IMPORTED_MODULE_4__.render)({
-    props: allProps,
-    slot: context.slot || {},
-    defaultTag: DEFAULT_LABEL_TAG,
-    name: context.name || 'Label'
-  });
-}
-
-
-//# sourceMappingURL=label.esm.js.map
-
-
-/***/ }),
-
-/***/ "./node_modules/@headlessui/react/dist/components/listbox/listbox.esm.js":
-/*!*******************************************************************************!*\
-  !*** ./node_modules/@headlessui/react/dist/components/listbox/listbox.esm.js ***!
-  \*******************************************************************************/
-/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
-
-"use strict";
-__webpack_require__.r(__webpack_exports__);
-/* harmony export */ __webpack_require__.d(__webpack_exports__, {
-/* harmony export */   "Listbox": () => (/* binding */ Listbox)
-/* harmony export */ });
-/* harmony import */ var _virtual_rollupPluginBabelHelpers_js__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../../_virtual/_rollupPluginBabelHelpers.js */ "./node_modules/@headlessui/react/dist/_virtual/_rollupPluginBabelHelpers.js");
-/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
-/* harmony import */ var _utils_match_esm_js__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../../utils/match.esm.js */ "./node_modules/@headlessui/react/dist/utils/match.esm.js");
-/* harmony import */ var _utils_render_esm_js__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! ../../utils/render.esm.js */ "./node_modules/@headlessui/react/dist/utils/render.esm.js");
-/* harmony import */ var _hooks_use_sync_refs_esm_js__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! ../../hooks/use-sync-refs.esm.js */ "./node_modules/@headlessui/react/dist/hooks/use-sync-refs.esm.js");
-/* harmony import */ var _keyboard_esm_js__WEBPACK_IMPORTED_MODULE_12__ = __webpack_require__(/*! ../keyboard.esm.js */ "./node_modules/@headlessui/react/dist/components/keyboard.esm.js");
-/* harmony import */ var _utils_bugs_esm_js__WEBPACK_IMPORTED_MODULE_13__ = __webpack_require__(/*! ../../utils/bugs.esm.js */ "./node_modules/@headlessui/react/dist/utils/bugs.esm.js");
-/* harmony import */ var _hooks_use_iso_morphic_effect_esm_js__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ../../hooks/use-iso-morphic-effect.esm.js */ "./node_modules/@headlessui/react/dist/hooks/use-iso-morphic-effect.esm.js");
-/* harmony import */ var _hooks_use_id_esm_js__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(/*! ../../hooks/use-id.esm.js */ "./node_modules/@headlessui/react/dist/hooks/use-id.esm.js");
-/* harmony import */ var _utils_focus_management_esm_js__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ../../utils/focus-management.esm.js */ "./node_modules/@headlessui/react/dist/utils/focus-management.esm.js");
-/* harmony import */ var _hooks_use_window_event_esm_js__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ../../hooks/use-window-event.esm.js */ "./node_modules/@headlessui/react/dist/hooks/use-window-event.esm.js");
-/* harmony import */ var _internal_open_closed_esm_js__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ../../internal/open-closed.esm.js */ "./node_modules/@headlessui/react/dist/internal/open-closed.esm.js");
-/* harmony import */ var _hooks_use_resolve_button_type_esm_js__WEBPACK_IMPORTED_MODULE_15__ = __webpack_require__(/*! ../../hooks/use-resolve-button-type.esm.js */ "./node_modules/@headlessui/react/dist/hooks/use-resolve-button-type.esm.js");
-/* harmony import */ var _utils_disposables_esm_js__WEBPACK_IMPORTED_MODULE_16__ = __webpack_require__(/*! ../../utils/disposables.esm.js */ "./node_modules/@headlessui/react/dist/utils/disposables.esm.js");
-/* harmony import */ var _hooks_use_disposables_esm_js__WEBPACK_IMPORTED_MODULE_11__ = __webpack_require__(/*! ../../hooks/use-disposables.esm.js */ "./node_modules/@headlessui/react/dist/hooks/use-disposables.esm.js");
-/* harmony import */ var _hooks_use_computed_esm_js__WEBPACK_IMPORTED_MODULE_14__ = __webpack_require__(/*! ../../hooks/use-computed.esm.js */ "./node_modules/@headlessui/react/dist/hooks/use-computed.esm.js");
-/* harmony import */ var _utils_calculate_active_index_esm_js__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../../utils/calculate-active-index.esm.js */ "./node_modules/@headlessui/react/dist/utils/calculate-active-index.esm.js");
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-var _reducers;
-var ListboxStates;
-
-(function (ListboxStates) {
-  ListboxStates[ListboxStates["Open"] = 0] = "Open";
-  ListboxStates[ListboxStates["Closed"] = 1] = "Closed";
-})(ListboxStates || (ListboxStates = {}));
-
-var ActionTypes;
-
-(function (ActionTypes) {
-  ActionTypes[ActionTypes["OpenListbox"] = 0] = "OpenListbox";
-  ActionTypes[ActionTypes["CloseListbox"] = 1] = "CloseListbox";
-  ActionTypes[ActionTypes["SetDisabled"] = 2] = "SetDisabled";
-  ActionTypes[ActionTypes["SetOrientation"] = 3] = "SetOrientation";
-  ActionTypes[ActionTypes["GoToOption"] = 4] = "GoToOption";
-  ActionTypes[ActionTypes["Search"] = 5] = "Search";
-  ActionTypes[ActionTypes["ClearSearch"] = 6] = "ClearSearch";
-  ActionTypes[ActionTypes["RegisterOption"] = 7] = "RegisterOption";
-  ActionTypes[ActionTypes["UnregisterOption"] = 8] = "UnregisterOption";
-})(ActionTypes || (ActionTypes = {}));
-
-var reducers = (_reducers = {}, _reducers[ActionTypes.CloseListbox] = function (state) {
-  if (state.disabled) return state;
-  if (state.listboxState === ListboxStates.Closed) return state;
-  return (0,_virtual_rollupPluginBabelHelpers_js__WEBPACK_IMPORTED_MODULE_1__["extends"])({}, state, {
-    activeOptionIndex: null,
-    listboxState: ListboxStates.Closed
-  });
-}, _reducers[ActionTypes.OpenListbox] = function (state) {
-  if (state.disabled) return state;
-  if (state.listboxState === ListboxStates.Open) return state;
-  return (0,_virtual_rollupPluginBabelHelpers_js__WEBPACK_IMPORTED_MODULE_1__["extends"])({}, state, {
-    listboxState: ListboxStates.Open
-  });
-}, _reducers[ActionTypes.SetDisabled] = function (state, action) {
-  if (state.disabled === action.disabled) return state;
-  return (0,_virtual_rollupPluginBabelHelpers_js__WEBPACK_IMPORTED_MODULE_1__["extends"])({}, state, {
-    disabled: action.disabled
-  });
-}, _reducers[ActionTypes.SetOrientation] = function (state, action) {
-  if (state.orientation === action.orientation) return state;
-  return (0,_virtual_rollupPluginBabelHelpers_js__WEBPACK_IMPORTED_MODULE_1__["extends"])({}, state, {
-    orientation: action.orientation
-  });
-}, _reducers[ActionTypes.GoToOption] = function (state, action) {
-  if (state.disabled) return state;
-  if (state.listboxState === ListboxStates.Closed) return state;
-  var activeOptionIndex = (0,_utils_calculate_active_index_esm_js__WEBPACK_IMPORTED_MODULE_2__.calculateActiveIndex)(action, {
-    resolveItems: function resolveItems() {
-      return state.options;
-    },
-    resolveActiveIndex: function resolveActiveIndex() {
-      return state.activeOptionIndex;
-    },
-    resolveId: function resolveId(item) {
-      return item.id;
-    },
-    resolveDisabled: function resolveDisabled(item) {
-      return item.dataRef.current.disabled;
-    }
-  });
-  if (state.searchQuery === '' && state.activeOptionIndex === activeOptionIndex) return state;
-  return (0,_virtual_rollupPluginBabelHelpers_js__WEBPACK_IMPORTED_MODULE_1__["extends"])({}, state, {
-    searchQuery: '',
-    activeOptionIndex: activeOptionIndex
-  });
-}, _reducers[ActionTypes.Search] = function (state, action) {
-  if (state.disabled) return state;
-  if (state.listboxState === ListboxStates.Closed) return state;
-  var searchQuery = state.searchQuery + action.value.toLowerCase();
-  var match = state.options.findIndex(function (option) {
-    var _option$dataRef$curre;
-
-    return !option.dataRef.current.disabled && ((_option$dataRef$curre = option.dataRef.current.textValue) == null ? void 0 : _option$dataRef$curre.startsWith(searchQuery));
-  });
-  if (match === -1 || match === state.activeOptionIndex) return (0,_virtual_rollupPluginBabelHelpers_js__WEBPACK_IMPORTED_MODULE_1__["extends"])({}, state, {
-    searchQuery: searchQuery
-  });
-  return (0,_virtual_rollupPluginBabelHelpers_js__WEBPACK_IMPORTED_MODULE_1__["extends"])({}, state, {
-    searchQuery: searchQuery,
-    activeOptionIndex: match
-  });
-}, _reducers[ActionTypes.ClearSearch] = function (state) {
-  if (state.disabled) return state;
-  if (state.listboxState === ListboxStates.Closed) return state;
-  if (state.searchQuery === '') return state;
-  return (0,_virtual_rollupPluginBabelHelpers_js__WEBPACK_IMPORTED_MODULE_1__["extends"])({}, state, {
-    searchQuery: ''
-  });
-}, _reducers[ActionTypes.RegisterOption] = function (state, action) {
-  return (0,_virtual_rollupPluginBabelHelpers_js__WEBPACK_IMPORTED_MODULE_1__["extends"])({}, state, {
-    options: [].concat(state.options, [{
-      id: action.id,
-      dataRef: action.dataRef
-    }])
-  });
-}, _reducers[ActionTypes.UnregisterOption] = function (state, action) {
-  var nextOptions = state.options.slice();
-  var currentActiveOption = state.activeOptionIndex !== null ? nextOptions[state.activeOptionIndex] : null;
-  var idx = nextOptions.findIndex(function (a) {
-    return a.id === action.id;
-  });
-  if (idx !== -1) nextOptions.splice(idx, 1);
-  return (0,_virtual_rollupPluginBabelHelpers_js__WEBPACK_IMPORTED_MODULE_1__["extends"])({}, state, {
-    options: nextOptions,
-    activeOptionIndex: function () {
-      if (idx === state.activeOptionIndex) return null;
-      if (currentActiveOption === null) return null; // If we removed the option before the actual active index, then it would be out of sync. To
-      // fix this, we will find the correct (new) index position.
-
-      return nextOptions.indexOf(currentActiveOption);
-    }()
-  });
-}, _reducers);
-var ListboxContext = /*#__PURE__*/(0,react__WEBPACK_IMPORTED_MODULE_0__.createContext)(null);
-ListboxContext.displayName = 'ListboxContext';
-
-function useListboxContext(component) {
-  var context = (0,react__WEBPACK_IMPORTED_MODULE_0__.useContext)(ListboxContext);
-
-  if (context === null) {
-    var err = new Error("<" + component + " /> is missing a parent <" + Listbox.name + " /> component.");
-    if (Error.captureStackTrace) Error.captureStackTrace(err, useListboxContext);
-    throw err;
-  }
-
-  return context;
-}
-
-function stateReducer(state, action) {
-  return (0,_utils_match_esm_js__WEBPACK_IMPORTED_MODULE_3__.match)(action.type, reducers, state, action);
-} // ---
-
-
-var DEFAULT_LISTBOX_TAG = react__WEBPACK_IMPORTED_MODULE_0__.Fragment;
-function Listbox(props) {
-  var _match;
-
-  var value = props.value,
-      onChange = props.onChange,
-      _props$disabled = props.disabled,
-      disabled = _props$disabled === void 0 ? false : _props$disabled,
-      _props$horizontal = props.horizontal,
-      horizontal = _props$horizontal === void 0 ? false : _props$horizontal,
-      passThroughProps = (0,_virtual_rollupPluginBabelHelpers_js__WEBPACK_IMPORTED_MODULE_1__.objectWithoutPropertiesLoose)(props, ["value", "onChange", "disabled", "horizontal"]);
-
-  var orientation = horizontal ? 'horizontal' : 'vertical';
-  var reducerBag = (0,react__WEBPACK_IMPORTED_MODULE_0__.useReducer)(stateReducer, {
-    listboxState: ListboxStates.Closed,
-    propsRef: {
-      current: {
-        value: value,
-        onChange: onChange
-      }
-    },
-    labelRef: (0,react__WEBPACK_IMPORTED_MODULE_0__.createRef)(),
-    buttonRef: (0,react__WEBPACK_IMPORTED_MODULE_0__.createRef)(),
-    optionsRef: (0,react__WEBPACK_IMPORTED_MODULE_0__.createRef)(),
-    disabled: disabled,
-    orientation: orientation,
-    options: [],
-    searchQuery: '',
-    activeOptionIndex: null
-  });
-  var _reducerBag$ = reducerBag[0],
-      listboxState = _reducerBag$.listboxState,
-      propsRef = _reducerBag$.propsRef,
-      optionsRef = _reducerBag$.optionsRef,
-      buttonRef = _reducerBag$.buttonRef,
-      dispatch = reducerBag[1];
-  (0,_hooks_use_iso_morphic_effect_esm_js__WEBPACK_IMPORTED_MODULE_4__.useIsoMorphicEffect)(function () {
-    propsRef.current.value = value;
-  }, [value, propsRef]);
-  (0,_hooks_use_iso_morphic_effect_esm_js__WEBPACK_IMPORTED_MODULE_4__.useIsoMorphicEffect)(function () {
-    propsRef.current.onChange = onChange;
-  }, [onChange, propsRef]);
-  (0,_hooks_use_iso_morphic_effect_esm_js__WEBPACK_IMPORTED_MODULE_4__.useIsoMorphicEffect)(function () {
-    return dispatch({
-      type: ActionTypes.SetDisabled,
-      disabled: disabled
-    });
-  }, [disabled]);
-  (0,_hooks_use_iso_morphic_effect_esm_js__WEBPACK_IMPORTED_MODULE_4__.useIsoMorphicEffect)(function () {
-    return dispatch({
-      type: ActionTypes.SetOrientation,
-      orientation: orientation
-    });
-  }, [orientation]); // Handle outside click
-
-  (0,_hooks_use_window_event_esm_js__WEBPACK_IMPORTED_MODULE_5__.useWindowEvent)('mousedown', function (event) {
-    var _buttonRef$current, _optionsRef$current;
-
-    var target = event.target;
-    if (listboxState !== ListboxStates.Open) return;
-    if ((_buttonRef$current = buttonRef.current) == null ? void 0 : _buttonRef$current.contains(target)) return;
-    if ((_optionsRef$current = optionsRef.current) == null ? void 0 : _optionsRef$current.contains(target)) return;
-    dispatch({
-      type: ActionTypes.CloseListbox
-    });
-
-    if (!(0,_utils_focus_management_esm_js__WEBPACK_IMPORTED_MODULE_6__.isFocusableElement)(target, _utils_focus_management_esm_js__WEBPACK_IMPORTED_MODULE_6__.FocusableMode.Loose)) {
-      var _buttonRef$current2;
-
-      event.preventDefault();
-      (_buttonRef$current2 = buttonRef.current) == null ? void 0 : _buttonRef$current2.focus();
-    }
-  });
-  var slot = (0,react__WEBPACK_IMPORTED_MODULE_0__.useMemo)(function () {
-    return {
-      open: listboxState === ListboxStates.Open,
-      disabled: disabled
-    };
-  }, [listboxState, disabled]);
-  return react__WEBPACK_IMPORTED_MODULE_0__.createElement(ListboxContext.Provider, {
-    value: reducerBag
-  }, react__WEBPACK_IMPORTED_MODULE_0__.createElement(_internal_open_closed_esm_js__WEBPACK_IMPORTED_MODULE_7__.OpenClosedProvider, {
-    value: (0,_utils_match_esm_js__WEBPACK_IMPORTED_MODULE_3__.match)(listboxState, (_match = {}, _match[ListboxStates.Open] = _internal_open_closed_esm_js__WEBPACK_IMPORTED_MODULE_7__.State.Open, _match[ListboxStates.Closed] = _internal_open_closed_esm_js__WEBPACK_IMPORTED_MODULE_7__.State.Closed, _match))
-  }, (0,_utils_render_esm_js__WEBPACK_IMPORTED_MODULE_8__.render)({
-    props: passThroughProps,
-    slot: slot,
-    defaultTag: DEFAULT_LISTBOX_TAG,
-    name: 'Listbox'
-  })));
-} // ---
-
-var DEFAULT_BUTTON_TAG = 'button';
-var Button = /*#__PURE__*/(0,_utils_render_esm_js__WEBPACK_IMPORTED_MODULE_8__.forwardRefWithAs)(function Button(props, ref) {
-  var _state$optionsRef$cur;
-
-  var _useListboxContext = useListboxContext([Listbox.name, Button.name].join('.')),
-      state = _useListboxContext[0],
-      dispatch = _useListboxContext[1];
-
-  var buttonRef = (0,_hooks_use_sync_refs_esm_js__WEBPACK_IMPORTED_MODULE_9__.useSyncRefs)(state.buttonRef, ref);
-  var id = "headlessui-listbox-button-" + (0,_hooks_use_id_esm_js__WEBPACK_IMPORTED_MODULE_10__.useId)();
-  var d = (0,_hooks_use_disposables_esm_js__WEBPACK_IMPORTED_MODULE_11__.useDisposables)();
-  var handleKeyDown = (0,react__WEBPACK_IMPORTED_MODULE_0__.useCallback)(function (event) {
-    switch (event.key) {
-      // Ref: https://www.w3.org/TR/wai-aria-practices-1.2/#keyboard-interaction-13
-      case _keyboard_esm_js__WEBPACK_IMPORTED_MODULE_12__.Keys.Space:
-      case _keyboard_esm_js__WEBPACK_IMPORTED_MODULE_12__.Keys.Enter:
-      case _keyboard_esm_js__WEBPACK_IMPORTED_MODULE_12__.Keys.ArrowDown:
-        event.preventDefault();
-        dispatch({
-          type: ActionTypes.OpenListbox
-        });
-        d.nextFrame(function () {
-          if (!state.propsRef.current.value) dispatch({
-            type: ActionTypes.GoToOption,
-            focus: _utils_calculate_active_index_esm_js__WEBPACK_IMPORTED_MODULE_2__.Focus.First
-          });
-        });
-        break;
-
-      case _keyboard_esm_js__WEBPACK_IMPORTED_MODULE_12__.Keys.ArrowUp:
-        event.preventDefault();
-        dispatch({
-          type: ActionTypes.OpenListbox
-        });
-        d.nextFrame(function () {
-          if (!state.propsRef.current.value) dispatch({
-            type: ActionTypes.GoToOption,
-            focus: _utils_calculate_active_index_esm_js__WEBPACK_IMPORTED_MODULE_2__.Focus.Last
-          });
-        });
-        break;
-    }
-  }, [dispatch, state, d]);
-  var handleKeyUp = (0,react__WEBPACK_IMPORTED_MODULE_0__.useCallback)(function (event) {
-    switch (event.key) {
-      case _keyboard_esm_js__WEBPACK_IMPORTED_MODULE_12__.Keys.Space:
-        // Required for firefox, event.preventDefault() in handleKeyDown for
-        // the Space key doesn't cancel the handleKeyUp, which in turn
-        // triggers a *click*.
-        event.preventDefault();
-        break;
-    }
-  }, []);
-  var handleClick = (0,react__WEBPACK_IMPORTED_MODULE_0__.useCallback)(function (event) {
-    if ((0,_utils_bugs_esm_js__WEBPACK_IMPORTED_MODULE_13__.isDisabledReactIssue7711)(event.currentTarget)) return event.preventDefault();
-
-    if (state.listboxState === ListboxStates.Open) {
-      dispatch({
-        type: ActionTypes.CloseListbox
-      });
-      d.nextFrame(function () {
-        var _state$buttonRef$curr;
-
-        return (_state$buttonRef$curr = state.buttonRef.current) == null ? void 0 : _state$buttonRef$curr.focus({
-          preventScroll: true
-        });
-      });
-    } else {
-      event.preventDefault();
-      dispatch({
-        type: ActionTypes.OpenListbox
-      });
-    }
-  }, [dispatch, d, state]);
-  var labelledby = (0,_hooks_use_computed_esm_js__WEBPACK_IMPORTED_MODULE_14__.useComputed)(function () {
-    if (!state.labelRef.current) return undefined;
-    return [state.labelRef.current.id, id].join(' ');
-  }, [state.labelRef.current, id]);
-  var slot = (0,react__WEBPACK_IMPORTED_MODULE_0__.useMemo)(function () {
-    return {
-      open: state.listboxState === ListboxStates.Open,
-      disabled: state.disabled
-    };
-  }, [state]);
-  var passthroughProps = props;
-  var propsWeControl = {
-    ref: buttonRef,
-    id: id,
-    type: (0,_hooks_use_resolve_button_type_esm_js__WEBPACK_IMPORTED_MODULE_15__.useResolveButtonType)(props, state.buttonRef),
-    'aria-haspopup': true,
-    'aria-controls': (_state$optionsRef$cur = state.optionsRef.current) == null ? void 0 : _state$optionsRef$cur.id,
-    'aria-expanded': state.disabled ? undefined : state.listboxState === ListboxStates.Open,
-    'aria-labelledby': labelledby,
-    disabled: state.disabled,
-    onKeyDown: handleKeyDown,
-    onKeyUp: handleKeyUp,
-    onClick: handleClick
-  };
-  return (0,_utils_render_esm_js__WEBPACK_IMPORTED_MODULE_8__.render)({
-    props: (0,_virtual_rollupPluginBabelHelpers_js__WEBPACK_IMPORTED_MODULE_1__["extends"])({}, passthroughProps, propsWeControl),
-    slot: slot,
-    defaultTag: DEFAULT_BUTTON_TAG,
-    name: 'Listbox.Button'
-  });
-}); // ---
-
-var DEFAULT_LABEL_TAG = 'label';
-
-function Label(props) {
-  var _useListboxContext2 = useListboxContext([Listbox.name, Label.name].join('.')),
-      state = _useListboxContext2[0];
-
-  var id = "headlessui-listbox-label-" + (0,_hooks_use_id_esm_js__WEBPACK_IMPORTED_MODULE_10__.useId)();
-  var handleClick = (0,react__WEBPACK_IMPORTED_MODULE_0__.useCallback)(function () {
-    var _state$buttonRef$curr2;
-
-    return (_state$buttonRef$curr2 = state.buttonRef.current) == null ? void 0 : _state$buttonRef$curr2.focus({
-      preventScroll: true
-    });
-  }, [state.buttonRef]);
-  var slot = (0,react__WEBPACK_IMPORTED_MODULE_0__.useMemo)(function () {
-    return {
-      open: state.listboxState === ListboxStates.Open,
-      disabled: state.disabled
-    };
-  }, [state]);
-  var propsWeControl = {
-    ref: state.labelRef,
-    id: id,
-    onClick: handleClick
-  };
-  return (0,_utils_render_esm_js__WEBPACK_IMPORTED_MODULE_8__.render)({
-    props: (0,_virtual_rollupPluginBabelHelpers_js__WEBPACK_IMPORTED_MODULE_1__["extends"])({}, props, propsWeControl),
-    slot: slot,
-    defaultTag: DEFAULT_LABEL_TAG,
-    name: 'Listbox.Label'
-  });
-} // ---
-
-
-var DEFAULT_OPTIONS_TAG = 'ul';
-var OptionsRenderFeatures = _utils_render_esm_js__WEBPACK_IMPORTED_MODULE_8__.Features.RenderStrategy | _utils_render_esm_js__WEBPACK_IMPORTED_MODULE_8__.Features.Static;
-var Options = /*#__PURE__*/(0,_utils_render_esm_js__WEBPACK_IMPORTED_MODULE_8__.forwardRefWithAs)(function Options(props, ref) {
-  var _state$options$state$;
-
-  var _useListboxContext3 = useListboxContext([Listbox.name, Options.name].join('.')),
-      state = _useListboxContext3[0],
-      dispatch = _useListboxContext3[1];
-
-  var optionsRef = (0,_hooks_use_sync_refs_esm_js__WEBPACK_IMPORTED_MODULE_9__.useSyncRefs)(state.optionsRef, ref);
-  var id = "headlessui-listbox-options-" + (0,_hooks_use_id_esm_js__WEBPACK_IMPORTED_MODULE_10__.useId)();
-  var d = (0,_hooks_use_disposables_esm_js__WEBPACK_IMPORTED_MODULE_11__.useDisposables)();
-  var searchDisposables = (0,_hooks_use_disposables_esm_js__WEBPACK_IMPORTED_MODULE_11__.useDisposables)();
-  var usesOpenClosedState = (0,_internal_open_closed_esm_js__WEBPACK_IMPORTED_MODULE_7__.useOpenClosed)();
-
-  var visible = function () {
-    if (usesOpenClosedState !== null) {
-      return usesOpenClosedState === _internal_open_closed_esm_js__WEBPACK_IMPORTED_MODULE_7__.State.Open;
-    }
-
-    return state.listboxState === ListboxStates.Open;
-  }();
-
-  (0,_hooks_use_iso_morphic_effect_esm_js__WEBPACK_IMPORTED_MODULE_4__.useIsoMorphicEffect)(function () {
-    var container = state.optionsRef.current;
-    if (!container) return;
-    if (state.listboxState !== ListboxStates.Open) return;
-    if (container === document.activeElement) return;
-    container.focus({
-      preventScroll: true
-    });
-  }, [state.listboxState, state.optionsRef]);
-  var handleKeyDown = (0,react__WEBPACK_IMPORTED_MODULE_0__.useCallback)(function (event) {
-    searchDisposables.dispose();
-
-    switch (event.key) {
-      // Ref: https://www.w3.org/TR/wai-aria-practices-1.2/#keyboard-interaction-12
-      // @ts-expect-error Fallthrough is expected here
-      case _keyboard_esm_js__WEBPACK_IMPORTED_MODULE_12__.Keys.Space:
-        if (state.searchQuery !== '') {
-          event.preventDefault();
-          event.stopPropagation();
-          return dispatch({
-            type: ActionTypes.Search,
-            value: event.key
-          });
-        }
-
-      // When in type ahead mode, fallthrough
-
-      case _keyboard_esm_js__WEBPACK_IMPORTED_MODULE_12__.Keys.Enter:
-        event.preventDefault();
-        event.stopPropagation();
-        dispatch({
-          type: ActionTypes.CloseListbox
-        });
-
-        if (state.activeOptionIndex !== null) {
-          var dataRef = state.options[state.activeOptionIndex].dataRef;
-          state.propsRef.current.onChange(dataRef.current.value);
-        }
-
-        (0,_utils_disposables_esm_js__WEBPACK_IMPORTED_MODULE_16__.disposables)().nextFrame(function () {
-          var _state$buttonRef$curr3;
-
-          return (_state$buttonRef$curr3 = state.buttonRef.current) == null ? void 0 : _state$buttonRef$curr3.focus({
-            preventScroll: true
-          });
-        });
-        break;
-
-      case (0,_utils_match_esm_js__WEBPACK_IMPORTED_MODULE_3__.match)(state.orientation, {
-        vertical: _keyboard_esm_js__WEBPACK_IMPORTED_MODULE_12__.Keys.ArrowDown,
-        horizontal: _keyboard_esm_js__WEBPACK_IMPORTED_MODULE_12__.Keys.ArrowRight
-      }):
-        event.preventDefault();
-        event.stopPropagation();
-        return dispatch({
-          type: ActionTypes.GoToOption,
-          focus: _utils_calculate_active_index_esm_js__WEBPACK_IMPORTED_MODULE_2__.Focus.Next
-        });
-
-      case (0,_utils_match_esm_js__WEBPACK_IMPORTED_MODULE_3__.match)(state.orientation, {
-        vertical: _keyboard_esm_js__WEBPACK_IMPORTED_MODULE_12__.Keys.ArrowUp,
-        horizontal: _keyboard_esm_js__WEBPACK_IMPORTED_MODULE_12__.Keys.ArrowLeft
-      }):
-        event.preventDefault();
-        event.stopPropagation();
-        return dispatch({
-          type: ActionTypes.GoToOption,
-          focus: _utils_calculate_active_index_esm_js__WEBPACK_IMPORTED_MODULE_2__.Focus.Previous
-        });
-
-      case _keyboard_esm_js__WEBPACK_IMPORTED_MODULE_12__.Keys.Home:
-      case _keyboard_esm_js__WEBPACK_IMPORTED_MODULE_12__.Keys.PageUp:
-        event.preventDefault();
-        event.stopPropagation();
-        return dispatch({
-          type: ActionTypes.GoToOption,
-          focus: _utils_calculate_active_index_esm_js__WEBPACK_IMPORTED_MODULE_2__.Focus.First
-        });
-
-      case _keyboard_esm_js__WEBPACK_IMPORTED_MODULE_12__.Keys.End:
-      case _keyboard_esm_js__WEBPACK_IMPORTED_MODULE_12__.Keys.PageDown:
-        event.preventDefault();
-        event.stopPropagation();
-        return dispatch({
-          type: ActionTypes.GoToOption,
-          focus: _utils_calculate_active_index_esm_js__WEBPACK_IMPORTED_MODULE_2__.Focus.Last
-        });
-
-      case _keyboard_esm_js__WEBPACK_IMPORTED_MODULE_12__.Keys.Escape:
-        event.preventDefault();
-        event.stopPropagation();
-        dispatch({
-          type: ActionTypes.CloseListbox
-        });
-        return d.nextFrame(function () {
-          var _state$buttonRef$curr4;
-
-          return (_state$buttonRef$curr4 = state.buttonRef.current) == null ? void 0 : _state$buttonRef$curr4.focus({
-            preventScroll: true
-          });
-        });
-
-      case _keyboard_esm_js__WEBPACK_IMPORTED_MODULE_12__.Keys.Tab:
-        event.preventDefault();
-        event.stopPropagation();
-        break;
-
-      default:
-        if (event.key.length === 1) {
-          dispatch({
-            type: ActionTypes.Search,
-            value: event.key
-          });
-          searchDisposables.setTimeout(function () {
-            return dispatch({
-              type: ActionTypes.ClearSearch
-            });
-          }, 350);
-        }
-
-        break;
-    }
-  }, [d, dispatch, searchDisposables, state]);
-  var labelledby = (0,_hooks_use_computed_esm_js__WEBPACK_IMPORTED_MODULE_14__.useComputed)(function () {
-    var _state$labelRef$curre, _state$labelRef$curre2, _state$buttonRef$curr5;
-
-    return (_state$labelRef$curre = (_state$labelRef$curre2 = state.labelRef.current) == null ? void 0 : _state$labelRef$curre2.id) != null ? _state$labelRef$curre : (_state$buttonRef$curr5 = state.buttonRef.current) == null ? void 0 : _state$buttonRef$curr5.id;
-  }, [state.labelRef.current, state.buttonRef.current]);
-  var slot = (0,react__WEBPACK_IMPORTED_MODULE_0__.useMemo)(function () {
-    return {
-      open: state.listboxState === ListboxStates.Open
-    };
-  }, [state]);
-  var propsWeControl = {
-    'aria-activedescendant': state.activeOptionIndex === null ? undefined : (_state$options$state$ = state.options[state.activeOptionIndex]) == null ? void 0 : _state$options$state$.id,
-    'aria-labelledby': labelledby,
-    'aria-orientation': state.orientation,
-    id: id,
-    onKeyDown: handleKeyDown,
-    role: 'listbox',
-    tabIndex: 0,
-    ref: optionsRef
-  };
-  var passthroughProps = props;
-  return (0,_utils_render_esm_js__WEBPACK_IMPORTED_MODULE_8__.render)({
-    props: (0,_virtual_rollupPluginBabelHelpers_js__WEBPACK_IMPORTED_MODULE_1__["extends"])({}, passthroughProps, propsWeControl),
-    slot: slot,
-    defaultTag: DEFAULT_OPTIONS_TAG,
-    features: OptionsRenderFeatures,
-    visible: visible,
-    name: 'Listbox.Options'
-  });
-}); // ---
-
-var DEFAULT_OPTION_TAG = 'li';
-
-function Option(props) {
-  var _props$disabled2 = props.disabled,
-      disabled = _props$disabled2 === void 0 ? false : _props$disabled2,
-      value = props.value,
-      passthroughProps = (0,_virtual_rollupPluginBabelHelpers_js__WEBPACK_IMPORTED_MODULE_1__.objectWithoutPropertiesLoose)(props, ["disabled", "value"]);
-
-  var _useListboxContext4 = useListboxContext([Listbox.name, Option.name].join('.')),
-      state = _useListboxContext4[0],
-      dispatch = _useListboxContext4[1];
-
-  var id = "headlessui-listbox-option-" + (0,_hooks_use_id_esm_js__WEBPACK_IMPORTED_MODULE_10__.useId)();
-  var active = state.activeOptionIndex !== null ? state.options[state.activeOptionIndex].id === id : false;
-  var selected = state.propsRef.current.value === value;
-  var bag = (0,react__WEBPACK_IMPORTED_MODULE_0__.useRef)({
-    disabled: disabled,
-    value: value
-  });
-  (0,_hooks_use_iso_morphic_effect_esm_js__WEBPACK_IMPORTED_MODULE_4__.useIsoMorphicEffect)(function () {
-    bag.current.disabled = disabled;
-  }, [bag, disabled]);
-  (0,_hooks_use_iso_morphic_effect_esm_js__WEBPACK_IMPORTED_MODULE_4__.useIsoMorphicEffect)(function () {
-    bag.current.value = value;
-  }, [bag, value]);
-  (0,_hooks_use_iso_morphic_effect_esm_js__WEBPACK_IMPORTED_MODULE_4__.useIsoMorphicEffect)(function () {
-    var _document$getElementB, _document$getElementB2;
-
-    bag.current.textValue = (_document$getElementB = document.getElementById(id)) == null ? void 0 : (_document$getElementB2 = _document$getElementB.textContent) == null ? void 0 : _document$getElementB2.toLowerCase();
-  }, [bag, id]);
-  var select = (0,react__WEBPACK_IMPORTED_MODULE_0__.useCallback)(function () {
-    return state.propsRef.current.onChange(value);
-  }, [state.propsRef, value]);
-  (0,_hooks_use_iso_morphic_effect_esm_js__WEBPACK_IMPORTED_MODULE_4__.useIsoMorphicEffect)(function () {
-    dispatch({
-      type: ActionTypes.RegisterOption,
-      id: id,
-      dataRef: bag
-    });
-    return function () {
-      return dispatch({
-        type: ActionTypes.UnregisterOption,
-        id: id
-      });
-    };
-  }, [bag, id]);
-  (0,_hooks_use_iso_morphic_effect_esm_js__WEBPACK_IMPORTED_MODULE_4__.useIsoMorphicEffect)(function () {
-    var _document$getElementB3;
-
-    if (state.listboxState !== ListboxStates.Open) return;
-    if (!selected) return;
-    dispatch({
-      type: ActionTypes.GoToOption,
-      focus: _utils_calculate_active_index_esm_js__WEBPACK_IMPORTED_MODULE_2__.Focus.Specific,
-      id: id
-    });
-    (_document$getElementB3 = document.getElementById(id)) == null ? void 0 : _document$getElementB3.focus == null ? void 0 : _document$getElementB3.focus();
-  }, [state.listboxState]);
-  (0,_hooks_use_iso_morphic_effect_esm_js__WEBPACK_IMPORTED_MODULE_4__.useIsoMorphicEffect)(function () {
-    if (state.listboxState !== ListboxStates.Open) return;
-    if (!active) return;
-    var d = (0,_utils_disposables_esm_js__WEBPACK_IMPORTED_MODULE_16__.disposables)();
-    d.nextFrame(function () {
-      var _document$getElementB4;
-
-      return (_document$getElementB4 = document.getElementById(id)) == null ? void 0 : _document$getElementB4.scrollIntoView == null ? void 0 : _document$getElementB4.scrollIntoView({
-        block: 'nearest'
-      });
-    });
-    return d.dispose;
-  }, [id, active, state.listboxState]);
-  var handleClick = (0,react__WEBPACK_IMPORTED_MODULE_0__.useCallback)(function (event) {
-    if (disabled) return event.preventDefault();
-    select();
-    dispatch({
-      type: ActionTypes.CloseListbox
-    });
-    (0,_utils_disposables_esm_js__WEBPACK_IMPORTED_MODULE_16__.disposables)().nextFrame(function () {
-      var _state$buttonRef$curr6;
-
-      return (_state$buttonRef$curr6 = state.buttonRef.current) == null ? void 0 : _state$buttonRef$curr6.focus({
-        preventScroll: true
-      });
-    });
-  }, [dispatch, state.buttonRef, disabled, select]);
-  var handleFocus = (0,react__WEBPACK_IMPORTED_MODULE_0__.useCallback)(function () {
-    if (disabled) return dispatch({
-      type: ActionTypes.GoToOption,
-      focus: _utils_calculate_active_index_esm_js__WEBPACK_IMPORTED_MODULE_2__.Focus.Nothing
-    });
-    dispatch({
-      type: ActionTypes.GoToOption,
-      focus: _utils_calculate_active_index_esm_js__WEBPACK_IMPORTED_MODULE_2__.Focus.Specific,
-      id: id
-    });
-  }, [disabled, id, dispatch]);
-  var handleMove = (0,react__WEBPACK_IMPORTED_MODULE_0__.useCallback)(function () {
-    if (disabled) return;
-    if (active) return;
-    dispatch({
-      type: ActionTypes.GoToOption,
-      focus: _utils_calculate_active_index_esm_js__WEBPACK_IMPORTED_MODULE_2__.Focus.Specific,
-      id: id
-    });
-  }, [disabled, active, id, dispatch]);
-  var handleLeave = (0,react__WEBPACK_IMPORTED_MODULE_0__.useCallback)(function () {
-    if (disabled) return;
-    if (!active) return;
-    dispatch({
-      type: ActionTypes.GoToOption,
-      focus: _utils_calculate_active_index_esm_js__WEBPACK_IMPORTED_MODULE_2__.Focus.Nothing
-    });
-  }, [disabled, active, dispatch]);
-  var slot = (0,react__WEBPACK_IMPORTED_MODULE_0__.useMemo)(function () {
-    return {
-      active: active,
-      selected: selected,
-      disabled: disabled
-    };
-  }, [active, selected, disabled]);
-  var propsWeControl = {
-    id: id,
-    role: 'option',
-    tabIndex: disabled === true ? undefined : -1,
-    'aria-disabled': disabled === true ? true : undefined,
-    'aria-selected': selected === true ? true : undefined,
-    disabled: undefined,
-    onClick: handleClick,
-    onFocus: handleFocus,
-    onPointerMove: handleMove,
-    onMouseMove: handleMove,
-    onPointerLeave: handleLeave,
-    onMouseLeave: handleLeave
-  };
-  return (0,_utils_render_esm_js__WEBPACK_IMPORTED_MODULE_8__.render)({
-    props: (0,_virtual_rollupPluginBabelHelpers_js__WEBPACK_IMPORTED_MODULE_1__["extends"])({}, passthroughProps, propsWeControl),
-    slot: slot,
-    defaultTag: DEFAULT_OPTION_TAG,
-    name: 'Listbox.Option'
-  });
-} // ---
-
-
-Listbox.Button = Button;
-Listbox.Label = Label;
-Listbox.Options = Options;
-Listbox.Option = Option;
-
-
-//# sourceMappingURL=listbox.esm.js.map
-
-
-/***/ }),
-
-/***/ "./node_modules/@headlessui/react/dist/components/menu/menu.esm.js":
-/*!*************************************************************************!*\
-  !*** ./node_modules/@headlessui/react/dist/components/menu/menu.esm.js ***!
-  \*************************************************************************/
-/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
-
-"use strict";
-__webpack_require__.r(__webpack_exports__);
-/* harmony export */ __webpack_require__.d(__webpack_exports__, {
-/* harmony export */   "Menu": () => (/* binding */ Menu)
-/* harmony export */ });
-/* harmony import */ var _virtual_rollupPluginBabelHelpers_js__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../../_virtual/_rollupPluginBabelHelpers.js */ "./node_modules/@headlessui/react/dist/_virtual/_rollupPluginBabelHelpers.js");
-/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
-/* harmony import */ var _utils_match_esm_js__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../../utils/match.esm.js */ "./node_modules/@headlessui/react/dist/utils/match.esm.js");
-/* harmony import */ var _utils_render_esm_js__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ../../utils/render.esm.js */ "./node_modules/@headlessui/react/dist/utils/render.esm.js");
-/* harmony import */ var _hooks_use_sync_refs_esm_js__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! ../../hooks/use-sync-refs.esm.js */ "./node_modules/@headlessui/react/dist/hooks/use-sync-refs.esm.js");
-/* harmony import */ var _keyboard_esm_js__WEBPACK_IMPORTED_MODULE_11__ = __webpack_require__(/*! ../keyboard.esm.js */ "./node_modules/@headlessui/react/dist/components/keyboard.esm.js");
-/* harmony import */ var _utils_bugs_esm_js__WEBPACK_IMPORTED_MODULE_12__ = __webpack_require__(/*! ../../utils/bugs.esm.js */ "./node_modules/@headlessui/react/dist/utils/bugs.esm.js");
-/* harmony import */ var _hooks_use_iso_morphic_effect_esm_js__WEBPACK_IMPORTED_MODULE_16__ = __webpack_require__(/*! ../../hooks/use-iso-morphic-effect.esm.js */ "./node_modules/@headlessui/react/dist/hooks/use-iso-morphic-effect.esm.js");
-/* harmony import */ var _hooks_use_id_esm_js__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! ../../hooks/use-id.esm.js */ "./node_modules/@headlessui/react/dist/hooks/use-id.esm.js");
-/* harmony import */ var _utils_focus_management_esm_js__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ../../utils/focus-management.esm.js */ "./node_modules/@headlessui/react/dist/utils/focus-management.esm.js");
-/* harmony import */ var _hooks_use_window_event_esm_js__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ../../hooks/use-window-event.esm.js */ "./node_modules/@headlessui/react/dist/hooks/use-window-event.esm.js");
-/* harmony import */ var _internal_open_closed_esm_js__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ../../internal/open-closed.esm.js */ "./node_modules/@headlessui/react/dist/internal/open-closed.esm.js");
-/* harmony import */ var _hooks_use_resolve_button_type_esm_js__WEBPACK_IMPORTED_MODULE_13__ = __webpack_require__(/*! ../../hooks/use-resolve-button-type.esm.js */ "./node_modules/@headlessui/react/dist/hooks/use-resolve-button-type.esm.js");
-/* harmony import */ var _utils_disposables_esm_js__WEBPACK_IMPORTED_MODULE_15__ = __webpack_require__(/*! ../../utils/disposables.esm.js */ "./node_modules/@headlessui/react/dist/utils/disposables.esm.js");
-/* harmony import */ var _hooks_use_disposables_esm_js__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(/*! ../../hooks/use-disposables.esm.js */ "./node_modules/@headlessui/react/dist/hooks/use-disposables.esm.js");
-/* harmony import */ var _utils_calculate_active_index_esm_js__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../../utils/calculate-active-index.esm.js */ "./node_modules/@headlessui/react/dist/utils/calculate-active-index.esm.js");
-/* harmony import */ var _hooks_use_tree_walker_esm_js__WEBPACK_IMPORTED_MODULE_14__ = __webpack_require__(/*! ../../hooks/use-tree-walker.esm.js */ "./node_modules/@headlessui/react/dist/hooks/use-tree-walker.esm.js");
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-var _reducers;
-var MenuStates;
-
-(function (MenuStates) {
-  MenuStates[MenuStates["Open"] = 0] = "Open";
-  MenuStates[MenuStates["Closed"] = 1] = "Closed";
-})(MenuStates || (MenuStates = {}));
-
-var ActionTypes;
-
-(function (ActionTypes) {
-  ActionTypes[ActionTypes["OpenMenu"] = 0] = "OpenMenu";
-  ActionTypes[ActionTypes["CloseMenu"] = 1] = "CloseMenu";
-  ActionTypes[ActionTypes["GoToItem"] = 2] = "GoToItem";
-  ActionTypes[ActionTypes["Search"] = 3] = "Search";
-  ActionTypes[ActionTypes["ClearSearch"] = 4] = "ClearSearch";
-  ActionTypes[ActionTypes["RegisterItem"] = 5] = "RegisterItem";
-  ActionTypes[ActionTypes["UnregisterItem"] = 6] = "UnregisterItem";
-})(ActionTypes || (ActionTypes = {}));
-
-var reducers = (_reducers = {}, _reducers[ActionTypes.CloseMenu] = function (state) {
-  if (state.menuState === MenuStates.Closed) return state;
-  return (0,_virtual_rollupPluginBabelHelpers_js__WEBPACK_IMPORTED_MODULE_1__["extends"])({}, state, {
-    activeItemIndex: null,
-    menuState: MenuStates.Closed
-  });
-}, _reducers[ActionTypes.OpenMenu] = function (state) {
-  if (state.menuState === MenuStates.Open) return state;
-  return (0,_virtual_rollupPluginBabelHelpers_js__WEBPACK_IMPORTED_MODULE_1__["extends"])({}, state, {
-    menuState: MenuStates.Open
-  });
-}, _reducers[ActionTypes.GoToItem] = function (state, action) {
-  var activeItemIndex = (0,_utils_calculate_active_index_esm_js__WEBPACK_IMPORTED_MODULE_2__.calculateActiveIndex)(action, {
-    resolveItems: function resolveItems() {
-      return state.items;
-    },
-    resolveActiveIndex: function resolveActiveIndex() {
-      return state.activeItemIndex;
-    },
-    resolveId: function resolveId(item) {
-      return item.id;
-    },
-    resolveDisabled: function resolveDisabled(item) {
-      return item.dataRef.current.disabled;
-    }
-  });
-  if (state.searchQuery === '' && state.activeItemIndex === activeItemIndex) return state;
-  return (0,_virtual_rollupPluginBabelHelpers_js__WEBPACK_IMPORTED_MODULE_1__["extends"])({}, state, {
-    searchQuery: '',
-    activeItemIndex: activeItemIndex
-  });
-}, _reducers[ActionTypes.Search] = function (state, action) {
-  var searchQuery = state.searchQuery + action.value.toLowerCase();
-  var match = state.items.findIndex(function (item) {
-    var _item$dataRef$current;
-
-    return ((_item$dataRef$current = item.dataRef.current.textValue) == null ? void 0 : _item$dataRef$current.startsWith(searchQuery)) && !item.dataRef.current.disabled;
-  });
-  if (match === -1 || match === state.activeItemIndex) return (0,_virtual_rollupPluginBabelHelpers_js__WEBPACK_IMPORTED_MODULE_1__["extends"])({}, state, {
-    searchQuery: searchQuery
-  });
-  return (0,_virtual_rollupPluginBabelHelpers_js__WEBPACK_IMPORTED_MODULE_1__["extends"])({}, state, {
-    searchQuery: searchQuery,
-    activeItemIndex: match
-  });
-}, _reducers[ActionTypes.ClearSearch] = function (state) {
-  if (state.searchQuery === '') return state;
-  return (0,_virtual_rollupPluginBabelHelpers_js__WEBPACK_IMPORTED_MODULE_1__["extends"])({}, state, {
-    searchQuery: ''
-  });
-}, _reducers[ActionTypes.RegisterItem] = function (state, action) {
-  return (0,_virtual_rollupPluginBabelHelpers_js__WEBPACK_IMPORTED_MODULE_1__["extends"])({}, state, {
-    items: [].concat(state.items, [{
-      id: action.id,
-      dataRef: action.dataRef
-    }])
-  });
-}, _reducers[ActionTypes.UnregisterItem] = function (state, action) {
-  var nextItems = state.items.slice();
-  var currentActiveItem = state.activeItemIndex !== null ? nextItems[state.activeItemIndex] : null;
-  var idx = nextItems.findIndex(function (a) {
-    return a.id === action.id;
-  });
-  if (idx !== -1) nextItems.splice(idx, 1);
-  return (0,_virtual_rollupPluginBabelHelpers_js__WEBPACK_IMPORTED_MODULE_1__["extends"])({}, state, {
-    items: nextItems,
-    activeItemIndex: function () {
-      if (idx === state.activeItemIndex) return null;
-      if (currentActiveItem === null) return null; // If we removed the item before the actual active index, then it would be out of sync. To
-      // fix this, we will find the correct (new) index position.
-
-      return nextItems.indexOf(currentActiveItem);
-    }()
-  });
-}, _reducers);
-var MenuContext = /*#__PURE__*/(0,react__WEBPACK_IMPORTED_MODULE_0__.createContext)(null);
-MenuContext.displayName = 'MenuContext';
-
-function useMenuContext(component) {
-  var context = (0,react__WEBPACK_IMPORTED_MODULE_0__.useContext)(MenuContext);
-
-  if (context === null) {
-    var err = new Error("<" + component + " /> is missing a parent <" + Menu.name + " /> component.");
-    if (Error.captureStackTrace) Error.captureStackTrace(err, useMenuContext);
-    throw err;
-  }
-
-  return context;
-}
-
-function stateReducer(state, action) {
-  return (0,_utils_match_esm_js__WEBPACK_IMPORTED_MODULE_3__.match)(action.type, reducers, state, action);
-} // ---
-
-
-var DEFAULT_MENU_TAG = react__WEBPACK_IMPORTED_MODULE_0__.Fragment;
-function Menu(props) {
-  var _match;
-
-  var reducerBag = (0,react__WEBPACK_IMPORTED_MODULE_0__.useReducer)(stateReducer, {
-    menuState: MenuStates.Closed,
-    buttonRef: (0,react__WEBPACK_IMPORTED_MODULE_0__.createRef)(),
-    itemsRef: (0,react__WEBPACK_IMPORTED_MODULE_0__.createRef)(),
-    items: [],
-    searchQuery: '',
-    activeItemIndex: null
-  });
-  var _reducerBag$ = reducerBag[0],
-      menuState = _reducerBag$.menuState,
-      itemsRef = _reducerBag$.itemsRef,
-      buttonRef = _reducerBag$.buttonRef,
-      dispatch = reducerBag[1]; // Handle outside click
-
-  (0,_hooks_use_window_event_esm_js__WEBPACK_IMPORTED_MODULE_4__.useWindowEvent)('mousedown', function (event) {
-    var _buttonRef$current, _itemsRef$current;
-
-    var target = event.target;
-    if (menuState !== MenuStates.Open) return;
-    if ((_buttonRef$current = buttonRef.current) == null ? void 0 : _buttonRef$current.contains(target)) return;
-    if ((_itemsRef$current = itemsRef.current) == null ? void 0 : _itemsRef$current.contains(target)) return;
-    dispatch({
-      type: ActionTypes.CloseMenu
-    });
-
-    if (!(0,_utils_focus_management_esm_js__WEBPACK_IMPORTED_MODULE_5__.isFocusableElement)(target, _utils_focus_management_esm_js__WEBPACK_IMPORTED_MODULE_5__.FocusableMode.Loose)) {
-      var _buttonRef$current2;
-
-      event.preventDefault();
-      (_buttonRef$current2 = buttonRef.current) == null ? void 0 : _buttonRef$current2.focus();
-    }
-  });
-  var slot = (0,react__WEBPACK_IMPORTED_MODULE_0__.useMemo)(function () {
-    return {
-      open: menuState === MenuStates.Open
-    };
-  }, [menuState]);
-  return react__WEBPACK_IMPORTED_MODULE_0__.createElement(MenuContext.Provider, {
-    value: reducerBag
-  }, react__WEBPACK_IMPORTED_MODULE_0__.createElement(_internal_open_closed_esm_js__WEBPACK_IMPORTED_MODULE_6__.OpenClosedProvider, {
-    value: (0,_utils_match_esm_js__WEBPACK_IMPORTED_MODULE_3__.match)(menuState, (_match = {}, _match[MenuStates.Open] = _internal_open_closed_esm_js__WEBPACK_IMPORTED_MODULE_6__.State.Open, _match[MenuStates.Closed] = _internal_open_closed_esm_js__WEBPACK_IMPORTED_MODULE_6__.State.Closed, _match))
-  }, (0,_utils_render_esm_js__WEBPACK_IMPORTED_MODULE_7__.render)({
-    props: props,
-    slot: slot,
-    defaultTag: DEFAULT_MENU_TAG,
-    name: 'Menu'
-  })));
-} // ---
-
-var DEFAULT_BUTTON_TAG = 'button';
-var Button = /*#__PURE__*/(0,_utils_render_esm_js__WEBPACK_IMPORTED_MODULE_7__.forwardRefWithAs)(function Button(props, ref) {
-  var _state$itemsRef$curre;
-
-  var _useMenuContext = useMenuContext([Menu.name, Button.name].join('.')),
-      state = _useMenuContext[0],
-      dispatch = _useMenuContext[1];
-
-  var buttonRef = (0,_hooks_use_sync_refs_esm_js__WEBPACK_IMPORTED_MODULE_8__.useSyncRefs)(state.buttonRef, ref);
-  var id = "headlessui-menu-button-" + (0,_hooks_use_id_esm_js__WEBPACK_IMPORTED_MODULE_9__.useId)();
-  var d = (0,_hooks_use_disposables_esm_js__WEBPACK_IMPORTED_MODULE_10__.useDisposables)();
-  var handleKeyDown = (0,react__WEBPACK_IMPORTED_MODULE_0__.useCallback)(function (event) {
-    switch (event.key) {
-      // Ref: https://www.w3.org/TR/wai-aria-practices-1.2/#keyboard-interaction-13
-      case _keyboard_esm_js__WEBPACK_IMPORTED_MODULE_11__.Keys.Space:
-      case _keyboard_esm_js__WEBPACK_IMPORTED_MODULE_11__.Keys.Enter:
-      case _keyboard_esm_js__WEBPACK_IMPORTED_MODULE_11__.Keys.ArrowDown:
-        event.preventDefault();
-        event.stopPropagation();
-        dispatch({
-          type: ActionTypes.OpenMenu
-        });
-        d.nextFrame(function () {
-          return dispatch({
-            type: ActionTypes.GoToItem,
-            focus: _utils_calculate_active_index_esm_js__WEBPACK_IMPORTED_MODULE_2__.Focus.First
-          });
-        });
-        break;
-
-      case _keyboard_esm_js__WEBPACK_IMPORTED_MODULE_11__.Keys.ArrowUp:
-        event.preventDefault();
-        event.stopPropagation();
-        dispatch({
-          type: ActionTypes.OpenMenu
-        });
-        d.nextFrame(function () {
-          return dispatch({
-            type: ActionTypes.GoToItem,
-            focus: _utils_calculate_active_index_esm_js__WEBPACK_IMPORTED_MODULE_2__.Focus.Last
-          });
-        });
-        break;
-    }
-  }, [dispatch, d]);
-  var handleKeyUp = (0,react__WEBPACK_IMPORTED_MODULE_0__.useCallback)(function (event) {
-    switch (event.key) {
-      case _keyboard_esm_js__WEBPACK_IMPORTED_MODULE_11__.Keys.Space:
-        // Required for firefox, event.preventDefault() in handleKeyDown for
-        // the Space key doesn't cancel the handleKeyUp, which in turn
-        // triggers a *click*.
-        event.preventDefault();
-        break;
-    }
-  }, []);
-  var handleClick = (0,react__WEBPACK_IMPORTED_MODULE_0__.useCallback)(function (event) {
-    if ((0,_utils_bugs_esm_js__WEBPACK_IMPORTED_MODULE_12__.isDisabledReactIssue7711)(event.currentTarget)) return event.preventDefault();
-    if (props.disabled) return;
-
-    if (state.menuState === MenuStates.Open) {
-      dispatch({
-        type: ActionTypes.CloseMenu
-      });
-      d.nextFrame(function () {
-        var _state$buttonRef$curr;
-
-        return (_state$buttonRef$curr = state.buttonRef.current) == null ? void 0 : _state$buttonRef$curr.focus({
-          preventScroll: true
-        });
-      });
-    } else {
-      event.preventDefault();
-      event.stopPropagation();
-      dispatch({
-        type: ActionTypes.OpenMenu
-      });
-    }
-  }, [dispatch, d, state, props.disabled]);
-  var slot = (0,react__WEBPACK_IMPORTED_MODULE_0__.useMemo)(function () {
-    return {
-      open: state.menuState === MenuStates.Open
-    };
-  }, [state]);
-  var passthroughProps = props;
-  var propsWeControl = {
-    ref: buttonRef,
-    id: id,
-    type: (0,_hooks_use_resolve_button_type_esm_js__WEBPACK_IMPORTED_MODULE_13__.useResolveButtonType)(props, state.buttonRef),
-    'aria-haspopup': true,
-    'aria-controls': (_state$itemsRef$curre = state.itemsRef.current) == null ? void 0 : _state$itemsRef$curre.id,
-    'aria-expanded': props.disabled ? undefined : state.menuState === MenuStates.Open,
-    onKeyDown: handleKeyDown,
-    onKeyUp: handleKeyUp,
-    onClick: handleClick
-  };
-  return (0,_utils_render_esm_js__WEBPACK_IMPORTED_MODULE_7__.render)({
-    props: (0,_virtual_rollupPluginBabelHelpers_js__WEBPACK_IMPORTED_MODULE_1__["extends"])({}, passthroughProps, propsWeControl),
-    slot: slot,
-    defaultTag: DEFAULT_BUTTON_TAG,
-    name: 'Menu.Button'
-  });
-}); // ---
-
-var DEFAULT_ITEMS_TAG = 'div';
-var ItemsRenderFeatures = _utils_render_esm_js__WEBPACK_IMPORTED_MODULE_7__.Features.RenderStrategy | _utils_render_esm_js__WEBPACK_IMPORTED_MODULE_7__.Features.Static;
-var Items = /*#__PURE__*/(0,_utils_render_esm_js__WEBPACK_IMPORTED_MODULE_7__.forwardRefWithAs)(function Items(props, ref) {
-  var _state$items$state$ac, _state$buttonRef$curr4;
-
-  var _useMenuContext2 = useMenuContext([Menu.name, Items.name].join('.')),
-      state = _useMenuContext2[0],
-      dispatch = _useMenuContext2[1];
-
-  var itemsRef = (0,_hooks_use_sync_refs_esm_js__WEBPACK_IMPORTED_MODULE_8__.useSyncRefs)(state.itemsRef, ref);
-  var id = "headlessui-menu-items-" + (0,_hooks_use_id_esm_js__WEBPACK_IMPORTED_MODULE_9__.useId)();
-  var searchDisposables = (0,_hooks_use_disposables_esm_js__WEBPACK_IMPORTED_MODULE_10__.useDisposables)();
-  var usesOpenClosedState = (0,_internal_open_closed_esm_js__WEBPACK_IMPORTED_MODULE_6__.useOpenClosed)();
-
-  var visible = function () {
-    if (usesOpenClosedState !== null) {
-      return usesOpenClosedState === _internal_open_closed_esm_js__WEBPACK_IMPORTED_MODULE_6__.State.Open;
-    }
-
-    return state.menuState === MenuStates.Open;
-  }();
-
-  (0,react__WEBPACK_IMPORTED_MODULE_0__.useEffect)(function () {
-    var container = state.itemsRef.current;
-    if (!container) return;
-    if (state.menuState !== MenuStates.Open) return;
-    if (container === document.activeElement) return;
-    container.focus({
-      preventScroll: true
-    });
-  }, [state.menuState, state.itemsRef]);
-  (0,_hooks_use_tree_walker_esm_js__WEBPACK_IMPORTED_MODULE_14__.useTreeWalker)({
-    container: state.itemsRef.current,
-    enabled: state.menuState === MenuStates.Open,
-    accept: function accept(node) {
-      if (node.getAttribute('role') === 'menuitem') return NodeFilter.FILTER_REJECT;
-      if (node.hasAttribute('role')) return NodeFilter.FILTER_SKIP;
-      return NodeFilter.FILTER_ACCEPT;
-    },
-    walk: function walk(node) {
-      node.setAttribute('role', 'none');
-    }
-  });
-  var handleKeyDown = (0,react__WEBPACK_IMPORTED_MODULE_0__.useCallback)(function (event) {
-    searchDisposables.dispose();
-
-    switch (event.key) {
-      // Ref: https://www.w3.org/TR/wai-aria-practices-1.2/#keyboard-interaction-12
-      // @ts-expect-error Fallthrough is expected here
-      case _keyboard_esm_js__WEBPACK_IMPORTED_MODULE_11__.Keys.Space:
-        if (state.searchQuery !== '') {
-          event.preventDefault();
-          event.stopPropagation();
-          return dispatch({
-            type: ActionTypes.Search,
-            value: event.key
-          });
-        }
-
-      // When in type ahead mode, fallthrough
-
-      case _keyboard_esm_js__WEBPACK_IMPORTED_MODULE_11__.Keys.Enter:
-        event.preventDefault();
-        event.stopPropagation();
-        dispatch({
-          type: ActionTypes.CloseMenu
-        });
-
-        if (state.activeItemIndex !== null) {
-          var _document$getElementB;
-
-          var _id = state.items[state.activeItemIndex].id;
-          (_document$getElementB = document.getElementById(_id)) == null ? void 0 : _document$getElementB.click();
-        }
-
-        (0,_utils_disposables_esm_js__WEBPACK_IMPORTED_MODULE_15__.disposables)().nextFrame(function () {
-          var _state$buttonRef$curr2;
-
-          return (_state$buttonRef$curr2 = state.buttonRef.current) == null ? void 0 : _state$buttonRef$curr2.focus({
-            preventScroll: true
-          });
-        });
-        break;
-
-      case _keyboard_esm_js__WEBPACK_IMPORTED_MODULE_11__.Keys.ArrowDown:
-        event.preventDefault();
-        event.stopPropagation();
-        return dispatch({
-          type: ActionTypes.GoToItem,
-          focus: _utils_calculate_active_index_esm_js__WEBPACK_IMPORTED_MODULE_2__.Focus.Next
-        });
-
-      case _keyboard_esm_js__WEBPACK_IMPORTED_MODULE_11__.Keys.ArrowUp:
-        event.preventDefault();
-        event.stopPropagation();
-        return dispatch({
-          type: ActionTypes.GoToItem,
-          focus: _utils_calculate_active_index_esm_js__WEBPACK_IMPORTED_MODULE_2__.Focus.Previous
-        });
-
-      case _keyboard_esm_js__WEBPACK_IMPORTED_MODULE_11__.Keys.Home:
-      case _keyboard_esm_js__WEBPACK_IMPORTED_MODULE_11__.Keys.PageUp:
-        event.preventDefault();
-        event.stopPropagation();
-        return dispatch({
-          type: ActionTypes.GoToItem,
-          focus: _utils_calculate_active_index_esm_js__WEBPACK_IMPORTED_MODULE_2__.Focus.First
-        });
-
-      case _keyboard_esm_js__WEBPACK_IMPORTED_MODULE_11__.Keys.End:
-      case _keyboard_esm_js__WEBPACK_IMPORTED_MODULE_11__.Keys.PageDown:
-        event.preventDefault();
-        event.stopPropagation();
-        return dispatch({
-          type: ActionTypes.GoToItem,
-          focus: _utils_calculate_active_index_esm_js__WEBPACK_IMPORTED_MODULE_2__.Focus.Last
-        });
-
-      case _keyboard_esm_js__WEBPACK_IMPORTED_MODULE_11__.Keys.Escape:
-        event.preventDefault();
-        event.stopPropagation();
-        dispatch({
-          type: ActionTypes.CloseMenu
-        });
-        (0,_utils_disposables_esm_js__WEBPACK_IMPORTED_MODULE_15__.disposables)().nextFrame(function () {
-          var _state$buttonRef$curr3;
-
-          return (_state$buttonRef$curr3 = state.buttonRef.current) == null ? void 0 : _state$buttonRef$curr3.focus({
-            preventScroll: true
-          });
-        });
-        break;
-
-      case _keyboard_esm_js__WEBPACK_IMPORTED_MODULE_11__.Keys.Tab:
-        event.preventDefault();
-        event.stopPropagation();
-        break;
-
-      default:
-        if (event.key.length === 1) {
-          dispatch({
-            type: ActionTypes.Search,
-            value: event.key
-          });
-          searchDisposables.setTimeout(function () {
-            return dispatch({
-              type: ActionTypes.ClearSearch
-            });
-          }, 350);
-        }
-
-        break;
-    }
-  }, [dispatch, searchDisposables, state]);
-  var handleKeyUp = (0,react__WEBPACK_IMPORTED_MODULE_0__.useCallback)(function (event) {
-    switch (event.key) {
-      case _keyboard_esm_js__WEBPACK_IMPORTED_MODULE_11__.Keys.Space:
-        // Required for firefox, event.preventDefault() in handleKeyDown for
-        // the Space key doesn't cancel the handleKeyUp, which in turn
-        // triggers a *click*.
-        event.preventDefault();
-        break;
-    }
-  }, []);
-  var slot = (0,react__WEBPACK_IMPORTED_MODULE_0__.useMemo)(function () {
-    return {
-      open: state.menuState === MenuStates.Open
-    };
-  }, [state]);
-  var propsWeControl = {
-    'aria-activedescendant': state.activeItemIndex === null ? undefined : (_state$items$state$ac = state.items[state.activeItemIndex]) == null ? void 0 : _state$items$state$ac.id,
-    'aria-labelledby': (_state$buttonRef$curr4 = state.buttonRef.current) == null ? void 0 : _state$buttonRef$curr4.id,
-    id: id,
-    onKeyDown: handleKeyDown,
-    onKeyUp: handleKeyUp,
-    role: 'menu',
-    tabIndex: 0,
-    ref: itemsRef
-  };
-  var passthroughProps = props;
-  return (0,_utils_render_esm_js__WEBPACK_IMPORTED_MODULE_7__.render)({
-    props: (0,_virtual_rollupPluginBabelHelpers_js__WEBPACK_IMPORTED_MODULE_1__["extends"])({}, passthroughProps, propsWeControl),
-    slot: slot,
-    defaultTag: DEFAULT_ITEMS_TAG,
-    features: ItemsRenderFeatures,
-    visible: visible,
-    name: 'Menu.Items'
-  });
-}); // ---
-
-var DEFAULT_ITEM_TAG = react__WEBPACK_IMPORTED_MODULE_0__.Fragment;
-
-function Item(props) {
-  var _props$disabled = props.disabled,
-      disabled = _props$disabled === void 0 ? false : _props$disabled,
-      onClick = props.onClick,
-      passthroughProps = (0,_virtual_rollupPluginBabelHelpers_js__WEBPACK_IMPORTED_MODULE_1__.objectWithoutPropertiesLoose)(props, ["disabled", "onClick"]);
-
-  var _useMenuContext3 = useMenuContext([Menu.name, Item.name].join('.')),
-      state = _useMenuContext3[0],
-      dispatch = _useMenuContext3[1];
-
-  var id = "headlessui-menu-item-" + (0,_hooks_use_id_esm_js__WEBPACK_IMPORTED_MODULE_9__.useId)();
-  var active = state.activeItemIndex !== null ? state.items[state.activeItemIndex].id === id : false;
-  (0,_hooks_use_iso_morphic_effect_esm_js__WEBPACK_IMPORTED_MODULE_16__.useIsoMorphicEffect)(function () {
-    if (state.menuState !== MenuStates.Open) return;
-    if (!active) return;
-    var d = (0,_utils_disposables_esm_js__WEBPACK_IMPORTED_MODULE_15__.disposables)();
-    d.nextFrame(function () {
-      var _document$getElementB2;
-
-      return (_document$getElementB2 = document.getElementById(id)) == null ? void 0 : _document$getElementB2.scrollIntoView == null ? void 0 : _document$getElementB2.scrollIntoView({
-        block: 'nearest'
-      });
-    });
-    return d.dispose;
-  }, [id, active, state.menuState]);
-  var bag = (0,react__WEBPACK_IMPORTED_MODULE_0__.useRef)({
-    disabled: disabled
-  });
-  (0,_hooks_use_iso_morphic_effect_esm_js__WEBPACK_IMPORTED_MODULE_16__.useIsoMorphicEffect)(function () {
-    bag.current.disabled = disabled;
-  }, [bag, disabled]);
-  (0,_hooks_use_iso_morphic_effect_esm_js__WEBPACK_IMPORTED_MODULE_16__.useIsoMorphicEffect)(function () {
-    var _document$getElementB3, _document$getElementB4;
-
-    bag.current.textValue = (_document$getElementB3 = document.getElementById(id)) == null ? void 0 : (_document$getElementB4 = _document$getElementB3.textContent) == null ? void 0 : _document$getElementB4.toLowerCase();
-  }, [bag, id]);
-  (0,_hooks_use_iso_morphic_effect_esm_js__WEBPACK_IMPORTED_MODULE_16__.useIsoMorphicEffect)(function () {
-    dispatch({
-      type: ActionTypes.RegisterItem,
-      id: id,
-      dataRef: bag
-    });
-    return function () {
-      return dispatch({
-        type: ActionTypes.UnregisterItem,
-        id: id
-      });
-    };
-  }, [bag, id]);
-  var handleClick = (0,react__WEBPACK_IMPORTED_MODULE_0__.useCallback)(function (event) {
-    if (disabled) return event.preventDefault();
-    dispatch({
-      type: ActionTypes.CloseMenu
-    });
-    (0,_utils_disposables_esm_js__WEBPACK_IMPORTED_MODULE_15__.disposables)().nextFrame(function () {
-      var _state$buttonRef$curr5;
-
-      return (_state$buttonRef$curr5 = state.buttonRef.current) == null ? void 0 : _state$buttonRef$curr5.focus({
-        preventScroll: true
-      });
-    });
-    if (onClick) return onClick(event);
-  }, [dispatch, state.buttonRef, disabled, onClick]);
-  var handleFocus = (0,react__WEBPACK_IMPORTED_MODULE_0__.useCallback)(function () {
-    if (disabled) return dispatch({
-      type: ActionTypes.GoToItem,
-      focus: _utils_calculate_active_index_esm_js__WEBPACK_IMPORTED_MODULE_2__.Focus.Nothing
-    });
-    dispatch({
-      type: ActionTypes.GoToItem,
-      focus: _utils_calculate_active_index_esm_js__WEBPACK_IMPORTED_MODULE_2__.Focus.Specific,
-      id: id
-    });
-  }, [disabled, id, dispatch]);
-  var handleMove = (0,react__WEBPACK_IMPORTED_MODULE_0__.useCallback)(function () {
-    if (disabled) return;
-    if (active) return;
-    dispatch({
-      type: ActionTypes.GoToItem,
-      focus: _utils_calculate_active_index_esm_js__WEBPACK_IMPORTED_MODULE_2__.Focus.Specific,
-      id: id
-    });
-  }, [disabled, active, id, dispatch]);
-  var handleLeave = (0,react__WEBPACK_IMPORTED_MODULE_0__.useCallback)(function () {
-    if (disabled) return;
-    if (!active) return;
-    dispatch({
-      type: ActionTypes.GoToItem,
-      focus: _utils_calculate_active_index_esm_js__WEBPACK_IMPORTED_MODULE_2__.Focus.Nothing
-    });
-  }, [disabled, active, dispatch]);
-  var slot = (0,react__WEBPACK_IMPORTED_MODULE_0__.useMemo)(function () {
-    return {
-      active: active,
-      disabled: disabled
-    };
-  }, [active, disabled]);
-  var propsWeControl = {
-    id: id,
-    role: 'menuitem',
-    tabIndex: disabled === true ? undefined : -1,
-    'aria-disabled': disabled === true ? true : undefined,
-    disabled: undefined,
-    onClick: handleClick,
-    onFocus: handleFocus,
-    onPointerMove: handleMove,
-    onMouseMove: handleMove,
-    onPointerLeave: handleLeave,
-    onMouseLeave: handleLeave
-  };
-  return (0,_utils_render_esm_js__WEBPACK_IMPORTED_MODULE_7__.render)({
-    props: (0,_virtual_rollupPluginBabelHelpers_js__WEBPACK_IMPORTED_MODULE_1__["extends"])({}, passthroughProps, propsWeControl),
-    slot: slot,
-    defaultTag: DEFAULT_ITEM_TAG,
-    name: 'Menu.Item'
-  });
-} // ---
-
-
-Menu.Button = Button;
-Menu.Items = Items;
-Menu.Item = Item;
-
-
-//# sourceMappingURL=menu.esm.js.map
-
-
-/***/ }),
-
-/***/ "./node_modules/@headlessui/react/dist/components/popover/popover.esm.js":
-/*!*******************************************************************************!*\
-  !*** ./node_modules/@headlessui/react/dist/components/popover/popover.esm.js ***!
-  \*******************************************************************************/
-/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
-
-"use strict";
-__webpack_require__.r(__webpack_exports__);
-/* harmony export */ __webpack_require__.d(__webpack_exports__, {
-/* harmony export */   "Popover": () => (/* binding */ Popover)
-/* harmony export */ });
-/* harmony import */ var _virtual_rollupPluginBabelHelpers_js__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../../_virtual/_rollupPluginBabelHelpers.js */ "./node_modules/@headlessui/react/dist/_virtual/_rollupPluginBabelHelpers.js");
-/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
-/* harmony import */ var _utils_match_esm_js__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../../utils/match.esm.js */ "./node_modules/@headlessui/react/dist/utils/match.esm.js");
-/* harmony import */ var _utils_render_esm_js__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ../../utils/render.esm.js */ "./node_modules/@headlessui/react/dist/utils/render.esm.js");
-/* harmony import */ var _hooks_use_sync_refs_esm_js__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! ../../hooks/use-sync-refs.esm.js */ "./node_modules/@headlessui/react/dist/hooks/use-sync-refs.esm.js");
-/* harmony import */ var _keyboard_esm_js__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! ../keyboard.esm.js */ "./node_modules/@headlessui/react/dist/components/keyboard.esm.js");
-/* harmony import */ var _utils_bugs_esm_js__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(/*! ../../utils/bugs.esm.js */ "./node_modules/@headlessui/react/dist/utils/bugs.esm.js");
-/* harmony import */ var _hooks_use_id_esm_js__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../../hooks/use-id.esm.js */ "./node_modules/@headlessui/react/dist/hooks/use-id.esm.js");
-/* harmony import */ var _utils_focus_management_esm_js__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ../../utils/focus-management.esm.js */ "./node_modules/@headlessui/react/dist/utils/focus-management.esm.js");
-/* harmony import */ var _hooks_use_window_event_esm_js__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ../../hooks/use-window-event.esm.js */ "./node_modules/@headlessui/react/dist/hooks/use-window-event.esm.js");
-/* harmony import */ var _internal_open_closed_esm_js__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ../../internal/open-closed.esm.js */ "./node_modules/@headlessui/react/dist/internal/open-closed.esm.js");
-/* harmony import */ var _hooks_use_resolve_button_type_esm_js__WEBPACK_IMPORTED_MODULE_11__ = __webpack_require__(/*! ../../hooks/use-resolve-button-type.esm.js */ "./node_modules/@headlessui/react/dist/hooks/use-resolve-button-type.esm.js");
-
-
-
-
-
-
-
-
-
-
-
-
-
-var _reducers;
-var PopoverStates;
-
-(function (PopoverStates) {
-  PopoverStates[PopoverStates["Open"] = 0] = "Open";
-  PopoverStates[PopoverStates["Closed"] = 1] = "Closed";
-})(PopoverStates || (PopoverStates = {}));
-
-var ActionTypes;
-
-(function (ActionTypes) {
-  ActionTypes[ActionTypes["TogglePopover"] = 0] = "TogglePopover";
-  ActionTypes[ActionTypes["ClosePopover"] = 1] = "ClosePopover";
-  ActionTypes[ActionTypes["SetButton"] = 2] = "SetButton";
-  ActionTypes[ActionTypes["SetButtonId"] = 3] = "SetButtonId";
-  ActionTypes[ActionTypes["SetPanel"] = 4] = "SetPanel";
-  ActionTypes[ActionTypes["SetPanelId"] = 5] = "SetPanelId";
-})(ActionTypes || (ActionTypes = {}));
-
-var reducers = (_reducers = {}, _reducers[ActionTypes.TogglePopover] = function (state) {
-  var _match;
-
-  return (0,_virtual_rollupPluginBabelHelpers_js__WEBPACK_IMPORTED_MODULE_1__["extends"])({}, state, {
-    popoverState: (0,_utils_match_esm_js__WEBPACK_IMPORTED_MODULE_2__.match)(state.popoverState, (_match = {}, _match[PopoverStates.Open] = PopoverStates.Closed, _match[PopoverStates.Closed] = PopoverStates.Open, _match))
-  });
-}, _reducers[ActionTypes.ClosePopover] = function (state) {
-  if (state.popoverState === PopoverStates.Closed) return state;
-  return (0,_virtual_rollupPluginBabelHelpers_js__WEBPACK_IMPORTED_MODULE_1__["extends"])({}, state, {
-    popoverState: PopoverStates.Closed
-  });
-}, _reducers[ActionTypes.SetButton] = function (state, action) {
-  if (state.button === action.button) return state;
-  return (0,_virtual_rollupPluginBabelHelpers_js__WEBPACK_IMPORTED_MODULE_1__["extends"])({}, state, {
-    button: action.button
-  });
-}, _reducers[ActionTypes.SetButtonId] = function (state, action) {
-  if (state.buttonId === action.buttonId) return state;
-  return (0,_virtual_rollupPluginBabelHelpers_js__WEBPACK_IMPORTED_MODULE_1__["extends"])({}, state, {
-    buttonId: action.buttonId
-  });
-}, _reducers[ActionTypes.SetPanel] = function (state, action) {
-  if (state.panel === action.panel) return state;
-  return (0,_virtual_rollupPluginBabelHelpers_js__WEBPACK_IMPORTED_MODULE_1__["extends"])({}, state, {
-    panel: action.panel
-  });
-}, _reducers[ActionTypes.SetPanelId] = function (state, action) {
-  if (state.panelId === action.panelId) return state;
-  return (0,_virtual_rollupPluginBabelHelpers_js__WEBPACK_IMPORTED_MODULE_1__["extends"])({}, state, {
-    panelId: action.panelId
-  });
-}, _reducers);
-var PopoverContext = /*#__PURE__*/(0,react__WEBPACK_IMPORTED_MODULE_0__.createContext)(null);
-PopoverContext.displayName = 'PopoverContext';
-
-function usePopoverContext(component) {
-  var context = (0,react__WEBPACK_IMPORTED_MODULE_0__.useContext)(PopoverContext);
-
-  if (context === null) {
-    var err = new Error("<" + component + " /> is missing a parent <" + Popover.name + " /> component.");
-    if (Error.captureStackTrace) Error.captureStackTrace(err, usePopoverContext);
-    throw err;
-  }
-
-  return context;
-}
-
-var PopoverAPIContext = /*#__PURE__*/(0,react__WEBPACK_IMPORTED_MODULE_0__.createContext)(null);
-PopoverAPIContext.displayName = 'PopoverAPIContext';
-
-function usePopoverAPIContext(component) {
-  var context = (0,react__WEBPACK_IMPORTED_MODULE_0__.useContext)(PopoverAPIContext);
-
-  if (context === null) {
-    var err = new Error("<" + component + " /> is missing a parent <" + Popover.name + " /> component.");
-    if (Error.captureStackTrace) Error.captureStackTrace(err, usePopoverAPIContext);
-    throw err;
-  }
-
-  return context;
-}
-
-var PopoverGroupContext = /*#__PURE__*/(0,react__WEBPACK_IMPORTED_MODULE_0__.createContext)(null);
-PopoverGroupContext.displayName = 'PopoverGroupContext';
-
-function usePopoverGroupContext() {
-  return (0,react__WEBPACK_IMPORTED_MODULE_0__.useContext)(PopoverGroupContext);
-}
-
-var PopoverPanelContext = /*#__PURE__*/(0,react__WEBPACK_IMPORTED_MODULE_0__.createContext)(null);
-PopoverPanelContext.displayName = 'PopoverPanelContext';
-
-function usePopoverPanelContext() {
-  return (0,react__WEBPACK_IMPORTED_MODULE_0__.useContext)(PopoverPanelContext);
-}
-
-function stateReducer(state, action) {
-  return (0,_utils_match_esm_js__WEBPACK_IMPORTED_MODULE_2__.match)(action.type, reducers, state, action);
-} // ---
-
-
-var DEFAULT_POPOVER_TAG = 'div';
-function Popover(props) {
-  var _match2;
-
-  var buttonId = "headlessui-popover-button-" + (0,_hooks_use_id_esm_js__WEBPACK_IMPORTED_MODULE_3__.useId)();
-  var panelId = "headlessui-popover-panel-" + (0,_hooks_use_id_esm_js__WEBPACK_IMPORTED_MODULE_3__.useId)();
-  var reducerBag = (0,react__WEBPACK_IMPORTED_MODULE_0__.useReducer)(stateReducer, {
-    popoverState: PopoverStates.Closed,
-    button: null,
-    buttonId: buttonId,
-    panel: null,
-    panelId: panelId
-  });
-  var _reducerBag$ = reducerBag[0],
-      popoverState = _reducerBag$.popoverState,
-      button = _reducerBag$.button,
-      panel = _reducerBag$.panel,
-      dispatch = reducerBag[1];
-  (0,react__WEBPACK_IMPORTED_MODULE_0__.useEffect)(function () {
-    return dispatch({
-      type: ActionTypes.SetButtonId,
-      buttonId: buttonId
-    });
-  }, [buttonId, dispatch]);
-  (0,react__WEBPACK_IMPORTED_MODULE_0__.useEffect)(function () {
-    return dispatch({
-      type: ActionTypes.SetPanelId,
-      panelId: panelId
-    });
-  }, [panelId, dispatch]);
-  var registerBag = (0,react__WEBPACK_IMPORTED_MODULE_0__.useMemo)(function () {
-    return {
-      buttonId: buttonId,
-      panelId: panelId,
-      close: function close() {
-        return dispatch({
-          type: ActionTypes.ClosePopover
-        });
-      }
-    };
-  }, [buttonId, panelId, dispatch]);
-  var groupContext = usePopoverGroupContext();
-  var registerPopover = groupContext == null ? void 0 : groupContext.registerPopover;
-  var isFocusWithinPopoverGroup = (0,react__WEBPACK_IMPORTED_MODULE_0__.useCallback)(function () {
-    var _groupContext$isFocus;
-
-    return (_groupContext$isFocus = groupContext == null ? void 0 : groupContext.isFocusWithinPopoverGroup()) != null ? _groupContext$isFocus : (button == null ? void 0 : button.contains(document.activeElement)) || (panel == null ? void 0 : panel.contains(document.activeElement));
-  }, [groupContext, button, panel]);
-  (0,react__WEBPACK_IMPORTED_MODULE_0__.useEffect)(function () {
-    return registerPopover == null ? void 0 : registerPopover(registerBag);
-  }, [registerPopover, registerBag]); // Handle focus out
-
-  (0,_hooks_use_window_event_esm_js__WEBPACK_IMPORTED_MODULE_4__.useWindowEvent)('focus', function () {
-    if (popoverState !== PopoverStates.Open) return;
-    if (isFocusWithinPopoverGroup()) return;
-    if (!button) return;
-    if (!panel) return;
-    dispatch({
-      type: ActionTypes.ClosePopover
-    });
-  }, true); // Handle outside click
-
-  (0,_hooks_use_window_event_esm_js__WEBPACK_IMPORTED_MODULE_4__.useWindowEvent)('mousedown', function (event) {
-    var target = event.target;
-    if (popoverState !== PopoverStates.Open) return;
-    if (button == null ? void 0 : button.contains(target)) return;
-    if (panel == null ? void 0 : panel.contains(target)) return;
-    dispatch({
-      type: ActionTypes.ClosePopover
-    });
-
-    if (!(0,_utils_focus_management_esm_js__WEBPACK_IMPORTED_MODULE_5__.isFocusableElement)(target, _utils_focus_management_esm_js__WEBPACK_IMPORTED_MODULE_5__.FocusableMode.Loose)) {
-      event.preventDefault();
-      button == null ? void 0 : button.focus();
-    }
-  });
-  var close = (0,react__WEBPACK_IMPORTED_MODULE_0__.useCallback)(function (focusableElement) {
-    dispatch({
-      type: ActionTypes.ClosePopover
-    });
-
-    var restoreElement = function () {
-      if (!focusableElement) return button;
-      if (focusableElement instanceof HTMLElement) return focusableElement;
-      if (focusableElement.current instanceof HTMLElement) return focusableElement.current;
-      return button;
-    }();
-
-    restoreElement == null ? void 0 : restoreElement.focus();
-  }, [dispatch, button]);
-  var api = (0,react__WEBPACK_IMPORTED_MODULE_0__.useMemo)(function () {
-    return {
-      close: close
-    };
-  }, [close]);
-  var slot = (0,react__WEBPACK_IMPORTED_MODULE_0__.useMemo)(function () {
-    return {
-      open: popoverState === PopoverStates.Open,
-      close: close
-    };
-  }, [popoverState, close]);
-  return react__WEBPACK_IMPORTED_MODULE_0__.createElement(PopoverContext.Provider, {
-    value: reducerBag
-  }, react__WEBPACK_IMPORTED_MODULE_0__.createElement(PopoverAPIContext.Provider, {
-    value: api
-  }, react__WEBPACK_IMPORTED_MODULE_0__.createElement(_internal_open_closed_esm_js__WEBPACK_IMPORTED_MODULE_6__.OpenClosedProvider, {
-    value: (0,_utils_match_esm_js__WEBPACK_IMPORTED_MODULE_2__.match)(popoverState, (_match2 = {}, _match2[PopoverStates.Open] = _internal_open_closed_esm_js__WEBPACK_IMPORTED_MODULE_6__.State.Open, _match2[PopoverStates.Closed] = _internal_open_closed_esm_js__WEBPACK_IMPORTED_MODULE_6__.State.Closed, _match2))
-  }, (0,_utils_render_esm_js__WEBPACK_IMPORTED_MODULE_7__.render)({
-    props: props,
-    slot: slot,
-    defaultTag: DEFAULT_POPOVER_TAG,
-    name: 'Popover'
-  }))));
-} // ---
-
-var DEFAULT_BUTTON_TAG = 'button';
-var Button = /*#__PURE__*/(0,_utils_render_esm_js__WEBPACK_IMPORTED_MODULE_7__.forwardRefWithAs)(function Button(props, ref) {
-  var _usePopoverContext = usePopoverContext([Popover.name, Button.name].join('.')),
-      state = _usePopoverContext[0],
-      dispatch = _usePopoverContext[1];
-
-  var internalButtonRef = (0,react__WEBPACK_IMPORTED_MODULE_0__.useRef)(null);
-  var groupContext = usePopoverGroupContext();
-  var closeOthers = groupContext == null ? void 0 : groupContext.closeOthers;
-  var panelContext = usePopoverPanelContext();
-  var isWithinPanel = panelContext === null ? false : panelContext === state.panelId;
-  var buttonRef = (0,_hooks_use_sync_refs_esm_js__WEBPACK_IMPORTED_MODULE_8__.useSyncRefs)(internalButtonRef, ref, isWithinPanel ? null : function (button) {
-    return dispatch({
-      type: ActionTypes.SetButton,
-      button: button
-    });
-  });
-  var withinPanelButtonRef = (0,_hooks_use_sync_refs_esm_js__WEBPACK_IMPORTED_MODULE_8__.useSyncRefs)(internalButtonRef, ref); // TODO: Revisit when handling Tab/Shift+Tab when using Portal's
-
-  var activeElementRef = (0,react__WEBPACK_IMPORTED_MODULE_0__.useRef)(null);
-  var previousActiveElementRef = (0,react__WEBPACK_IMPORTED_MODULE_0__.useRef)(typeof window === 'undefined' ? null : document.activeElement);
-  (0,_hooks_use_window_event_esm_js__WEBPACK_IMPORTED_MODULE_4__.useWindowEvent)('focus', function () {
-    previousActiveElementRef.current = activeElementRef.current;
-    activeElementRef.current = document.activeElement;
-  }, true);
-  var handleKeyDown = (0,react__WEBPACK_IMPORTED_MODULE_0__.useCallback)(function (event) {
-    var _state$button;
-
-    if (isWithinPanel) {
-      if (state.popoverState === PopoverStates.Closed) return;
-
-      switch (event.key) {
-        case _keyboard_esm_js__WEBPACK_IMPORTED_MODULE_9__.Keys.Space:
-        case _keyboard_esm_js__WEBPACK_IMPORTED_MODULE_9__.Keys.Enter:
-          event.preventDefault(); // Prevent triggering a *click* event
-
-          event.stopPropagation();
-          dispatch({
-            type: ActionTypes.ClosePopover
-          });
-          (_state$button = state.button) == null ? void 0 : _state$button.focus(); // Re-focus the original opening Button
-
-          break;
-      }
-    } else {
-      switch (event.key) {
-        case _keyboard_esm_js__WEBPACK_IMPORTED_MODULE_9__.Keys.Space:
-        case _keyboard_esm_js__WEBPACK_IMPORTED_MODULE_9__.Keys.Enter:
-          event.preventDefault(); // Prevent triggering a *click* event
-
-          event.stopPropagation();
-          if (state.popoverState === PopoverStates.Closed) closeOthers == null ? void 0 : closeOthers(state.buttonId);
-          dispatch({
-            type: ActionTypes.TogglePopover
-          });
-          break;
-
-        case _keyboard_esm_js__WEBPACK_IMPORTED_MODULE_9__.Keys.Escape:
-          if (state.popoverState !== PopoverStates.Open) return closeOthers == null ? void 0 : closeOthers(state.buttonId);
-          if (!internalButtonRef.current) return;
-          if (!internalButtonRef.current.contains(document.activeElement)) return;
-          event.preventDefault();
-          event.stopPropagation();
-          dispatch({
-            type: ActionTypes.ClosePopover
-          });
-          break;
-
-        case _keyboard_esm_js__WEBPACK_IMPORTED_MODULE_9__.Keys.Tab:
-          if (state.popoverState !== PopoverStates.Open) return;
-          if (!state.panel) return;
-          if (!state.button) return; // TODO: Revisit when handling Tab/Shift+Tab when using Portal's
-
-          if (event.shiftKey) {
-            var _state$button2;
-
-            // Check if the last focused element exists, and check that it is not inside button or panel itself
-            if (!previousActiveElementRef.current) return;
-            if ((_state$button2 = state.button) == null ? void 0 : _state$button2.contains(previousActiveElementRef.current)) return;
-            if (state.panel.contains(previousActiveElementRef.current)) return; // Check if the last focused element is *after* the button in the DOM
-
-            var focusableElements = (0,_utils_focus_management_esm_js__WEBPACK_IMPORTED_MODULE_5__.getFocusableElements)();
-            var previousIdx = focusableElements.indexOf(previousActiveElementRef.current);
-            var buttonIdx = focusableElements.indexOf(state.button);
-            if (buttonIdx > previousIdx) return;
-            event.preventDefault();
-            event.stopPropagation();
-            (0,_utils_focus_management_esm_js__WEBPACK_IMPORTED_MODULE_5__.focusIn)(state.panel, _utils_focus_management_esm_js__WEBPACK_IMPORTED_MODULE_5__.Focus.Last);
-          } else {
-            event.preventDefault();
-            event.stopPropagation();
-            (0,_utils_focus_management_esm_js__WEBPACK_IMPORTED_MODULE_5__.focusIn)(state.panel, _utils_focus_management_esm_js__WEBPACK_IMPORTED_MODULE_5__.Focus.First);
-          }
-
-          break;
-      }
-    }
-  }, [dispatch, state.popoverState, state.buttonId, state.button, state.panel, internalButtonRef, closeOthers, isWithinPanel]);
-  var handleKeyUp = (0,react__WEBPACK_IMPORTED_MODULE_0__.useCallback)(function (event) {
-    var _state$button3;
-
-    if (isWithinPanel) return;
-
-    if (event.key === _keyboard_esm_js__WEBPACK_IMPORTED_MODULE_9__.Keys.Space) {
-      // Required for firefox, event.preventDefault() in handleKeyDown for
-      // the Space key doesn't cancel the handleKeyUp, which in turn
-      // triggers a *click*.
-      event.preventDefault();
-    }
-
-    if (state.popoverState !== PopoverStates.Open) return;
-    if (!state.panel) return;
-    if (!state.button) return; // TODO: Revisit when handling Tab/Shift+Tab when using Portal's
-
-    switch (event.key) {
-      case _keyboard_esm_js__WEBPACK_IMPORTED_MODULE_9__.Keys.Tab:
-        // Check if the last focused element exists, and check that it is not inside button or panel itself
-        if (!previousActiveElementRef.current) return;
-        if ((_state$button3 = state.button) == null ? void 0 : _state$button3.contains(previousActiveElementRef.current)) return;
-        if (state.panel.contains(previousActiveElementRef.current)) return; // Check if the last focused element is *after* the button in the DOM
-
-        var focusableElements = (0,_utils_focus_management_esm_js__WEBPACK_IMPORTED_MODULE_5__.getFocusableElements)();
-        var previousIdx = focusableElements.indexOf(previousActiveElementRef.current);
-        var buttonIdx = focusableElements.indexOf(state.button);
-        if (buttonIdx > previousIdx) return;
-        event.preventDefault();
-        event.stopPropagation();
-        (0,_utils_focus_management_esm_js__WEBPACK_IMPORTED_MODULE_5__.focusIn)(state.panel, _utils_focus_management_esm_js__WEBPACK_IMPORTED_MODULE_5__.Focus.Last);
-        break;
-    }
-  }, [state.popoverState, state.panel, state.button, isWithinPanel]);
-  var handleClick = (0,react__WEBPACK_IMPORTED_MODULE_0__.useCallback)(function (event) {
-    if ((0,_utils_bugs_esm_js__WEBPACK_IMPORTED_MODULE_10__.isDisabledReactIssue7711)(event.currentTarget)) return;
-    if (props.disabled) return;
-
-    if (isWithinPanel) {
-      var _state$button4;
-
-      dispatch({
-        type: ActionTypes.ClosePopover
-      });
-      (_state$button4 = state.button) == null ? void 0 : _state$button4.focus(); // Re-focus the original opening Button
-    } else {
-      var _state$button5;
-
-      if (state.popoverState === PopoverStates.Closed) closeOthers == null ? void 0 : closeOthers(state.buttonId);
-      (_state$button5 = state.button) == null ? void 0 : _state$button5.focus();
-      dispatch({
-        type: ActionTypes.TogglePopover
-      });
-    }
-  }, [dispatch, state.button, state.popoverState, state.buttonId, props.disabled, closeOthers, isWithinPanel]);
-  var slot = (0,react__WEBPACK_IMPORTED_MODULE_0__.useMemo)(function () {
-    return {
-      open: state.popoverState === PopoverStates.Open
-    };
-  }, [state]);
-  var type = (0,_hooks_use_resolve_button_type_esm_js__WEBPACK_IMPORTED_MODULE_11__.useResolveButtonType)(props, internalButtonRef);
-  var passthroughProps = props;
-  var propsWeControl = isWithinPanel ? {
-    ref: withinPanelButtonRef,
-    type: type,
-    onKeyDown: handleKeyDown,
-    onClick: handleClick
-  } : {
-    ref: buttonRef,
-    id: state.buttonId,
-    type: type,
-    'aria-expanded': props.disabled ? undefined : state.popoverState === PopoverStates.Open,
-    'aria-controls': state.panel ? state.panelId : undefined,
-    onKeyDown: handleKeyDown,
-    onKeyUp: handleKeyUp,
-    onClick: handleClick
-  };
-  return (0,_utils_render_esm_js__WEBPACK_IMPORTED_MODULE_7__.render)({
-    props: (0,_virtual_rollupPluginBabelHelpers_js__WEBPACK_IMPORTED_MODULE_1__["extends"])({}, passthroughProps, propsWeControl),
-    slot: slot,
-    defaultTag: DEFAULT_BUTTON_TAG,
-    name: 'Popover.Button'
-  });
-}); // ---
-
-var DEFAULT_OVERLAY_TAG = 'div';
-var OverlayRenderFeatures = _utils_render_esm_js__WEBPACK_IMPORTED_MODULE_7__.Features.RenderStrategy | _utils_render_esm_js__WEBPACK_IMPORTED_MODULE_7__.Features.Static;
-var Overlay = /*#__PURE__*/(0,_utils_render_esm_js__WEBPACK_IMPORTED_MODULE_7__.forwardRefWithAs)(function Overlay(props, ref) {
-  var _usePopoverContext2 = usePopoverContext([Popover.name, Overlay.name].join('.')),
-      popoverState = _usePopoverContext2[0].popoverState,
-      dispatch = _usePopoverContext2[1];
-
-  var overlayRef = (0,_hooks_use_sync_refs_esm_js__WEBPACK_IMPORTED_MODULE_8__.useSyncRefs)(ref);
-  var id = "headlessui-popover-overlay-" + (0,_hooks_use_id_esm_js__WEBPACK_IMPORTED_MODULE_3__.useId)();
-  var usesOpenClosedState = (0,_internal_open_closed_esm_js__WEBPACK_IMPORTED_MODULE_6__.useOpenClosed)();
-
-  var visible = function () {
-    if (usesOpenClosedState !== null) {
-      return usesOpenClosedState === _internal_open_closed_esm_js__WEBPACK_IMPORTED_MODULE_6__.State.Open;
-    }
-
-    return popoverState === PopoverStates.Open;
-  }();
-
-  var handleClick = (0,react__WEBPACK_IMPORTED_MODULE_0__.useCallback)(function (event) {
-    if ((0,_utils_bugs_esm_js__WEBPACK_IMPORTED_MODULE_10__.isDisabledReactIssue7711)(event.currentTarget)) return event.preventDefault();
-    dispatch({
-      type: ActionTypes.ClosePopover
-    });
-  }, [dispatch]);
-  var slot = (0,react__WEBPACK_IMPORTED_MODULE_0__.useMemo)(function () {
-    return {
-      open: popoverState === PopoverStates.Open
-    };
-  }, [popoverState]);
-  var propsWeControl = {
-    ref: overlayRef,
-    id: id,
-    'aria-hidden': true,
-    onClick: handleClick
-  };
-  var passthroughProps = props;
-  return (0,_utils_render_esm_js__WEBPACK_IMPORTED_MODULE_7__.render)({
-    props: (0,_virtual_rollupPluginBabelHelpers_js__WEBPACK_IMPORTED_MODULE_1__["extends"])({}, passthroughProps, propsWeControl),
-    slot: slot,
-    defaultTag: DEFAULT_OVERLAY_TAG,
-    features: OverlayRenderFeatures,
-    visible: visible,
-    name: 'Popover.Overlay'
-  });
-}); // ---
-
-var DEFAULT_PANEL_TAG = 'div';
-var PanelRenderFeatures = _utils_render_esm_js__WEBPACK_IMPORTED_MODULE_7__.Features.RenderStrategy | _utils_render_esm_js__WEBPACK_IMPORTED_MODULE_7__.Features.Static;
-var Panel = /*#__PURE__*/(0,_utils_render_esm_js__WEBPACK_IMPORTED_MODULE_7__.forwardRefWithAs)(function Panel(props, ref) {
-  var _props$focus = props.focus,
-      focus = _props$focus === void 0 ? false : _props$focus,
-      passthroughProps = (0,_virtual_rollupPluginBabelHelpers_js__WEBPACK_IMPORTED_MODULE_1__.objectWithoutPropertiesLoose)(props, ["focus"]);
-
-  var _usePopoverContext3 = usePopoverContext([Popover.name, Panel.name].join('.')),
-      state = _usePopoverContext3[0],
-      dispatch = _usePopoverContext3[1];
-
-  var _usePopoverAPIContext = usePopoverAPIContext([Popover.name, Panel.name].join('.')),
-      close = _usePopoverAPIContext.close;
-
-  var internalPanelRef = (0,react__WEBPACK_IMPORTED_MODULE_0__.useRef)(null);
-  var panelRef = (0,_hooks_use_sync_refs_esm_js__WEBPACK_IMPORTED_MODULE_8__.useSyncRefs)(internalPanelRef, ref, function (panel) {
-    dispatch({
-      type: ActionTypes.SetPanel,
-      panel: panel
-    });
-  });
-  var usesOpenClosedState = (0,_internal_open_closed_esm_js__WEBPACK_IMPORTED_MODULE_6__.useOpenClosed)();
-
-  var visible = function () {
-    if (usesOpenClosedState !== null) {
-      return usesOpenClosedState === _internal_open_closed_esm_js__WEBPACK_IMPORTED_MODULE_6__.State.Open;
-    }
-
-    return state.popoverState === PopoverStates.Open;
-  }();
-
-  var handleKeyDown = (0,react__WEBPACK_IMPORTED_MODULE_0__.useCallback)(function (event) {
-    var _state$button6;
-
-    switch (event.key) {
-      case _keyboard_esm_js__WEBPACK_IMPORTED_MODULE_9__.Keys.Escape:
-        if (state.popoverState !== PopoverStates.Open) return;
-        if (!internalPanelRef.current) return;
-        if (!internalPanelRef.current.contains(document.activeElement)) return;
-        event.preventDefault();
-        event.stopPropagation();
-        dispatch({
-          type: ActionTypes.ClosePopover
-        });
-        (_state$button6 = state.button) == null ? void 0 : _state$button6.focus();
-        break;
-    }
-  }, [state, internalPanelRef, dispatch]); // Unlink on "unmount" myself
-
-  (0,react__WEBPACK_IMPORTED_MODULE_0__.useEffect)(function () {
-    return function () {
-      return dispatch({
-        type: ActionTypes.SetPanel,
-        panel: null
-      });
-    };
-  }, [dispatch]); // Unlink on "unmount" children
-
-  (0,react__WEBPACK_IMPORTED_MODULE_0__.useEffect)(function () {
-    var _props$unmount;
-
-    if (props["static"]) return;
-
-    if (state.popoverState === PopoverStates.Closed && ((_props$unmount = props.unmount) != null ? _props$unmount : true)) {
-      dispatch({
-        type: ActionTypes.SetPanel,
-        panel: null
-      });
-    }
-  }, [state.popoverState, props.unmount, props["static"], dispatch]); // Move focus within panel
-
-  (0,react__WEBPACK_IMPORTED_MODULE_0__.useEffect)(function () {
-    if (!focus) return;
-    if (state.popoverState !== PopoverStates.Open) return;
-    if (!internalPanelRef.current) return;
-    var activeElement = document.activeElement;
-    if (internalPanelRef.current.contains(activeElement)) return; // Already focused within Dialog
-
-    (0,_utils_focus_management_esm_js__WEBPACK_IMPORTED_MODULE_5__.focusIn)(internalPanelRef.current, _utils_focus_management_esm_js__WEBPACK_IMPORTED_MODULE_5__.Focus.First);
-  }, [focus, internalPanelRef, state.popoverState]); // Handle Tab / Shift+Tab focus positioning
-
-  (0,_hooks_use_window_event_esm_js__WEBPACK_IMPORTED_MODULE_4__.useWindowEvent)('keydown', function (event) {
-    if (state.popoverState !== PopoverStates.Open) return;
-    if (!internalPanelRef.current) return;
-    if (event.key !== _keyboard_esm_js__WEBPACK_IMPORTED_MODULE_9__.Keys.Tab) return;
-    if (!document.activeElement) return;
-    if (!internalPanelRef.current) return;
-    if (!internalPanelRef.current.contains(document.activeElement)) return; // We will take-over the default tab behaviour so that we have a bit
-    // control over what is focused next. It will behave exactly the same,
-    // but it will also "fix" some issues based on whether you are using a
-    // Portal or not.
-
-    event.preventDefault();
-    var result = (0,_utils_focus_management_esm_js__WEBPACK_IMPORTED_MODULE_5__.focusIn)(internalPanelRef.current, event.shiftKey ? _utils_focus_management_esm_js__WEBPACK_IMPORTED_MODULE_5__.Focus.Previous : _utils_focus_management_esm_js__WEBPACK_IMPORTED_MODULE_5__.Focus.Next);
-
-    if (result === _utils_focus_management_esm_js__WEBPACK_IMPORTED_MODULE_5__.FocusResult.Underflow) {
-      var _state$button7;
-
-      return (_state$button7 = state.button) == null ? void 0 : _state$button7.focus();
-    } else if (result === _utils_focus_management_esm_js__WEBPACK_IMPORTED_MODULE_5__.FocusResult.Overflow) {
-      if (!state.button) return;
-      var elements = (0,_utils_focus_management_esm_js__WEBPACK_IMPORTED_MODULE_5__.getFocusableElements)();
-      var buttonIdx = elements.indexOf(state.button);
-      var nextElements = elements.splice(buttonIdx + 1) // Elements after button
-      .filter(function (element) {
-        var _internalPanelRef$cur;
-
-        return !((_internalPanelRef$cur = internalPanelRef.current) == null ? void 0 : _internalPanelRef$cur.contains(element));
-      }); // Ignore items in panel
-      // Try to focus the next element, however it could fail if we are in a
-      // Portal that happens to be the very last one in the DOM. In that
-      // case we would Error (because nothing after the button is
-      // focusable). Therefore we will try and focus the very first item in
-      // the document.body.
-
-      if ((0,_utils_focus_management_esm_js__WEBPACK_IMPORTED_MODULE_5__.focusIn)(nextElements, _utils_focus_management_esm_js__WEBPACK_IMPORTED_MODULE_5__.Focus.First) === _utils_focus_management_esm_js__WEBPACK_IMPORTED_MODULE_5__.FocusResult.Error) {
-        (0,_utils_focus_management_esm_js__WEBPACK_IMPORTED_MODULE_5__.focusIn)(document.body, _utils_focus_management_esm_js__WEBPACK_IMPORTED_MODULE_5__.Focus.First);
-      }
-    }
-  }); // Handle focus out when we are in special "focus" mode
-
-  (0,_hooks_use_window_event_esm_js__WEBPACK_IMPORTED_MODULE_4__.useWindowEvent)('focus', function () {
-    var _internalPanelRef$cur2;
-
-    if (!focus) return;
-    if (state.popoverState !== PopoverStates.Open) return;
-    if (!internalPanelRef.current) return;
-    if ((_internalPanelRef$cur2 = internalPanelRef.current) == null ? void 0 : _internalPanelRef$cur2.contains(document.activeElement)) return;
-    dispatch({
-      type: ActionTypes.ClosePopover
-    });
-  }, true);
-  var slot = (0,react__WEBPACK_IMPORTED_MODULE_0__.useMemo)(function () {
-    return {
-      open: state.popoverState === PopoverStates.Open,
-      close: close
-    };
-  }, [state, close]);
-  var propsWeControl = {
-    ref: panelRef,
-    id: state.panelId,
-    onKeyDown: handleKeyDown
-  };
-  return react__WEBPACK_IMPORTED_MODULE_0__.createElement(PopoverPanelContext.Provider, {
-    value: state.panelId
-  }, (0,_utils_render_esm_js__WEBPACK_IMPORTED_MODULE_7__.render)({
-    props: (0,_virtual_rollupPluginBabelHelpers_js__WEBPACK_IMPORTED_MODULE_1__["extends"])({}, passthroughProps, propsWeControl),
-    slot: slot,
-    defaultTag: DEFAULT_PANEL_TAG,
-    features: PanelRenderFeatures,
-    visible: visible,
-    name: 'Popover.Panel'
-  }));
-}); // ---
-
-var DEFAULT_GROUP_TAG = 'div';
-
-function Group(props) {
-  var groupRef = (0,react__WEBPACK_IMPORTED_MODULE_0__.useRef)(null);
-
-  var _useState = (0,react__WEBPACK_IMPORTED_MODULE_0__.useState)([]),
-      popovers = _useState[0],
-      setPopovers = _useState[1];
-
-  var unregisterPopover = (0,react__WEBPACK_IMPORTED_MODULE_0__.useCallback)(function (registerbag) {
-    setPopovers(function (existing) {
-      var idx = existing.indexOf(registerbag);
-
-      if (idx !== -1) {
-        var clone = existing.slice();
-        clone.splice(idx, 1);
-        return clone;
-      }
-
-      return existing;
-    });
-  }, [setPopovers]);
-  var registerPopover = (0,react__WEBPACK_IMPORTED_MODULE_0__.useCallback)(function (registerbag) {
-    setPopovers(function (existing) {
-      return [].concat(existing, [registerbag]);
-    });
-    return function () {
-      return unregisterPopover(registerbag);
-    };
-  }, [setPopovers, unregisterPopover]);
-  var isFocusWithinPopoverGroup = (0,react__WEBPACK_IMPORTED_MODULE_0__.useCallback)(function () {
-    var _groupRef$current;
-
-    var element = document.activeElement;
-    if ((_groupRef$current = groupRef.current) == null ? void 0 : _groupRef$current.contains(element)) return true; // Check if the focus is in one of the button or panel elements. This is important in case you are rendering inside a Portal.
-
-    return popovers.some(function (bag) {
-      var _document$getElementB, _document$getElementB2;
-
-      return ((_document$getElementB = document.getElementById(bag.buttonId)) == null ? void 0 : _document$getElementB.contains(element)) || ((_document$getElementB2 = document.getElementById(bag.panelId)) == null ? void 0 : _document$getElementB2.contains(element));
-    });
-  }, [groupRef, popovers]);
-  var closeOthers = (0,react__WEBPACK_IMPORTED_MODULE_0__.useCallback)(function (buttonId) {
-    for (var _iterator = (0,_virtual_rollupPluginBabelHelpers_js__WEBPACK_IMPORTED_MODULE_1__.createForOfIteratorHelperLoose)(popovers), _step; !(_step = _iterator()).done;) {
-      var popover = _step.value;
-      if (popover.buttonId !== buttonId) popover.close();
-    }
-  }, [popovers]);
-  var contextBag = (0,react__WEBPACK_IMPORTED_MODULE_0__.useMemo)(function () {
-    return {
-      registerPopover: registerPopover,
-      unregisterPopover: unregisterPopover,
-      isFocusWithinPopoverGroup: isFocusWithinPopoverGroup,
-      closeOthers: closeOthers
-    };
-  }, [registerPopover, unregisterPopover, isFocusWithinPopoverGroup, closeOthers]);
-  var slot = (0,react__WEBPACK_IMPORTED_MODULE_0__.useMemo)(function () {
-    return {};
-  }, []);
-  var propsWeControl = {
-    ref: groupRef
-  };
-  var passthroughProps = props;
-  return react__WEBPACK_IMPORTED_MODULE_0__.createElement(PopoverGroupContext.Provider, {
-    value: contextBag
-  }, (0,_utils_render_esm_js__WEBPACK_IMPORTED_MODULE_7__.render)({
-    props: (0,_virtual_rollupPluginBabelHelpers_js__WEBPACK_IMPORTED_MODULE_1__["extends"])({}, passthroughProps, propsWeControl),
-    slot: slot,
-    defaultTag: DEFAULT_GROUP_TAG,
-    name: 'Popover.Group'
-  }));
-} // ---
-
-
-Popover.Button = Button;
-Popover.Overlay = Overlay;
-Popover.Panel = Panel;
-Popover.Group = Group;
-
-
-//# sourceMappingURL=popover.esm.js.map
-
-
-/***/ }),
-
-/***/ "./node_modules/@headlessui/react/dist/components/portal/portal.esm.js":
-/*!*****************************************************************************!*\
-  !*** ./node_modules/@headlessui/react/dist/components/portal/portal.esm.js ***!
-  \*****************************************************************************/
-/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
-
-"use strict";
-__webpack_require__.r(__webpack_exports__);
-/* harmony export */ __webpack_require__.d(__webpack_exports__, {
-/* harmony export */   "Portal": () => (/* binding */ Portal)
-/* harmony export */ });
-/* harmony import */ var _virtual_rollupPluginBabelHelpers_js__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ../../_virtual/_rollupPluginBabelHelpers.js */ "./node_modules/@headlessui/react/dist/_virtual/_rollupPluginBabelHelpers.js");
-/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
-/* harmony import */ var _utils_render_esm_js__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ../../utils/render.esm.js */ "./node_modules/@headlessui/react/dist/utils/render.esm.js");
-/* harmony import */ var _hooks_use_iso_morphic_effect_esm_js__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ../../hooks/use-iso-morphic-effect.esm.js */ "./node_modules/@headlessui/react/dist/hooks/use-iso-morphic-effect.esm.js");
-/* harmony import */ var _hooks_use_server_handoff_complete_esm_js__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../../hooks/use-server-handoff-complete.esm.js */ "./node_modules/@headlessui/react/dist/hooks/use-server-handoff-complete.esm.js");
-/* harmony import */ var react_dom__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! react-dom */ "./node_modules/react-dom/index.js");
-/* harmony import */ var _internal_portal_force_root_esm_js__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../../internal/portal-force-root.esm.js */ "./node_modules/@headlessui/react/dist/internal/portal-force-root.esm.js");
-
-
-
-
-
-
-
-
-function usePortalTarget() {
-  var forceInRoot = (0,_internal_portal_force_root_esm_js__WEBPACK_IMPORTED_MODULE_2__.usePortalRoot)();
-  var groupTarget = (0,react__WEBPACK_IMPORTED_MODULE_0__.useContext)(PortalGroupContext);
-
-  var _useState = (0,react__WEBPACK_IMPORTED_MODULE_0__.useState)(function () {
-    // Group context is used, but still null
-    if (!forceInRoot && groupTarget !== null) return null; // No group context is used, let's create a default portal root
-
-    if (typeof window === 'undefined') return null;
-    var existingRoot = document.getElementById('headlessui-portal-root');
-    if (existingRoot) return existingRoot;
-    var root = document.createElement('div');
-    root.setAttribute('id', 'headlessui-portal-root');
-    return document.body.appendChild(root);
-  }),
-      target = _useState[0],
-      setTarget = _useState[1]; // Ensure the portal root is always in the DOM
-
-
-  (0,react__WEBPACK_IMPORTED_MODULE_0__.useEffect)(function () {
-    if (target === null) return;
-
-    if (!document.body.contains(target)) {
-      document.body.appendChild(target);
-    }
-  }, [target]);
-  (0,react__WEBPACK_IMPORTED_MODULE_0__.useEffect)(function () {
-    if (forceInRoot) return;
-    if (groupTarget === null) return;
-    setTarget(groupTarget.current);
-  }, [groupTarget, setTarget, forceInRoot]);
-  return target;
-} // ---
-
-
-var DEFAULT_PORTAL_TAG = react__WEBPACK_IMPORTED_MODULE_0__.Fragment;
-function Portal(props) {
-  var passthroughProps = props;
-  var target = usePortalTarget();
-
-  var _useState2 = (0,react__WEBPACK_IMPORTED_MODULE_0__.useState)(function () {
-    return typeof window === 'undefined' ? null : document.createElement('div');
-  }),
-      element = _useState2[0];
-
-  var ready = (0,_hooks_use_server_handoff_complete_esm_js__WEBPACK_IMPORTED_MODULE_3__.useServerHandoffComplete)();
-  (0,_hooks_use_iso_morphic_effect_esm_js__WEBPACK_IMPORTED_MODULE_4__.useIsoMorphicEffect)(function () {
-    if (!target) return;
-    if (!element) return;
-    target.appendChild(element);
-    return function () {
-      if (!target) return;
-      if (!element) return;
-      target.removeChild(element);
-
-      if (target.childNodes.length <= 0) {
-        var _target$parentElement;
-
-        (_target$parentElement = target.parentElement) == null ? void 0 : _target$parentElement.removeChild(target);
-      }
-    };
-  }, [target, element]);
-  if (!ready) return null;
-  return !target || !element ? null : (0,react_dom__WEBPACK_IMPORTED_MODULE_1__.createPortal)((0,_utils_render_esm_js__WEBPACK_IMPORTED_MODULE_5__.render)({
-    props: passthroughProps,
-    defaultTag: DEFAULT_PORTAL_TAG,
-    name: 'Portal'
-  }), element);
-} // ---
-
-var DEFAULT_GROUP_TAG = react__WEBPACK_IMPORTED_MODULE_0__.Fragment;
-var PortalGroupContext = /*#__PURE__*/(0,react__WEBPACK_IMPORTED_MODULE_0__.createContext)(null);
-
-function Group(props) {
-  var target = props.target,
-      passthroughProps = (0,_virtual_rollupPluginBabelHelpers_js__WEBPACK_IMPORTED_MODULE_6__.objectWithoutPropertiesLoose)(props, ["target"]);
-
-  return react__WEBPACK_IMPORTED_MODULE_0__.createElement(PortalGroupContext.Provider, {
-    value: target
-  }, (0,_utils_render_esm_js__WEBPACK_IMPORTED_MODULE_5__.render)({
-    props: passthroughProps,
-    defaultTag: DEFAULT_GROUP_TAG,
-    name: 'Popover.Group'
-  }));
-} // ---
-
-
-Portal.Group = Group;
-
-
-//# sourceMappingURL=portal.esm.js.map
-
-
-/***/ }),
-
-/***/ "./node_modules/@headlessui/react/dist/components/radio-group/radio-group.esm.js":
-/*!***************************************************************************************!*\
-  !*** ./node_modules/@headlessui/react/dist/components/radio-group/radio-group.esm.js ***!
-  \***************************************************************************************/
-/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
-
-"use strict";
-__webpack_require__.r(__webpack_exports__);
-/* harmony export */ __webpack_require__.d(__webpack_exports__, {
-/* harmony export */   "RadioGroup": () => (/* binding */ RadioGroup)
-/* harmony export */ });
-/* harmony import */ var _virtual_rollupPluginBabelHelpers_js__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../../_virtual/_rollupPluginBabelHelpers.js */ "./node_modules/@headlessui/react/dist/_virtual/_rollupPluginBabelHelpers.js");
-/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
-/* harmony import */ var _utils_match_esm_js__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../../utils/match.esm.js */ "./node_modules/@headlessui/react/dist/utils/match.esm.js");
-/* harmony import */ var _utils_render_esm_js__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! ../../utils/render.esm.js */ "./node_modules/@headlessui/react/dist/utils/render.esm.js");
-/* harmony import */ var _keyboard_esm_js__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ../keyboard.esm.js */ "./node_modules/@headlessui/react/dist/components/keyboard.esm.js");
-/* harmony import */ var _hooks_use_iso_morphic_effect_esm_js__WEBPACK_IMPORTED_MODULE_11__ = __webpack_require__(/*! ../../hooks/use-iso-morphic-effect.esm.js */ "./node_modules/@headlessui/react/dist/hooks/use-iso-morphic-effect.esm.js");
-/* harmony import */ var _hooks_use_id_esm_js__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ../../hooks/use-id.esm.js */ "./node_modules/@headlessui/react/dist/hooks/use-id.esm.js");
-/* harmony import */ var _utils_focus_management_esm_js__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! ../../utils/focus-management.esm.js */ "./node_modules/@headlessui/react/dist/utils/focus-management.esm.js");
-/* harmony import */ var _description_description_esm_js__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ../description/description.esm.js */ "./node_modules/@headlessui/react/dist/components/description/description.esm.js");
-/* harmony import */ var _hooks_use_tree_walker_esm_js__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ../../hooks/use-tree-walker.esm.js */ "./node_modules/@headlessui/react/dist/hooks/use-tree-walker.esm.js");
-/* harmony import */ var _hooks_use_flags_esm_js__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(/*! ../../hooks/use-flags.esm.js */ "./node_modules/@headlessui/react/dist/hooks/use-flags.esm.js");
-/* harmony import */ var _label_label_esm_js__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../label/label.esm.js */ "./node_modules/@headlessui/react/dist/components/label/label.esm.js");
-
-
-
-
-
-
-
-
-
-
-
-
-
-var _reducers;
-var ActionTypes;
-
-(function (ActionTypes) {
-  ActionTypes[ActionTypes["RegisterOption"] = 0] = "RegisterOption";
-  ActionTypes[ActionTypes["UnregisterOption"] = 1] = "UnregisterOption";
-})(ActionTypes || (ActionTypes = {}));
-
-var reducers = (_reducers = {}, _reducers[ActionTypes.RegisterOption] = function (state, action) {
-  return (0,_virtual_rollupPluginBabelHelpers_js__WEBPACK_IMPORTED_MODULE_1__["extends"])({}, state, {
-    options: [].concat(state.options, [{
-      id: action.id,
-      element: action.element,
-      propsRef: action.propsRef
-    }])
-  });
-}, _reducers[ActionTypes.UnregisterOption] = function (state, action) {
-  var options = state.options.slice();
-  var idx = state.options.findIndex(function (radio) {
-    return radio.id === action.id;
-  });
-  if (idx === -1) return state;
-  options.splice(idx, 1);
-  return (0,_virtual_rollupPluginBabelHelpers_js__WEBPACK_IMPORTED_MODULE_1__["extends"])({}, state, {
-    options: options
-  });
-}, _reducers);
-var RadioGroupContext = /*#__PURE__*/(0,react__WEBPACK_IMPORTED_MODULE_0__.createContext)(null);
-RadioGroupContext.displayName = 'RadioGroupContext';
-
-function useRadioGroupContext(component) {
-  var context = (0,react__WEBPACK_IMPORTED_MODULE_0__.useContext)(RadioGroupContext);
-
-  if (context === null) {
-    var err = new Error("<" + component + " /> is missing a parent <" + RadioGroup.name + " /> component.");
-    if (Error.captureStackTrace) Error.captureStackTrace(err, useRadioGroupContext);
-    throw err;
-  }
-
-  return context;
-}
-
-function stateReducer(state, action) {
-  return (0,_utils_match_esm_js__WEBPACK_IMPORTED_MODULE_2__.match)(action.type, reducers, state, action);
-} // ---
-
-
-var DEFAULT_RADIO_GROUP_TAG = 'div';
-function RadioGroup(props) {
-  var value = props.value,
-      onChange = props.onChange,
-      _props$disabled = props.disabled,
-      disabled = _props$disabled === void 0 ? false : _props$disabled,
-      passThroughProps = (0,_virtual_rollupPluginBabelHelpers_js__WEBPACK_IMPORTED_MODULE_1__.objectWithoutPropertiesLoose)(props, ["value", "onChange", "disabled"]);
-
-  var _useReducer = (0,react__WEBPACK_IMPORTED_MODULE_0__.useReducer)(stateReducer, {
-    options: []
-  }),
-      options = _useReducer[0].options,
-      dispatch = _useReducer[1];
-
-  var _useLabels = (0,_label_label_esm_js__WEBPACK_IMPORTED_MODULE_3__.useLabels)(),
-      labelledby = _useLabels[0],
-      LabelProvider = _useLabels[1];
-
-  var _useDescriptions = (0,_description_description_esm_js__WEBPACK_IMPORTED_MODULE_4__.useDescriptions)(),
-      describedby = _useDescriptions[0],
-      DescriptionProvider = _useDescriptions[1];
-
-  var id = "headlessui-radiogroup-" + (0,_hooks_use_id_esm_js__WEBPACK_IMPORTED_MODULE_5__.useId)();
-  var radioGroupRef = (0,react__WEBPACK_IMPORTED_MODULE_0__.useRef)(null);
-  var firstOption = (0,react__WEBPACK_IMPORTED_MODULE_0__.useMemo)(function () {
-    return options.find(function (option) {
-      if (option.propsRef.current.disabled) return false;
-      return true;
-    });
-  }, [options]);
-  var containsCheckedOption = (0,react__WEBPACK_IMPORTED_MODULE_0__.useMemo)(function () {
-    return options.some(function (option) {
-      return option.propsRef.current.value === value;
-    });
-  }, [options, value]);
-  var triggerChange = (0,react__WEBPACK_IMPORTED_MODULE_0__.useCallback)(function (nextValue) {
-    var _options$find;
-
-    if (disabled) return false;
-    if (nextValue === value) return false;
-    var nextOption = (_options$find = options.find(function (option) {
-      return option.propsRef.current.value === nextValue;
-    })) == null ? void 0 : _options$find.propsRef.current;
-    if (nextOption == null ? void 0 : nextOption.disabled) return false;
-    onChange(nextValue);
-    return true;
-  }, [onChange, value, disabled, options]);
-  (0,_hooks_use_tree_walker_esm_js__WEBPACK_IMPORTED_MODULE_6__.useTreeWalker)({
-    container: radioGroupRef.current,
-    accept: function accept(node) {
-      if (node.getAttribute('role') === 'radio') return NodeFilter.FILTER_REJECT;
-      if (node.hasAttribute('role')) return NodeFilter.FILTER_SKIP;
-      return NodeFilter.FILTER_ACCEPT;
-    },
-    walk: function walk(node) {
-      node.setAttribute('role', 'none');
-    }
-  });
-  var handleKeyDown = (0,react__WEBPACK_IMPORTED_MODULE_0__.useCallback)(function (event) {
-    var container = radioGroupRef.current;
-    if (!container) return;
-    var all = options.filter(function (option) {
-      return option.propsRef.current.disabled === false;
-    }).map(function (radio) {
-      return radio.element.current;
-    });
-
-    switch (event.key) {
-      case _keyboard_esm_js__WEBPACK_IMPORTED_MODULE_7__.Keys.ArrowLeft:
-      case _keyboard_esm_js__WEBPACK_IMPORTED_MODULE_7__.Keys.ArrowUp:
-        {
-          event.preventDefault();
-          event.stopPropagation();
-          var result = (0,_utils_focus_management_esm_js__WEBPACK_IMPORTED_MODULE_8__.focusIn)(all, _utils_focus_management_esm_js__WEBPACK_IMPORTED_MODULE_8__.Focus.Previous | _utils_focus_management_esm_js__WEBPACK_IMPORTED_MODULE_8__.Focus.WrapAround);
-
-          if (result === _utils_focus_management_esm_js__WEBPACK_IMPORTED_MODULE_8__.FocusResult.Success) {
-            var activeOption = options.find(function (option) {
-              return option.element.current === document.activeElement;
-            });
-            if (activeOption) triggerChange(activeOption.propsRef.current.value);
-          }
-        }
-        break;
-
-      case _keyboard_esm_js__WEBPACK_IMPORTED_MODULE_7__.Keys.ArrowRight:
-      case _keyboard_esm_js__WEBPACK_IMPORTED_MODULE_7__.Keys.ArrowDown:
-        {
-          event.preventDefault();
-          event.stopPropagation();
-
-          var _result = (0,_utils_focus_management_esm_js__WEBPACK_IMPORTED_MODULE_8__.focusIn)(all, _utils_focus_management_esm_js__WEBPACK_IMPORTED_MODULE_8__.Focus.Next | _utils_focus_management_esm_js__WEBPACK_IMPORTED_MODULE_8__.Focus.WrapAround);
-
-          if (_result === _utils_focus_management_esm_js__WEBPACK_IMPORTED_MODULE_8__.FocusResult.Success) {
-            var _activeOption = options.find(function (option) {
-              return option.element.current === document.activeElement;
-            });
-
-            if (_activeOption) triggerChange(_activeOption.propsRef.current.value);
-          }
-        }
-        break;
-
-      case _keyboard_esm_js__WEBPACK_IMPORTED_MODULE_7__.Keys.Space:
-        {
-          event.preventDefault();
-          event.stopPropagation();
-
-          var _activeOption2 = options.find(function (option) {
-            return option.element.current === document.activeElement;
-          });
-
-          if (_activeOption2) triggerChange(_activeOption2.propsRef.current.value);
-        }
-        break;
-    }
-  }, [radioGroupRef, options, triggerChange]);
-  var registerOption = (0,react__WEBPACK_IMPORTED_MODULE_0__.useCallback)(function (option) {
-    dispatch((0,_virtual_rollupPluginBabelHelpers_js__WEBPACK_IMPORTED_MODULE_1__["extends"])({
-      type: ActionTypes.RegisterOption
-    }, option));
-    return function () {
-      return dispatch({
-        type: ActionTypes.UnregisterOption,
-        id: option.id
-      });
-    };
-  }, [dispatch]);
-  var api = (0,react__WEBPACK_IMPORTED_MODULE_0__.useMemo)(function () {
-    return {
-      registerOption: registerOption,
-      firstOption: firstOption,
-      containsCheckedOption: containsCheckedOption,
-      change: triggerChange,
-      disabled: disabled,
-      value: value
-    };
-  }, [registerOption, firstOption, containsCheckedOption, triggerChange, disabled, value]);
-  var propsWeControl = {
-    ref: radioGroupRef,
-    id: id,
-    role: 'radiogroup',
-    'aria-labelledby': labelledby,
-    'aria-describedby': describedby,
-    onKeyDown: handleKeyDown
-  };
-  return react__WEBPACK_IMPORTED_MODULE_0__.createElement(DescriptionProvider, {
-    name: "RadioGroup.Description"
-  }, react__WEBPACK_IMPORTED_MODULE_0__.createElement(LabelProvider, {
-    name: "RadioGroup.Label"
-  }, react__WEBPACK_IMPORTED_MODULE_0__.createElement(RadioGroupContext.Provider, {
-    value: api
-  }, (0,_utils_render_esm_js__WEBPACK_IMPORTED_MODULE_9__.render)({
-    props: (0,_virtual_rollupPluginBabelHelpers_js__WEBPACK_IMPORTED_MODULE_1__["extends"])({}, passThroughProps, propsWeControl),
-    defaultTag: DEFAULT_RADIO_GROUP_TAG,
-    name: 'RadioGroup'
-  }))));
-} // ---
-
-var OptionState;
-
-(function (OptionState) {
-  OptionState[OptionState["Empty"] = 1] = "Empty";
-  OptionState[OptionState["Active"] = 2] = "Active";
-})(OptionState || (OptionState = {}));
-
-var DEFAULT_OPTION_TAG = 'div';
-
-function Option(props) {
-  var optionRef = (0,react__WEBPACK_IMPORTED_MODULE_0__.useRef)(null);
-  var id = "headlessui-radiogroup-option-" + (0,_hooks_use_id_esm_js__WEBPACK_IMPORTED_MODULE_5__.useId)();
-
-  var _useLabels2 = (0,_label_label_esm_js__WEBPACK_IMPORTED_MODULE_3__.useLabels)(),
-      labelledby = _useLabels2[0],
-      LabelProvider = _useLabels2[1];
-
-  var _useDescriptions2 = (0,_description_description_esm_js__WEBPACK_IMPORTED_MODULE_4__.useDescriptions)(),
-      describedby = _useDescriptions2[0],
-      DescriptionProvider = _useDescriptions2[1];
-
-  var _useFlags = (0,_hooks_use_flags_esm_js__WEBPACK_IMPORTED_MODULE_10__.useFlags)(OptionState.Empty),
-      addFlag = _useFlags.addFlag,
-      removeFlag = _useFlags.removeFlag,
-      hasFlag = _useFlags.hasFlag;
-
-  var value = props.value,
-      _props$disabled2 = props.disabled,
-      disabled = _props$disabled2 === void 0 ? false : _props$disabled2,
-      passThroughProps = (0,_virtual_rollupPluginBabelHelpers_js__WEBPACK_IMPORTED_MODULE_1__.objectWithoutPropertiesLoose)(props, ["value", "disabled"]);
-
-  var propsRef = (0,react__WEBPACK_IMPORTED_MODULE_0__.useRef)({
-    value: value,
-    disabled: disabled
-  });
-  (0,_hooks_use_iso_morphic_effect_esm_js__WEBPACK_IMPORTED_MODULE_11__.useIsoMorphicEffect)(function () {
-    propsRef.current.value = value;
-  }, [value, propsRef]);
-  (0,_hooks_use_iso_morphic_effect_esm_js__WEBPACK_IMPORTED_MODULE_11__.useIsoMorphicEffect)(function () {
-    propsRef.current.disabled = disabled;
-  }, [disabled, propsRef]);
-
-  var _useRadioGroupContext = useRadioGroupContext([RadioGroup.name, Option.name].join('.')),
-      registerOption = _useRadioGroupContext.registerOption,
-      radioGroupDisabled = _useRadioGroupContext.disabled,
-      change = _useRadioGroupContext.change,
-      firstOption = _useRadioGroupContext.firstOption,
-      containsCheckedOption = _useRadioGroupContext.containsCheckedOption,
-      radioGroupValue = _useRadioGroupContext.value;
-
-  (0,_hooks_use_iso_morphic_effect_esm_js__WEBPACK_IMPORTED_MODULE_11__.useIsoMorphicEffect)(function () {
-    return registerOption({
-      id: id,
-      element: optionRef,
-      propsRef: propsRef
-    });
-  }, [id, registerOption, optionRef, props]);
-  var handleClick = (0,react__WEBPACK_IMPORTED_MODULE_0__.useCallback)(function () {
-    var _optionRef$current;
-
-    if (!change(value)) return;
-    addFlag(OptionState.Active);
-    (_optionRef$current = optionRef.current) == null ? void 0 : _optionRef$current.focus();
-  }, [addFlag, change, value]);
-  var handleFocus = (0,react__WEBPACK_IMPORTED_MODULE_0__.useCallback)(function () {
-    return addFlag(OptionState.Active);
-  }, [addFlag]);
-  var handleBlur = (0,react__WEBPACK_IMPORTED_MODULE_0__.useCallback)(function () {
-    return removeFlag(OptionState.Active);
-  }, [removeFlag]);
-  var isFirstOption = (firstOption == null ? void 0 : firstOption.id) === id;
-  var isDisabled = radioGroupDisabled || disabled;
-  var checked = radioGroupValue === value;
-  var propsWeControl = {
-    ref: optionRef,
-    id: id,
-    role: 'radio',
-    'aria-checked': checked ? 'true' : 'false',
-    'aria-labelledby': labelledby,
-    'aria-describedby': describedby,
-    'aria-disabled': isDisabled ? true : undefined,
-    tabIndex: function () {
-      if (isDisabled) return -1;
-      if (checked) return 0;
-      if (!containsCheckedOption && isFirstOption) return 0;
-      return -1;
-    }(),
-    onClick: isDisabled ? undefined : handleClick,
-    onFocus: isDisabled ? undefined : handleFocus,
-    onBlur: isDisabled ? undefined : handleBlur
-  };
-  var slot = (0,react__WEBPACK_IMPORTED_MODULE_0__.useMemo)(function () {
-    return {
-      checked: checked,
-      disabled: isDisabled,
-      active: hasFlag(OptionState.Active)
-    };
-  }, [checked, isDisabled, hasFlag]);
-  return react__WEBPACK_IMPORTED_MODULE_0__.createElement(DescriptionProvider, {
-    name: "RadioGroup.Description"
-  }, react__WEBPACK_IMPORTED_MODULE_0__.createElement(LabelProvider, {
-    name: "RadioGroup.Label"
-  }, (0,_utils_render_esm_js__WEBPACK_IMPORTED_MODULE_9__.render)({
-    props: (0,_virtual_rollupPluginBabelHelpers_js__WEBPACK_IMPORTED_MODULE_1__["extends"])({}, passThroughProps, propsWeControl),
-    slot: slot,
-    defaultTag: DEFAULT_OPTION_TAG,
-    name: 'RadioGroup.Option'
-  })));
-} // ---
-
-
-RadioGroup.Option = Option;
-RadioGroup.Label = _label_label_esm_js__WEBPACK_IMPORTED_MODULE_3__.Label;
-RadioGroup.Description = _description_description_esm_js__WEBPACK_IMPORTED_MODULE_4__.Description;
-
-
-//# sourceMappingURL=radio-group.esm.js.map
-
-
-/***/ }),
-
-/***/ "./node_modules/@headlessui/react/dist/components/switch/switch.esm.js":
-/*!*****************************************************************************!*\
-  !*** ./node_modules/@headlessui/react/dist/components/switch/switch.esm.js ***!
-  \*****************************************************************************/
-/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
-
-"use strict";
-__webpack_require__.r(__webpack_exports__);
-/* harmony export */ __webpack_require__.d(__webpack_exports__, {
-/* harmony export */   "Switch": () => (/* binding */ Switch)
-/* harmony export */ });
-/* harmony import */ var _virtual_rollupPluginBabelHelpers_js__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ../../_virtual/_rollupPluginBabelHelpers.js */ "./node_modules/@headlessui/react/dist/_virtual/_rollupPluginBabelHelpers.js");
-/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
-/* harmony import */ var _utils_render_esm_js__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../../utils/render.esm.js */ "./node_modules/@headlessui/react/dist/utils/render.esm.js");
-/* harmony import */ var _hooks_use_sync_refs_esm_js__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ../../hooks/use-sync-refs.esm.js */ "./node_modules/@headlessui/react/dist/hooks/use-sync-refs.esm.js");
-/* harmony import */ var _keyboard_esm_js__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! ../keyboard.esm.js */ "./node_modules/@headlessui/react/dist/components/keyboard.esm.js");
-/* harmony import */ var _utils_bugs_esm_js__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ../../utils/bugs.esm.js */ "./node_modules/@headlessui/react/dist/utils/bugs.esm.js");
-/* harmony import */ var _hooks_use_id_esm_js__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ../../hooks/use-id.esm.js */ "./node_modules/@headlessui/react/dist/hooks/use-id.esm.js");
-/* harmony import */ var _description_description_esm_js__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../description/description.esm.js */ "./node_modules/@headlessui/react/dist/components/description/description.esm.js");
-/* harmony import */ var _hooks_use_resolve_button_type_esm_js__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! ../../hooks/use-resolve-button-type.esm.js */ "./node_modules/@headlessui/react/dist/hooks/use-resolve-button-type.esm.js");
-/* harmony import */ var _label_label_esm_js__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../label/label.esm.js */ "./node_modules/@headlessui/react/dist/components/label/label.esm.js");
-
-
-
-
-
-
-
-
-
-
-
-var GroupContext = /*#__PURE__*/(0,react__WEBPACK_IMPORTED_MODULE_0__.createContext)(null);
-GroupContext.displayName = 'GroupContext'; // ---
-
-var DEFAULT_GROUP_TAG = react__WEBPACK_IMPORTED_MODULE_0__.Fragment;
-
-function Group(props) {
-  var _useState = (0,react__WEBPACK_IMPORTED_MODULE_0__.useState)(null),
-      switchElement = _useState[0],
-      setSwitchElement = _useState[1];
-
-  var _useLabels = (0,_label_label_esm_js__WEBPACK_IMPORTED_MODULE_1__.useLabels)(),
-      labelledby = _useLabels[0],
-      LabelProvider = _useLabels[1];
-
-  var _useDescriptions = (0,_description_description_esm_js__WEBPACK_IMPORTED_MODULE_2__.useDescriptions)(),
-      describedby = _useDescriptions[0],
-      DescriptionProvider = _useDescriptions[1];
-
-  var context = (0,react__WEBPACK_IMPORTED_MODULE_0__.useMemo)(function () {
-    return {
-      "switch": switchElement,
-      setSwitch: setSwitchElement,
-      labelledby: labelledby,
-      describedby: describedby
-    };
-  }, [switchElement, setSwitchElement, labelledby, describedby]);
-  return react__WEBPACK_IMPORTED_MODULE_0__.createElement(DescriptionProvider, {
-    name: "Switch.Description"
-  }, react__WEBPACK_IMPORTED_MODULE_0__.createElement(LabelProvider, {
-    name: "Switch.Label",
-    props: {
-      onClick: function onClick() {
-        if (!switchElement) return;
-        switchElement.click();
-        switchElement.focus({
-          preventScroll: true
-        });
-      }
-    }
-  }, react__WEBPACK_IMPORTED_MODULE_0__.createElement(GroupContext.Provider, {
-    value: context
-  }, (0,_utils_render_esm_js__WEBPACK_IMPORTED_MODULE_3__.render)({
-    props: props,
-    defaultTag: DEFAULT_GROUP_TAG,
-    name: 'Switch.Group'
-  }))));
-} // ---
-
-
-var DEFAULT_SWITCH_TAG = 'button';
-function Switch(props) {
-  var checked = props.checked,
-      onChange = props.onChange,
-      passThroughProps = (0,_virtual_rollupPluginBabelHelpers_js__WEBPACK_IMPORTED_MODULE_4__.objectWithoutPropertiesLoose)(props, ["checked", "onChange"]);
-
-  var id = "headlessui-switch-" + (0,_hooks_use_id_esm_js__WEBPACK_IMPORTED_MODULE_5__.useId)();
-  var groupContext = (0,react__WEBPACK_IMPORTED_MODULE_0__.useContext)(GroupContext);
-  var internalSwitchRef = (0,react__WEBPACK_IMPORTED_MODULE_0__.useRef)(null);
-  var switchRef = (0,_hooks_use_sync_refs_esm_js__WEBPACK_IMPORTED_MODULE_6__.useSyncRefs)(internalSwitchRef, groupContext === null ? null : groupContext.setSwitch);
-  var toggle = (0,react__WEBPACK_IMPORTED_MODULE_0__.useCallback)(function () {
-    return onChange(!checked);
-  }, [onChange, checked]);
-  var handleClick = (0,react__WEBPACK_IMPORTED_MODULE_0__.useCallback)(function (event) {
-    if ((0,_utils_bugs_esm_js__WEBPACK_IMPORTED_MODULE_7__.isDisabledReactIssue7711)(event.currentTarget)) return event.preventDefault();
-    event.preventDefault();
-    toggle();
-  }, [toggle]);
-  var handleKeyUp = (0,react__WEBPACK_IMPORTED_MODULE_0__.useCallback)(function (event) {
-    if (event.key !== _keyboard_esm_js__WEBPACK_IMPORTED_MODULE_8__.Keys.Tab) event.preventDefault();
-    if (event.key === _keyboard_esm_js__WEBPACK_IMPORTED_MODULE_8__.Keys.Space) toggle();
-  }, [toggle]); // This is needed so that we can "cancel" the click event when we use the `Enter` key on a button.
-
-  var handleKeyPress = (0,react__WEBPACK_IMPORTED_MODULE_0__.useCallback)(function (event) {
-    return event.preventDefault();
-  }, []);
-  var slot = (0,react__WEBPACK_IMPORTED_MODULE_0__.useMemo)(function () {
-    return {
-      checked: checked
-    };
-  }, [checked]);
-  var propsWeControl = {
-    id: id,
-    ref: switchRef,
-    role: 'switch',
-    type: (0,_hooks_use_resolve_button_type_esm_js__WEBPACK_IMPORTED_MODULE_9__.useResolveButtonType)(props, internalSwitchRef),
-    tabIndex: 0,
-    'aria-checked': checked,
-    'aria-labelledby': groupContext == null ? void 0 : groupContext.labelledby,
-    'aria-describedby': groupContext == null ? void 0 : groupContext.describedby,
-    onClick: handleClick,
-    onKeyUp: handleKeyUp,
-    onKeyPress: handleKeyPress
-  };
-  return (0,_utils_render_esm_js__WEBPACK_IMPORTED_MODULE_3__.render)({
-    props: (0,_virtual_rollupPluginBabelHelpers_js__WEBPACK_IMPORTED_MODULE_4__["extends"])({}, passThroughProps, propsWeControl),
-    slot: slot,
-    defaultTag: DEFAULT_SWITCH_TAG,
-    name: 'Switch'
-  });
-} // ---
-
-Switch.Group = Group;
-Switch.Label = _label_label_esm_js__WEBPACK_IMPORTED_MODULE_1__.Label;
-Switch.Description = _description_description_esm_js__WEBPACK_IMPORTED_MODULE_2__.Description;
-
-
-//# sourceMappingURL=switch.esm.js.map
-
-
-/***/ }),
-
-/***/ "./node_modules/@headlessui/react/dist/components/tabs/tabs.esm.js":
-/*!*************************************************************************!*\
-  !*** ./node_modules/@headlessui/react/dist/components/tabs/tabs.esm.js ***!
-  \*************************************************************************/
-/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
-
-"use strict";
-__webpack_require__.r(__webpack_exports__);
-/* harmony export */ __webpack_require__.d(__webpack_exports__, {
-/* harmony export */   "Tab": () => (/* binding */ Tab)
-/* harmony export */ });
-/* harmony import */ var _virtual_rollupPluginBabelHelpers_js__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../../_virtual/_rollupPluginBabelHelpers.js */ "./node_modules/@headlessui/react/dist/_virtual/_rollupPluginBabelHelpers.js");
-/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
-/* harmony import */ var _utils_match_esm_js__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../../utils/match.esm.js */ "./node_modules/@headlessui/react/dist/utils/match.esm.js");
-/* harmony import */ var _utils_render_esm_js__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../../utils/render.esm.js */ "./node_modules/@headlessui/react/dist/utils/render.esm.js");
-/* harmony import */ var _hooks_use_sync_refs_esm_js__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ../../hooks/use-sync-refs.esm.js */ "./node_modules/@headlessui/react/dist/hooks/use-sync-refs.esm.js");
-/* harmony import */ var _keyboard_esm_js__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ../keyboard.esm.js */ "./node_modules/@headlessui/react/dist/components/keyboard.esm.js");
-/* harmony import */ var _hooks_use_iso_morphic_effect_esm_js__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ../../hooks/use-iso-morphic-effect.esm.js */ "./node_modules/@headlessui/react/dist/hooks/use-iso-morphic-effect.esm.js");
-/* harmony import */ var _hooks_use_id_esm_js__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ../../hooks/use-id.esm.js */ "./node_modules/@headlessui/react/dist/hooks/use-id.esm.js");
-/* harmony import */ var _utils_focus_management_esm_js__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! ../../utils/focus-management.esm.js */ "./node_modules/@headlessui/react/dist/utils/focus-management.esm.js");
-/* harmony import */ var _hooks_use_resolve_button_type_esm_js__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! ../../hooks/use-resolve-button-type.esm.js */ "./node_modules/@headlessui/react/dist/hooks/use-resolve-button-type.esm.js");
-
-
-
-
-
-
-
-
-
-
-
-var _reducers;
-var ActionTypes;
-
-(function (ActionTypes) {
-  ActionTypes[ActionTypes["SetSelectedIndex"] = 0] = "SetSelectedIndex";
-  ActionTypes[ActionTypes["SetOrientation"] = 1] = "SetOrientation";
-  ActionTypes[ActionTypes["SetActivation"] = 2] = "SetActivation";
-  ActionTypes[ActionTypes["RegisterTab"] = 3] = "RegisterTab";
-  ActionTypes[ActionTypes["UnregisterTab"] = 4] = "UnregisterTab";
-  ActionTypes[ActionTypes["RegisterPanel"] = 5] = "RegisterPanel";
-  ActionTypes[ActionTypes["UnregisterPanel"] = 6] = "UnregisterPanel";
-  ActionTypes[ActionTypes["ForceRerender"] = 7] = "ForceRerender";
-})(ActionTypes || (ActionTypes = {}));
-
-var reducers = (_reducers = {}, _reducers[ActionTypes.SetSelectedIndex] = function (state, action) {
-  if (state.selectedIndex === action.index) return state;
-  return (0,_virtual_rollupPluginBabelHelpers_js__WEBPACK_IMPORTED_MODULE_1__["extends"])({}, state, {
-    selectedIndex: action.index
-  });
-}, _reducers[ActionTypes.SetOrientation] = function (state, action) {
-  if (state.orientation === action.orientation) return state;
-  return (0,_virtual_rollupPluginBabelHelpers_js__WEBPACK_IMPORTED_MODULE_1__["extends"])({}, state, {
-    orientation: action.orientation
-  });
-}, _reducers[ActionTypes.SetActivation] = function (state, action) {
-  if (state.activation === action.activation) return state;
-  return (0,_virtual_rollupPluginBabelHelpers_js__WEBPACK_IMPORTED_MODULE_1__["extends"])({}, state, {
-    activation: action.activation
-  });
-}, _reducers[ActionTypes.RegisterTab] = function (state, action) {
-  if (state.tabs.includes(action.tab)) return state;
-  return (0,_virtual_rollupPluginBabelHelpers_js__WEBPACK_IMPORTED_MODULE_1__["extends"])({}, state, {
-    tabs: [].concat(state.tabs, [action.tab])
-  });
-}, _reducers[ActionTypes.UnregisterTab] = function (state, action) {
-  return (0,_virtual_rollupPluginBabelHelpers_js__WEBPACK_IMPORTED_MODULE_1__["extends"])({}, state, {
-    tabs: state.tabs.filter(function (tab) {
-      return tab !== action.tab;
-    })
-  });
-}, _reducers[ActionTypes.RegisterPanel] = function (state, action) {
-  if (state.panels.includes(action.panel)) return state;
-  return (0,_virtual_rollupPluginBabelHelpers_js__WEBPACK_IMPORTED_MODULE_1__["extends"])({}, state, {
-    panels: [].concat(state.panels, [action.panel])
-  });
-}, _reducers[ActionTypes.UnregisterPanel] = function (state, action) {
-  return (0,_virtual_rollupPluginBabelHelpers_js__WEBPACK_IMPORTED_MODULE_1__["extends"])({}, state, {
-    panels: state.panels.filter(function (panel) {
-      return panel !== action.panel;
-    })
-  });
-}, _reducers[ActionTypes.ForceRerender] = function (state) {
-  return (0,_virtual_rollupPluginBabelHelpers_js__WEBPACK_IMPORTED_MODULE_1__["extends"])({}, state);
-}, _reducers);
-var TabsContext = /*#__PURE__*/(0,react__WEBPACK_IMPORTED_MODULE_0__.createContext)(null);
-TabsContext.displayName = 'TabsContext';
-
-function useTabsContext(component) {
-  var context = (0,react__WEBPACK_IMPORTED_MODULE_0__.useContext)(TabsContext);
-
-  if (context === null) {
-    var err = new Error("<" + component + " /> is missing a parent <Tab.Group /> component.");
-    if (Error.captureStackTrace) Error.captureStackTrace(err, useTabsContext);
-    throw err;
-  }
-
-  return context;
-}
-
-function stateReducer(state, action) {
-  return (0,_utils_match_esm_js__WEBPACK_IMPORTED_MODULE_2__.match)(action.type, reducers, state, action);
-} // ---
-
-
-var DEFAULT_TABS_TAG = react__WEBPACK_IMPORTED_MODULE_0__.Fragment;
-
-function Tabs(props) {
-  var _props$defaultIndex = props.defaultIndex,
-      defaultIndex = _props$defaultIndex === void 0 ? 0 : _props$defaultIndex,
-      _props$vertical = props.vertical,
-      vertical = _props$vertical === void 0 ? false : _props$vertical,
-      _props$manual = props.manual,
-      manual = _props$manual === void 0 ? false : _props$manual,
-      onChange = props.onChange,
-      _props$selectedIndex = props.selectedIndex,
-      selectedIndex = _props$selectedIndex === void 0 ? null : _props$selectedIndex,
-      passThroughProps = (0,_virtual_rollupPluginBabelHelpers_js__WEBPACK_IMPORTED_MODULE_1__.objectWithoutPropertiesLoose)(props, ["defaultIndex", "vertical", "manual", "onChange", "selectedIndex"]);
-
-  var orientation = vertical ? 'vertical' : 'horizontal';
-  var activation = manual ? 'manual' : 'auto';
-
-  var _useReducer = (0,react__WEBPACK_IMPORTED_MODULE_0__.useReducer)(stateReducer, {
-    selectedIndex: null,
-    tabs: [],
-    panels: [],
-    orientation: orientation,
-    activation: activation
-  }),
-      state = _useReducer[0],
-      dispatch = _useReducer[1];
-
-  var slot = (0,react__WEBPACK_IMPORTED_MODULE_0__.useMemo)(function () {
-    return {
-      selectedIndex: state.selectedIndex
-    };
-  }, [state.selectedIndex]);
-  var onChangeRef = (0,react__WEBPACK_IMPORTED_MODULE_0__.useRef)(function () {});
-  (0,react__WEBPACK_IMPORTED_MODULE_0__.useEffect)(function () {
-    dispatch({
-      type: ActionTypes.SetOrientation,
-      orientation: orientation
-    });
-  }, [orientation]);
-  (0,react__WEBPACK_IMPORTED_MODULE_0__.useEffect)(function () {
-    dispatch({
-      type: ActionTypes.SetActivation,
-      activation: activation
-    });
-  }, [activation]);
-  (0,react__WEBPACK_IMPORTED_MODULE_0__.useEffect)(function () {
-    if (typeof onChange === 'function') {
-      onChangeRef.current = onChange;
-    }
-  }, [onChange]);
-  (0,react__WEBPACK_IMPORTED_MODULE_0__.useEffect)(function () {
-    if (state.tabs.length <= 0) return;
-    if (selectedIndex === null && state.selectedIndex !== null) return;
-    var tabs = state.tabs.map(function (tab) {
-      return tab.current;
-    }).filter(Boolean);
-    var focusableTabs = tabs.filter(function (tab) {
-      return !tab.hasAttribute('disabled');
-    });
-    var indexToSet = selectedIndex != null ? selectedIndex : defaultIndex; // Underflow
-
-    if (indexToSet < 0) {
-      dispatch({
-        type: ActionTypes.SetSelectedIndex,
-        index: tabs.indexOf(focusableTabs[0])
-      });
-    } // Overflow
-    else if (indexToSet > state.tabs.length) {
-        dispatch({
-          type: ActionTypes.SetSelectedIndex,
-          index: tabs.indexOf(focusableTabs[focusableTabs.length - 1])
-        });
-      } // Middle
-      else {
-          var before = tabs.slice(0, indexToSet);
-          var after = tabs.slice(indexToSet);
-          var next = [].concat(after, before).find(function (tab) {
-            return focusableTabs.includes(tab);
-          });
-          if (!next) return;
-          dispatch({
-            type: ActionTypes.SetSelectedIndex,
-            index: tabs.indexOf(next)
-          });
-        }
-  }, [defaultIndex, selectedIndex, state.tabs, state.selectedIndex]);
-  var lastChangedIndex = (0,react__WEBPACK_IMPORTED_MODULE_0__.useRef)(state.selectedIndex);
-  var providerBag = (0,react__WEBPACK_IMPORTED_MODULE_0__.useMemo)(function () {
-    return [state, {
-      dispatch: dispatch,
-      change: function change(index) {
-        if (lastChangedIndex.current !== index) onChangeRef.current(index);
-        lastChangedIndex.current = index;
-        dispatch({
-          type: ActionTypes.SetSelectedIndex,
-          index: index
-        });
-      }
-    }];
-  }, [state, dispatch]);
-  return react__WEBPACK_IMPORTED_MODULE_0__.createElement(TabsContext.Provider, {
-    value: providerBag
-  }, (0,_utils_render_esm_js__WEBPACK_IMPORTED_MODULE_3__.render)({
-    props: (0,_virtual_rollupPluginBabelHelpers_js__WEBPACK_IMPORTED_MODULE_1__["extends"])({}, passThroughProps),
-    slot: slot,
-    defaultTag: DEFAULT_TABS_TAG,
-    name: 'Tabs'
-  }));
-} // ---
-
-
-var DEFAULT_LIST_TAG = 'div';
-
-function List(props) {
-  var _useTabsContext = useTabsContext([Tab.name, List.name].join('.')),
-      _useTabsContext$ = _useTabsContext[0],
-      selectedIndex = _useTabsContext$.selectedIndex,
-      orientation = _useTabsContext$.orientation;
-
-  var slot = {
-    selectedIndex: selectedIndex
-  };
-  var propsWeControl = {
-    role: 'tablist',
-    'aria-orientation': orientation
-  };
-  var passThroughProps = props;
-  return (0,_utils_render_esm_js__WEBPACK_IMPORTED_MODULE_3__.render)({
-    props: (0,_virtual_rollupPluginBabelHelpers_js__WEBPACK_IMPORTED_MODULE_1__["extends"])({}, passThroughProps, propsWeControl),
-    slot: slot,
-    defaultTag: DEFAULT_LIST_TAG,
-    name: 'Tabs.List'
-  });
-} // ---
-
-
-var DEFAULT_TAB_TAG = 'button';
-function Tab(props) {
-  var _panels$myIndex, _panels$myIndex$curre;
-
-  var id = "headlessui-tabs-tab-" + (0,_hooks_use_id_esm_js__WEBPACK_IMPORTED_MODULE_4__.useId)();
-
-  var _useTabsContext2 = useTabsContext(Tab.name),
-      _useTabsContext2$ = _useTabsContext2[0],
-      selectedIndex = _useTabsContext2$.selectedIndex,
-      tabs = _useTabsContext2$.tabs,
-      panels = _useTabsContext2$.panels,
-      orientation = _useTabsContext2$.orientation,
-      activation = _useTabsContext2$.activation,
-      _useTabsContext2$2 = _useTabsContext2[1],
-      dispatch = _useTabsContext2$2.dispatch,
-      change = _useTabsContext2$2.change;
-
-  var internalTabRef = (0,react__WEBPACK_IMPORTED_MODULE_0__.useRef)(null);
-  var tabRef = (0,_hooks_use_sync_refs_esm_js__WEBPACK_IMPORTED_MODULE_5__.useSyncRefs)(internalTabRef, function (element) {
-    if (!element) return;
-    dispatch({
-      type: ActionTypes.ForceRerender
-    });
-  });
-  (0,_hooks_use_iso_morphic_effect_esm_js__WEBPACK_IMPORTED_MODULE_6__.useIsoMorphicEffect)(function () {
-    dispatch({
-      type: ActionTypes.RegisterTab,
-      tab: internalTabRef
-    });
-    return function () {
-      return dispatch({
-        type: ActionTypes.UnregisterTab,
-        tab: internalTabRef
-      });
-    };
-  }, [dispatch, internalTabRef]);
-  var myIndex = tabs.indexOf(internalTabRef);
-  var selected = myIndex === selectedIndex;
-  var handleKeyDown = (0,react__WEBPACK_IMPORTED_MODULE_0__.useCallback)(function (event) {
-    var list = tabs.map(function (tab) {
-      return tab.current;
-    }).filter(Boolean);
-
-    if (event.key === _keyboard_esm_js__WEBPACK_IMPORTED_MODULE_7__.Keys.Space || event.key === _keyboard_esm_js__WEBPACK_IMPORTED_MODULE_7__.Keys.Enter) {
-      event.preventDefault();
-      event.stopPropagation();
-      change(myIndex);
-      return;
-    }
-
-    switch (event.key) {
-      case _keyboard_esm_js__WEBPACK_IMPORTED_MODULE_7__.Keys.Home:
-      case _keyboard_esm_js__WEBPACK_IMPORTED_MODULE_7__.Keys.PageUp:
-        event.preventDefault();
-        event.stopPropagation();
-        return (0,_utils_focus_management_esm_js__WEBPACK_IMPORTED_MODULE_8__.focusIn)(list, _utils_focus_management_esm_js__WEBPACK_IMPORTED_MODULE_8__.Focus.First);
-
-      case _keyboard_esm_js__WEBPACK_IMPORTED_MODULE_7__.Keys.End:
-      case _keyboard_esm_js__WEBPACK_IMPORTED_MODULE_7__.Keys.PageDown:
-        event.preventDefault();
-        event.stopPropagation();
-        return (0,_utils_focus_management_esm_js__WEBPACK_IMPORTED_MODULE_8__.focusIn)(list, _utils_focus_management_esm_js__WEBPACK_IMPORTED_MODULE_8__.Focus.Last);
-    }
-
-    return (0,_utils_match_esm_js__WEBPACK_IMPORTED_MODULE_2__.match)(orientation, {
-      vertical: function vertical() {
-        if (event.key === _keyboard_esm_js__WEBPACK_IMPORTED_MODULE_7__.Keys.ArrowUp) return (0,_utils_focus_management_esm_js__WEBPACK_IMPORTED_MODULE_8__.focusIn)(list, _utils_focus_management_esm_js__WEBPACK_IMPORTED_MODULE_8__.Focus.Previous | _utils_focus_management_esm_js__WEBPACK_IMPORTED_MODULE_8__.Focus.WrapAround);
-        if (event.key === _keyboard_esm_js__WEBPACK_IMPORTED_MODULE_7__.Keys.ArrowDown) return (0,_utils_focus_management_esm_js__WEBPACK_IMPORTED_MODULE_8__.focusIn)(list, _utils_focus_management_esm_js__WEBPACK_IMPORTED_MODULE_8__.Focus.Next | _utils_focus_management_esm_js__WEBPACK_IMPORTED_MODULE_8__.Focus.WrapAround);
-        return;
-      },
-      horizontal: function horizontal() {
-        if (event.key === _keyboard_esm_js__WEBPACK_IMPORTED_MODULE_7__.Keys.ArrowLeft) return (0,_utils_focus_management_esm_js__WEBPACK_IMPORTED_MODULE_8__.focusIn)(list, _utils_focus_management_esm_js__WEBPACK_IMPORTED_MODULE_8__.Focus.Previous | _utils_focus_management_esm_js__WEBPACK_IMPORTED_MODULE_8__.Focus.WrapAround);
-        if (event.key === _keyboard_esm_js__WEBPACK_IMPORTED_MODULE_7__.Keys.ArrowRight) return (0,_utils_focus_management_esm_js__WEBPACK_IMPORTED_MODULE_8__.focusIn)(list, _utils_focus_management_esm_js__WEBPACK_IMPORTED_MODULE_8__.Focus.Next | _utils_focus_management_esm_js__WEBPACK_IMPORTED_MODULE_8__.Focus.WrapAround);
-        return;
-      }
-    });
-  }, [tabs, orientation, myIndex, change]);
-  var handleFocus = (0,react__WEBPACK_IMPORTED_MODULE_0__.useCallback)(function () {
-    var _internalTabRef$curre;
-
-    (_internalTabRef$curre = internalTabRef.current) == null ? void 0 : _internalTabRef$curre.focus();
-  }, [internalTabRef]);
-  var handleSelection = (0,react__WEBPACK_IMPORTED_MODULE_0__.useCallback)(function () {
-    var _internalTabRef$curre2;
-
-    (_internalTabRef$curre2 = internalTabRef.current) == null ? void 0 : _internalTabRef$curre2.focus();
-    change(myIndex);
-  }, [change, myIndex, internalTabRef]);
-  var slot = (0,react__WEBPACK_IMPORTED_MODULE_0__.useMemo)(function () {
-    return {
-      selected: selected
-    };
-  }, [selected]);
-  var propsWeControl = {
-    ref: tabRef,
-    onKeyDown: handleKeyDown,
-    onFocus: activation === 'manual' ? handleFocus : handleSelection,
-    onClick: handleSelection,
-    id: id,
-    role: 'tab',
-    type: (0,_hooks_use_resolve_button_type_esm_js__WEBPACK_IMPORTED_MODULE_9__.useResolveButtonType)(props, internalTabRef),
-    'aria-controls': (_panels$myIndex = panels[myIndex]) == null ? void 0 : (_panels$myIndex$curre = _panels$myIndex.current) == null ? void 0 : _panels$myIndex$curre.id,
-    'aria-selected': selected,
-    tabIndex: selected ? 0 : -1
-  };
-  var passThroughProps = props;
-  return (0,_utils_render_esm_js__WEBPACK_IMPORTED_MODULE_3__.render)({
-    props: (0,_virtual_rollupPluginBabelHelpers_js__WEBPACK_IMPORTED_MODULE_1__["extends"])({}, passThroughProps, propsWeControl),
-    slot: slot,
-    defaultTag: DEFAULT_TAB_TAG,
-    name: 'Tabs.Tab'
-  });
-} // ---
-
-var DEFAULT_PANELS_TAG = 'div';
-
-function Panels(props) {
-  var _useTabsContext3 = useTabsContext([Tab.name, Panels.name].join('.')),
-      selectedIndex = _useTabsContext3[0].selectedIndex;
-
-  var slot = (0,react__WEBPACK_IMPORTED_MODULE_0__.useMemo)(function () {
-    return {
-      selectedIndex: selectedIndex
-    };
-  }, [selectedIndex]);
-  return (0,_utils_render_esm_js__WEBPACK_IMPORTED_MODULE_3__.render)({
-    props: props,
-    slot: slot,
-    defaultTag: DEFAULT_PANELS_TAG,
-    name: 'Tabs.Panels'
-  });
-} // ---
-
-
-var DEFAULT_PANEL_TAG = 'div';
-var PanelRenderFeatures = _utils_render_esm_js__WEBPACK_IMPORTED_MODULE_3__.Features.RenderStrategy | _utils_render_esm_js__WEBPACK_IMPORTED_MODULE_3__.Features.Static;
-
-function Panel(props) {
-  var _tabs$myIndex, _tabs$myIndex$current;
-
-  var _useTabsContext4 = useTabsContext([Tab.name, Panel.name].join('.')),
-      _useTabsContext4$ = _useTabsContext4[0],
-      selectedIndex = _useTabsContext4$.selectedIndex,
-      tabs = _useTabsContext4$.tabs,
-      panels = _useTabsContext4$.panels,
-      dispatch = _useTabsContext4[1].dispatch;
-
-  var id = "headlessui-tabs-panel-" + (0,_hooks_use_id_esm_js__WEBPACK_IMPORTED_MODULE_4__.useId)();
-  var internalPanelRef = (0,react__WEBPACK_IMPORTED_MODULE_0__.useRef)(null);
-  var panelRef = (0,_hooks_use_sync_refs_esm_js__WEBPACK_IMPORTED_MODULE_5__.useSyncRefs)(internalPanelRef, function (element) {
-    if (!element) return;
-    dispatch({
-      type: ActionTypes.ForceRerender
-    });
-  });
-  (0,_hooks_use_iso_morphic_effect_esm_js__WEBPACK_IMPORTED_MODULE_6__.useIsoMorphicEffect)(function () {
-    dispatch({
-      type: ActionTypes.RegisterPanel,
-      panel: internalPanelRef
-    });
-    return function () {
-      return dispatch({
-        type: ActionTypes.UnregisterPanel,
-        panel: internalPanelRef
-      });
-    };
-  }, [dispatch, internalPanelRef]);
-  var myIndex = panels.indexOf(internalPanelRef);
-  var selected = myIndex === selectedIndex;
-  var slot = (0,react__WEBPACK_IMPORTED_MODULE_0__.useMemo)(function () {
-    return {
-      selected: selected
-    };
-  }, [selected]);
-  var propsWeControl = {
-    ref: panelRef,
-    id: id,
-    role: 'tabpanel',
-    'aria-labelledby': (_tabs$myIndex = tabs[myIndex]) == null ? void 0 : (_tabs$myIndex$current = _tabs$myIndex.current) == null ? void 0 : _tabs$myIndex$current.id,
-    tabIndex: selected ? 0 : -1
-  };
-  var passThroughProps = props;
-  return (0,_utils_render_esm_js__WEBPACK_IMPORTED_MODULE_3__.render)({
-    props: (0,_virtual_rollupPluginBabelHelpers_js__WEBPACK_IMPORTED_MODULE_1__["extends"])({}, passThroughProps, propsWeControl),
-    slot: slot,
-    defaultTag: DEFAULT_PANEL_TAG,
-    features: PanelRenderFeatures,
-    visible: selected,
-    name: 'Tabs.Panel'
-  });
-} // ---
-
-
-Tab.Group = Tabs;
-Tab.List = List;
-Tab.Panels = Panels;
-Tab.Panel = Panel;
-
-
-//# sourceMappingURL=tabs.esm.js.map
-
-
-/***/ }),
-
-/***/ "./node_modules/@headlessui/react/dist/components/transitions/transition.esm.js":
-/*!**************************************************************************************!*\
-  !*** ./node_modules/@headlessui/react/dist/components/transitions/transition.esm.js ***!
-  \**************************************************************************************/
-/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
-
-"use strict";
-__webpack_require__.r(__webpack_exports__);
-/* harmony export */ __webpack_require__.d(__webpack_exports__, {
-/* harmony export */   "Transition": () => (/* binding */ Transition)
-/* harmony export */ });
-/* harmony import */ var _virtual_rollupPluginBabelHelpers_js__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ../../_virtual/_rollupPluginBabelHelpers.js */ "./node_modules/@headlessui/react/dist/_virtual/_rollupPluginBabelHelpers.js");
-/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
-/* harmony import */ var _utils_match_esm_js__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../../utils/match.esm.js */ "./node_modules/@headlessui/react/dist/utils/match.esm.js");
-/* harmony import */ var _utils_render_esm_js__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../../utils/render.esm.js */ "./node_modules/@headlessui/react/dist/utils/render.esm.js");
-/* harmony import */ var _hooks_use_iso_morphic_effect_esm_js__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ../../hooks/use-iso-morphic-effect.esm.js */ "./node_modules/@headlessui/react/dist/hooks/use-iso-morphic-effect.esm.js");
-/* harmony import */ var _hooks_use_server_handoff_complete_esm_js__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ../../hooks/use-server-handoff-complete.esm.js */ "./node_modules/@headlessui/react/dist/hooks/use-server-handoff-complete.esm.js");
-/* harmony import */ var _hooks_use_id_esm_js__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ../../hooks/use-id.esm.js */ "./node_modules/@headlessui/react/dist/hooks/use-id.esm.js");
-/* harmony import */ var _hooks_use_is_mounted_esm_js__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../../hooks/use-is-mounted.esm.js */ "./node_modules/@headlessui/react/dist/hooks/use-is-mounted.esm.js");
-/* harmony import */ var _internal_open_closed_esm_js__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! ../../internal/open-closed.esm.js */ "./node_modules/@headlessui/react/dist/internal/open-closed.esm.js");
-/* harmony import */ var _hooks_use_is_initial_render_esm_js__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(/*! ../../hooks/use-is-initial-render.esm.js */ "./node_modules/@headlessui/react/dist/hooks/use-is-initial-render.esm.js");
-/* harmony import */ var _utils_transition_esm_js__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! ./utils/transition.esm.js */ "./node_modules/@headlessui/react/dist/components/transitions/utils/transition.esm.js");
-
-
-
-
-
-
-
-
-
-
-
-
-function useSplitClasses(classes) {
-  if (classes === void 0) {
-    classes = '';
-  }
-
-  return (0,react__WEBPACK_IMPORTED_MODULE_0__.useMemo)(function () {
-    return classes.split(' ').filter(function (className) {
-      return className.trim().length > 1;
-    });
-  }, [classes]);
-}
-
-var TransitionContext = /*#__PURE__*/(0,react__WEBPACK_IMPORTED_MODULE_0__.createContext)(null);
-TransitionContext.displayName = 'TransitionContext';
-var TreeStates;
-
-(function (TreeStates) {
-  TreeStates["Visible"] = "visible";
-  TreeStates["Hidden"] = "hidden";
-})(TreeStates || (TreeStates = {}));
-
-function useTransitionContext() {
-  var context = (0,react__WEBPACK_IMPORTED_MODULE_0__.useContext)(TransitionContext);
-
-  if (context === null) {
-    throw new Error('A <Transition.Child /> is used but it is missing a parent <Transition /> or <Transition.Root />.');
-  }
-
-  return context;
-}
-
-function useParentNesting() {
-  var context = (0,react__WEBPACK_IMPORTED_MODULE_0__.useContext)(NestingContext);
-
-  if (context === null) {
-    throw new Error('A <Transition.Child /> is used but it is missing a parent <Transition /> or <Transition.Root />.');
-  }
-
-  return context;
-}
-
-var NestingContext = /*#__PURE__*/(0,react__WEBPACK_IMPORTED_MODULE_0__.createContext)(null);
-NestingContext.displayName = 'NestingContext';
-
-function hasChildren(bag) {
-  if ('children' in bag) return hasChildren(bag.children);
-  return bag.current.filter(function (_ref) {
-    var state = _ref.state;
-    return state === TreeStates.Visible;
-  }).length > 0;
-}
-
-function useNesting(done) {
-  var doneRef = (0,react__WEBPACK_IMPORTED_MODULE_0__.useRef)(done);
-  var transitionableChildren = (0,react__WEBPACK_IMPORTED_MODULE_0__.useRef)([]);
-  var mounted = (0,_hooks_use_is_mounted_esm_js__WEBPACK_IMPORTED_MODULE_1__.useIsMounted)();
-  (0,react__WEBPACK_IMPORTED_MODULE_0__.useEffect)(function () {
-    doneRef.current = done;
-  }, [done]);
-  var unregister = (0,react__WEBPACK_IMPORTED_MODULE_0__.useCallback)(function (childId, strategy) {
-    var _match;
-
-    if (strategy === void 0) {
-      strategy = _utils_render_esm_js__WEBPACK_IMPORTED_MODULE_2__.RenderStrategy.Hidden;
-    }
-
-    var idx = transitionableChildren.current.findIndex(function (_ref2) {
-      var id = _ref2.id;
-      return id === childId;
-    });
-    if (idx === -1) return;
-    (0,_utils_match_esm_js__WEBPACK_IMPORTED_MODULE_3__.match)(strategy, (_match = {}, _match[_utils_render_esm_js__WEBPACK_IMPORTED_MODULE_2__.RenderStrategy.Unmount] = function () {
-      transitionableChildren.current.splice(idx, 1);
-    }, _match[_utils_render_esm_js__WEBPACK_IMPORTED_MODULE_2__.RenderStrategy.Hidden] = function () {
-      transitionableChildren.current[idx].state = TreeStates.Hidden;
-    }, _match));
-
-    if (!hasChildren(transitionableChildren) && mounted.current) {
-      doneRef.current == null ? void 0 : doneRef.current();
-    }
-  }, [doneRef, mounted, transitionableChildren]);
-  var register = (0,react__WEBPACK_IMPORTED_MODULE_0__.useCallback)(function (childId) {
-    var child = transitionableChildren.current.find(function (_ref3) {
-      var id = _ref3.id;
-      return id === childId;
-    });
-
-    if (!child) {
-      transitionableChildren.current.push({
-        id: childId,
-        state: TreeStates.Visible
-      });
-    } else if (child.state !== TreeStates.Visible) {
-      child.state = TreeStates.Visible;
-    }
-
-    return function () {
-      return unregister(childId, _utils_render_esm_js__WEBPACK_IMPORTED_MODULE_2__.RenderStrategy.Unmount);
-    };
-  }, [transitionableChildren, unregister]);
-  return (0,react__WEBPACK_IMPORTED_MODULE_0__.useMemo)(function () {
-    return {
-      children: transitionableChildren,
-      register: register,
-      unregister: unregister
-    };
-  }, [register, unregister, transitionableChildren]);
-}
-
-function noop() {}
-
-var eventNames = ['beforeEnter', 'afterEnter', 'beforeLeave', 'afterLeave'];
-
-function ensureEventHooksExist(events) {
-  var result = {};
-
-  for (var _iterator = (0,_virtual_rollupPluginBabelHelpers_js__WEBPACK_IMPORTED_MODULE_4__.createForOfIteratorHelperLoose)(eventNames), _step; !(_step = _iterator()).done;) {
-    var _events$name;
-
-    var name = _step.value;
-    result[name] = (_events$name = events[name]) != null ? _events$name : noop;
-  }
-
-  return result;
-}
-
-function useEvents(events) {
-  var eventsRef = (0,react__WEBPACK_IMPORTED_MODULE_0__.useRef)(ensureEventHooksExist(events));
-  (0,react__WEBPACK_IMPORTED_MODULE_0__.useEffect)(function () {
-    eventsRef.current = ensureEventHooksExist(events);
-  }, [events]);
-  return eventsRef;
-} // ---
-
-
-var DEFAULT_TRANSITION_CHILD_TAG = 'div';
-var TransitionChildRenderFeatures = _utils_render_esm_js__WEBPACK_IMPORTED_MODULE_2__.Features.RenderStrategy;
-
-function TransitionChild(props) {
-  var _match3;
-
-  var beforeEnter = props.beforeEnter,
-      afterEnter = props.afterEnter,
-      beforeLeave = props.beforeLeave,
-      afterLeave = props.afterLeave,
-      enter = props.enter,
-      enterFrom = props.enterFrom,
-      enterTo = props.enterTo,
-      entered = props.entered,
-      leave = props.leave,
-      leaveFrom = props.leaveFrom,
-      leaveTo = props.leaveTo,
-      rest = (0,_virtual_rollupPluginBabelHelpers_js__WEBPACK_IMPORTED_MODULE_4__.objectWithoutPropertiesLoose)(props, ["beforeEnter", "afterEnter", "beforeLeave", "afterLeave", "enter", "enterFrom", "enterTo", "entered", "leave", "leaveFrom", "leaveTo"]);
-
-  var container = (0,react__WEBPACK_IMPORTED_MODULE_0__.useRef)(null);
-
-  var _useState = (0,react__WEBPACK_IMPORTED_MODULE_0__.useState)(TreeStates.Visible),
-      state = _useState[0],
-      setState = _useState[1];
-
-  var strategy = rest.unmount ? _utils_render_esm_js__WEBPACK_IMPORTED_MODULE_2__.RenderStrategy.Unmount : _utils_render_esm_js__WEBPACK_IMPORTED_MODULE_2__.RenderStrategy.Hidden;
-
-  var _useTransitionContext = useTransitionContext(),
-      show = _useTransitionContext.show,
-      appear = _useTransitionContext.appear,
-      initial = _useTransitionContext.initial;
-
-  var _useParentNesting = useParentNesting(),
-      register = _useParentNesting.register,
-      unregister = _useParentNesting.unregister;
-
-  var id = (0,_hooks_use_id_esm_js__WEBPACK_IMPORTED_MODULE_5__.useId)();
-  var isTransitioning = (0,react__WEBPACK_IMPORTED_MODULE_0__.useRef)(false);
-  var nesting = useNesting(function () {
-    // When all children have been unmounted we can only hide ourselves if and only if we are not
-    // transitioning ourselves. Otherwise we would unmount before the transitions are finished.
-    if (!isTransitioning.current) {
-      setState(TreeStates.Hidden);
-      unregister(id);
-      events.current.afterLeave();
-    }
-  });
-  (0,_hooks_use_iso_morphic_effect_esm_js__WEBPACK_IMPORTED_MODULE_6__.useIsoMorphicEffect)(function () {
-    if (!id) return;
-    return register(id);
-  }, [register, id]);
-  (0,_hooks_use_iso_morphic_effect_esm_js__WEBPACK_IMPORTED_MODULE_6__.useIsoMorphicEffect)(function () {
-    var _match2;
-
-    // If we are in another mode than the Hidden mode then ignore
-    if (strategy !== _utils_render_esm_js__WEBPACK_IMPORTED_MODULE_2__.RenderStrategy.Hidden) return;
-    if (!id) return; // Make sure that we are visible
-
-    if (show && state !== TreeStates.Visible) {
-      setState(TreeStates.Visible);
-      return;
-    }
-
-    (0,_utils_match_esm_js__WEBPACK_IMPORTED_MODULE_3__.match)(state, (_match2 = {}, _match2[TreeStates.Hidden] = function () {
-      return unregister(id);
-    }, _match2[TreeStates.Visible] = function () {
-      return register(id);
-    }, _match2));
-  }, [state, id, register, unregister, show, strategy]);
-  var enterClasses = useSplitClasses(enter);
-  var enterFromClasses = useSplitClasses(enterFrom);
-  var enterToClasses = useSplitClasses(enterTo);
-  var enteredClasses = useSplitClasses(entered);
-  var leaveClasses = useSplitClasses(leave);
-  var leaveFromClasses = useSplitClasses(leaveFrom);
-  var leaveToClasses = useSplitClasses(leaveTo);
-  var events = useEvents({
-    beforeEnter: beforeEnter,
-    afterEnter: afterEnter,
-    beforeLeave: beforeLeave,
-    afterLeave: afterLeave
-  });
-  var ready = (0,_hooks_use_server_handoff_complete_esm_js__WEBPACK_IMPORTED_MODULE_7__.useServerHandoffComplete)();
-  (0,react__WEBPACK_IMPORTED_MODULE_0__.useEffect)(function () {
-    if (ready && state === TreeStates.Visible && container.current === null) {
-      throw new Error('Did you forget to passthrough the `ref` to the actual DOM node?');
-    }
-  }, [container, state, ready]); // Skipping initial transition
-
-  var skip = initial && !appear;
-  (0,_hooks_use_iso_morphic_effect_esm_js__WEBPACK_IMPORTED_MODULE_6__.useIsoMorphicEffect)(function () {
-    var node = container.current;
-    if (!node) return;
-    if (skip) return;
-    isTransitioning.current = true;
-    if (show) events.current.beforeEnter();
-    if (!show) events.current.beforeLeave();
-    return show ? (0,_utils_transition_esm_js__WEBPACK_IMPORTED_MODULE_8__.transition)(node, enterClasses, enterFromClasses, enterToClasses, enteredClasses, function (reason) {
-      isTransitioning.current = false;
-      if (reason === _utils_transition_esm_js__WEBPACK_IMPORTED_MODULE_8__.Reason.Finished) events.current.afterEnter();
-    }) : (0,_utils_transition_esm_js__WEBPACK_IMPORTED_MODULE_8__.transition)(node, leaveClasses, leaveFromClasses, leaveToClasses, enteredClasses, function (reason) {
-      isTransitioning.current = false;
-      if (reason !== _utils_transition_esm_js__WEBPACK_IMPORTED_MODULE_8__.Reason.Finished) return; // When we don't have children anymore we can safely unregister from the parent and hide
-      // ourselves.
-
-      if (!hasChildren(nesting)) {
-        setState(TreeStates.Hidden);
-        unregister(id);
-        events.current.afterLeave();
-      }
-    });
-  }, [events, id, isTransitioning, unregister, nesting, container, skip, show, enterClasses, enterFromClasses, enterToClasses, leaveClasses, leaveFromClasses, leaveToClasses]);
-  var propsWeControl = {
-    ref: container
-  };
-  var passthroughProps = rest;
-  return react__WEBPACK_IMPORTED_MODULE_0__.createElement(NestingContext.Provider, {
-    value: nesting
-  }, react__WEBPACK_IMPORTED_MODULE_0__.createElement(_internal_open_closed_esm_js__WEBPACK_IMPORTED_MODULE_9__.OpenClosedProvider, {
-    value: (0,_utils_match_esm_js__WEBPACK_IMPORTED_MODULE_3__.match)(state, (_match3 = {}, _match3[TreeStates.Visible] = _internal_open_closed_esm_js__WEBPACK_IMPORTED_MODULE_9__.State.Open, _match3[TreeStates.Hidden] = _internal_open_closed_esm_js__WEBPACK_IMPORTED_MODULE_9__.State.Closed, _match3))
-  }, (0,_utils_render_esm_js__WEBPACK_IMPORTED_MODULE_2__.render)({
-    props: (0,_virtual_rollupPluginBabelHelpers_js__WEBPACK_IMPORTED_MODULE_4__["extends"])({}, passthroughProps, propsWeControl),
-    defaultTag: DEFAULT_TRANSITION_CHILD_TAG,
-    features: TransitionChildRenderFeatures,
-    visible: state === TreeStates.Visible,
-    name: 'Transition.Child'
-  })));
-}
-
-function Transition(props) {
-  // @ts-expect-error
-  var show = props.show,
-      _props$appear = props.appear,
-      appear = _props$appear === void 0 ? false : _props$appear,
-      unmount = props.unmount,
-      passthroughProps = (0,_virtual_rollupPluginBabelHelpers_js__WEBPACK_IMPORTED_MODULE_4__.objectWithoutPropertiesLoose)(props, ["show", "appear", "unmount"]);
-
-  var usesOpenClosedState = (0,_internal_open_closed_esm_js__WEBPACK_IMPORTED_MODULE_9__.useOpenClosed)();
-
-  if (show === undefined && usesOpenClosedState !== null) {
-    var _match4;
-
-    show = (0,_utils_match_esm_js__WEBPACK_IMPORTED_MODULE_3__.match)(usesOpenClosedState, (_match4 = {}, _match4[_internal_open_closed_esm_js__WEBPACK_IMPORTED_MODULE_9__.State.Open] = true, _match4[_internal_open_closed_esm_js__WEBPACK_IMPORTED_MODULE_9__.State.Closed] = false, _match4));
-  }
-
-  if (![true, false].includes(show)) {
-    throw new Error('A <Transition /> is used but it is missing a `show={true | false}` prop.');
-  }
-
-  var _useState2 = (0,react__WEBPACK_IMPORTED_MODULE_0__.useState)(show ? TreeStates.Visible : TreeStates.Hidden),
-      state = _useState2[0],
-      setState = _useState2[1];
-
-  var nestingBag = useNesting(function () {
-    setState(TreeStates.Hidden);
-  });
-  var initial = (0,_hooks_use_is_initial_render_esm_js__WEBPACK_IMPORTED_MODULE_10__.useIsInitialRender)();
-  var transitionBag = (0,react__WEBPACK_IMPORTED_MODULE_0__.useMemo)(function () {
-    return {
-      show: show,
-      appear: appear || !initial,
-      initial: initial
-    };
-  }, [show, appear, initial]);
-  (0,react__WEBPACK_IMPORTED_MODULE_0__.useEffect)(function () {
-    if (show) {
-      setState(TreeStates.Visible);
-    } else if (!hasChildren(nestingBag)) {
-      setState(TreeStates.Hidden);
-    }
-  }, [show, nestingBag]);
-  var sharedProps = {
-    unmount: unmount
-  };
-  return react__WEBPACK_IMPORTED_MODULE_0__.createElement(NestingContext.Provider, {
-    value: nestingBag
-  }, react__WEBPACK_IMPORTED_MODULE_0__.createElement(TransitionContext.Provider, {
-    value: transitionBag
-  }, (0,_utils_render_esm_js__WEBPACK_IMPORTED_MODULE_2__.render)({
-    props: (0,_virtual_rollupPluginBabelHelpers_js__WEBPACK_IMPORTED_MODULE_4__["extends"])({}, sharedProps, {
-      as: react__WEBPACK_IMPORTED_MODULE_0__.Fragment,
-      children: react__WEBPACK_IMPORTED_MODULE_0__.createElement(TransitionChild, Object.assign({}, sharedProps, passthroughProps))
-    }),
-    defaultTag: react__WEBPACK_IMPORTED_MODULE_0__.Fragment,
-    features: TransitionChildRenderFeatures,
-    visible: state === TreeStates.Visible,
-    name: 'Transition'
-  })));
-}
-
-Transition.Child = function Child(props) {
-  var hasTransitionContext = (0,react__WEBPACK_IMPORTED_MODULE_0__.useContext)(TransitionContext) !== null;
-  var hasOpenClosedContext = (0,_internal_open_closed_esm_js__WEBPACK_IMPORTED_MODULE_9__.useOpenClosed)() !== null;
-  return !hasTransitionContext && hasOpenClosedContext ? react__WEBPACK_IMPORTED_MODULE_0__.createElement(Transition, Object.assign({}, props)) : react__WEBPACK_IMPORTED_MODULE_0__.createElement(TransitionChild, Object.assign({}, props));
-};
-
-Transition.Root = Transition;
-
-
-//# sourceMappingURL=transition.esm.js.map
-
-
-/***/ }),
-
-/***/ "./node_modules/@headlessui/react/dist/components/transitions/utils/transition.esm.js":
-/*!********************************************************************************************!*\
-  !*** ./node_modules/@headlessui/react/dist/components/transitions/utils/transition.esm.js ***!
-  \********************************************************************************************/
-/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
-
-"use strict";
-__webpack_require__.r(__webpack_exports__);
-/* harmony export */ __webpack_require__.d(__webpack_exports__, {
-/* harmony export */   "Reason": () => (/* binding */ Reason),
-/* harmony export */   "transition": () => (/* binding */ transition)
-/* harmony export */ });
-/* harmony import */ var _utils_disposables_esm_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../../../utils/disposables.esm.js */ "./node_modules/@headlessui/react/dist/utils/disposables.esm.js");
-/* harmony import */ var _utils_once_esm_js__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../../../utils/once.esm.js */ "./node_modules/@headlessui/react/dist/utils/once.esm.js");
-
-
-
-function addClasses(node) {
-  var _node$classList;
-
-  for (var _len = arguments.length, classes = new Array(_len > 1 ? _len - 1 : 0), _key = 1; _key < _len; _key++) {
-    classes[_key - 1] = arguments[_key];
-  }
-
-  node && classes.length > 0 && (_node$classList = node.classList).add.apply(_node$classList, classes);
-}
-
-function removeClasses(node) {
-  var _node$classList2;
-
-  for (var _len2 = arguments.length, classes = new Array(_len2 > 1 ? _len2 - 1 : 0), _key2 = 1; _key2 < _len2; _key2++) {
-    classes[_key2 - 1] = arguments[_key2];
-  }
-
-  node && classes.length > 0 && (_node$classList2 = node.classList).remove.apply(_node$classList2, classes);
-}
-
-var Reason;
-
-(function (Reason) {
-  Reason["Finished"] = "finished";
-  Reason["Cancelled"] = "cancelled";
-})(Reason || (Reason = {}));
-
-function waitForTransition(node, done) {
-  var d = (0,_utils_disposables_esm_js__WEBPACK_IMPORTED_MODULE_0__.disposables)();
-  if (!node) return d.dispose; // Safari returns a comma separated list of values, so let's sort them and take the highest value.
-
-  var _getComputedStyle = getComputedStyle(node),
-      transitionDuration = _getComputedStyle.transitionDuration,
-      transitionDelay = _getComputedStyle.transitionDelay;
-
-  var _map = [transitionDuration, transitionDelay].map(function (value) {
-    var _value$split$filter$m = value.split(',') // Remove falsy we can't work with
-    .filter(Boolean) // Values are returned as `0.3s` or `75ms`
-    .map(function (v) {
-      return v.includes('ms') ? parseFloat(v) : parseFloat(v) * 1000;
-    }).sort(function (a, z) {
-      return z - a;
-    }),
-        _value$split$filter$m2 = _value$split$filter$m[0],
-        resolvedValue = _value$split$filter$m2 === void 0 ? 0 : _value$split$filter$m2;
-
-    return resolvedValue;
-  }),
-      durationMs = _map[0],
-      delaysMs = _map[1]; // Waiting for the transition to end. We could use the `transitionend` event, however when no
-  // actual transition/duration is defined then the `transitionend` event is not fired.
-  //
-  // TODO: Downside is, when you slow down transitions via devtools this timeout is still using the
-  // full 100% speed instead of the 25% or 10%.
-
-
-  if (durationMs !== 0) {
-    d.setTimeout(function () {
-      done(Reason.Finished);
-    }, durationMs + delaysMs);
-  } else {
-    // No transition is happening, so we should cleanup already. Otherwise we have to wait until we
-    // get disposed.
-    done(Reason.Finished);
-  } // If we get disposed before the timeout runs we should cleanup anyway
-
-
-  d.add(function () {
-    return done(Reason.Cancelled);
-  });
-  return d.dispose;
-}
-
-function transition(node, base, from, to, entered, done) {
-  var d = (0,_utils_disposables_esm_js__WEBPACK_IMPORTED_MODULE_0__.disposables)();
-
-  var _done = done !== undefined ? (0,_utils_once_esm_js__WEBPACK_IMPORTED_MODULE_1__.once)(done) : function () {};
-
-  removeClasses.apply(void 0, [node].concat(entered));
-  addClasses.apply(void 0, [node].concat(base, from));
-  d.nextFrame(function () {
-    removeClasses.apply(void 0, [node].concat(from));
-    addClasses.apply(void 0, [node].concat(to));
-    d.add(waitForTransition(node, function (reason) {
-      removeClasses.apply(void 0, [node].concat(to, base));
-      addClasses.apply(void 0, [node].concat(entered));
-      return _done(reason);
-    }));
-  }); // Once we get disposed, we should ensure that we cleanup after ourselves. In case of an unmount,
-  // the node itself will be nullified and will be a no-op. In case of a full transition the classes
-  // are already removed which is also a no-op. However if you go from enter -> leave mid-transition
-  // then we have some leftovers that should be cleaned.
-
-  d.add(function () {
-    return removeClasses.apply(void 0, [node].concat(base, from, to, entered));
-  }); // When we get disposed early, than we should also call the done method but switch the reason.
-
-  d.add(function () {
-    return _done(Reason.Cancelled);
-  });
-  return d.dispose;
-}
-
-
-//# sourceMappingURL=transition.esm.js.map
-
-
-/***/ }),
-
-/***/ "./node_modules/@headlessui/react/dist/hooks/use-computed.esm.js":
-/*!***********************************************************************!*\
-  !*** ./node_modules/@headlessui/react/dist/hooks/use-computed.esm.js ***!
-  \***********************************************************************/
-/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
-
-"use strict";
-__webpack_require__.r(__webpack_exports__);
-/* harmony export */ __webpack_require__.d(__webpack_exports__, {
-/* harmony export */   "useComputed": () => (/* binding */ useComputed)
-/* harmony export */ });
-/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
-/* harmony import */ var _use_iso_morphic_effect_esm_js__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./use-iso-morphic-effect.esm.js */ "./node_modules/@headlessui/react/dist/hooks/use-iso-morphic-effect.esm.js");
-
-
-
-function useComputed(cb, dependencies) {
-  var _useState = (0,react__WEBPACK_IMPORTED_MODULE_0__.useState)(cb),
-      value = _useState[0],
-      setValue = _useState[1];
-
-  var cbRef = (0,react__WEBPACK_IMPORTED_MODULE_0__.useRef)(cb);
-  (0,_use_iso_morphic_effect_esm_js__WEBPACK_IMPORTED_MODULE_1__.useIsoMorphicEffect)(function () {
-    cbRef.current = cb;
-  }, [cb]);
-  (0,_use_iso_morphic_effect_esm_js__WEBPACK_IMPORTED_MODULE_1__.useIsoMorphicEffect)(function () {
-    return setValue(cbRef.current);
-  }, [cbRef, setValue].concat(dependencies));
-  return value;
-}
-
-
-//# sourceMappingURL=use-computed.esm.js.map
-
-
-/***/ }),
-
-/***/ "./node_modules/@headlessui/react/dist/hooks/use-disposables.esm.js":
-/*!**************************************************************************!*\
-  !*** ./node_modules/@headlessui/react/dist/hooks/use-disposables.esm.js ***!
-  \**************************************************************************/
-/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
-
-"use strict";
-__webpack_require__.r(__webpack_exports__);
-/* harmony export */ __webpack_require__.d(__webpack_exports__, {
-/* harmony export */   "useDisposables": () => (/* binding */ useDisposables)
-/* harmony export */ });
-/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
-/* harmony import */ var _utils_disposables_esm_js__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../utils/disposables.esm.js */ "./node_modules/@headlessui/react/dist/utils/disposables.esm.js");
-
-
-
-function useDisposables() {
-  // Using useState instead of useRef so that we can use the initializer function.
-  var _useState = (0,react__WEBPACK_IMPORTED_MODULE_0__.useState)(_utils_disposables_esm_js__WEBPACK_IMPORTED_MODULE_1__.disposables),
-      d = _useState[0];
-
-  (0,react__WEBPACK_IMPORTED_MODULE_0__.useEffect)(function () {
-    return function () {
-      return d.dispose();
-    };
-  }, [d]);
-  return d;
-}
-
-
-//# sourceMappingURL=use-disposables.esm.js.map
-
-
-/***/ }),
-
-/***/ "./node_modules/@headlessui/react/dist/hooks/use-flags.esm.js":
-/*!********************************************************************!*\
-  !*** ./node_modules/@headlessui/react/dist/hooks/use-flags.esm.js ***!
-  \********************************************************************/
-/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
-
-"use strict";
-__webpack_require__.r(__webpack_exports__);
-/* harmony export */ __webpack_require__.d(__webpack_exports__, {
-/* harmony export */   "useFlags": () => (/* binding */ useFlags)
-/* harmony export */ });
-/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
-
-
-function useFlags(initialFlags) {
-  if (initialFlags === void 0) {
-    initialFlags = 0;
-  }
-
-  var _useState = (0,react__WEBPACK_IMPORTED_MODULE_0__.useState)(initialFlags),
-      flags = _useState[0],
-      setFlags = _useState[1];
-
-  var addFlag = (0,react__WEBPACK_IMPORTED_MODULE_0__.useCallback)(function (flag) {
-    return setFlags(function (flags) {
-      return flags | flag;
-    });
-  }, [setFlags]);
-  var hasFlag = (0,react__WEBPACK_IMPORTED_MODULE_0__.useCallback)(function (flag) {
-    return Boolean(flags & flag);
-  }, [flags]);
-  var removeFlag = (0,react__WEBPACK_IMPORTED_MODULE_0__.useCallback)(function (flag) {
-    return setFlags(function (flags) {
-      return flags & ~flag;
-    });
-  }, [setFlags]);
-  var toggleFlag = (0,react__WEBPACK_IMPORTED_MODULE_0__.useCallback)(function (flag) {
-    return setFlags(function (flags) {
-      return flags ^ flag;
-    });
-  }, [setFlags]);
-  return {
-    addFlag: addFlag,
-    hasFlag: hasFlag,
-    removeFlag: removeFlag,
-    toggleFlag: toggleFlag
-  };
-}
-
-
-//# sourceMappingURL=use-flags.esm.js.map
-
-
-/***/ }),
-
-/***/ "./node_modules/@headlessui/react/dist/hooks/use-focus-trap.esm.js":
-/*!*************************************************************************!*\
-  !*** ./node_modules/@headlessui/react/dist/hooks/use-focus-trap.esm.js ***!
-  \*************************************************************************/
-/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
-
-"use strict";
-__webpack_require__.r(__webpack_exports__);
-/* harmony export */ __webpack_require__.d(__webpack_exports__, {
-/* harmony export */   "Features": () => (/* binding */ Features),
-/* harmony export */   "useFocusTrap": () => (/* binding */ useFocusTrap)
-/* harmony export */ });
-/* harmony import */ var _virtual_rollupPluginBabelHelpers_js__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ../_virtual/_rollupPluginBabelHelpers.js */ "./node_modules/@headlessui/react/dist/_virtual/_rollupPluginBabelHelpers.js");
-/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
-/* harmony import */ var _components_keyboard_esm_js__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ../components/keyboard.esm.js */ "./node_modules/@headlessui/react/dist/components/keyboard.esm.js");
-/* harmony import */ var _utils_focus_management_esm_js__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../utils/focus-management.esm.js */ "./node_modules/@headlessui/react/dist/utils/focus-management.esm.js");
-/* harmony import */ var _use_window_event_esm_js__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./use-window-event.esm.js */ "./node_modules/@headlessui/react/dist/hooks/use-window-event.esm.js");
-/* harmony import */ var _use_is_mounted_esm_js__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./use-is-mounted.esm.js */ "./node_modules/@headlessui/react/dist/hooks/use-is-mounted.esm.js");
-
-
-
-
-
-
-
-var Features;
-
-(function (Features) {
-  /** No features enabled for the `useFocusTrap` hook. */
-  Features[Features["None"] = 1] = "None";
-  /** Ensure that we move focus initially into the container. */
-
-  Features[Features["InitialFocus"] = 2] = "InitialFocus";
-  /** Ensure that pressing `Tab` and `Shift+Tab` is trapped within the container. */
-
-  Features[Features["TabLock"] = 4] = "TabLock";
-  /** Ensure that programmatically moving focus outside of the container is disallowed. */
-
-  Features[Features["FocusLock"] = 8] = "FocusLock";
-  /** Ensure that we restore the focus when unmounting the component that uses this `useFocusTrap` hook. */
-
-  Features[Features["RestoreFocus"] = 16] = "RestoreFocus";
-  /** Enable all features. */
-
-  Features[Features["All"] = 30] = "All";
-})(Features || (Features = {}));
-
-function useFocusTrap(container, features, _temp) {
-  if (features === void 0) {
-    features = Features.All;
-  }
-
-  var _ref = _temp === void 0 ? {} : _temp,
-      initialFocus = _ref.initialFocus,
-      containers = _ref.containers;
-
-  var restoreElement = (0,react__WEBPACK_IMPORTED_MODULE_0__.useRef)(typeof window !== 'undefined' ? document.activeElement : null);
-  var previousActiveElement = (0,react__WEBPACK_IMPORTED_MODULE_0__.useRef)(null);
-  var mounted = (0,_use_is_mounted_esm_js__WEBPACK_IMPORTED_MODULE_1__.useIsMounted)();
-  var featuresRestoreFocus = Boolean(features & Features.RestoreFocus);
-  var featuresInitialFocus = Boolean(features & Features.InitialFocus); // Capture the currently focused element, before we enable the focus trap.
-
-  (0,react__WEBPACK_IMPORTED_MODULE_0__.useEffect)(function () {
-    if (!featuresRestoreFocus) return;
-    restoreElement.current = document.activeElement;
-  }, [featuresRestoreFocus]); // Restore the focus when we unmount the component.
-
-  (0,react__WEBPACK_IMPORTED_MODULE_0__.useEffect)(function () {
-    if (!featuresRestoreFocus) return;
-    return function () {
-      (0,_utils_focus_management_esm_js__WEBPACK_IMPORTED_MODULE_2__.focusElement)(restoreElement.current);
-      restoreElement.current = null;
-    };
-  }, [featuresRestoreFocus]); // Handle initial focus
-
-  (0,react__WEBPACK_IMPORTED_MODULE_0__.useEffect)(function () {
-    if (!featuresInitialFocus) return;
-    if (!container.current) return;
-    var activeElement = document.activeElement;
-
-    if (initialFocus == null ? void 0 : initialFocus.current) {
-      if ((initialFocus == null ? void 0 : initialFocus.current) === activeElement) {
-        previousActiveElement.current = activeElement;
-        return; // Initial focus ref is already the active element
-      }
-    } else if (container.current.contains(activeElement)) {
-      previousActiveElement.current = activeElement;
-      return; // Already focused within Dialog
-    } // Try to focus the initialFocus ref
-
-
-    if (initialFocus == null ? void 0 : initialFocus.current) {
-      (0,_utils_focus_management_esm_js__WEBPACK_IMPORTED_MODULE_2__.focusElement)(initialFocus.current);
-    } else {
-      if ((0,_utils_focus_management_esm_js__WEBPACK_IMPORTED_MODULE_2__.focusIn)(container.current, _utils_focus_management_esm_js__WEBPACK_IMPORTED_MODULE_2__.Focus.First) === _utils_focus_management_esm_js__WEBPACK_IMPORTED_MODULE_2__.FocusResult.Error) {
-        console.warn('There are no focusable elements inside the <FocusTrap />');
-      }
-    }
-
-    previousActiveElement.current = document.activeElement;
-  }, [container, initialFocus, featuresInitialFocus]); // Handle `Tab` & `Shift+Tab` keyboard events
-
-  (0,_use_window_event_esm_js__WEBPACK_IMPORTED_MODULE_3__.useWindowEvent)('keydown', function (event) {
-    if (!(features & Features.TabLock)) return;
-    if (!container.current) return;
-    if (event.key !== _components_keyboard_esm_js__WEBPACK_IMPORTED_MODULE_4__.Keys.Tab) return;
-    event.preventDefault();
-
-    if ((0,_utils_focus_management_esm_js__WEBPACK_IMPORTED_MODULE_2__.focusIn)(container.current, (event.shiftKey ? _utils_focus_management_esm_js__WEBPACK_IMPORTED_MODULE_2__.Focus.Previous : _utils_focus_management_esm_js__WEBPACK_IMPORTED_MODULE_2__.Focus.Next) | _utils_focus_management_esm_js__WEBPACK_IMPORTED_MODULE_2__.Focus.WrapAround) === _utils_focus_management_esm_js__WEBPACK_IMPORTED_MODULE_2__.FocusResult.Success) {
-      previousActiveElement.current = document.activeElement;
-    }
-  }); // Prevent programmatically escaping the container
-
-  (0,_use_window_event_esm_js__WEBPACK_IMPORTED_MODULE_3__.useWindowEvent)('focus', function (event) {
-    if (!(features & Features.FocusLock)) return;
-    var allContainers = new Set(containers == null ? void 0 : containers.current);
-    allContainers.add(container);
-    if (!allContainers.size) return;
-    var previous = previousActiveElement.current;
-    if (!previous) return;
-    if (!mounted.current) return;
-    var toElement = event.target;
-
-    if (toElement && toElement instanceof HTMLElement) {
-      if (!contains(allContainers, toElement)) {
-        event.preventDefault();
-        event.stopPropagation();
-        (0,_utils_focus_management_esm_js__WEBPACK_IMPORTED_MODULE_2__.focusElement)(previous);
-      } else {
-        previousActiveElement.current = toElement;
-        (0,_utils_focus_management_esm_js__WEBPACK_IMPORTED_MODULE_2__.focusElement)(toElement);
-      }
-    } else {
-      (0,_utils_focus_management_esm_js__WEBPACK_IMPORTED_MODULE_2__.focusElement)(previousActiveElement.current);
-    }
-  }, true);
-}
-
-function contains(containers, element) {
-  for (var _iterator = (0,_virtual_rollupPluginBabelHelpers_js__WEBPACK_IMPORTED_MODULE_5__.createForOfIteratorHelperLoose)(containers), _step; !(_step = _iterator()).done;) {
-    var _container$current;
-
-    var container = _step.value;
-    if ((_container$current = container.current) == null ? void 0 : _container$current.contains(element)) return true;
-  }
-
-  return false;
-}
-
-
-//# sourceMappingURL=use-focus-trap.esm.js.map
-
-
-/***/ }),
-
-/***/ "./node_modules/@headlessui/react/dist/hooks/use-id.esm.js":
-/*!*****************************************************************!*\
-  !*** ./node_modules/@headlessui/react/dist/hooks/use-id.esm.js ***!
-  \*****************************************************************/
-/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
-
-"use strict";
-__webpack_require__.r(__webpack_exports__);
-/* harmony export */ __webpack_require__.d(__webpack_exports__, {
-/* harmony export */   "useId": () => (/* binding */ useId)
-/* harmony export */ });
-/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
-/* harmony import */ var _use_iso_morphic_effect_esm_js__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./use-iso-morphic-effect.esm.js */ "./node_modules/@headlessui/react/dist/hooks/use-iso-morphic-effect.esm.js");
-/* harmony import */ var _use_server_handoff_complete_esm_js__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./use-server-handoff-complete.esm.js */ "./node_modules/@headlessui/react/dist/hooks/use-server-handoff-complete.esm.js");
-
-
-
-
-// didn't take care of the Suspense case. To fix this we used the approach the @reach-ui/auto-id
-// uses.
-//
-// Credits: https://github.com/reach/reach-ui/blob/develop/packages/auto-id/src/index.tsx
-
-var id = 0;
-
-function generateId() {
-  return ++id;
-}
-
-function useId() {
-  var ready = (0,_use_server_handoff_complete_esm_js__WEBPACK_IMPORTED_MODULE_1__.useServerHandoffComplete)();
-
-  var _useState = (0,react__WEBPACK_IMPORTED_MODULE_0__.useState)(ready ? generateId : null),
-      id = _useState[0],
-      setId = _useState[1];
-
-  (0,_use_iso_morphic_effect_esm_js__WEBPACK_IMPORTED_MODULE_2__.useIsoMorphicEffect)(function () {
-    if (id === null) setId(generateId());
-  }, [id]);
-  return id != null ? '' + id : undefined;
-}
-
-
-//# sourceMappingURL=use-id.esm.js.map
-
-
-/***/ }),
-
-/***/ "./node_modules/@headlessui/react/dist/hooks/use-inert-others.esm.js":
-/*!***************************************************************************!*\
-  !*** ./node_modules/@headlessui/react/dist/hooks/use-inert-others.esm.js ***!
-  \***************************************************************************/
-/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
-
-"use strict";
-__webpack_require__.r(__webpack_exports__);
-/* harmony export */ __webpack_require__.d(__webpack_exports__, {
-/* harmony export */   "useInertOthers": () => (/* binding */ useInertOthers)
-/* harmony export */ });
-/* harmony import */ var _virtual_rollupPluginBabelHelpers_js__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../_virtual/_rollupPluginBabelHelpers.js */ "./node_modules/@headlessui/react/dist/_virtual/_rollupPluginBabelHelpers.js");
-/* harmony import */ var _use_iso_morphic_effect_esm_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./use-iso-morphic-effect.esm.js */ "./node_modules/@headlessui/react/dist/hooks/use-iso-morphic-effect.esm.js");
-
-
-
-var interactables = /*#__PURE__*/new Set();
-var originals = /*#__PURE__*/new Map();
-
-function inert(element) {
-  element.setAttribute('aria-hidden', 'true'); // @ts-expect-error `inert` does not exist on HTMLElement (yet!)
-
-  element.inert = true;
-}
-
-function restore(element) {
-  var original = originals.get(element);
-  if (!original) return;
-  if (original['aria-hidden'] === null) element.removeAttribute('aria-hidden');else element.setAttribute('aria-hidden', original['aria-hidden']); // @ts-expect-error `inert` does not exist on HTMLElement (yet!)
-
-  element.inert = original.inert;
-}
-
-function useInertOthers(container, enabled) {
-  if (enabled === void 0) {
-    enabled = true;
-  }
-
-  (0,_use_iso_morphic_effect_esm_js__WEBPACK_IMPORTED_MODULE_0__.useIsoMorphicEffect)(function () {
-    if (!enabled) return;
-    if (!container.current) return;
-    var element = container.current; // Mark myself as an interactable element
-
-    interactables.add(element); // Restore elements that now contain an interactable child
-
-    for (var _iterator = (0,_virtual_rollupPluginBabelHelpers_js__WEBPACK_IMPORTED_MODULE_1__.createForOfIteratorHelperLoose)(originals.keys()), _step; !(_step = _iterator()).done;) {
-      var original = _step.value;
-
-      if (original.contains(element)) {
-        restore(original);
-        originals["delete"](original);
-      }
-    } // Collect direct children of the body
-
-
-    document.querySelectorAll('body > *').forEach(function (child) {
-      if (!(child instanceof HTMLElement)) return; // Skip non-HTMLElements
-      // Skip the interactables, and the parents of the interactables
-
-      for (var _iterator2 = (0,_virtual_rollupPluginBabelHelpers_js__WEBPACK_IMPORTED_MODULE_1__.createForOfIteratorHelperLoose)(interactables), _step2; !(_step2 = _iterator2()).done;) {
-        var interactable = _step2.value;
-        if (child.contains(interactable)) return;
-      } // Keep track of the elements
-
-
-      if (interactables.size === 1) {
-        originals.set(child, {
-          'aria-hidden': child.getAttribute('aria-hidden'),
-          // @ts-expect-error `inert` does not exist on HTMLElement (yet!)
-          inert: child.inert
-        }); // Mutate the element
-
-        inert(child);
-      }
-    });
-    return function () {
-      // Inert is disabled on the current element
-      interactables["delete"](element); // We still have interactable elements, therefore this one and its parent
-      // will become inert as well.
-
-      if (interactables.size > 0) {
-        // Collect direct children of the body
-        document.querySelectorAll('body > *').forEach(function (child) {
-          if (!(child instanceof HTMLElement)) return; // Skip non-HTMLElements
-          // Skip already inert parents
-
-          if (originals.has(child)) return; // Skip the interactables, and the parents of the interactables
-
-          for (var _iterator3 = (0,_virtual_rollupPluginBabelHelpers_js__WEBPACK_IMPORTED_MODULE_1__.createForOfIteratorHelperLoose)(interactables), _step3; !(_step3 = _iterator3()).done;) {
-            var interactable = _step3.value;
-            if (child.contains(interactable)) return;
-          }
-
-          originals.set(child, {
-            'aria-hidden': child.getAttribute('aria-hidden'),
-            // @ts-expect-error `inert` does not exist on HTMLElement (yet!)
-            inert: child.inert
-          }); // Mutate the element
-
-          inert(child);
-        });
-      } else {
-        for (var _iterator4 = (0,_virtual_rollupPluginBabelHelpers_js__WEBPACK_IMPORTED_MODULE_1__.createForOfIteratorHelperLoose)(originals.keys()), _step4; !(_step4 = _iterator4()).done;) {
-          var _element = _step4.value;
-          // Restore
-          restore(_element); // Cleanup
-
-          originals["delete"](_element);
-        }
-      }
-    };
-  }, [enabled]);
-}
-
-
-//# sourceMappingURL=use-inert-others.esm.js.map
-
-
-/***/ }),
-
-/***/ "./node_modules/@headlessui/react/dist/hooks/use-is-initial-render.esm.js":
-/*!********************************************************************************!*\
-  !*** ./node_modules/@headlessui/react/dist/hooks/use-is-initial-render.esm.js ***!
-  \********************************************************************************/
-/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
-
-"use strict";
-__webpack_require__.r(__webpack_exports__);
-/* harmony export */ __webpack_require__.d(__webpack_exports__, {
-/* harmony export */   "useIsInitialRender": () => (/* binding */ useIsInitialRender)
-/* harmony export */ });
-/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
-
-
-function useIsInitialRender() {
-  var initial = (0,react__WEBPACK_IMPORTED_MODULE_0__.useRef)(true);
-  (0,react__WEBPACK_IMPORTED_MODULE_0__.useEffect)(function () {
-    initial.current = false;
-  }, []);
-  return initial.current;
-}
-
-
-//# sourceMappingURL=use-is-initial-render.esm.js.map
-
-
-/***/ }),
-
-/***/ "./node_modules/@headlessui/react/dist/hooks/use-is-mounted.esm.js":
-/*!*************************************************************************!*\
-  !*** ./node_modules/@headlessui/react/dist/hooks/use-is-mounted.esm.js ***!
-  \*************************************************************************/
-/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
-
-"use strict";
-__webpack_require__.r(__webpack_exports__);
-/* harmony export */ __webpack_require__.d(__webpack_exports__, {
-/* harmony export */   "useIsMounted": () => (/* binding */ useIsMounted)
-/* harmony export */ });
-/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
-
-
-function useIsMounted() {
-  var mounted = (0,react__WEBPACK_IMPORTED_MODULE_0__.useRef)(false);
-  (0,react__WEBPACK_IMPORTED_MODULE_0__.useEffect)(function () {
-    mounted.current = true;
-    return function () {
-      mounted.current = false;
-    };
-  }, []);
-  return mounted;
-}
-
-
-//# sourceMappingURL=use-is-mounted.esm.js.map
-
-
-/***/ }),
-
-/***/ "./node_modules/@headlessui/react/dist/hooks/use-iso-morphic-effect.esm.js":
-/*!*********************************************************************************!*\
-  !*** ./node_modules/@headlessui/react/dist/hooks/use-iso-morphic-effect.esm.js ***!
-  \*********************************************************************************/
-/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
-
-"use strict";
-__webpack_require__.r(__webpack_exports__);
-/* harmony export */ __webpack_require__.d(__webpack_exports__, {
-/* harmony export */   "useIsoMorphicEffect": () => (/* binding */ useIsoMorphicEffect)
-/* harmony export */ });
-/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
-
-
-var useIsoMorphicEffect = typeof window !== 'undefined' ? react__WEBPACK_IMPORTED_MODULE_0__.useLayoutEffect : react__WEBPACK_IMPORTED_MODULE_0__.useEffect;
-
-
-//# sourceMappingURL=use-iso-morphic-effect.esm.js.map
-
-
-/***/ }),
-
-/***/ "./node_modules/@headlessui/react/dist/hooks/use-resolve-button-type.esm.js":
-/*!**********************************************************************************!*\
-  !*** ./node_modules/@headlessui/react/dist/hooks/use-resolve-button-type.esm.js ***!
-  \**********************************************************************************/
-/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
-
-"use strict";
-__webpack_require__.r(__webpack_exports__);
-/* harmony export */ __webpack_require__.d(__webpack_exports__, {
-/* harmony export */   "useResolveButtonType": () => (/* binding */ useResolveButtonType)
-/* harmony export */ });
-/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
-/* harmony import */ var _use_iso_morphic_effect_esm_js__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./use-iso-morphic-effect.esm.js */ "./node_modules/@headlessui/react/dist/hooks/use-iso-morphic-effect.esm.js");
-
-
-
-function resolveType(props) {
-  var _props$as;
-
-  if (props.type) return props.type;
-  var tag = (_props$as = props.as) != null ? _props$as : 'button';
-  if (typeof tag === 'string' && tag.toLowerCase() === 'button') return 'button';
-  return undefined;
-}
-
-function useResolveButtonType(props, ref) {
-  var _useState = (0,react__WEBPACK_IMPORTED_MODULE_0__.useState)(function () {
-    return resolveType(props);
-  }),
-      type = _useState[0],
-      setType = _useState[1];
-
-  (0,_use_iso_morphic_effect_esm_js__WEBPACK_IMPORTED_MODULE_1__.useIsoMorphicEffect)(function () {
-    setType(resolveType(props));
-  }, [props.type, props.as]);
-  (0,_use_iso_morphic_effect_esm_js__WEBPACK_IMPORTED_MODULE_1__.useIsoMorphicEffect)(function () {
-    if (type) return;
-    if (!ref.current) return;
-
-    if (ref.current instanceof HTMLButtonElement && !ref.current.hasAttribute('type')) {
-      setType('button');
-    }
-  }, [type, ref]);
-  return type;
-}
-
-
-//# sourceMappingURL=use-resolve-button-type.esm.js.map
-
-
-/***/ }),
-
-/***/ "./node_modules/@headlessui/react/dist/hooks/use-server-handoff-complete.esm.js":
-/*!**************************************************************************************!*\
-  !*** ./node_modules/@headlessui/react/dist/hooks/use-server-handoff-complete.esm.js ***!
-  \**************************************************************************************/
-/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
-
-"use strict";
-__webpack_require__.r(__webpack_exports__);
-/* harmony export */ __webpack_require__.d(__webpack_exports__, {
-/* harmony export */   "useServerHandoffComplete": () => (/* binding */ useServerHandoffComplete)
-/* harmony export */ });
-/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
-
-
-var state = {
-  serverHandoffComplete: false
-};
-function useServerHandoffComplete() {
-  var _useState = (0,react__WEBPACK_IMPORTED_MODULE_0__.useState)(state.serverHandoffComplete),
-      serverHandoffComplete = _useState[0],
-      setServerHandoffComplete = _useState[1];
-
-  (0,react__WEBPACK_IMPORTED_MODULE_0__.useEffect)(function () {
-    if (serverHandoffComplete === true) return;
-    setServerHandoffComplete(true);
-  }, [serverHandoffComplete]);
-  (0,react__WEBPACK_IMPORTED_MODULE_0__.useEffect)(function () {
-    if (state.serverHandoffComplete === false) state.serverHandoffComplete = true;
-  }, []);
-  return serverHandoffComplete;
-}
-
-
-//# sourceMappingURL=use-server-handoff-complete.esm.js.map
-
-
-/***/ }),
-
-/***/ "./node_modules/@headlessui/react/dist/hooks/use-sync-refs.esm.js":
-/*!************************************************************************!*\
-  !*** ./node_modules/@headlessui/react/dist/hooks/use-sync-refs.esm.js ***!
-  \************************************************************************/
-/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
-
-"use strict";
-__webpack_require__.r(__webpack_exports__);
-/* harmony export */ __webpack_require__.d(__webpack_exports__, {
-/* harmony export */   "useSyncRefs": () => (/* binding */ useSyncRefs)
-/* harmony export */ });
-/* harmony import */ var _virtual_rollupPluginBabelHelpers_js__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../_virtual/_rollupPluginBabelHelpers.js */ "./node_modules/@headlessui/react/dist/_virtual/_rollupPluginBabelHelpers.js");
-/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
-
-
-
-function useSyncRefs() {
-  for (var _len = arguments.length, refs = new Array(_len), _key = 0; _key < _len; _key++) {
-    refs[_key] = arguments[_key];
-  }
-
-  var cache = (0,react__WEBPACK_IMPORTED_MODULE_0__.useRef)(refs);
-  (0,react__WEBPACK_IMPORTED_MODULE_0__.useEffect)(function () {
-    cache.current = refs;
-  }, [refs]);
-  return (0,react__WEBPACK_IMPORTED_MODULE_0__.useCallback)(function (value) {
-    for (var _iterator = (0,_virtual_rollupPluginBabelHelpers_js__WEBPACK_IMPORTED_MODULE_1__.createForOfIteratorHelperLoose)(cache.current), _step; !(_step = _iterator()).done;) {
-      var ref = _step.value;
-      if (ref == null) continue;
-      if (typeof ref === 'function') ref(value);else ref.current = value;
-    }
-  }, [cache]);
-}
-
-
-//# sourceMappingURL=use-sync-refs.esm.js.map
-
-
-/***/ }),
-
-/***/ "./node_modules/@headlessui/react/dist/hooks/use-tree-walker.esm.js":
-/*!**************************************************************************!*\
-  !*** ./node_modules/@headlessui/react/dist/hooks/use-tree-walker.esm.js ***!
-  \**************************************************************************/
-/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
-
-"use strict";
-__webpack_require__.r(__webpack_exports__);
-/* harmony export */ __webpack_require__.d(__webpack_exports__, {
-/* harmony export */   "useTreeWalker": () => (/* binding */ useTreeWalker)
-/* harmony export */ });
-/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
-/* harmony import */ var _use_iso_morphic_effect_esm_js__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./use-iso-morphic-effect.esm.js */ "./node_modules/@headlessui/react/dist/hooks/use-iso-morphic-effect.esm.js");
-
-
-
-function useTreeWalker(_ref) {
-  var container = _ref.container,
-      accept = _ref.accept,
-      walk = _ref.walk,
-      _ref$enabled = _ref.enabled,
-      enabled = _ref$enabled === void 0 ? true : _ref$enabled;
-  var acceptRef = (0,react__WEBPACK_IMPORTED_MODULE_0__.useRef)(accept);
-  var walkRef = (0,react__WEBPACK_IMPORTED_MODULE_0__.useRef)(walk);
-  (0,react__WEBPACK_IMPORTED_MODULE_0__.useEffect)(function () {
-    acceptRef.current = accept;
-    walkRef.current = walk;
-  }, [accept, walk]);
-  (0,_use_iso_morphic_effect_esm_js__WEBPACK_IMPORTED_MODULE_1__.useIsoMorphicEffect)(function () {
-    if (!container) return;
-    if (!enabled) return;
-    var accept = acceptRef.current;
-    var walk = walkRef.current;
-    var acceptNode = Object.assign(function (node) {
-      return accept(node);
-    }, {
-      acceptNode: accept
-    });
-    var walker = document.createTreeWalker(container, NodeFilter.SHOW_ELEMENT, acceptNode, false);
-
-    while (walker.nextNode()) {
-      walk(walker.currentNode);
-    }
-  }, [container, enabled, acceptRef, walkRef]);
-}
-
-
-//# sourceMappingURL=use-tree-walker.esm.js.map
-
-
-/***/ }),
-
-/***/ "./node_modules/@headlessui/react/dist/hooks/use-window-event.esm.js":
-/*!***************************************************************************!*\
-  !*** ./node_modules/@headlessui/react/dist/hooks/use-window-event.esm.js ***!
-  \***************************************************************************/
-/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
-
-"use strict";
-__webpack_require__.r(__webpack_exports__);
-/* harmony export */ __webpack_require__.d(__webpack_exports__, {
-/* harmony export */   "useWindowEvent": () => (/* binding */ useWindowEvent)
-/* harmony export */ });
-/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
-
-
-function useWindowEvent(type, listener, options) {
-  var listenerRef = (0,react__WEBPACK_IMPORTED_MODULE_0__.useRef)(listener);
-  listenerRef.current = listener;
-  (0,react__WEBPACK_IMPORTED_MODULE_0__.useEffect)(function () {
-    function handler(event) {
-      listenerRef.current.call(window, event);
-    }
-
-    window.addEventListener(type, handler, options);
-    return function () {
-      return window.removeEventListener(type, handler, options);
-    };
-  }, [type, options]);
-}
-
-
-//# sourceMappingURL=use-window-event.esm.js.map
-
-
-/***/ }),
-
-/***/ "./node_modules/@headlessui/react/dist/index.esm.js":
-/*!**********************************************************!*\
-  !*** ./node_modules/@headlessui/react/dist/index.esm.js ***!
-  \**********************************************************/
-/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
-
-"use strict";
-__webpack_require__.r(__webpack_exports__);
-/* harmony export */ __webpack_require__.d(__webpack_exports__, {
-/* harmony export */   "Portal": () => (/* reexport safe */ _components_portal_portal_esm_js__WEBPACK_IMPORTED_MODULE_0__.Portal),
-/* harmony export */   "Dialog": () => (/* reexport safe */ _components_dialog_dialog_esm_js__WEBPACK_IMPORTED_MODULE_1__.Dialog),
-/* harmony export */   "Disclosure": () => (/* reexport safe */ _components_disclosure_disclosure_esm_js__WEBPACK_IMPORTED_MODULE_2__.Disclosure),
-/* harmony export */   "FocusTrap": () => (/* reexport safe */ _components_focus_trap_focus_trap_esm_js__WEBPACK_IMPORTED_MODULE_3__.FocusTrap),
-/* harmony export */   "Listbox": () => (/* reexport safe */ _components_listbox_listbox_esm_js__WEBPACK_IMPORTED_MODULE_4__.Listbox),
-/* harmony export */   "Menu": () => (/* reexport safe */ _components_menu_menu_esm_js__WEBPACK_IMPORTED_MODULE_5__.Menu),
-/* harmony export */   "Popover": () => (/* reexport safe */ _components_popover_popover_esm_js__WEBPACK_IMPORTED_MODULE_6__.Popover),
-/* harmony export */   "RadioGroup": () => (/* reexport safe */ _components_radio_group_radio_group_esm_js__WEBPACK_IMPORTED_MODULE_7__.RadioGroup),
-/* harmony export */   "Switch": () => (/* reexport safe */ _components_switch_switch_esm_js__WEBPACK_IMPORTED_MODULE_8__.Switch),
-/* harmony export */   "Tab": () => (/* reexport safe */ _components_tabs_tabs_esm_js__WEBPACK_IMPORTED_MODULE_9__.Tab),
-/* harmony export */   "Transition": () => (/* reexport safe */ _components_transitions_transition_esm_js__WEBPACK_IMPORTED_MODULE_10__.Transition)
-/* harmony export */ });
-/* harmony import */ var _components_portal_portal_esm_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./components/portal/portal.esm.js */ "./node_modules/@headlessui/react/dist/components/portal/portal.esm.js");
-/* harmony import */ var _components_dialog_dialog_esm_js__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./components/dialog/dialog.esm.js */ "./node_modules/@headlessui/react/dist/components/dialog/dialog.esm.js");
-/* harmony import */ var _components_disclosure_disclosure_esm_js__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./components/disclosure/disclosure.esm.js */ "./node_modules/@headlessui/react/dist/components/disclosure/disclosure.esm.js");
-/* harmony import */ var _components_focus_trap_focus_trap_esm_js__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./components/focus-trap/focus-trap.esm.js */ "./node_modules/@headlessui/react/dist/components/focus-trap/focus-trap.esm.js");
-/* harmony import */ var _components_listbox_listbox_esm_js__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./components/listbox/listbox.esm.js */ "./node_modules/@headlessui/react/dist/components/listbox/listbox.esm.js");
-/* harmony import */ var _components_menu_menu_esm_js__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ./components/menu/menu.esm.js */ "./node_modules/@headlessui/react/dist/components/menu/menu.esm.js");
-/* harmony import */ var _components_popover_popover_esm_js__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ./components/popover/popover.esm.js */ "./node_modules/@headlessui/react/dist/components/popover/popover.esm.js");
-/* harmony import */ var _components_radio_group_radio_group_esm_js__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ./components/radio-group/radio-group.esm.js */ "./node_modules/@headlessui/react/dist/components/radio-group/radio-group.esm.js");
-/* harmony import */ var _components_switch_switch_esm_js__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! ./components/switch/switch.esm.js */ "./node_modules/@headlessui/react/dist/components/switch/switch.esm.js");
-/* harmony import */ var _components_tabs_tabs_esm_js__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! ./components/tabs/tabs.esm.js */ "./node_modules/@headlessui/react/dist/components/tabs/tabs.esm.js");
-/* harmony import */ var _components_transitions_transition_esm_js__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(/*! ./components/transitions/transition.esm.js */ "./node_modules/@headlessui/react/dist/components/transitions/transition.esm.js");
-
-
-
-
-
-
-
-
-
-
-
-//# sourceMappingURL=index.esm.js.map
-
-
-/***/ }),
-
-/***/ "./node_modules/@headlessui/react/dist/internal/open-closed.esm.js":
-/*!*************************************************************************!*\
-  !*** ./node_modules/@headlessui/react/dist/internal/open-closed.esm.js ***!
-  \*************************************************************************/
-/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
-
-"use strict";
-__webpack_require__.r(__webpack_exports__);
-/* harmony export */ __webpack_require__.d(__webpack_exports__, {
-/* harmony export */   "OpenClosedProvider": () => (/* binding */ OpenClosedProvider),
-/* harmony export */   "State": () => (/* binding */ State),
-/* harmony export */   "useOpenClosed": () => (/* binding */ useOpenClosed)
-/* harmony export */ });
-/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
-
-
-var Context = /*#__PURE__*/(0,react__WEBPACK_IMPORTED_MODULE_0__.createContext)(null);
-Context.displayName = 'OpenClosedContext';
-var State;
-
-(function (State) {
-  State[State["Open"] = 0] = "Open";
-  State[State["Closed"] = 1] = "Closed";
-})(State || (State = {}));
-
-function useOpenClosed() {
-  return (0,react__WEBPACK_IMPORTED_MODULE_0__.useContext)(Context);
-}
-function OpenClosedProvider(_ref) {
-  var value = _ref.value,
-      children = _ref.children;
-  return react__WEBPACK_IMPORTED_MODULE_0__.createElement(Context.Provider, {
-    value: value
-  }, children);
-}
-
-
-//# sourceMappingURL=open-closed.esm.js.map
-
-
-/***/ }),
-
-/***/ "./node_modules/@headlessui/react/dist/internal/portal-force-root.esm.js":
-/*!*******************************************************************************!*\
-  !*** ./node_modules/@headlessui/react/dist/internal/portal-force-root.esm.js ***!
-  \*******************************************************************************/
-/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
-
-"use strict";
-__webpack_require__.r(__webpack_exports__);
-/* harmony export */ __webpack_require__.d(__webpack_exports__, {
-/* harmony export */   "ForcePortalRoot": () => (/* binding */ ForcePortalRoot),
-/* harmony export */   "usePortalRoot": () => (/* binding */ usePortalRoot)
-/* harmony export */ });
-/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
-
-
-var ForcePortalRootContext = /*#__PURE__*/(0,react__WEBPACK_IMPORTED_MODULE_0__.createContext)(false);
-function usePortalRoot() {
-  return (0,react__WEBPACK_IMPORTED_MODULE_0__.useContext)(ForcePortalRootContext);
-}
-function ForcePortalRoot(props) {
-  return react__WEBPACK_IMPORTED_MODULE_0__.createElement(ForcePortalRootContext.Provider, {
-    value: props.force
-  }, props.children);
-}
-
-
-//# sourceMappingURL=portal-force-root.esm.js.map
-
-
-/***/ }),
-
-/***/ "./node_modules/@headlessui/react/dist/internal/stack-context.esm.js":
-/*!***************************************************************************!*\
-  !*** ./node_modules/@headlessui/react/dist/internal/stack-context.esm.js ***!
-  \***************************************************************************/
-/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
-
-"use strict";
-__webpack_require__.r(__webpack_exports__);
-/* harmony export */ __webpack_require__.d(__webpack_exports__, {
-/* harmony export */   "StackMessage": () => (/* binding */ StackMessage),
-/* harmony export */   "StackProvider": () => (/* binding */ StackProvider),
-/* harmony export */   "useStackContext": () => (/* binding */ useStackContext)
-/* harmony export */ });
-/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
-/* harmony import */ var _hooks_use_iso_morphic_effect_esm_js__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../hooks/use-iso-morphic-effect.esm.js */ "./node_modules/@headlessui/react/dist/hooks/use-iso-morphic-effect.esm.js");
-
-
-
-var StackContext = /*#__PURE__*/(0,react__WEBPACK_IMPORTED_MODULE_0__.createContext)(function () {});
-StackContext.displayName = 'StackContext';
-var StackMessage;
-
-(function (StackMessage) {
-  StackMessage[StackMessage["Add"] = 0] = "Add";
-  StackMessage[StackMessage["Remove"] = 1] = "Remove";
-})(StackMessage || (StackMessage = {}));
-
-function useStackContext() {
-  return (0,react__WEBPACK_IMPORTED_MODULE_0__.useContext)(StackContext);
-}
-function StackProvider(_ref) {
-  var children = _ref.children,
-      onUpdate = _ref.onUpdate,
-      type = _ref.type,
-      element = _ref.element;
-  var parentUpdate = useStackContext();
-  var notify = (0,react__WEBPACK_IMPORTED_MODULE_0__.useCallback)(function () {
-    for (var _len = arguments.length, args = new Array(_len), _key = 0; _key < _len; _key++) {
-      args[_key] = arguments[_key];
-    }
-
-    // Notify our layer
-    onUpdate == null ? void 0 : onUpdate.apply(void 0, args); // Notify the parent
-
-    parentUpdate.apply(void 0, args);
-  }, [parentUpdate, onUpdate]);
-  (0,_hooks_use_iso_morphic_effect_esm_js__WEBPACK_IMPORTED_MODULE_1__.useIsoMorphicEffect)(function () {
-    notify(StackMessage.Add, type, element);
-    return function () {
-      return notify(StackMessage.Remove, type, element);
-    };
-  }, [notify, type, element]);
-  return react__WEBPACK_IMPORTED_MODULE_0__.createElement(StackContext.Provider, {
-    value: notify
-  }, children);
-}
-
-
-//# sourceMappingURL=stack-context.esm.js.map
-
-
-/***/ }),
-
-/***/ "./node_modules/@headlessui/react/dist/utils/bugs.esm.js":
-/*!***************************************************************!*\
-  !*** ./node_modules/@headlessui/react/dist/utils/bugs.esm.js ***!
-  \***************************************************************/
-/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
-
-"use strict";
-__webpack_require__.r(__webpack_exports__);
-/* harmony export */ __webpack_require__.d(__webpack_exports__, {
-/* harmony export */   "isDisabledReactIssue7711": () => (/* binding */ isDisabledReactIssue7711)
-/* harmony export */ });
-// See: https://github.com/facebook/react/issues/7711
-// See: https://github.com/facebook/react/pull/20612
-// See: https://html.spec.whatwg.org/multipage/form-control-infrastructure.html#concept-fe-disabled (2.)
-function isDisabledReactIssue7711(element) {
-  var _ref, _parent;
-
-  var parent = element.parentElement;
-  var legend = null;
-
-  while (parent && !(parent instanceof HTMLFieldSetElement)) {
-    if (parent instanceof HTMLLegendElement) legend = parent;
-    parent = parent.parentElement;
-  }
-
-  var isParentDisabled = (_ref = ((_parent = parent) == null ? void 0 : _parent.getAttribute('disabled')) === '') != null ? _ref : false;
-  if (isParentDisabled && isFirstLegend(legend)) return false;
-  return isParentDisabled;
-}
-
-function isFirstLegend(element) {
-  if (!element) return false;
-  var previous = element.previousElementSibling;
-
-  while (previous !== null) {
-    if (previous instanceof HTMLLegendElement) return false;
-    previous = previous.previousElementSibling;
-  }
-
-  return true;
-}
-
-
-//# sourceMappingURL=bugs.esm.js.map
-
-
-/***/ }),
-
-/***/ "./node_modules/@headlessui/react/dist/utils/calculate-active-index.esm.js":
-/*!*********************************************************************************!*\
-  !*** ./node_modules/@headlessui/react/dist/utils/calculate-active-index.esm.js ***!
-  \*********************************************************************************/
-/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
-
-"use strict";
-__webpack_require__.r(__webpack_exports__);
-/* harmony export */ __webpack_require__.d(__webpack_exports__, {
-/* harmony export */   "Focus": () => (/* binding */ Focus),
-/* harmony export */   "calculateActiveIndex": () => (/* binding */ calculateActiveIndex)
-/* harmony export */ });
-function assertNever(x) {
-  throw new Error('Unexpected object: ' + x);
-}
-
-var Focus;
-
-(function (Focus) {
-  /** Focus the first non-disabled item. */
-  Focus[Focus["First"] = 0] = "First";
-  /** Focus the previous non-disabled item. */
-
-  Focus[Focus["Previous"] = 1] = "Previous";
-  /** Focus the next non-disabled item. */
-
-  Focus[Focus["Next"] = 2] = "Next";
-  /** Focus the last non-disabled item. */
-
-  Focus[Focus["Last"] = 3] = "Last";
-  /** Focus a specific item based on the `id` of the item. */
-
-  Focus[Focus["Specific"] = 4] = "Specific";
-  /** Focus no items at all. */
-
-  Focus[Focus["Nothing"] = 5] = "Nothing";
-})(Focus || (Focus = {}));
-
-function calculateActiveIndex(action, resolvers) {
-  var items = resolvers.resolveItems();
-  if (items.length <= 0) return null;
-  var currentActiveIndex = resolvers.resolveActiveIndex();
-  var activeIndex = currentActiveIndex != null ? currentActiveIndex : -1;
-
-  var nextActiveIndex = function () {
-    switch (action.focus) {
-      case Focus.First:
-        return items.findIndex(function (item) {
-          return !resolvers.resolveDisabled(item);
-        });
-
-      case Focus.Previous:
-        {
-          var idx = items.slice().reverse().findIndex(function (item, idx, all) {
-            if (activeIndex !== -1 && all.length - idx - 1 >= activeIndex) return false;
-            return !resolvers.resolveDisabled(item);
-          });
-          if (idx === -1) return idx;
-          return items.length - 1 - idx;
-        }
-
-      case Focus.Next:
-        return items.findIndex(function (item, idx) {
-          if (idx <= activeIndex) return false;
-          return !resolvers.resolveDisabled(item);
-        });
-
-      case Focus.Last:
-        {
-          var _idx = items.slice().reverse().findIndex(function (item) {
-            return !resolvers.resolveDisabled(item);
-          });
-
-          if (_idx === -1) return _idx;
-          return items.length - 1 - _idx;
-        }
-
-      case Focus.Specific:
-        return items.findIndex(function (item) {
-          return resolvers.resolveId(item) === action.id;
-        });
-
-      case Focus.Nothing:
-        return null;
-
-      default:
-        assertNever(action);
-    }
-  }();
-
-  return nextActiveIndex === -1 ? currentActiveIndex : nextActiveIndex;
-}
-
-
-//# sourceMappingURL=calculate-active-index.esm.js.map
-
-
-/***/ }),
-
-/***/ "./node_modules/@headlessui/react/dist/utils/disposables.esm.js":
-/*!**********************************************************************!*\
-  !*** ./node_modules/@headlessui/react/dist/utils/disposables.esm.js ***!
-  \**********************************************************************/
-/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
-
-"use strict";
-__webpack_require__.r(__webpack_exports__);
-/* harmony export */ __webpack_require__.d(__webpack_exports__, {
-/* harmony export */   "disposables": () => (/* binding */ disposables)
-/* harmony export */ });
-/* harmony import */ var _virtual_rollupPluginBabelHelpers_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../_virtual/_rollupPluginBabelHelpers.js */ "./node_modules/@headlessui/react/dist/_virtual/_rollupPluginBabelHelpers.js");
-
-
-function disposables() {
-  var disposables = [];
-  var api = {
-    requestAnimationFrame: function (_requestAnimationFrame) {
-      function requestAnimationFrame() {
-        return _requestAnimationFrame.apply(this, arguments);
-      }
-
-      requestAnimationFrame.toString = function () {
-        return _requestAnimationFrame.toString();
-      };
-
-      return requestAnimationFrame;
-    }(function () {
-      var raf = requestAnimationFrame.apply(void 0, arguments);
-      api.add(function () {
-        return cancelAnimationFrame(raf);
-      });
-    }),
-    nextFrame: function nextFrame() {
-      for (var _len = arguments.length, args = new Array(_len), _key = 0; _key < _len; _key++) {
-        args[_key] = arguments[_key];
-      }
-
-      api.requestAnimationFrame(function () {
-        api.requestAnimationFrame.apply(api, args);
-      });
-    },
-    setTimeout: function (_setTimeout) {
-      function setTimeout() {
-        return _setTimeout.apply(this, arguments);
-      }
-
-      setTimeout.toString = function () {
-        return _setTimeout.toString();
-      };
-
-      return setTimeout;
-    }(function () {
-      var timer = setTimeout.apply(void 0, arguments);
-      api.add(function () {
-        return clearTimeout(timer);
-      });
-    }),
-    add: function add(cb) {
-      disposables.push(cb);
-    },
-    dispose: function dispose() {
-      for (var _iterator = (0,_virtual_rollupPluginBabelHelpers_js__WEBPACK_IMPORTED_MODULE_0__.createForOfIteratorHelperLoose)(disposables.splice(0)), _step; !(_step = _iterator()).done;) {
-        var dispose = _step.value;
-        dispose();
-      }
-    }
-  };
-  return api;
-}
-
-
-//# sourceMappingURL=disposables.esm.js.map
-
-
-/***/ }),
-
-/***/ "./node_modules/@headlessui/react/dist/utils/focus-management.esm.js":
-/*!***************************************************************************!*\
-  !*** ./node_modules/@headlessui/react/dist/utils/focus-management.esm.js ***!
-  \***************************************************************************/
-/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
-
-"use strict";
-__webpack_require__.r(__webpack_exports__);
-/* harmony export */ __webpack_require__.d(__webpack_exports__, {
-/* harmony export */   "Focus": () => (/* binding */ Focus),
-/* harmony export */   "FocusResult": () => (/* binding */ FocusResult),
-/* harmony export */   "FocusableMode": () => (/* binding */ FocusableMode),
-/* harmony export */   "focusElement": () => (/* binding */ focusElement),
-/* harmony export */   "focusIn": () => (/* binding */ focusIn),
-/* harmony export */   "getFocusableElements": () => (/* binding */ getFocusableElements),
-/* harmony export */   "isFocusableElement": () => (/* binding */ isFocusableElement)
-/* harmony export */ });
-/* harmony import */ var _match_esm_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./match.esm.js */ "./node_modules/@headlessui/react/dist/utils/match.esm.js");
-
-
-//  - https://stackoverflow.com/a/30753870
-
-var focusableSelector = /*#__PURE__*/['[contentEditable=true]', '[tabindex]', 'a[href]', 'area[href]', 'button:not([disabled])', 'iframe', 'input:not([disabled])', 'select:not([disabled])', 'textarea:not([disabled])'].map( false ? // TODO: Remove this once JSDOM fixes the issue where an element that is
-// "hidden" can be the document.activeElement, because this is not possible
-// in real browsers.
-// TODO: Remove this once JSDOM fixes the issue where an element that is
-0 : function (selector) {
-  return selector + ":not([tabindex='-1'])";
-}).join(',');
-var Focus;
-
-(function (Focus) {
-  /** Focus the first non-disabled element */
-  Focus[Focus["First"] = 1] = "First";
-  /** Focus the previous non-disabled element */
-
-  Focus[Focus["Previous"] = 2] = "Previous";
-  /** Focus the next non-disabled element */
-
-  Focus[Focus["Next"] = 4] = "Next";
-  /** Focus the last non-disabled element */
-
-  Focus[Focus["Last"] = 8] = "Last";
-  /** Wrap tab around */
-
-  Focus[Focus["WrapAround"] = 16] = "WrapAround";
-  /** Prevent scrolling the focusable elements into view */
-
-  Focus[Focus["NoScroll"] = 32] = "NoScroll";
-})(Focus || (Focus = {}));
-
-var FocusResult;
-
-(function (FocusResult) {
-  /** Something went wrong while trying to focus. */
-  FocusResult[FocusResult["Error"] = 0] = "Error";
-  /** When `Focus.WrapAround` is enabled, going from position `N` to `N+1` where `N` is the last index in the array, then we overflow. */
-
-  FocusResult[FocusResult["Overflow"] = 1] = "Overflow";
-  /** Focus was successful. */
-
-  FocusResult[FocusResult["Success"] = 2] = "Success";
-  /** When `Focus.WrapAround` is enabled, going from position `N` to `N-1` where `N` is the first index in the array, then we underflow. */
-
-  FocusResult[FocusResult["Underflow"] = 3] = "Underflow";
-})(FocusResult || (FocusResult = {}));
-
-var Direction;
-
-(function (Direction) {
-  Direction[Direction["Previous"] = -1] = "Previous";
-  Direction[Direction["Next"] = 1] = "Next";
-})(Direction || (Direction = {}));
-
-function getFocusableElements(container) {
-  if (container === void 0) {
-    container = document.body;
-  }
-
-  if (container == null) return [];
-  return Array.from(container.querySelectorAll(focusableSelector));
-}
-var FocusableMode;
-
-(function (FocusableMode) {
-  /** The element itself must be focusable. */
-  FocusableMode[FocusableMode["Strict"] = 0] = "Strict";
-  /** The element should be inside of a focusable element. */
-
-  FocusableMode[FocusableMode["Loose"] = 1] = "Loose";
-})(FocusableMode || (FocusableMode = {}));
-
-function isFocusableElement(element, mode) {
-  var _match;
-
-  if (mode === void 0) {
-    mode = FocusableMode.Strict;
-  }
-
-  if (element === document.body) return false;
-  return (0,_match_esm_js__WEBPACK_IMPORTED_MODULE_0__.match)(mode, (_match = {}, _match[FocusableMode.Strict] = function () {
-    return element.matches(focusableSelector);
-  }, _match[FocusableMode.Loose] = function () {
-    var next = element;
-
-    while (next !== null) {
-      if (next.matches(focusableSelector)) return true;
-      next = next.parentElement;
-    }
-
-    return false;
-  }, _match));
-}
-function focusElement(element) {
-  element == null ? void 0 : element.focus({
-    preventScroll: true
-  });
-}
-function focusIn(container, focus) {
-  var elements = Array.isArray(container) ? container.slice().sort(function (a, b) {
-    var position = a.compareDocumentPosition(b);
-    if (position & Node.DOCUMENT_POSITION_FOLLOWING) return -1;
-    if (position & Node.DOCUMENT_POSITION_PRECEDING) return 1;
-    return 0;
-  }) : getFocusableElements(container);
-  var active = document.activeElement;
-
-  var direction = function () {
-    if (focus & (Focus.First | Focus.Next)) return Direction.Next;
-    if (focus & (Focus.Previous | Focus.Last)) return Direction.Previous;
-    throw new Error('Missing Focus.First, Focus.Previous, Focus.Next or Focus.Last');
-  }();
-
-  var startIndex = function () {
-    if (focus & Focus.First) return 0;
-    if (focus & Focus.Previous) return Math.max(0, elements.indexOf(active)) - 1;
-    if (focus & Focus.Next) return Math.max(0, elements.indexOf(active)) + 1;
-    if (focus & Focus.Last) return elements.length - 1;
-    throw new Error('Missing Focus.First, Focus.Previous, Focus.Next or Focus.Last');
-  }();
-
-  var focusOptions = focus & Focus.NoScroll ? {
-    preventScroll: true
-  } : {};
-  var offset = 0;
-  var total = elements.length;
-  var next = undefined;
-
-  do {
-    var _next;
-
-    // Guard against infinite loops
-    if (offset >= total || offset + total <= 0) return FocusResult.Error;
-    var nextIdx = startIndex + offset;
-
-    if (focus & Focus.WrapAround) {
-      nextIdx = (nextIdx + total) % total;
-    } else {
-      if (nextIdx < 0) return FocusResult.Underflow;
-      if (nextIdx >= total) return FocusResult.Overflow;
-    }
-
-    next = elements[nextIdx]; // Try the focus the next element, might not work if it is "hidden" to the user.
-
-    (_next = next) == null ? void 0 : _next.focus(focusOptions); // Try the next one in line
-
-    offset += direction;
-  } while (next !== document.activeElement); // This is a little weird, but let me try and explain: There are a few scenario's
-  // in chrome for example where a focused `<a>` tag does not get the default focus
-  // styles and sometimes they do. This highly depends on whether you started by
-  // clicking or by using your keyboard. When you programmatically add focus `anchor.focus()`
-  // then the active element (document.activeElement) is this anchor, which is expected.
-  // However in that case the default focus styles are not applied *unless* you
-  // also add this tabindex.
-
-
-  if (!next.hasAttribute('tabindex')) next.setAttribute('tabindex', '0');
-  return FocusResult.Success;
-}
-
-
-//# sourceMappingURL=focus-management.esm.js.map
-
-
-/***/ }),
-
-/***/ "./node_modules/@headlessui/react/dist/utils/match.esm.js":
-/*!****************************************************************!*\
-  !*** ./node_modules/@headlessui/react/dist/utils/match.esm.js ***!
-  \****************************************************************/
-/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
-
-"use strict";
-__webpack_require__.r(__webpack_exports__);
-/* harmony export */ __webpack_require__.d(__webpack_exports__, {
-/* harmony export */   "match": () => (/* binding */ match)
-/* harmony export */ });
-function match(value, lookup) {
-  if (value in lookup) {
-    var returnValue = lookup[value];
-
-    for (var _len = arguments.length, args = new Array(_len > 2 ? _len - 2 : 0), _key = 2; _key < _len; _key++) {
-      args[_key - 2] = arguments[_key];
-    }
-
-    return typeof returnValue === 'function' ? returnValue.apply(void 0, args) : returnValue;
-  }
-
-  var error = new Error("Tried to handle \"" + value + "\" but there is no handler defined. Only defined handlers are: " + Object.keys(lookup).map(function (key) {
-    return "\"" + key + "\"";
-  }).join(', ') + ".");
-  if (Error.captureStackTrace) Error.captureStackTrace(error, match);
-  throw error;
-}
-
-
-//# sourceMappingURL=match.esm.js.map
-
-
-/***/ }),
-
-/***/ "./node_modules/@headlessui/react/dist/utils/once.esm.js":
-/*!***************************************************************!*\
-  !*** ./node_modules/@headlessui/react/dist/utils/once.esm.js ***!
-  \***************************************************************/
-/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
-
-"use strict";
-__webpack_require__.r(__webpack_exports__);
-/* harmony export */ __webpack_require__.d(__webpack_exports__, {
-/* harmony export */   "once": () => (/* binding */ once)
-/* harmony export */ });
-function once(cb) {
-  var state = {
-    called: false
-  };
-  return function () {
-    if (state.called) return;
-    state.called = true;
-    return cb.apply(void 0, arguments);
-  };
-}
-
-
-//# sourceMappingURL=once.esm.js.map
-
-
-/***/ }),
-
-/***/ "./node_modules/@headlessui/react/dist/utils/render.esm.js":
-/*!*****************************************************************!*\
-  !*** ./node_modules/@headlessui/react/dist/utils/render.esm.js ***!
-  \*****************************************************************/
-/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
-
-"use strict";
-__webpack_require__.r(__webpack_exports__);
-/* harmony export */ __webpack_require__.d(__webpack_exports__, {
-/* harmony export */   "Features": () => (/* binding */ Features),
-/* harmony export */   "RenderStrategy": () => (/* binding */ RenderStrategy),
-/* harmony export */   "forwardRefWithAs": () => (/* binding */ forwardRefWithAs),
-/* harmony export */   "render": () => (/* binding */ render)
-/* harmony export */ });
-/* harmony import */ var _virtual_rollupPluginBabelHelpers_js__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../_virtual/_rollupPluginBabelHelpers.js */ "./node_modules/@headlessui/react/dist/_virtual/_rollupPluginBabelHelpers.js");
-/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
-/* harmony import */ var _match_esm_js__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./match.esm.js */ "./node_modules/@headlessui/react/dist/utils/match.esm.js");
-
-
-
-
-var Features;
-
-(function (Features) {
-  /** No features at all */
-  Features[Features["None"] = 0] = "None";
-  /**
-   * When used, this will allow us to use one of the render strategies.
-   *
-   * **The render strategies are:**
-   *    - **Unmount**   _(Will unmount the component.)_
-   *    - **Hidden**    _(Will hide the component using the [hidden] attribute.)_
-   */
-
-  Features[Features["RenderStrategy"] = 1] = "RenderStrategy";
-  /**
-   * When used, this will allow the user of our component to be in control. This can be used when
-   * you want to transition based on some state.
-   */
-
-  Features[Features["Static"] = 2] = "Static";
-})(Features || (Features = {}));
-
-var RenderStrategy;
-
-(function (RenderStrategy) {
-  RenderStrategy[RenderStrategy["Unmount"] = 0] = "Unmount";
-  RenderStrategy[RenderStrategy["Hidden"] = 1] = "Hidden";
-})(RenderStrategy || (RenderStrategy = {}));
-
-function render(_ref) {
-  var props = _ref.props,
-      slot = _ref.slot,
-      defaultTag = _ref.defaultTag,
-      features = _ref.features,
-      _ref$visible = _ref.visible,
-      visible = _ref$visible === void 0 ? true : _ref$visible,
-      name = _ref.name;
-  // Visible always render
-  if (visible) return _render(props, slot, defaultTag, name);
-  var featureFlags = features != null ? features : Features.None;
-
-  if (featureFlags & Features.Static) {
-    var _props$static = props["static"],
-        isStatic = _props$static === void 0 ? false : _props$static,
-        rest = (0,_virtual_rollupPluginBabelHelpers_js__WEBPACK_IMPORTED_MODULE_1__.objectWithoutPropertiesLoose)(props, ["static"]); // When the `static` prop is passed as `true`, then the user is in control, thus we don't care about anything else
-
-
-    if (isStatic) return _render(rest, slot, defaultTag, name);
-  }
-
-  if (featureFlags & Features.RenderStrategy) {
-    var _match;
-
-    var _props$unmount = props.unmount,
-        unmount = _props$unmount === void 0 ? true : _props$unmount,
-        _rest = (0,_virtual_rollupPluginBabelHelpers_js__WEBPACK_IMPORTED_MODULE_1__.objectWithoutPropertiesLoose)(props, ["unmount"]);
-
-    var strategy = unmount ? RenderStrategy.Unmount : RenderStrategy.Hidden;
-    return (0,_match_esm_js__WEBPACK_IMPORTED_MODULE_2__.match)(strategy, (_match = {}, _match[RenderStrategy.Unmount] = function () {
-      return null;
-    }, _match[RenderStrategy.Hidden] = function () {
-      return _render((0,_virtual_rollupPluginBabelHelpers_js__WEBPACK_IMPORTED_MODULE_1__["extends"])({}, _rest, {
-        hidden: true,
-        style: {
-          display: 'none'
-        }
-      }), slot, defaultTag, name);
-    }, _match));
-  } // No features enabled, just render
-
-
-  return _render(props, slot, defaultTag, name);
-}
-
-function _render(props, slot, tag, name) {
-  var _ref2;
-
-  if (slot === void 0) {
-    slot = {};
-  }
-
-  var _omit = omit(props, ['unmount', 'static']),
-      _omit$as = _omit.as,
-      Component = _omit$as === void 0 ? tag : _omit$as,
-      children = _omit.children,
-      _omit$refName = _omit.refName,
-      refName = _omit$refName === void 0 ? 'ref' : _omit$refName,
-      passThroughProps = (0,_virtual_rollupPluginBabelHelpers_js__WEBPACK_IMPORTED_MODULE_1__.objectWithoutPropertiesLoose)(_omit, ["as", "children", "refName"]); // This allows us to use `<HeadlessUIComponent as={MyComponent} refName="innerRef" />`
-
-
-  var refRelatedProps = props.ref !== undefined ? (_ref2 = {}, _ref2[refName] = props.ref, _ref2) : {};
-  var resolvedChildren = typeof children === 'function' ? children(slot) : children; // Allow for className to be a function with the slot as the contents
-
-  if (passThroughProps.className && typeof passThroughProps.className === 'function') {
-    passThroughProps.className = passThroughProps.className(slot);
-  }
-
-  if (Component === react__WEBPACK_IMPORTED_MODULE_0__.Fragment) {
-    if (Object.keys(passThroughProps).length > 0) {
-      if (!(0,react__WEBPACK_IMPORTED_MODULE_0__.isValidElement)(resolvedChildren) || Array.isArray(resolvedChildren) && resolvedChildren.length > 1) {
-        throw new Error(['Passing props on "Fragment"!', '', "The current component <" + name + " /> is rendering a \"Fragment\".", "However we need to passthrough the following props:", Object.keys(passThroughProps).map(function (line) {
-          return "  - " + line;
-        }).join('\n'), '', 'You can apply a few solutions:', ['Add an `as="..."` prop, to ensure that we render an actual element instead of a "Fragment".', 'Render a single element as the child so that we can forward the props onto that element.'].map(function (line) {
-          return "  - " + line;
-        }).join('\n')].join('\n'));
-      }
-
-      return (0,react__WEBPACK_IMPORTED_MODULE_0__.cloneElement)(resolvedChildren, Object.assign({}, // Filter out undefined values so that they don't override the existing values
-      mergeEventFunctions(compact(omit(passThroughProps, ['ref'])), resolvedChildren.props, ['onClick']), refRelatedProps));
-    }
-  }
-
-  return (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(Component, Object.assign({}, omit(passThroughProps, ['ref']), Component !== react__WEBPACK_IMPORTED_MODULE_0__.Fragment && refRelatedProps), resolvedChildren);
-}
-/**
- * We can use this function for the following useCase:
- *
- * <Menu.Item> <button onClick={console.log} /> </Menu.Item>
- *
- * Our `Menu.Item` will have an internal `onClick`, if you passthrough an `onClick` to the actual
- * `Menu.Item` component we will call it correctly. However, when we have an `onClick` on the actual
- * first child, that one should _also_ be called (but before this implementation, it was just
- * overriding the `onClick`). But it is only when we *render* that we have access to the existing
- * props of this component.
- *
- * It's a bit hacky, and not that clean, but it is something internal and we have tests to rely on
- * so that we can refactor this later (if needed).
- */
-
-
-function mergeEventFunctions(passThroughProps, existingProps, functionsToMerge) {
-  var clone = Object.assign({}, passThroughProps);
-
-  var _loop = function _loop() {
-    var func = _step.value;
-
-    if (passThroughProps[func] !== undefined && existingProps[func] !== undefined) {
-      var _Object$assign;
-
-      Object.assign(clone, (_Object$assign = {}, _Object$assign[func] = function (event) {
-        // Props we control
-        if (!event.defaultPrevented) passThroughProps[func](event); // Existing props on the component
-
-        if (!event.defaultPrevented) existingProps[func](event);
-      }, _Object$assign));
-    }
-  };
-
-  for (var _iterator = (0,_virtual_rollupPluginBabelHelpers_js__WEBPACK_IMPORTED_MODULE_1__.createForOfIteratorHelperLoose)(functionsToMerge), _step; !(_step = _iterator()).done;) {
-    _loop();
-  }
-
-  return clone;
-}
-/**
- * This is a hack, but basically we want to keep the full 'API' of the component, but we do want to
- * wrap it in a forwardRef so that we _can_ passthrough the ref
- */
-
-
-function forwardRefWithAs(component) {
-  var _component$displayNam;
-
-  return Object.assign((0,react__WEBPACK_IMPORTED_MODULE_0__.forwardRef)(component), {
-    displayName: (_component$displayNam = component.displayName) != null ? _component$displayNam : component.name
-  });
-}
-
-function compact(object) {
-  var clone = Object.assign({}, object);
-
-  for (var key in clone) {
-    if (clone[key] === undefined) delete clone[key];
-  }
-
-  return clone;
-}
-
-function omit(object, keysToOmit) {
-  if (keysToOmit === void 0) {
-    keysToOmit = [];
-  }
-
-  var clone = Object.assign({}, object);
-
-  for (var _iterator2 = (0,_virtual_rollupPluginBabelHelpers_js__WEBPACK_IMPORTED_MODULE_1__.createForOfIteratorHelperLoose)(keysToOmit), _step2; !(_step2 = _iterator2()).done;) {
-    var key = _step2.value;
-    if (key in clone) delete clone[key];
-  }
-
-  return clone;
-}
-
-
-//# sourceMappingURL=render.esm.js.map
-
-
-/***/ }),
-
 /***/ "./node_modules/@inertiajs/inertia-react/dist/index.js":
 /*!*************************************************************!*\
   !*** ./node_modules/@inertiajs/inertia-react/dist/index.js ***!
@@ -6765,929 +331,8 @@ function e(e){return e&&"object"==typeof e&&"default"in e?e.default:e}var n=e(__
   \*******************************************************/
 /***/ ((__unused_webpack_module, exports, __webpack_require__) => {
 
-function e(e){return e&&"object"==typeof e&&"default"in e?e.default:e}var t=e(__webpack_require__(/*! axios */ "./node_modules/axios/index.js")),n=__webpack_require__(/*! qs */ "./node_modules/@inertiajs/inertia/node_modules/qs/lib/index.js"),i=e(__webpack_require__(/*! deepmerge */ "./node_modules/deepmerge/dist/cjs.js"));function r(){return(r=Object.assign||function(e){for(var t=1;t<arguments.length;t++){var n=arguments[t];for(var i in n)Object.prototype.hasOwnProperty.call(n,i)&&(e[i]=n[i])}return e}).apply(this,arguments)}var o,s={modal:null,listener:null,show:function(e){var t=this;"object"==typeof e&&(e="All Inertia requests must receive a valid Inertia response, however a plain JSON response was received.<hr>"+JSON.stringify(e));var n=document.createElement("html");n.innerHTML=e,n.querySelectorAll("a").forEach(function(e){return e.setAttribute("target","_top")}),this.modal=document.createElement("div"),this.modal.style.position="fixed",this.modal.style.width="100vw",this.modal.style.height="100vh",this.modal.style.padding="50px",this.modal.style.boxSizing="border-box",this.modal.style.backgroundColor="rgba(0, 0, 0, .6)",this.modal.style.zIndex=2e5,this.modal.addEventListener("click",function(){return t.hide()});var i=document.createElement("iframe");if(i.style.backgroundColor="white",i.style.borderRadius="5px",i.style.width="100%",i.style.height="100%",this.modal.appendChild(i),document.body.prepend(this.modal),document.body.style.overflow="hidden",!i.contentWindow)throw new Error("iframe not yet ready.");i.contentWindow.document.open(),i.contentWindow.document.write(n.outerHTML),i.contentWindow.document.close(),this.listener=this.hideOnEscape.bind(this),document.addEventListener("keydown",this.listener)},hide:function(){this.modal.outerHTML="",this.modal=null,document.body.style.overflow="visible",document.removeEventListener("keydown",this.listener)},hideOnEscape:function(e){27===e.keyCode&&this.hide()}};function a(e,t){var n;return function(){var i=arguments,r=this;clearTimeout(n),n=setTimeout(function(){return e.apply(r,[].slice.call(i))},t)}}function c(e,t,n){for(var i in void 0===t&&(t=new FormData),void 0===n&&(n=null),e=e||{})Object.prototype.hasOwnProperty.call(e,i)&&d(t,l(n,i),e[i]);return t}function l(e,t){return e?e+"["+t+"]":t}function d(e,t,n){return Array.isArray(n)?Array.from(n.keys()).forEach(function(i){return d(e,l(t,i.toString()),n[i])}):n instanceof Date?e.append(t,n.toISOString()):n instanceof File?e.append(t,n,n.name):n instanceof Blob?e.append(t,n):"boolean"==typeof n?e.append(t,n?"1":"0"):"string"==typeof n?e.append(t,n):"number"==typeof n?e.append(t,""+n):null==n?e.append(t,""):void c(n,e,t)}function u(e){return new URL(e.toString(),window.location.toString())}function h(e,t,r){var o=t.toString().includes("http"),s=o||t.toString().startsWith("/"),a=!s&&!t.toString().startsWith("#")&&!t.toString().startsWith("?"),c=t.toString().includes("?")||e===exports.Method.GET&&Object.keys(r).length,l=t.toString().includes("#"),d=new URL(t.toString(),"http://localhost");return e===exports.Method.GET&&Object.keys(r).length&&(d.search=n.stringify(i(n.parse(d.search,{ignoreQueryPrefix:!0}),r),{encodeValuesOnly:!0,arrayFormat:"brackets"}),r={}),[[o?d.protocol+"//"+d.host:"",s?d.pathname:"",a?d.pathname.substring(1):"",c?d.search:"",l?d.hash:""].join(""),r]}function p(e){return(e=new URL(e.href)).hash="",e}function f(e,t){return document.dispatchEvent(new CustomEvent("inertia:"+e,t))}(o=exports.Method||(exports.Method={})).GET="get",o.POST="post",o.PUT="put",o.PATCH="patch",o.DELETE="delete";var v=function(e){return f("finish",{detail:{visit:e}})},m=function(e){return f("navigate",{detail:{page:e}})},g=function(){function e(){this.visitId=null}var n=e.prototype;return n.init=function(e){var t=e.resolveComponent,n=e.swapComponent;this.page=e.initialPage,this.resolveComponent=t,this.swapComponent=n,this.isBackForwardVisit()?this.handleBackForwardVisit(this.page):this.isLocationVisit()?this.handleLocationVisit(this.page):this.handleInitialPageVisit(this.page),this.setupEventListeners()},n.handleInitialPageVisit=function(e){this.page.url+=window.location.hash,this.setPage(e,{preserveState:!0}).then(function(){return m(e)})},n.setupEventListeners=function(){window.addEventListener("popstate",this.handlePopstateEvent.bind(this)),document.addEventListener("scroll",a(this.handleScrollEvent.bind(this),100),!0)},n.scrollRegions=function(){return document.querySelectorAll("[scroll-region]")},n.handleScrollEvent=function(e){"function"==typeof e.target.hasAttribute&&e.target.hasAttribute("scroll-region")&&this.saveScrollPositions()},n.saveScrollPositions=function(){this.replaceState(r({},this.page,{scrollRegions:Array.from(this.scrollRegions()).map(function(e){return{top:e.scrollTop,left:e.scrollLeft}})}))},n.resetScrollPositions=function(){var e;document.documentElement.scrollTop=0,document.documentElement.scrollLeft=0,this.scrollRegions().forEach(function(e){e.scrollTop=0,e.scrollLeft=0}),this.saveScrollPositions(),window.location.hash&&(null==(e=document.getElementById(window.location.hash.slice(1)))||e.scrollIntoView())},n.restoreScrollPositions=function(){var e=this;this.page.scrollRegions&&this.scrollRegions().forEach(function(t,n){var i=e.page.scrollRegions[n];i&&(t.scrollTop=i.top,t.scrollLeft=i.left)})},n.isBackForwardVisit=function(){return window.history.state&&window.performance&&window.performance.getEntriesByType("navigation").length>0&&"back_forward"===window.performance.getEntriesByType("navigation")[0].type},n.handleBackForwardVisit=function(e){var t=this;window.history.state.version=e.version,this.setPage(window.history.state,{preserveScroll:!0,preserveState:!0}).then(function(){t.restoreScrollPositions(),m(e)})},n.locationVisit=function(e,t){try{window.sessionStorage.setItem("inertiaLocationVisit",JSON.stringify({preserveScroll:t})),window.location.href=e.href,p(window.location).href===p(e).href&&window.location.reload()}catch(e){return!1}},n.isLocationVisit=function(){try{return null!==window.sessionStorage.getItem("inertiaLocationVisit")}catch(e){return!1}},n.handleLocationVisit=function(e){var t,n,i,r,o=this,s=JSON.parse(window.sessionStorage.getItem("inertiaLocationVisit")||"");window.sessionStorage.removeItem("inertiaLocationVisit"),e.url+=window.location.hash,e.rememberedState=null!=(t=null==(n=window.history.state)?void 0:n.rememberedState)?t:{},e.scrollRegions=null!=(i=null==(r=window.history.state)?void 0:r.scrollRegions)?i:[],this.setPage(e,{preserveScroll:s.preserveScroll,preserveState:!0}).then(function(){s.preserveScroll&&o.restoreScrollPositions(),m(e)})},n.isLocationVisitResponse=function(e){return e&&409===e.status&&e.headers["x-inertia-location"]},n.isInertiaResponse=function(e){return null==e?void 0:e.headers["x-inertia"]},n.createVisitId=function(){return this.visitId={},this.visitId},n.cancelVisit=function(e,t){var n=t.cancelled,i=void 0!==n&&n,r=t.interrupted,o=void 0!==r&&r;!e||e.completed||e.cancelled||e.interrupted||(e.cancelToken.cancel(),e.onCancel(),e.completed=!1,e.cancelled=i,e.interrupted=o,v(e),e.onFinish(e))},n.finishVisit=function(e){e.cancelled||e.interrupted||(e.completed=!0,e.cancelled=!1,e.interrupted=!1,v(e),e.onFinish(e))},n.resolvePreserveOption=function(e,t){return"function"==typeof e?e(t):"errors"===e?Object.keys(t.props.errors||{}).length>0:e},n.visit=function(e,n){var i=this,o=void 0===n?{}:n,a=o.method,l=void 0===a?exports.Method.GET:a,d=o.data,v=void 0===d?{}:d,m=o.replace,g=void 0!==m&&m,w=o.preserveScroll,S=void 0!==w&&w,y=o.preserveState,b=void 0!==y&&y,E=o.only,P=void 0===E?[]:E,I=o.headers,x=void 0===I?{}:I,V=o.errorBag,T=void 0===V?"":V,L=o.forceFormData,O=void 0!==L&&L,C=o.onCancelToken,k=void 0===C?function(){}:C,M=o.onBefore,R=void 0===M?function(){}:M,j=o.onStart,A=void 0===j?function(){}:j,F=o.onProgress,D=void 0===F?function(){}:F,B=o.onFinish,N=void 0===B?function(){}:B,H=o.onCancel,q=void 0===H?function(){}:H,W=o.onSuccess,G=void 0===W?function(){}:W,U=o.onError,X=void 0===U?function(){}:U,J="string"==typeof e?u(e):e;if(!function e(t){return t instanceof File||t instanceof Blob||t instanceof FileList&&t.length>0||t instanceof FormData&&Array.from(t.values()).some(function(t){return e(t)})||"object"==typeof t&&null!==t&&Object.values(t).some(function(t){return e(t)})}(v)&&!O||v instanceof FormData||(v=c(v)),!(v instanceof FormData)){var K=h(l,J,v),_=K[1];J=u(K[0]),v=_}var z={url:J,method:l,data:v,replace:g,preserveScroll:S,preserveState:b,only:P,headers:x,errorBag:T,forceFormData:O,cancelled:!1,completed:!1,interrupted:!1};if(!1!==R(z)&&function(e){return f("before",{cancelable:!0,detail:{visit:e}})}(z)){this.activeVisit&&this.cancelVisit(this.activeVisit,{interrupted:!0}),this.saveScrollPositions();var Q=this.createVisitId();this.activeVisit=r({},z,{onCancelToken:k,onBefore:R,onStart:A,onProgress:D,onFinish:N,onCancel:q,onSuccess:G,onError:X,cancelToken:t.CancelToken.source()}),k({cancel:function(){i.activeVisit&&i.cancelVisit(i.activeVisit,{cancelled:!0})}}),function(e){f("start",{detail:{visit:e}})}(z),A(z),t({method:l,url:p(J).href,data:l===exports.Method.GET?{}:v,params:l===exports.Method.GET?v:{},cancelToken:this.activeVisit.cancelToken.token,headers:r({},x,{Accept:"text/html, application/xhtml+xml","X-Requested-With":"XMLHttpRequest","X-Inertia":!0},P.length?{"X-Inertia-Partial-Component":this.page.component,"X-Inertia-Partial-Data":P.join(",")}:{},T&&T.length?{"X-Inertia-Error-Bag":T}:{},this.page.version?{"X-Inertia-Version":this.page.version}:{}),onUploadProgress:function(e){v instanceof FormData&&(e.percentage=Math.round(e.loaded/e.total*100),function(e){f("progress",{detail:{progress:e}})}(e),D(e))}}).then(function(e){var t;if(!i.isInertiaResponse(e))return Promise.reject({response:e});var n=e.data;P.length&&n.component===i.page.component&&(n.props=r({},i.page.props,n.props)),S=i.resolvePreserveOption(S,n),(b=i.resolvePreserveOption(b,n))&&null!=(t=window.history.state)&&t.rememberedState&&n.component===i.page.component&&(n.rememberedState=window.history.state.rememberedState);var o=J,s=u(n.url);return o.hash&&!s.hash&&p(o).href===s.href&&(s.hash=o.hash,n.url=s.href),i.setPage(n,{visitId:Q,replace:g,preserveScroll:S,preserveState:b})}).then(function(){var e=i.page.props.errors||{};if(Object.keys(e).length>0){var t=T?e[T]?e[T]:{}:e;return function(e){f("error",{detail:{errors:e}})}(t),X(t)}return f("success",{detail:{page:i.page}}),G(i.page)}).catch(function(e){if(i.isInertiaResponse(e.response))return i.setPage(e.response.data,{visitId:Q});if(i.isLocationVisitResponse(e.response)){var t=u(e.response.headers["x-inertia-location"]),n=J;n.hash&&!t.hash&&p(n).href===t.href&&(t.hash=n.hash),i.locationVisit(t,!0===S)}else{if(!e.response)return Promise.reject(e);f("invalid",{cancelable:!0,detail:{response:e.response}})&&s.show(e.response.data)}}).then(function(){i.activeVisit&&i.finishVisit(i.activeVisit)}).catch(function(e){if(!t.isCancel(e)){var n=f("exception",{cancelable:!0,detail:{exception:e}});if(i.activeVisit&&i.finishVisit(i.activeVisit),n)return Promise.reject(e)}})}},n.setPage=function(e,t){var n=this,i=void 0===t?{}:t,r=i.visitId,o=void 0===r?this.createVisitId():r,s=i.replace,a=void 0!==s&&s,c=i.preserveScroll,l=void 0!==c&&c,d=i.preserveState,h=void 0!==d&&d;return Promise.resolve(this.resolveComponent(e.component)).then(function(t){o===n.visitId&&(e.scrollRegions=e.scrollRegions||[],e.rememberedState=e.rememberedState||{},(a=a||u(e.url).href===window.location.href)?n.replaceState(e):n.pushState(e),n.swapComponent({component:t,page:e,preserveState:h}).then(function(){l||n.resetScrollPositions(),a||m(e)}))})},n.pushState=function(e){this.page=e,window.history.pushState(e,"",e.url)},n.replaceState=function(e){this.page=e,window.history.replaceState(e,"",e.url)},n.handlePopstateEvent=function(e){var t=this;if(null!==e.state){var n=e.state,i=this.createVisitId();Promise.resolve(this.resolveComponent(n.component)).then(function(e){i===t.visitId&&(t.page=n,t.swapComponent({component:e,page:n,preserveState:!1}).then(function(){t.restoreScrollPositions(),m(n)}))})}else{var o=u(this.page.url);o.hash=window.location.hash,this.replaceState(r({},this.page,{url:o.href})),this.resetScrollPositions()}},n.get=function(e,t,n){return void 0===t&&(t={}),void 0===n&&(n={}),this.visit(e,r({},n,{method:exports.Method.GET,data:t}))},n.reload=function(e){return void 0===e&&(e={}),this.visit(window.location.href,r({},e,{preserveScroll:!0,preserveState:!0}))},n.replace=function(e,t){var n;return void 0===t&&(t={}),console.warn("Inertia.replace() has been deprecated and will be removed in a future release. Please use Inertia."+(null!=(n=t.method)?n:"get")+"() instead."),this.visit(e,r({preserveState:!0},t,{replace:!0}))},n.post=function(e,t,n){return void 0===t&&(t={}),void 0===n&&(n={}),this.visit(e,r({preserveState:!0},n,{method:exports.Method.POST,data:t}))},n.put=function(e,t,n){return void 0===t&&(t={}),void 0===n&&(n={}),this.visit(e,r({preserveState:!0},n,{method:exports.Method.PUT,data:t}))},n.patch=function(e,t,n){return void 0===t&&(t={}),void 0===n&&(n={}),this.visit(e,r({preserveState:!0},n,{method:exports.Method.PATCH,data:t}))},n.delete=function(e,t){return void 0===t&&(t={}),this.visit(e,r({preserveState:!0},t,{method:exports.Method.DELETE}))},n.remember=function(e,t){var n;void 0===t&&(t="default"),this.replaceState(r({},this.page,{rememberedState:r({},this.page.rememberedState,(n={},n[t]=e,n))}))},n.restore=function(e){var t,n;return void 0===e&&(e="default"),null==(t=window.history.state)||null==(n=t.rememberedState)?void 0:n[e]},n.on=function(e,t){var n=function(e){var n=t(e);e.cancelable&&!e.defaultPrevented&&!1===n&&e.preventDefault()};return document.addEventListener("inertia:"+e,n),function(){return document.removeEventListener("inertia:"+e,n)}},e}(),w={buildDOMElement:function(e){var t=document.createElement("template");t.innerHTML=e;var n=t.content.firstChild;if(!e.startsWith("<script "))return n;var i=document.createElement("script");return i.innerHTML=n.innerHTML,n.getAttributeNames().forEach(function(e){i.setAttribute(e,n.getAttribute(e)||"")}),i},isInertiaManagedElement:function(e){return e.nodeType===Node.ELEMENT_NODE&&null!==e.getAttribute("inertia")},findMatchingElementIndex:function(e,t){var n=e.getAttribute("inertia");return null!==n?t.findIndex(function(e){return e.getAttribute("inertia")===n}):-1},update:a(function(e){var t=this,n=e.map(function(e){return t.buildDOMElement(e)});Array.from(document.head.childNodes).filter(function(e){return t.isInertiaManagedElement(e)}).forEach(function(e){var i=t.findMatchingElementIndex(e,n);if(-1!==i){var r,o=n.splice(i,1)[0];o&&!e.isEqualNode(o)&&(null==e||null==(r=e.parentNode)||r.replaceChild(o,e))}else{var s;null==e||null==(s=e.parentNode)||s.removeChild(e)}}),n.forEach(function(e){return document.head.appendChild(e)})},1)},S=new g;exports.Inertia=S,exports.createHeadManager=function(e,t,n){var i={},r=0;function o(){var e=Object.values(i).reduce(function(e,t){return e.concat(t)},[]).reduce(function(e,n){if(-1===n.indexOf("<"))return e;if(0===n.indexOf("<title ")){var i=n.match(/(<title [^>]+>)(.*?)(<\/title>)/);return e.title=i?""+i[1]+t(i[2])+i[3]:n,e}var r=n.match(/ inertia="[^"]+"/);return r?e[r[0]]=n:e[Object.keys(e).length]=n,e},{});return Object.values(e)}function s(){e?n(o()):w.update(o())}return{createProvider:function(){var e=function(){var e=r+=1;return i[e]=[],e.toString()}();return{update:function(t){return function(e,t){void 0===t&&(t=[]),null!==e&&Object.keys(i).indexOf(e)>-1&&(i[e]=t),s()}(e,t)},disconnect:function(){return function(e){null!==e&&-1!==Object.keys(i).indexOf(e)&&(delete i[e],s())}(e)}}}}},exports.hrefToUrl=u,exports.mergeDataIntoQueryString=h,exports.shouldIntercept=function(e){var t="a"===e.currentTarget.tagName.toLowerCase();return!(e.target&&null!=e&&e.target.isContentEditable||e.defaultPrevented||t&&e.which>1||t&&e.altKey||t&&e.ctrlKey||t&&e.metaKey||t&&e.shiftKey)},exports.urlWithoutHash=p;
+function e(e){return e&&"object"==typeof e&&"default"in e?e.default:e}var t=e(__webpack_require__(/*! axios */ "./node_modules/axios/index.js")),n=__webpack_require__(/*! qs */ "./node_modules/qs/lib/index.js"),i=e(__webpack_require__(/*! deepmerge */ "./node_modules/deepmerge/dist/cjs.js"));function r(){return(r=Object.assign||function(e){for(var t=1;t<arguments.length;t++){var n=arguments[t];for(var i in n)Object.prototype.hasOwnProperty.call(n,i)&&(e[i]=n[i])}return e}).apply(this,arguments)}var o,s={modal:null,listener:null,show:function(e){var t=this;"object"==typeof e&&(e="All Inertia requests must receive a valid Inertia response, however a plain JSON response was received.<hr>"+JSON.stringify(e));var n=document.createElement("html");n.innerHTML=e,n.querySelectorAll("a").forEach(function(e){return e.setAttribute("target","_top")}),this.modal=document.createElement("div"),this.modal.style.position="fixed",this.modal.style.width="100vw",this.modal.style.height="100vh",this.modal.style.padding="50px",this.modal.style.boxSizing="border-box",this.modal.style.backgroundColor="rgba(0, 0, 0, .6)",this.modal.style.zIndex=2e5,this.modal.addEventListener("click",function(){return t.hide()});var i=document.createElement("iframe");if(i.style.backgroundColor="white",i.style.borderRadius="5px",i.style.width="100%",i.style.height="100%",this.modal.appendChild(i),document.body.prepend(this.modal),document.body.style.overflow="hidden",!i.contentWindow)throw new Error("iframe not yet ready.");i.contentWindow.document.open(),i.contentWindow.document.write(n.outerHTML),i.contentWindow.document.close(),this.listener=this.hideOnEscape.bind(this),document.addEventListener("keydown",this.listener)},hide:function(){this.modal.outerHTML="",this.modal=null,document.body.style.overflow="visible",document.removeEventListener("keydown",this.listener)},hideOnEscape:function(e){27===e.keyCode&&this.hide()}};function a(e,t){var n;return function(){var i=arguments,r=this;clearTimeout(n),n=setTimeout(function(){return e.apply(r,[].slice.call(i))},t)}}function c(e,t,n){for(var i in void 0===t&&(t=new FormData),void 0===n&&(n=null),e=e||{})Object.prototype.hasOwnProperty.call(e,i)&&d(t,l(n,i),e[i]);return t}function l(e,t){return e?e+"["+t+"]":t}function d(e,t,n){return Array.isArray(n)?Array.from(n.keys()).forEach(function(i){return d(e,l(t,i.toString()),n[i])}):n instanceof Date?e.append(t,n.toISOString()):n instanceof File?e.append(t,n,n.name):n instanceof Blob?e.append(t,n):"boolean"==typeof n?e.append(t,n?"1":"0"):"string"==typeof n?e.append(t,n):"number"==typeof n?e.append(t,""+n):null==n?e.append(t,""):void c(n,e,t)}function u(e){return new URL(e.toString(),window.location.toString())}function h(e,t,r){var o=t.toString().includes("http"),s=o||t.toString().startsWith("/"),a=!s&&!t.toString().startsWith("#")&&!t.toString().startsWith("?"),c=t.toString().includes("?")||e===exports.Method.GET&&Object.keys(r).length,l=t.toString().includes("#"),d=new URL(t.toString(),"http://localhost");return e===exports.Method.GET&&Object.keys(r).length&&(d.search=n.stringify(i(n.parse(d.search,{ignoreQueryPrefix:!0}),r),{encodeValuesOnly:!0,arrayFormat:"brackets"}),r={}),[[o?d.protocol+"//"+d.host:"",s?d.pathname:"",a?d.pathname.substring(1):"",c?d.search:"",l?d.hash:""].join(""),r]}function p(e){return(e=new URL(e.href)).hash="",e}function f(e,t){return document.dispatchEvent(new CustomEvent("inertia:"+e,t))}(o=exports.Method||(exports.Method={})).GET="get",o.POST="post",o.PUT="put",o.PATCH="patch",o.DELETE="delete";var v=function(e){return f("finish",{detail:{visit:e}})},m=function(e){return f("navigate",{detail:{page:e}})},g=function(){function e(){this.visitId=null}var n=e.prototype;return n.init=function(e){var t=e.resolveComponent,n=e.swapComponent;this.page=e.initialPage,this.resolveComponent=t,this.swapComponent=n,this.isBackForwardVisit()?this.handleBackForwardVisit(this.page):this.isLocationVisit()?this.handleLocationVisit(this.page):this.handleInitialPageVisit(this.page),this.setupEventListeners()},n.handleInitialPageVisit=function(e){this.page.url+=window.location.hash,this.setPage(e,{preserveState:!0}).then(function(){return m(e)})},n.setupEventListeners=function(){window.addEventListener("popstate",this.handlePopstateEvent.bind(this)),document.addEventListener("scroll",a(this.handleScrollEvent.bind(this),100),!0)},n.scrollRegions=function(){return document.querySelectorAll("[scroll-region]")},n.handleScrollEvent=function(e){"function"==typeof e.target.hasAttribute&&e.target.hasAttribute("scroll-region")&&this.saveScrollPositions()},n.saveScrollPositions=function(){this.replaceState(r({},this.page,{scrollRegions:Array.from(this.scrollRegions()).map(function(e){return{top:e.scrollTop,left:e.scrollLeft}})}))},n.resetScrollPositions=function(){var e;document.documentElement.scrollTop=0,document.documentElement.scrollLeft=0,this.scrollRegions().forEach(function(e){e.scrollTop=0,e.scrollLeft=0}),this.saveScrollPositions(),window.location.hash&&(null==(e=document.getElementById(window.location.hash.slice(1)))||e.scrollIntoView())},n.restoreScrollPositions=function(){var e=this;this.page.scrollRegions&&this.scrollRegions().forEach(function(t,n){var i=e.page.scrollRegions[n];i&&(t.scrollTop=i.top,t.scrollLeft=i.left)})},n.isBackForwardVisit=function(){return window.history.state&&window.performance&&window.performance.getEntriesByType("navigation").length>0&&"back_forward"===window.performance.getEntriesByType("navigation")[0].type},n.handleBackForwardVisit=function(e){var t=this;window.history.state.version=e.version,this.setPage(window.history.state,{preserveScroll:!0,preserveState:!0}).then(function(){t.restoreScrollPositions(),m(e)})},n.locationVisit=function(e,t){try{window.sessionStorage.setItem("inertiaLocationVisit",JSON.stringify({preserveScroll:t})),window.location.href=e.href,p(window.location).href===p(e).href&&window.location.reload()}catch(e){return!1}},n.isLocationVisit=function(){try{return null!==window.sessionStorage.getItem("inertiaLocationVisit")}catch(e){return!1}},n.handleLocationVisit=function(e){var t,n,i,r,o=this,s=JSON.parse(window.sessionStorage.getItem("inertiaLocationVisit")||"");window.sessionStorage.removeItem("inertiaLocationVisit"),e.url+=window.location.hash,e.rememberedState=null!=(t=null==(n=window.history.state)?void 0:n.rememberedState)?t:{},e.scrollRegions=null!=(i=null==(r=window.history.state)?void 0:r.scrollRegions)?i:[],this.setPage(e,{preserveScroll:s.preserveScroll,preserveState:!0}).then(function(){s.preserveScroll&&o.restoreScrollPositions(),m(e)})},n.isLocationVisitResponse=function(e){return e&&409===e.status&&e.headers["x-inertia-location"]},n.isInertiaResponse=function(e){return null==e?void 0:e.headers["x-inertia"]},n.createVisitId=function(){return this.visitId={},this.visitId},n.cancelVisit=function(e,t){var n=t.cancelled,i=void 0!==n&&n,r=t.interrupted,o=void 0!==r&&r;!e||e.completed||e.cancelled||e.interrupted||(e.cancelToken.cancel(),e.onCancel(),e.completed=!1,e.cancelled=i,e.interrupted=o,v(e),e.onFinish(e))},n.finishVisit=function(e){e.cancelled||e.interrupted||(e.completed=!0,e.cancelled=!1,e.interrupted=!1,v(e),e.onFinish(e))},n.resolvePreserveOption=function(e,t){return"function"==typeof e?e(t):"errors"===e?Object.keys(t.props.errors||{}).length>0:e},n.visit=function(e,n){var i=this,o=void 0===n?{}:n,a=o.method,l=void 0===a?exports.Method.GET:a,d=o.data,v=void 0===d?{}:d,m=o.replace,g=void 0!==m&&m,w=o.preserveScroll,S=void 0!==w&&w,y=o.preserveState,b=void 0!==y&&y,E=o.only,P=void 0===E?[]:E,I=o.headers,x=void 0===I?{}:I,V=o.errorBag,T=void 0===V?"":V,L=o.forceFormData,O=void 0!==L&&L,C=o.onCancelToken,k=void 0===C?function(){}:C,M=o.onBefore,R=void 0===M?function(){}:M,j=o.onStart,A=void 0===j?function(){}:j,F=o.onProgress,D=void 0===F?function(){}:F,B=o.onFinish,N=void 0===B?function(){}:B,H=o.onCancel,q=void 0===H?function(){}:H,W=o.onSuccess,G=void 0===W?function(){}:W,U=o.onError,X=void 0===U?function(){}:U,J="string"==typeof e?u(e):e;if(!function e(t){return t instanceof File||t instanceof Blob||t instanceof FileList&&t.length>0||t instanceof FormData&&Array.from(t.values()).some(function(t){return e(t)})||"object"==typeof t&&null!==t&&Object.values(t).some(function(t){return e(t)})}(v)&&!O||v instanceof FormData||(v=c(v)),!(v instanceof FormData)){var K=h(l,J,v),_=K[1];J=u(K[0]),v=_}var z={url:J,method:l,data:v,replace:g,preserveScroll:S,preserveState:b,only:P,headers:x,errorBag:T,forceFormData:O,cancelled:!1,completed:!1,interrupted:!1};if(!1!==R(z)&&function(e){return f("before",{cancelable:!0,detail:{visit:e}})}(z)){this.activeVisit&&this.cancelVisit(this.activeVisit,{interrupted:!0}),this.saveScrollPositions();var Q=this.createVisitId();this.activeVisit=r({},z,{onCancelToken:k,onBefore:R,onStart:A,onProgress:D,onFinish:N,onCancel:q,onSuccess:G,onError:X,cancelToken:t.CancelToken.source()}),k({cancel:function(){i.activeVisit&&i.cancelVisit(i.activeVisit,{cancelled:!0})}}),function(e){f("start",{detail:{visit:e}})}(z),A(z),t({method:l,url:p(J).href,data:l===exports.Method.GET?{}:v,params:l===exports.Method.GET?v:{},cancelToken:this.activeVisit.cancelToken.token,headers:r({},x,{Accept:"text/html, application/xhtml+xml","X-Requested-With":"XMLHttpRequest","X-Inertia":!0},P.length?{"X-Inertia-Partial-Component":this.page.component,"X-Inertia-Partial-Data":P.join(",")}:{},T&&T.length?{"X-Inertia-Error-Bag":T}:{},this.page.version?{"X-Inertia-Version":this.page.version}:{}),onUploadProgress:function(e){v instanceof FormData&&(e.percentage=Math.round(e.loaded/e.total*100),function(e){f("progress",{detail:{progress:e}})}(e),D(e))}}).then(function(e){var t;if(!i.isInertiaResponse(e))return Promise.reject({response:e});var n=e.data;P.length&&n.component===i.page.component&&(n.props=r({},i.page.props,n.props)),S=i.resolvePreserveOption(S,n),(b=i.resolvePreserveOption(b,n))&&null!=(t=window.history.state)&&t.rememberedState&&n.component===i.page.component&&(n.rememberedState=window.history.state.rememberedState);var o=J,s=u(n.url);return o.hash&&!s.hash&&p(o).href===s.href&&(s.hash=o.hash,n.url=s.href),i.setPage(n,{visitId:Q,replace:g,preserveScroll:S,preserveState:b})}).then(function(){var e=i.page.props.errors||{};if(Object.keys(e).length>0){var t=T?e[T]?e[T]:{}:e;return function(e){f("error",{detail:{errors:e}})}(t),X(t)}return f("success",{detail:{page:i.page}}),G(i.page)}).catch(function(e){if(i.isInertiaResponse(e.response))return i.setPage(e.response.data,{visitId:Q});if(i.isLocationVisitResponse(e.response)){var t=u(e.response.headers["x-inertia-location"]),n=J;n.hash&&!t.hash&&p(n).href===t.href&&(t.hash=n.hash),i.locationVisit(t,!0===S)}else{if(!e.response)return Promise.reject(e);f("invalid",{cancelable:!0,detail:{response:e.response}})&&s.show(e.response.data)}}).then(function(){i.activeVisit&&i.finishVisit(i.activeVisit)}).catch(function(e){if(!t.isCancel(e)){var n=f("exception",{cancelable:!0,detail:{exception:e}});if(i.activeVisit&&i.finishVisit(i.activeVisit),n)return Promise.reject(e)}})}},n.setPage=function(e,t){var n=this,i=void 0===t?{}:t,r=i.visitId,o=void 0===r?this.createVisitId():r,s=i.replace,a=void 0!==s&&s,c=i.preserveScroll,l=void 0!==c&&c,d=i.preserveState,h=void 0!==d&&d;return Promise.resolve(this.resolveComponent(e.component)).then(function(t){o===n.visitId&&(e.scrollRegions=e.scrollRegions||[],e.rememberedState=e.rememberedState||{},(a=a||u(e.url).href===window.location.href)?n.replaceState(e):n.pushState(e),n.swapComponent({component:t,page:e,preserveState:h}).then(function(){l||n.resetScrollPositions(),a||m(e)}))})},n.pushState=function(e){this.page=e,window.history.pushState(e,"",e.url)},n.replaceState=function(e){this.page=e,window.history.replaceState(e,"",e.url)},n.handlePopstateEvent=function(e){var t=this;if(null!==e.state){var n=e.state,i=this.createVisitId();Promise.resolve(this.resolveComponent(n.component)).then(function(e){i===t.visitId&&(t.page=n,t.swapComponent({component:e,page:n,preserveState:!1}).then(function(){t.restoreScrollPositions(),m(n)}))})}else{var o=u(this.page.url);o.hash=window.location.hash,this.replaceState(r({},this.page,{url:o.href})),this.resetScrollPositions()}},n.get=function(e,t,n){return void 0===t&&(t={}),void 0===n&&(n={}),this.visit(e,r({},n,{method:exports.Method.GET,data:t}))},n.reload=function(e){return void 0===e&&(e={}),this.visit(window.location.href,r({},e,{preserveScroll:!0,preserveState:!0}))},n.replace=function(e,t){var n;return void 0===t&&(t={}),console.warn("Inertia.replace() has been deprecated and will be removed in a future release. Please use Inertia."+(null!=(n=t.method)?n:"get")+"() instead."),this.visit(e,r({preserveState:!0},t,{replace:!0}))},n.post=function(e,t,n){return void 0===t&&(t={}),void 0===n&&(n={}),this.visit(e,r({preserveState:!0},n,{method:exports.Method.POST,data:t}))},n.put=function(e,t,n){return void 0===t&&(t={}),void 0===n&&(n={}),this.visit(e,r({preserveState:!0},n,{method:exports.Method.PUT,data:t}))},n.patch=function(e,t,n){return void 0===t&&(t={}),void 0===n&&(n={}),this.visit(e,r({preserveState:!0},n,{method:exports.Method.PATCH,data:t}))},n.delete=function(e,t){return void 0===t&&(t={}),this.visit(e,r({preserveState:!0},t,{method:exports.Method.DELETE}))},n.remember=function(e,t){var n;void 0===t&&(t="default"),this.replaceState(r({},this.page,{rememberedState:r({},this.page.rememberedState,(n={},n[t]=e,n))}))},n.restore=function(e){var t,n;return void 0===e&&(e="default"),null==(t=window.history.state)||null==(n=t.rememberedState)?void 0:n[e]},n.on=function(e,t){var n=function(e){var n=t(e);e.cancelable&&!e.defaultPrevented&&!1===n&&e.preventDefault()};return document.addEventListener("inertia:"+e,n),function(){return document.removeEventListener("inertia:"+e,n)}},e}(),w={buildDOMElement:function(e){var t=document.createElement("template");t.innerHTML=e;var n=t.content.firstChild;if(!e.startsWith("<script "))return n;var i=document.createElement("script");return i.innerHTML=n.innerHTML,n.getAttributeNames().forEach(function(e){i.setAttribute(e,n.getAttribute(e)||"")}),i},isInertiaManagedElement:function(e){return e.nodeType===Node.ELEMENT_NODE&&null!==e.getAttribute("inertia")},findMatchingElementIndex:function(e,t){var n=e.getAttribute("inertia");return null!==n?t.findIndex(function(e){return e.getAttribute("inertia")===n}):-1},update:a(function(e){var t=this,n=e.map(function(e){return t.buildDOMElement(e)});Array.from(document.head.childNodes).filter(function(e){return t.isInertiaManagedElement(e)}).forEach(function(e){var i=t.findMatchingElementIndex(e,n);if(-1!==i){var r,o=n.splice(i,1)[0];o&&!e.isEqualNode(o)&&(null==e||null==(r=e.parentNode)||r.replaceChild(o,e))}else{var s;null==e||null==(s=e.parentNode)||s.removeChild(e)}}),n.forEach(function(e){return document.head.appendChild(e)})},1)},S=new g;exports.Inertia=S,exports.createHeadManager=function(e,t,n){var i={},r=0;function o(){var e=Object.values(i).reduce(function(e,t){return e.concat(t)},[]).reduce(function(e,n){if(-1===n.indexOf("<"))return e;if(0===n.indexOf("<title ")){var i=n.match(/(<title [^>]+>)(.*?)(<\/title>)/);return e.title=i?""+i[1]+t(i[2])+i[3]:n,e}var r=n.match(/ inertia="[^"]+"/);return r?e[r[0]]=n:e[Object.keys(e).length]=n,e},{});return Object.values(e)}function s(){e?n(o()):w.update(o())}return{createProvider:function(){var e=function(){var e=r+=1;return i[e]=[],e.toString()}();return{update:function(t){return function(e,t){void 0===t&&(t=[]),null!==e&&Object.keys(i).indexOf(e)>-1&&(i[e]=t),s()}(e,t)},disconnect:function(){return function(e){null!==e&&-1!==Object.keys(i).indexOf(e)&&(delete i[e],s())}(e)}}}}},exports.hrefToUrl=u,exports.mergeDataIntoQueryString=h,exports.shouldIntercept=function(e){var t="a"===e.currentTarget.tagName.toLowerCase();return!(e.target&&null!=e&&e.target.isContentEditable||e.defaultPrevented||t&&e.which>1||t&&e.altKey||t&&e.ctrlKey||t&&e.metaKey||t&&e.shiftKey)},exports.urlWithoutHash=p;
 //# sourceMappingURL=index.js.map
-
-
-/***/ }),
-
-/***/ "./node_modules/@inertiajs/inertia/node_modules/qs/lib/formats.js":
-/*!************************************************************************!*\
-  !*** ./node_modules/@inertiajs/inertia/node_modules/qs/lib/formats.js ***!
-  \************************************************************************/
-/***/ ((module) => {
-
-"use strict";
-
-
-var replace = String.prototype.replace;
-var percentTwenties = /%20/g;
-
-var Format = {
-    RFC1738: 'RFC1738',
-    RFC3986: 'RFC3986'
-};
-
-module.exports = {
-    'default': Format.RFC3986,
-    formatters: {
-        RFC1738: function (value) {
-            return replace.call(value, percentTwenties, '+');
-        },
-        RFC3986: function (value) {
-            return String(value);
-        }
-    },
-    RFC1738: Format.RFC1738,
-    RFC3986: Format.RFC3986
-};
-
-
-/***/ }),
-
-/***/ "./node_modules/@inertiajs/inertia/node_modules/qs/lib/index.js":
-/*!**********************************************************************!*\
-  !*** ./node_modules/@inertiajs/inertia/node_modules/qs/lib/index.js ***!
-  \**********************************************************************/
-/***/ ((module, __unused_webpack_exports, __webpack_require__) => {
-
-"use strict";
-
-
-var stringify = __webpack_require__(/*! ./stringify */ "./node_modules/@inertiajs/inertia/node_modules/qs/lib/stringify.js");
-var parse = __webpack_require__(/*! ./parse */ "./node_modules/@inertiajs/inertia/node_modules/qs/lib/parse.js");
-var formats = __webpack_require__(/*! ./formats */ "./node_modules/@inertiajs/inertia/node_modules/qs/lib/formats.js");
-
-module.exports = {
-    formats: formats,
-    parse: parse,
-    stringify: stringify
-};
-
-
-/***/ }),
-
-/***/ "./node_modules/@inertiajs/inertia/node_modules/qs/lib/parse.js":
-/*!**********************************************************************!*\
-  !*** ./node_modules/@inertiajs/inertia/node_modules/qs/lib/parse.js ***!
-  \**********************************************************************/
-/***/ ((module, __unused_webpack_exports, __webpack_require__) => {
-
-"use strict";
-
-
-var utils = __webpack_require__(/*! ./utils */ "./node_modules/@inertiajs/inertia/node_modules/qs/lib/utils.js");
-
-var has = Object.prototype.hasOwnProperty;
-var isArray = Array.isArray;
-
-var defaults = {
-    allowDots: false,
-    allowPrototypes: false,
-    allowSparse: false,
-    arrayLimit: 20,
-    charset: 'utf-8',
-    charsetSentinel: false,
-    comma: false,
-    decoder: utils.decode,
-    delimiter: '&',
-    depth: 5,
-    ignoreQueryPrefix: false,
-    interpretNumericEntities: false,
-    parameterLimit: 1000,
-    parseArrays: true,
-    plainObjects: false,
-    strictNullHandling: false
-};
-
-var interpretNumericEntities = function (str) {
-    return str.replace(/&#(\d+);/g, function ($0, numberStr) {
-        return String.fromCharCode(parseInt(numberStr, 10));
-    });
-};
-
-var parseArrayValue = function (val, options) {
-    if (val && typeof val === 'string' && options.comma && val.indexOf(',') > -1) {
-        return val.split(',');
-    }
-
-    return val;
-};
-
-// This is what browsers will submit when the ✓ character occurs in an
-// application/x-www-form-urlencoded body and the encoding of the page containing
-// the form is iso-8859-1, or when the submitted form has an accept-charset
-// attribute of iso-8859-1. Presumably also with other charsets that do not contain
-// the ✓ character, such as us-ascii.
-var isoSentinel = 'utf8=%26%2310003%3B'; // encodeURIComponent('&#10003;')
-
-// These are the percent-encoded utf-8 octets representing a checkmark, indicating that the request actually is utf-8 encoded.
-var charsetSentinel = 'utf8=%E2%9C%93'; // encodeURIComponent('✓')
-
-var parseValues = function parseQueryStringValues(str, options) {
-    var obj = {};
-    var cleanStr = options.ignoreQueryPrefix ? str.replace(/^\?/, '') : str;
-    var limit = options.parameterLimit === Infinity ? undefined : options.parameterLimit;
-    var parts = cleanStr.split(options.delimiter, limit);
-    var skipIndex = -1; // Keep track of where the utf8 sentinel was found
-    var i;
-
-    var charset = options.charset;
-    if (options.charsetSentinel) {
-        for (i = 0; i < parts.length; ++i) {
-            if (parts[i].indexOf('utf8=') === 0) {
-                if (parts[i] === charsetSentinel) {
-                    charset = 'utf-8';
-                } else if (parts[i] === isoSentinel) {
-                    charset = 'iso-8859-1';
-                }
-                skipIndex = i;
-                i = parts.length; // The eslint settings do not allow break;
-            }
-        }
-    }
-
-    for (i = 0; i < parts.length; ++i) {
-        if (i === skipIndex) {
-            continue;
-        }
-        var part = parts[i];
-
-        var bracketEqualsPos = part.indexOf(']=');
-        var pos = bracketEqualsPos === -1 ? part.indexOf('=') : bracketEqualsPos + 1;
-
-        var key, val;
-        if (pos === -1) {
-            key = options.decoder(part, defaults.decoder, charset, 'key');
-            val = options.strictNullHandling ? null : '';
-        } else {
-            key = options.decoder(part.slice(0, pos), defaults.decoder, charset, 'key');
-            val = utils.maybeMap(
-                parseArrayValue(part.slice(pos + 1), options),
-                function (encodedVal) {
-                    return options.decoder(encodedVal, defaults.decoder, charset, 'value');
-                }
-            );
-        }
-
-        if (val && options.interpretNumericEntities && charset === 'iso-8859-1') {
-            val = interpretNumericEntities(val);
-        }
-
-        if (part.indexOf('[]=') > -1) {
-            val = isArray(val) ? [val] : val;
-        }
-
-        if (has.call(obj, key)) {
-            obj[key] = utils.combine(obj[key], val);
-        } else {
-            obj[key] = val;
-        }
-    }
-
-    return obj;
-};
-
-var parseObject = function (chain, val, options, valuesParsed) {
-    var leaf = valuesParsed ? val : parseArrayValue(val, options);
-
-    for (var i = chain.length - 1; i >= 0; --i) {
-        var obj;
-        var root = chain[i];
-
-        if (root === '[]' && options.parseArrays) {
-            obj = [].concat(leaf);
-        } else {
-            obj = options.plainObjects ? Object.create(null) : {};
-            var cleanRoot = root.charAt(0) === '[' && root.charAt(root.length - 1) === ']' ? root.slice(1, -1) : root;
-            var index = parseInt(cleanRoot, 10);
-            if (!options.parseArrays && cleanRoot === '') {
-                obj = { 0: leaf };
-            } else if (
-                !isNaN(index)
-                && root !== cleanRoot
-                && String(index) === cleanRoot
-                && index >= 0
-                && (options.parseArrays && index <= options.arrayLimit)
-            ) {
-                obj = [];
-                obj[index] = leaf;
-            } else if (cleanRoot !== '__proto__') {
-                obj[cleanRoot] = leaf;
-            }
-        }
-
-        leaf = obj;
-    }
-
-    return leaf;
-};
-
-var parseKeys = function parseQueryStringKeys(givenKey, val, options, valuesParsed) {
-    if (!givenKey) {
-        return;
-    }
-
-    // Transform dot notation to bracket notation
-    var key = options.allowDots ? givenKey.replace(/\.([^.[]+)/g, '[$1]') : givenKey;
-
-    // The regex chunks
-
-    var brackets = /(\[[^[\]]*])/;
-    var child = /(\[[^[\]]*])/g;
-
-    // Get the parent
-
-    var segment = options.depth > 0 && brackets.exec(key);
-    var parent = segment ? key.slice(0, segment.index) : key;
-
-    // Stash the parent if it exists
-
-    var keys = [];
-    if (parent) {
-        // If we aren't using plain objects, optionally prefix keys that would overwrite object prototype properties
-        if (!options.plainObjects && has.call(Object.prototype, parent)) {
-            if (!options.allowPrototypes) {
-                return;
-            }
-        }
-
-        keys.push(parent);
-    }
-
-    // Loop through children appending to the array until we hit depth
-
-    var i = 0;
-    while (options.depth > 0 && (segment = child.exec(key)) !== null && i < options.depth) {
-        i += 1;
-        if (!options.plainObjects && has.call(Object.prototype, segment[1].slice(1, -1))) {
-            if (!options.allowPrototypes) {
-                return;
-            }
-        }
-        keys.push(segment[1]);
-    }
-
-    // If there's a remainder, just add whatever is left
-
-    if (segment) {
-        keys.push('[' + key.slice(segment.index) + ']');
-    }
-
-    return parseObject(keys, val, options, valuesParsed);
-};
-
-var normalizeParseOptions = function normalizeParseOptions(opts) {
-    if (!opts) {
-        return defaults;
-    }
-
-    if (opts.decoder !== null && opts.decoder !== undefined && typeof opts.decoder !== 'function') {
-        throw new TypeError('Decoder has to be a function.');
-    }
-
-    if (typeof opts.charset !== 'undefined' && opts.charset !== 'utf-8' && opts.charset !== 'iso-8859-1') {
-        throw new TypeError('The charset option must be either utf-8, iso-8859-1, or undefined');
-    }
-    var charset = typeof opts.charset === 'undefined' ? defaults.charset : opts.charset;
-
-    return {
-        allowDots: typeof opts.allowDots === 'undefined' ? defaults.allowDots : !!opts.allowDots,
-        allowPrototypes: typeof opts.allowPrototypes === 'boolean' ? opts.allowPrototypes : defaults.allowPrototypes,
-        allowSparse: typeof opts.allowSparse === 'boolean' ? opts.allowSparse : defaults.allowSparse,
-        arrayLimit: typeof opts.arrayLimit === 'number' ? opts.arrayLimit : defaults.arrayLimit,
-        charset: charset,
-        charsetSentinel: typeof opts.charsetSentinel === 'boolean' ? opts.charsetSentinel : defaults.charsetSentinel,
-        comma: typeof opts.comma === 'boolean' ? opts.comma : defaults.comma,
-        decoder: typeof opts.decoder === 'function' ? opts.decoder : defaults.decoder,
-        delimiter: typeof opts.delimiter === 'string' || utils.isRegExp(opts.delimiter) ? opts.delimiter : defaults.delimiter,
-        // eslint-disable-next-line no-implicit-coercion, no-extra-parens
-        depth: (typeof opts.depth === 'number' || opts.depth === false) ? +opts.depth : defaults.depth,
-        ignoreQueryPrefix: opts.ignoreQueryPrefix === true,
-        interpretNumericEntities: typeof opts.interpretNumericEntities === 'boolean' ? opts.interpretNumericEntities : defaults.interpretNumericEntities,
-        parameterLimit: typeof opts.parameterLimit === 'number' ? opts.parameterLimit : defaults.parameterLimit,
-        parseArrays: opts.parseArrays !== false,
-        plainObjects: typeof opts.plainObjects === 'boolean' ? opts.plainObjects : defaults.plainObjects,
-        strictNullHandling: typeof opts.strictNullHandling === 'boolean' ? opts.strictNullHandling : defaults.strictNullHandling
-    };
-};
-
-module.exports = function (str, opts) {
-    var options = normalizeParseOptions(opts);
-
-    if (str === '' || str === null || typeof str === 'undefined') {
-        return options.plainObjects ? Object.create(null) : {};
-    }
-
-    var tempObj = typeof str === 'string' ? parseValues(str, options) : str;
-    var obj = options.plainObjects ? Object.create(null) : {};
-
-    // Iterate over the keys and setup the new object
-
-    var keys = Object.keys(tempObj);
-    for (var i = 0; i < keys.length; ++i) {
-        var key = keys[i];
-        var newObj = parseKeys(key, tempObj[key], options, typeof str === 'string');
-        obj = utils.merge(obj, newObj, options);
-    }
-
-    if (options.allowSparse === true) {
-        return obj;
-    }
-
-    return utils.compact(obj);
-};
-
-
-/***/ }),
-
-/***/ "./node_modules/@inertiajs/inertia/node_modules/qs/lib/stringify.js":
-/*!**************************************************************************!*\
-  !*** ./node_modules/@inertiajs/inertia/node_modules/qs/lib/stringify.js ***!
-  \**************************************************************************/
-/***/ ((module, __unused_webpack_exports, __webpack_require__) => {
-
-"use strict";
-
-
-var getSideChannel = __webpack_require__(/*! side-channel */ "./node_modules/side-channel/index.js");
-var utils = __webpack_require__(/*! ./utils */ "./node_modules/@inertiajs/inertia/node_modules/qs/lib/utils.js");
-var formats = __webpack_require__(/*! ./formats */ "./node_modules/@inertiajs/inertia/node_modules/qs/lib/formats.js");
-var has = Object.prototype.hasOwnProperty;
-
-var arrayPrefixGenerators = {
-    brackets: function brackets(prefix) {
-        return prefix + '[]';
-    },
-    comma: 'comma',
-    indices: function indices(prefix, key) {
-        return prefix + '[' + key + ']';
-    },
-    repeat: function repeat(prefix) {
-        return prefix;
-    }
-};
-
-var isArray = Array.isArray;
-var split = String.prototype.split;
-var push = Array.prototype.push;
-var pushToArray = function (arr, valueOrArray) {
-    push.apply(arr, isArray(valueOrArray) ? valueOrArray : [valueOrArray]);
-};
-
-var toISO = Date.prototype.toISOString;
-
-var defaultFormat = formats['default'];
-var defaults = {
-    addQueryPrefix: false,
-    allowDots: false,
-    charset: 'utf-8',
-    charsetSentinel: false,
-    delimiter: '&',
-    encode: true,
-    encoder: utils.encode,
-    encodeValuesOnly: false,
-    format: defaultFormat,
-    formatter: formats.formatters[defaultFormat],
-    // deprecated
-    indices: false,
-    serializeDate: function serializeDate(date) {
-        return toISO.call(date);
-    },
-    skipNulls: false,
-    strictNullHandling: false
-};
-
-var isNonNullishPrimitive = function isNonNullishPrimitive(v) {
-    return typeof v === 'string'
-        || typeof v === 'number'
-        || typeof v === 'boolean'
-        || typeof v === 'symbol'
-        || typeof v === 'bigint';
-};
-
-var sentinel = {};
-
-var stringify = function stringify(
-    object,
-    prefix,
-    generateArrayPrefix,
-    strictNullHandling,
-    skipNulls,
-    encoder,
-    filter,
-    sort,
-    allowDots,
-    serializeDate,
-    format,
-    formatter,
-    encodeValuesOnly,
-    charset,
-    sideChannel
-) {
-    var obj = object;
-
-    var tmpSc = sideChannel;
-    var step = 0;
-    var findFlag = false;
-    while ((tmpSc = tmpSc.get(sentinel)) !== void undefined && !findFlag) {
-        // Where object last appeared in the ref tree
-        var pos = tmpSc.get(object);
-        step += 1;
-        if (typeof pos !== 'undefined') {
-            if (pos === step) {
-                throw new RangeError('Cyclic object value');
-            } else {
-                findFlag = true; // Break while
-            }
-        }
-        if (typeof tmpSc.get(sentinel) === 'undefined') {
-            step = 0;
-        }
-    }
-
-    if (typeof filter === 'function') {
-        obj = filter(prefix, obj);
-    } else if (obj instanceof Date) {
-        obj = serializeDate(obj);
-    } else if (generateArrayPrefix === 'comma' && isArray(obj)) {
-        obj = utils.maybeMap(obj, function (value) {
-            if (value instanceof Date) {
-                return serializeDate(value);
-            }
-            return value;
-        });
-    }
-
-    if (obj === null) {
-        if (strictNullHandling) {
-            return encoder && !encodeValuesOnly ? encoder(prefix, defaults.encoder, charset, 'key', format) : prefix;
-        }
-
-        obj = '';
-    }
-
-    if (isNonNullishPrimitive(obj) || utils.isBuffer(obj)) {
-        if (encoder) {
-            var keyValue = encodeValuesOnly ? prefix : encoder(prefix, defaults.encoder, charset, 'key', format);
-            if (generateArrayPrefix === 'comma' && encodeValuesOnly) {
-                var valuesArray = split.call(String(obj), ',');
-                var valuesJoined = '';
-                for (var i = 0; i < valuesArray.length; ++i) {
-                    valuesJoined += (i === 0 ? '' : ',') + formatter(encoder(valuesArray[i], defaults.encoder, charset, 'value', format));
-                }
-                return [formatter(keyValue) + '=' + valuesJoined];
-            }
-            return [formatter(keyValue) + '=' + formatter(encoder(obj, defaults.encoder, charset, 'value', format))];
-        }
-        return [formatter(prefix) + '=' + formatter(String(obj))];
-    }
-
-    var values = [];
-
-    if (typeof obj === 'undefined') {
-        return values;
-    }
-
-    var objKeys;
-    if (generateArrayPrefix === 'comma' && isArray(obj)) {
-        // we need to join elements in
-        objKeys = [{ value: obj.length > 0 ? obj.join(',') || null : void undefined }];
-    } else if (isArray(filter)) {
-        objKeys = filter;
-    } else {
-        var keys = Object.keys(obj);
-        objKeys = sort ? keys.sort(sort) : keys;
-    }
-
-    for (var j = 0; j < objKeys.length; ++j) {
-        var key = objKeys[j];
-        var value = typeof key === 'object' && typeof key.value !== 'undefined' ? key.value : obj[key];
-
-        if (skipNulls && value === null) {
-            continue;
-        }
-
-        var keyPrefix = isArray(obj)
-            ? typeof generateArrayPrefix === 'function' ? generateArrayPrefix(prefix, key) : prefix
-            : prefix + (allowDots ? '.' + key : '[' + key + ']');
-
-        sideChannel.set(object, step);
-        var valueSideChannel = getSideChannel();
-        valueSideChannel.set(sentinel, sideChannel);
-        pushToArray(values, stringify(
-            value,
-            keyPrefix,
-            generateArrayPrefix,
-            strictNullHandling,
-            skipNulls,
-            encoder,
-            filter,
-            sort,
-            allowDots,
-            serializeDate,
-            format,
-            formatter,
-            encodeValuesOnly,
-            charset,
-            valueSideChannel
-        ));
-    }
-
-    return values;
-};
-
-var normalizeStringifyOptions = function normalizeStringifyOptions(opts) {
-    if (!opts) {
-        return defaults;
-    }
-
-    if (opts.encoder !== null && typeof opts.encoder !== 'undefined' && typeof opts.encoder !== 'function') {
-        throw new TypeError('Encoder has to be a function.');
-    }
-
-    var charset = opts.charset || defaults.charset;
-    if (typeof opts.charset !== 'undefined' && opts.charset !== 'utf-8' && opts.charset !== 'iso-8859-1') {
-        throw new TypeError('The charset option must be either utf-8, iso-8859-1, or undefined');
-    }
-
-    var format = formats['default'];
-    if (typeof opts.format !== 'undefined') {
-        if (!has.call(formats.formatters, opts.format)) {
-            throw new TypeError('Unknown format option provided.');
-        }
-        format = opts.format;
-    }
-    var formatter = formats.formatters[format];
-
-    var filter = defaults.filter;
-    if (typeof opts.filter === 'function' || isArray(opts.filter)) {
-        filter = opts.filter;
-    }
-
-    return {
-        addQueryPrefix: typeof opts.addQueryPrefix === 'boolean' ? opts.addQueryPrefix : defaults.addQueryPrefix,
-        allowDots: typeof opts.allowDots === 'undefined' ? defaults.allowDots : !!opts.allowDots,
-        charset: charset,
-        charsetSentinel: typeof opts.charsetSentinel === 'boolean' ? opts.charsetSentinel : defaults.charsetSentinel,
-        delimiter: typeof opts.delimiter === 'undefined' ? defaults.delimiter : opts.delimiter,
-        encode: typeof opts.encode === 'boolean' ? opts.encode : defaults.encode,
-        encoder: typeof opts.encoder === 'function' ? opts.encoder : defaults.encoder,
-        encodeValuesOnly: typeof opts.encodeValuesOnly === 'boolean' ? opts.encodeValuesOnly : defaults.encodeValuesOnly,
-        filter: filter,
-        format: format,
-        formatter: formatter,
-        serializeDate: typeof opts.serializeDate === 'function' ? opts.serializeDate : defaults.serializeDate,
-        skipNulls: typeof opts.skipNulls === 'boolean' ? opts.skipNulls : defaults.skipNulls,
-        sort: typeof opts.sort === 'function' ? opts.sort : null,
-        strictNullHandling: typeof opts.strictNullHandling === 'boolean' ? opts.strictNullHandling : defaults.strictNullHandling
-    };
-};
-
-module.exports = function (object, opts) {
-    var obj = object;
-    var options = normalizeStringifyOptions(opts);
-
-    var objKeys;
-    var filter;
-
-    if (typeof options.filter === 'function') {
-        filter = options.filter;
-        obj = filter('', obj);
-    } else if (isArray(options.filter)) {
-        filter = options.filter;
-        objKeys = filter;
-    }
-
-    var keys = [];
-
-    if (typeof obj !== 'object' || obj === null) {
-        return '';
-    }
-
-    var arrayFormat;
-    if (opts && opts.arrayFormat in arrayPrefixGenerators) {
-        arrayFormat = opts.arrayFormat;
-    } else if (opts && 'indices' in opts) {
-        arrayFormat = opts.indices ? 'indices' : 'repeat';
-    } else {
-        arrayFormat = 'indices';
-    }
-
-    var generateArrayPrefix = arrayPrefixGenerators[arrayFormat];
-
-    if (!objKeys) {
-        objKeys = Object.keys(obj);
-    }
-
-    if (options.sort) {
-        objKeys.sort(options.sort);
-    }
-
-    var sideChannel = getSideChannel();
-    for (var i = 0; i < objKeys.length; ++i) {
-        var key = objKeys[i];
-
-        if (options.skipNulls && obj[key] === null) {
-            continue;
-        }
-        pushToArray(keys, stringify(
-            obj[key],
-            key,
-            generateArrayPrefix,
-            options.strictNullHandling,
-            options.skipNulls,
-            options.encode ? options.encoder : null,
-            options.filter,
-            options.sort,
-            options.allowDots,
-            options.serializeDate,
-            options.format,
-            options.formatter,
-            options.encodeValuesOnly,
-            options.charset,
-            sideChannel
-        ));
-    }
-
-    var joined = keys.join(options.delimiter);
-    var prefix = options.addQueryPrefix === true ? '?' : '';
-
-    if (options.charsetSentinel) {
-        if (options.charset === 'iso-8859-1') {
-            // encodeURIComponent('&#10003;'), the "numeric entity" representation of a checkmark
-            prefix += 'utf8=%26%2310003%3B&';
-        } else {
-            // encodeURIComponent('✓')
-            prefix += 'utf8=%E2%9C%93&';
-        }
-    }
-
-    return joined.length > 0 ? prefix + joined : '';
-};
-
-
-/***/ }),
-
-/***/ "./node_modules/@inertiajs/inertia/node_modules/qs/lib/utils.js":
-/*!**********************************************************************!*\
-  !*** ./node_modules/@inertiajs/inertia/node_modules/qs/lib/utils.js ***!
-  \**********************************************************************/
-/***/ ((module, __unused_webpack_exports, __webpack_require__) => {
-
-"use strict";
-
-
-var formats = __webpack_require__(/*! ./formats */ "./node_modules/@inertiajs/inertia/node_modules/qs/lib/formats.js");
-
-var has = Object.prototype.hasOwnProperty;
-var isArray = Array.isArray;
-
-var hexTable = (function () {
-    var array = [];
-    for (var i = 0; i < 256; ++i) {
-        array.push('%' + ((i < 16 ? '0' : '') + i.toString(16)).toUpperCase());
-    }
-
-    return array;
-}());
-
-var compactQueue = function compactQueue(queue) {
-    while (queue.length > 1) {
-        var item = queue.pop();
-        var obj = item.obj[item.prop];
-
-        if (isArray(obj)) {
-            var compacted = [];
-
-            for (var j = 0; j < obj.length; ++j) {
-                if (typeof obj[j] !== 'undefined') {
-                    compacted.push(obj[j]);
-                }
-            }
-
-            item.obj[item.prop] = compacted;
-        }
-    }
-};
-
-var arrayToObject = function arrayToObject(source, options) {
-    var obj = options && options.plainObjects ? Object.create(null) : {};
-    for (var i = 0; i < source.length; ++i) {
-        if (typeof source[i] !== 'undefined') {
-            obj[i] = source[i];
-        }
-    }
-
-    return obj;
-};
-
-var merge = function merge(target, source, options) {
-    /* eslint no-param-reassign: 0 */
-    if (!source) {
-        return target;
-    }
-
-    if (typeof source !== 'object') {
-        if (isArray(target)) {
-            target.push(source);
-        } else if (target && typeof target === 'object') {
-            if ((options && (options.plainObjects || options.allowPrototypes)) || !has.call(Object.prototype, source)) {
-                target[source] = true;
-            }
-        } else {
-            return [target, source];
-        }
-
-        return target;
-    }
-
-    if (!target || typeof target !== 'object') {
-        return [target].concat(source);
-    }
-
-    var mergeTarget = target;
-    if (isArray(target) && !isArray(source)) {
-        mergeTarget = arrayToObject(target, options);
-    }
-
-    if (isArray(target) && isArray(source)) {
-        source.forEach(function (item, i) {
-            if (has.call(target, i)) {
-                var targetItem = target[i];
-                if (targetItem && typeof targetItem === 'object' && item && typeof item === 'object') {
-                    target[i] = merge(targetItem, item, options);
-                } else {
-                    target.push(item);
-                }
-            } else {
-                target[i] = item;
-            }
-        });
-        return target;
-    }
-
-    return Object.keys(source).reduce(function (acc, key) {
-        var value = source[key];
-
-        if (has.call(acc, key)) {
-            acc[key] = merge(acc[key], value, options);
-        } else {
-            acc[key] = value;
-        }
-        return acc;
-    }, mergeTarget);
-};
-
-var assign = function assignSingleSource(target, source) {
-    return Object.keys(source).reduce(function (acc, key) {
-        acc[key] = source[key];
-        return acc;
-    }, target);
-};
-
-var decode = function (str, decoder, charset) {
-    var strWithoutPlus = str.replace(/\+/g, ' ');
-    if (charset === 'iso-8859-1') {
-        // unescape never throws, no try...catch needed:
-        return strWithoutPlus.replace(/%[0-9a-f]{2}/gi, unescape);
-    }
-    // utf-8
-    try {
-        return decodeURIComponent(strWithoutPlus);
-    } catch (e) {
-        return strWithoutPlus;
-    }
-};
-
-var encode = function encode(str, defaultEncoder, charset, kind, format) {
-    // This code was originally written by Brian White (mscdex) for the io.js core querystring library.
-    // It has been adapted here for stricter adherence to RFC 3986
-    if (str.length === 0) {
-        return str;
-    }
-
-    var string = str;
-    if (typeof str === 'symbol') {
-        string = Symbol.prototype.toString.call(str);
-    } else if (typeof str !== 'string') {
-        string = String(str);
-    }
-
-    if (charset === 'iso-8859-1') {
-        return escape(string).replace(/%u[0-9a-f]{4}/gi, function ($0) {
-            return '%26%23' + parseInt($0.slice(2), 16) + '%3B';
-        });
-    }
-
-    var out = '';
-    for (var i = 0; i < string.length; ++i) {
-        var c = string.charCodeAt(i);
-
-        if (
-            c === 0x2D // -
-            || c === 0x2E // .
-            || c === 0x5F // _
-            || c === 0x7E // ~
-            || (c >= 0x30 && c <= 0x39) // 0-9
-            || (c >= 0x41 && c <= 0x5A) // a-z
-            || (c >= 0x61 && c <= 0x7A) // A-Z
-            || (format === formats.RFC1738 && (c === 0x28 || c === 0x29)) // ( )
-        ) {
-            out += string.charAt(i);
-            continue;
-        }
-
-        if (c < 0x80) {
-            out = out + hexTable[c];
-            continue;
-        }
-
-        if (c < 0x800) {
-            out = out + (hexTable[0xC0 | (c >> 6)] + hexTable[0x80 | (c & 0x3F)]);
-            continue;
-        }
-
-        if (c < 0xD800 || c >= 0xE000) {
-            out = out + (hexTable[0xE0 | (c >> 12)] + hexTable[0x80 | ((c >> 6) & 0x3F)] + hexTable[0x80 | (c & 0x3F)]);
-            continue;
-        }
-
-        i += 1;
-        c = 0x10000 + (((c & 0x3FF) << 10) | (string.charCodeAt(i) & 0x3FF));
-        /* eslint operator-linebreak: [2, "before"] */
-        out += hexTable[0xF0 | (c >> 18)]
-            + hexTable[0x80 | ((c >> 12) & 0x3F)]
-            + hexTable[0x80 | ((c >> 6) & 0x3F)]
-            + hexTable[0x80 | (c & 0x3F)];
-    }
-
-    return out;
-};
-
-var compact = function compact(value) {
-    var queue = [{ obj: { o: value }, prop: 'o' }];
-    var refs = [];
-
-    for (var i = 0; i < queue.length; ++i) {
-        var item = queue[i];
-        var obj = item.obj[item.prop];
-
-        var keys = Object.keys(obj);
-        for (var j = 0; j < keys.length; ++j) {
-            var key = keys[j];
-            var val = obj[key];
-            if (typeof val === 'object' && val !== null && refs.indexOf(val) === -1) {
-                queue.push({ obj: obj, prop: key });
-                refs.push(val);
-            }
-        }
-    }
-
-    compactQueue(queue);
-
-    return value;
-};
-
-var isRegExp = function isRegExp(obj) {
-    return Object.prototype.toString.call(obj) === '[object RegExp]';
-};
-
-var isBuffer = function isBuffer(obj) {
-    if (!obj || typeof obj !== 'object') {
-        return false;
-    }
-
-    return !!(obj.constructor && obj.constructor.isBuffer && obj.constructor.isBuffer(obj));
-};
-
-var combine = function combine(a, b) {
-    return [].concat(a, b);
-};
-
-var maybeMap = function maybeMap(val, fn) {
-    if (isArray(val)) {
-        var mapped = [];
-        for (var i = 0; i < val.length; i += 1) {
-            mapped.push(fn(val[i]));
-        }
-        return mapped;
-    }
-    return fn(val);
-};
-
-module.exports = {
-    arrayToObject: arrayToObject,
-    assign: assign,
-    combine: combine,
-    compact: compact,
-    decode: decode,
-    encode: encode,
-    isBuffer: isBuffer,
-    isRegExp: isRegExp,
-    maybeMap: maybeMap,
-    merge: merge
-};
 
 
 /***/ }),
@@ -9957,7 +2602,7 @@ function findMatchingHierarchicalFacetFromAttributeName(
 }
  **/
 /*eslint-enable */
-function SearchResults(state, results) {
+function SearchResults(state, results, options) {
   var mainSubResponse = results[0];
 
   this._rawResults = results;
@@ -9967,6 +2612,11 @@ function SearchResults(state, results) {
   // https://www.algolia.com/doc/api-reference/api-methods/search/#response
   Object.keys(mainSubResponse).forEach(function(key) {
     self[key] = mainSubResponse[key];
+  });
+
+  // Make every key of the result options reachable from the instance
+  Object.keys(options || {}).forEach(function(key) {
+    self[key] = options[key];
   });
 
   /**
@@ -13044,7 +5694,7 @@ module.exports = function isValidUserToken(userToken) {
 "use strict";
 
 
-module.exports = '3.7.0';
+module.exports = '3.7.4';
 
 
 /***/ }),
@@ -13055,8 +5705,8 @@ module.exports = '3.7.0';
   \*******************************************************************/
 /***/ (function(module) {
 
-/*! algoliasearch-lite.umd.js | 4.12.1 | © Algolia, inc. | https://github.com/algolia/algoliasearch-client-javascript */
-!function(e,t){ true?module.exports=t():0}(this,(function(){"use strict";function e(e,t,r){return t in e?Object.defineProperty(e,t,{value:r,enumerable:!0,configurable:!0,writable:!0}):e[t]=r,e}function t(e,t){var r=Object.keys(e);if(Object.getOwnPropertySymbols){var n=Object.getOwnPropertySymbols(e);t&&(n=n.filter((function(t){return Object.getOwnPropertyDescriptor(e,t).enumerable}))),r.push.apply(r,n)}return r}function r(r){for(var n=1;n<arguments.length;n++){var o=null!=arguments[n]?arguments[n]:{};n%2?t(Object(o),!0).forEach((function(t){e(r,t,o[t])})):Object.getOwnPropertyDescriptors?Object.defineProperties(r,Object.getOwnPropertyDescriptors(o)):t(Object(o)).forEach((function(e){Object.defineProperty(r,e,Object.getOwnPropertyDescriptor(o,e))}))}return r}function n(e,t){if(null==e)return{};var r,n,o=function(e,t){if(null==e)return{};var r,n,o={},a=Object.keys(e);for(n=0;n<a.length;n++)r=a[n],t.indexOf(r)>=0||(o[r]=e[r]);return o}(e,t);if(Object.getOwnPropertySymbols){var a=Object.getOwnPropertySymbols(e);for(n=0;n<a.length;n++)r=a[n],t.indexOf(r)>=0||Object.prototype.propertyIsEnumerable.call(e,r)&&(o[r]=e[r])}return o}function o(e,t){return function(e){if(Array.isArray(e))return e}(e)||function(e,t){if(!(Symbol.iterator in Object(e)||"[object Arguments]"===Object.prototype.toString.call(e)))return;var r=[],n=!0,o=!1,a=void 0;try{for(var u,i=e[Symbol.iterator]();!(n=(u=i.next()).done)&&(r.push(u.value),!t||r.length!==t);n=!0);}catch(e){o=!0,a=e}finally{try{n||null==i.return||i.return()}finally{if(o)throw a}}return r}(e,t)||function(){throw new TypeError("Invalid attempt to destructure non-iterable instance")}()}function a(e){return function(e){if(Array.isArray(e)){for(var t=0,r=new Array(e.length);t<e.length;t++)r[t]=e[t];return r}}(e)||function(e){if(Symbol.iterator in Object(e)||"[object Arguments]"===Object.prototype.toString.call(e))return Array.from(e)}(e)||function(){throw new TypeError("Invalid attempt to spread non-iterable instance")}()}function u(e){var t,r="algoliasearch-client-js-".concat(e.key),n=function(){return void 0===t&&(t=e.localStorage||window.localStorage),t},a=function(){return JSON.parse(n().getItem(r)||"{}")};return{get:function(e,t){var r=arguments.length>2&&void 0!==arguments[2]?arguments[2]:{miss:function(){return Promise.resolve()}};return Promise.resolve().then((function(){var r=JSON.stringify(e),n=a()[r];return Promise.all([n||t(),void 0!==n])})).then((function(e){var t=o(e,2),n=t[0],a=t[1];return Promise.all([n,a||r.miss(n)])})).then((function(e){return o(e,1)[0]}))},set:function(e,t){return Promise.resolve().then((function(){var o=a();return o[JSON.stringify(e)]=t,n().setItem(r,JSON.stringify(o)),t}))},delete:function(e){return Promise.resolve().then((function(){var t=a();delete t[JSON.stringify(e)],n().setItem(r,JSON.stringify(t))}))},clear:function(){return Promise.resolve().then((function(){n().removeItem(r)}))}}}function i(e){var t=a(e.caches),r=t.shift();return void 0===r?{get:function(e,t){var r=arguments.length>2&&void 0!==arguments[2]?arguments[2]:{miss:function(){return Promise.resolve()}},n=t();return n.then((function(e){return Promise.all([e,r.miss(e)])})).then((function(e){return o(e,1)[0]}))},set:function(e,t){return Promise.resolve(t)},delete:function(e){return Promise.resolve()},clear:function(){return Promise.resolve()}}:{get:function(e,n){var o=arguments.length>2&&void 0!==arguments[2]?arguments[2]:{miss:function(){return Promise.resolve()}};return r.get(e,n,o).catch((function(){return i({caches:t}).get(e,n,o)}))},set:function(e,n){return r.set(e,n).catch((function(){return i({caches:t}).set(e,n)}))},delete:function(e){return r.delete(e).catch((function(){return i({caches:t}).delete(e)}))},clear:function(){return r.clear().catch((function(){return i({caches:t}).clear()}))}}}function s(){var e=arguments.length>0&&void 0!==arguments[0]?arguments[0]:{serializable:!0},t={};return{get:function(r,n){var o=arguments.length>2&&void 0!==arguments[2]?arguments[2]:{miss:function(){return Promise.resolve()}},a=JSON.stringify(r);if(a in t)return Promise.resolve(e.serializable?JSON.parse(t[a]):t[a]);var u=n(),i=o&&o.miss||function(){return Promise.resolve()};return u.then((function(e){return i(e)})).then((function(){return u}))},set:function(r,n){return t[JSON.stringify(r)]=e.serializable?JSON.stringify(n):n,Promise.resolve(n)},delete:function(e){return delete t[JSON.stringify(e)],Promise.resolve()},clear:function(){return t={},Promise.resolve()}}}function c(e){for(var t=e.length-1;t>0;t--){var r=Math.floor(Math.random()*(t+1)),n=e[t];e[t]=e[r],e[r]=n}return e}function l(e,t){return t?(Object.keys(t).forEach((function(r){e[r]=t[r](e)})),e):e}function f(e){for(var t=arguments.length,r=new Array(t>1?t-1:0),n=1;n<t;n++)r[n-1]=arguments[n];var o=0;return e.replace(/%s/g,(function(){return encodeURIComponent(r[o++])}))}var h={WithinQueryParameters:0,WithinHeaders:1};function d(e,t){var r=e||{},n=r.data||{};return Object.keys(r).forEach((function(e){-1===["timeout","headers","queryParameters","data","cacheable"].indexOf(e)&&(n[e]=r[e])})),{data:Object.entries(n).length>0?n:void 0,timeout:r.timeout||t,headers:r.headers||{},queryParameters:r.queryParameters||{},cacheable:r.cacheable}}var m={Read:1,Write:2,Any:3},p=1,v=2,y=3;function g(e){var t=arguments.length>1&&void 0!==arguments[1]?arguments[1]:p;return r(r({},e),{},{status:t,lastUpdate:Date.now()})}function b(e){return"string"==typeof e?{protocol:"https",url:e,accept:m.Any}:{protocol:e.protocol||"https",url:e.url,accept:e.accept||m.Any}}var O="GET",P="POST";function q(e,t){return Promise.all(t.map((function(t){return e.get(t,(function(){return Promise.resolve(g(t))}))}))).then((function(e){var r=e.filter((function(e){return function(e){return e.status===p||Date.now()-e.lastUpdate>12e4}(e)})),n=e.filter((function(e){return function(e){return e.status===y&&Date.now()-e.lastUpdate<=12e4}(e)})),o=[].concat(a(r),a(n));return{getTimeout:function(e,t){return(0===n.length&&0===e?1:n.length+3+e)*t},statelessHosts:o.length>0?o.map((function(e){return b(e)})):t}}))}function w(e,t,n,o){var u=[],i=function(e,t){if(e.method===O||void 0===e.data&&void 0===t.data)return;var n=Array.isArray(e.data)?e.data:r(r({},e.data),t.data);return JSON.stringify(n)}(n,o),s=function(e,t){var n=r(r({},e.headers),t.headers),o={};return Object.keys(n).forEach((function(e){var t=n[e];o[e.toLowerCase()]=t})),o}(e,o),c=n.method,l=n.method!==O?{}:r(r({},n.data),o.data),f=r(r(r({"x-algolia-agent":e.userAgent.value},e.queryParameters),l),o.queryParameters),h=0,d=function t(r,a){var l=r.pop();if(void 0===l)throw{name:"RetryError",message:"Unreachable hosts - your application id may be incorrect. If the error persists, contact support@algolia.com.",transporterStackTrace:A(u)};var d={data:i,headers:s,method:c,url:S(l,n.path,f),connectTimeout:a(h,e.timeouts.connect),responseTimeout:a(h,o.timeout)},m=function(e){var t={request:d,response:e,host:l,triesLeft:r.length};return u.push(t),t},p={onSuccess:function(e){return function(e){try{return JSON.parse(e.content)}catch(t){throw function(e,t){return{name:"DeserializationError",message:e,response:t}}(t.message,e)}}(e)},onRetry:function(n){var o=m(n);return n.isTimedOut&&h++,Promise.all([e.logger.info("Retryable failure",x(o)),e.hostsCache.set(l,g(l,n.isTimedOut?y:v))]).then((function(){return t(r,a)}))},onFail:function(e){throw m(e),function(e,t){var r=e.content,n=e.status,o=r;try{o=JSON.parse(r).message}catch(e){}return function(e,t,r){return{name:"ApiError",message:e,status:t,transporterStackTrace:r}}(o,n,t)}(e,A(u))}};return e.requester.send(d).then((function(e){return function(e,t){return function(e){var t=e.status;return e.isTimedOut||function(e){var t=e.isTimedOut,r=e.status;return!t&&0==~~r}(e)||2!=~~(t/100)&&4!=~~(t/100)}(e)?t.onRetry(e):2==~~(e.status/100)?t.onSuccess(e):t.onFail(e)}(e,p)}))};return q(e.hostsCache,t).then((function(e){return d(a(e.statelessHosts).reverse(),e.getTimeout)}))}function j(e){var t={value:"Algolia for JavaScript (".concat(e,")"),add:function(e){var r="; ".concat(e.segment).concat(void 0!==e.version?" (".concat(e.version,")"):"");return-1===t.value.indexOf(r)&&(t.value="".concat(t.value).concat(r)),t}};return t}function S(e,t,r){var n=T(r),o="".concat(e.protocol,"://").concat(e.url,"/").concat("/"===t.charAt(0)?t.substr(1):t);return n.length&&(o+="?".concat(n)),o}function T(e){return Object.keys(e).map((function(t){return f("%s=%s",t,(r=e[t],"[object Object]"===Object.prototype.toString.call(r)||"[object Array]"===Object.prototype.toString.call(r)?JSON.stringify(e[t]):e[t]));var r})).join("&")}function A(e){return e.map((function(e){return x(e)}))}function x(e){var t=e.request.headers["x-algolia-api-key"]?{"x-algolia-api-key":"*****"}:{};return r(r({},e),{},{request:r(r({},e.request),{},{headers:r(r({},e.request.headers),t)})})}var N=function(e){var t=e.appId,n=function(e,t,r){var n={"x-algolia-api-key":r,"x-algolia-application-id":t};return{headers:function(){return e===h.WithinHeaders?n:{}},queryParameters:function(){return e===h.WithinQueryParameters?n:{}}}}(void 0!==e.authMode?e.authMode:h.WithinHeaders,t,e.apiKey),a=function(e){var t=e.hostsCache,r=e.logger,n=e.requester,a=e.requestsCache,u=e.responsesCache,i=e.timeouts,s=e.userAgent,c=e.hosts,l=e.queryParameters,f={hostsCache:t,logger:r,requester:n,requestsCache:a,responsesCache:u,timeouts:i,userAgent:s,headers:e.headers,queryParameters:l,hosts:c.map((function(e){return b(e)})),read:function(e,t){var r=d(t,f.timeouts.read),n=function(){return w(f,f.hosts.filter((function(e){return 0!=(e.accept&m.Read)})),e,r)};if(!0!==(void 0!==r.cacheable?r.cacheable:e.cacheable))return n();var a={request:e,mappedRequestOptions:r,transporter:{queryParameters:f.queryParameters,headers:f.headers}};return f.responsesCache.get(a,(function(){return f.requestsCache.get(a,(function(){return f.requestsCache.set(a,n()).then((function(e){return Promise.all([f.requestsCache.delete(a),e])}),(function(e){return Promise.all([f.requestsCache.delete(a),Promise.reject(e)])})).then((function(e){var t=o(e,2);t[0];return t[1]}))}))}),{miss:function(e){return f.responsesCache.set(a,e)}})},write:function(e,t){return w(f,f.hosts.filter((function(e){return 0!=(e.accept&m.Write)})),e,d(t,f.timeouts.write))}};return f}(r(r({hosts:[{url:"".concat(t,"-dsn.algolia.net"),accept:m.Read},{url:"".concat(t,".algolia.net"),accept:m.Write}].concat(c([{url:"".concat(t,"-1.algolianet.com")},{url:"".concat(t,"-2.algolianet.com")},{url:"".concat(t,"-3.algolianet.com")}]))},e),{},{headers:r(r(r({},n.headers()),{"content-type":"application/x-www-form-urlencoded"}),e.headers),queryParameters:r(r({},n.queryParameters()),e.queryParameters)}));return l({transporter:a,appId:t,addAlgoliaAgent:function(e,t){a.userAgent.add({segment:e,version:t})},clearCache:function(){return Promise.all([a.requestsCache.clear(),a.responsesCache.clear()]).then((function(){}))}},e.methods)},C=function(e){return function(t,r){return t.method===O?e.transporter.read(t,r):e.transporter.write(t,r)}},k=function(e){return function(t){var r=arguments.length>1&&void 0!==arguments[1]?arguments[1]:{},n={transporter:e.transporter,appId:e.appId,indexName:t};return l(n,r.methods)}},J=function(e){return function(t,n){var o=t.map((function(e){return r(r({},e),{},{params:T(e.params||{})})}));return e.transporter.read({method:P,path:"1/indexes/*/queries",data:{requests:o},cacheable:!0},n)}},E=function(e){return function(t,o){return Promise.all(t.map((function(t){var a=t.params,u=a.facetName,i=a.facetQuery,s=n(a,["facetName","facetQuery"]);return k(e)(t.indexName,{methods:{searchForFacetValues:R}}).searchForFacetValues(u,i,r(r({},o),s))})))}},I=function(e){return function(t,r,n){return e.transporter.read({method:P,path:f("1/answers/%s/prediction",e.indexName),data:{query:t,queryLanguages:r},cacheable:!0},n)}},F=function(e){return function(t,r){return e.transporter.read({method:P,path:f("1/indexes/%s/query",e.indexName),data:{query:t},cacheable:!0},r)}},R=function(e){return function(t,r,n){return e.transporter.read({method:P,path:f("1/indexes/%s/facets/%s/query",e.indexName,t),data:{facetQuery:r},cacheable:!0},n)}},D=1,W=2,H=3;function Q(e,t,n){var o,a={appId:e,apiKey:t,timeouts:{connect:1,read:2,write:30},requester:{send:function(e){return new Promise((function(t){var r=new XMLHttpRequest;r.open(e.method,e.url,!0),Object.keys(e.headers).forEach((function(t){return r.setRequestHeader(t,e.headers[t])}));var n,o=function(e,n){return setTimeout((function(){r.abort(),t({status:0,content:n,isTimedOut:!0})}),1e3*e)},a=o(e.connectTimeout,"Connection timeout");r.onreadystatechange=function(){r.readyState>r.OPENED&&void 0===n&&(clearTimeout(a),n=o(e.responseTimeout,"Socket timeout"))},r.onerror=function(){0===r.status&&(clearTimeout(a),clearTimeout(n),t({content:r.responseText||"Network request failed",status:r.status,isTimedOut:!1}))},r.onload=function(){clearTimeout(a),clearTimeout(n),t({content:r.responseText,status:r.status,isTimedOut:!1})},r.send(e.data)}))}},logger:(o=H,{debug:function(e,t){return D>=o&&console.debug(e,t),Promise.resolve()},info:function(e,t){return W>=o&&console.info(e,t),Promise.resolve()},error:function(e,t){return console.error(e,t),Promise.resolve()}}),responsesCache:s(),requestsCache:s({serializable:!1}),hostsCache:i({caches:[u({key:"".concat("4.12.1","-").concat(e)}),s()]}),userAgent:j("4.12.1").add({segment:"Browser",version:"lite"}),authMode:h.WithinQueryParameters};return N(r(r(r({},a),n),{},{methods:{search:J,searchForFacetValues:E,multipleQueries:J,multipleSearchForFacetValues:E,customRequest:C,initIndex:function(e){return function(t){return k(e)(t,{methods:{search:F,searchForFacetValues:R,findAnswers:I}})}}}}))}return Q.version="4.12.1",Q}));
+/*! algoliasearch-lite.umd.js | 4.13.0 | © Algolia, inc. | https://github.com/algolia/algoliasearch-client-javascript */
+!function(e,t){ true?module.exports=t():0}(this,(function(){"use strict";function e(e,t,r){return t in e?Object.defineProperty(e,t,{value:r,enumerable:!0,configurable:!0,writable:!0}):e[t]=r,e}function t(e,t){var r=Object.keys(e);if(Object.getOwnPropertySymbols){var n=Object.getOwnPropertySymbols(e);t&&(n=n.filter((function(t){return Object.getOwnPropertyDescriptor(e,t).enumerable}))),r.push.apply(r,n)}return r}function r(r){for(var n=1;n<arguments.length;n++){var o=null!=arguments[n]?arguments[n]:{};n%2?t(Object(o),!0).forEach((function(t){e(r,t,o[t])})):Object.getOwnPropertyDescriptors?Object.defineProperties(r,Object.getOwnPropertyDescriptors(o)):t(Object(o)).forEach((function(e){Object.defineProperty(r,e,Object.getOwnPropertyDescriptor(o,e))}))}return r}function n(e,t){if(null==e)return{};var r,n,o=function(e,t){if(null==e)return{};var r,n,o={},a=Object.keys(e);for(n=0;n<a.length;n++)r=a[n],t.indexOf(r)>=0||(o[r]=e[r]);return o}(e,t);if(Object.getOwnPropertySymbols){var a=Object.getOwnPropertySymbols(e);for(n=0;n<a.length;n++)r=a[n],t.indexOf(r)>=0||Object.prototype.propertyIsEnumerable.call(e,r)&&(o[r]=e[r])}return o}function o(e,t){return function(e){if(Array.isArray(e))return e}(e)||function(e,t){if(!(Symbol.iterator in Object(e)||"[object Arguments]"===Object.prototype.toString.call(e)))return;var r=[],n=!0,o=!1,a=void 0;try{for(var u,i=e[Symbol.iterator]();!(n=(u=i.next()).done)&&(r.push(u.value),!t||r.length!==t);n=!0);}catch(e){o=!0,a=e}finally{try{n||null==i.return||i.return()}finally{if(o)throw a}}return r}(e,t)||function(){throw new TypeError("Invalid attempt to destructure non-iterable instance")}()}function a(e){return function(e){if(Array.isArray(e)){for(var t=0,r=new Array(e.length);t<e.length;t++)r[t]=e[t];return r}}(e)||function(e){if(Symbol.iterator in Object(e)||"[object Arguments]"===Object.prototype.toString.call(e))return Array.from(e)}(e)||function(){throw new TypeError("Invalid attempt to spread non-iterable instance")}()}function u(e){var t,r="algoliasearch-client-js-".concat(e.key),n=function(){return void 0===t&&(t=e.localStorage||window.localStorage),t},a=function(){return JSON.parse(n().getItem(r)||"{}")};return{get:function(e,t){var r=arguments.length>2&&void 0!==arguments[2]?arguments[2]:{miss:function(){return Promise.resolve()}};return Promise.resolve().then((function(){var r=JSON.stringify(e),n=a()[r];return Promise.all([n||t(),void 0!==n])})).then((function(e){var t=o(e,2),n=t[0],a=t[1];return Promise.all([n,a||r.miss(n)])})).then((function(e){return o(e,1)[0]}))},set:function(e,t){return Promise.resolve().then((function(){var o=a();return o[JSON.stringify(e)]=t,n().setItem(r,JSON.stringify(o)),t}))},delete:function(e){return Promise.resolve().then((function(){var t=a();delete t[JSON.stringify(e)],n().setItem(r,JSON.stringify(t))}))},clear:function(){return Promise.resolve().then((function(){n().removeItem(r)}))}}}function i(e){var t=a(e.caches),r=t.shift();return void 0===r?{get:function(e,t){var r=arguments.length>2&&void 0!==arguments[2]?arguments[2]:{miss:function(){return Promise.resolve()}},n=t();return n.then((function(e){return Promise.all([e,r.miss(e)])})).then((function(e){return o(e,1)[0]}))},set:function(e,t){return Promise.resolve(t)},delete:function(e){return Promise.resolve()},clear:function(){return Promise.resolve()}}:{get:function(e,n){var o=arguments.length>2&&void 0!==arguments[2]?arguments[2]:{miss:function(){return Promise.resolve()}};return r.get(e,n,o).catch((function(){return i({caches:t}).get(e,n,o)}))},set:function(e,n){return r.set(e,n).catch((function(){return i({caches:t}).set(e,n)}))},delete:function(e){return r.delete(e).catch((function(){return i({caches:t}).delete(e)}))},clear:function(){return r.clear().catch((function(){return i({caches:t}).clear()}))}}}function s(){var e=arguments.length>0&&void 0!==arguments[0]?arguments[0]:{serializable:!0},t={};return{get:function(r,n){var o=arguments.length>2&&void 0!==arguments[2]?arguments[2]:{miss:function(){return Promise.resolve()}},a=JSON.stringify(r);if(a in t)return Promise.resolve(e.serializable?JSON.parse(t[a]):t[a]);var u=n(),i=o&&o.miss||function(){return Promise.resolve()};return u.then((function(e){return i(e)})).then((function(){return u}))},set:function(r,n){return t[JSON.stringify(r)]=e.serializable?JSON.stringify(n):n,Promise.resolve(n)},delete:function(e){return delete t[JSON.stringify(e)],Promise.resolve()},clear:function(){return t={},Promise.resolve()}}}function c(e){for(var t=e.length-1;t>0;t--){var r=Math.floor(Math.random()*(t+1)),n=e[t];e[t]=e[r],e[r]=n}return e}function l(e,t){return t?(Object.keys(t).forEach((function(r){e[r]=t[r](e)})),e):e}function f(e){for(var t=arguments.length,r=new Array(t>1?t-1:0),n=1;n<t;n++)r[n-1]=arguments[n];var o=0;return e.replace(/%s/g,(function(){return encodeURIComponent(r[o++])}))}var h={WithinQueryParameters:0,WithinHeaders:1};function d(e,t){var r=e||{},n=r.data||{};return Object.keys(r).forEach((function(e){-1===["timeout","headers","queryParameters","data","cacheable"].indexOf(e)&&(n[e]=r[e])})),{data:Object.entries(n).length>0?n:void 0,timeout:r.timeout||t,headers:r.headers||{},queryParameters:r.queryParameters||{},cacheable:r.cacheable}}var m={Read:1,Write:2,Any:3},p=1,v=2,y=3;function g(e){var t=arguments.length>1&&void 0!==arguments[1]?arguments[1]:p;return r(r({},e),{},{status:t,lastUpdate:Date.now()})}function b(e){return"string"==typeof e?{protocol:"https",url:e,accept:m.Any}:{protocol:e.protocol||"https",url:e.url,accept:e.accept||m.Any}}var O="GET",P="POST";function q(e,t){return Promise.all(t.map((function(t){return e.get(t,(function(){return Promise.resolve(g(t))}))}))).then((function(e){var r=e.filter((function(e){return function(e){return e.status===p||Date.now()-e.lastUpdate>12e4}(e)})),n=e.filter((function(e){return function(e){return e.status===y&&Date.now()-e.lastUpdate<=12e4}(e)})),o=[].concat(a(r),a(n));return{getTimeout:function(e,t){return(0===n.length&&0===e?1:n.length+3+e)*t},statelessHosts:o.length>0?o.map((function(e){return b(e)})):t}}))}function w(e,t,n,o){var u=[],i=function(e,t){if(e.method===O||void 0===e.data&&void 0===t.data)return;var n=Array.isArray(e.data)?e.data:r(r({},e.data),t.data);return JSON.stringify(n)}(n,o),s=function(e,t){var n=r(r({},e.headers),t.headers),o={};return Object.keys(n).forEach((function(e){var t=n[e];o[e.toLowerCase()]=t})),o}(e,o),c=n.method,l=n.method!==O?{}:r(r({},n.data),o.data),f=r(r(r({"x-algolia-agent":e.userAgent.value},e.queryParameters),l),o.queryParameters),h=0,d=function t(r,a){var l=r.pop();if(void 0===l)throw{name:"RetryError",message:"Unreachable hosts - your application id may be incorrect. If the error persists, contact support@algolia.com.",transporterStackTrace:A(u)};var d={data:i,headers:s,method:c,url:S(l,n.path,f),connectTimeout:a(h,e.timeouts.connect),responseTimeout:a(h,o.timeout)},m=function(e){var t={request:d,response:e,host:l,triesLeft:r.length};return u.push(t),t},p={onSuccess:function(e){return function(e){try{return JSON.parse(e.content)}catch(t){throw function(e,t){return{name:"DeserializationError",message:e,response:t}}(t.message,e)}}(e)},onRetry:function(n){var o=m(n);return n.isTimedOut&&h++,Promise.all([e.logger.info("Retryable failure",x(o)),e.hostsCache.set(l,g(l,n.isTimedOut?y:v))]).then((function(){return t(r,a)}))},onFail:function(e){throw m(e),function(e,t){var r=e.content,n=e.status,o=r;try{o=JSON.parse(r).message}catch(e){}return function(e,t,r){return{name:"ApiError",message:e,status:t,transporterStackTrace:r}}(o,n,t)}(e,A(u))}};return e.requester.send(d).then((function(e){return function(e,t){return function(e){var t=e.status;return e.isTimedOut||function(e){var t=e.isTimedOut,r=e.status;return!t&&0==~~r}(e)||2!=~~(t/100)&&4!=~~(t/100)}(e)?t.onRetry(e):2==~~(e.status/100)?t.onSuccess(e):t.onFail(e)}(e,p)}))};return q(e.hostsCache,t).then((function(e){return d(a(e.statelessHosts).reverse(),e.getTimeout)}))}function j(e){var t={value:"Algolia for JavaScript (".concat(e,")"),add:function(e){var r="; ".concat(e.segment).concat(void 0!==e.version?" (".concat(e.version,")"):"");return-1===t.value.indexOf(r)&&(t.value="".concat(t.value).concat(r)),t}};return t}function S(e,t,r){var n=T(r),o="".concat(e.protocol,"://").concat(e.url,"/").concat("/"===t.charAt(0)?t.substr(1):t);return n.length&&(o+="?".concat(n)),o}function T(e){return Object.keys(e).map((function(t){return f("%s=%s",t,(r=e[t],"[object Object]"===Object.prototype.toString.call(r)||"[object Array]"===Object.prototype.toString.call(r)?JSON.stringify(e[t]):e[t]));var r})).join("&")}function A(e){return e.map((function(e){return x(e)}))}function x(e){var t=e.request.headers["x-algolia-api-key"]?{"x-algolia-api-key":"*****"}:{};return r(r({},e),{},{request:r(r({},e.request),{},{headers:r(r({},e.request.headers),t)})})}var N=function(e){var t=e.appId,n=function(e,t,r){var n={"x-algolia-api-key":r,"x-algolia-application-id":t};return{headers:function(){return e===h.WithinHeaders?n:{}},queryParameters:function(){return e===h.WithinQueryParameters?n:{}}}}(void 0!==e.authMode?e.authMode:h.WithinHeaders,t,e.apiKey),a=function(e){var t=e.hostsCache,r=e.logger,n=e.requester,a=e.requestsCache,u=e.responsesCache,i=e.timeouts,s=e.userAgent,c=e.hosts,l=e.queryParameters,f={hostsCache:t,logger:r,requester:n,requestsCache:a,responsesCache:u,timeouts:i,userAgent:s,headers:e.headers,queryParameters:l,hosts:c.map((function(e){return b(e)})),read:function(e,t){var r=d(t,f.timeouts.read),n=function(){return w(f,f.hosts.filter((function(e){return 0!=(e.accept&m.Read)})),e,r)};if(!0!==(void 0!==r.cacheable?r.cacheable:e.cacheable))return n();var a={request:e,mappedRequestOptions:r,transporter:{queryParameters:f.queryParameters,headers:f.headers}};return f.responsesCache.get(a,(function(){return f.requestsCache.get(a,(function(){return f.requestsCache.set(a,n()).then((function(e){return Promise.all([f.requestsCache.delete(a),e])}),(function(e){return Promise.all([f.requestsCache.delete(a),Promise.reject(e)])})).then((function(e){var t=o(e,2);t[0];return t[1]}))}))}),{miss:function(e){return f.responsesCache.set(a,e)}})},write:function(e,t){return w(f,f.hosts.filter((function(e){return 0!=(e.accept&m.Write)})),e,d(t,f.timeouts.write))}};return f}(r(r({hosts:[{url:"".concat(t,"-dsn.algolia.net"),accept:m.Read},{url:"".concat(t,".algolia.net"),accept:m.Write}].concat(c([{url:"".concat(t,"-1.algolianet.com")},{url:"".concat(t,"-2.algolianet.com")},{url:"".concat(t,"-3.algolianet.com")}]))},e),{},{headers:r(r(r({},n.headers()),{"content-type":"application/x-www-form-urlencoded"}),e.headers),queryParameters:r(r({},n.queryParameters()),e.queryParameters)}));return l({transporter:a,appId:t,addAlgoliaAgent:function(e,t){a.userAgent.add({segment:e,version:t})},clearCache:function(){return Promise.all([a.requestsCache.clear(),a.responsesCache.clear()]).then((function(){}))}},e.methods)},C=function(e){return function(t,r){return t.method===O?e.transporter.read(t,r):e.transporter.write(t,r)}},k=function(e){return function(t){var r=arguments.length>1&&void 0!==arguments[1]?arguments[1]:{},n={transporter:e.transporter,appId:e.appId,indexName:t};return l(n,r.methods)}},J=function(e){return function(t,n){var o=t.map((function(e){return r(r({},e),{},{params:T(e.params||{})})}));return e.transporter.read({method:P,path:"1/indexes/*/queries",data:{requests:o},cacheable:!0},n)}},E=function(e){return function(t,o){return Promise.all(t.map((function(t){var a=t.params,u=a.facetName,i=a.facetQuery,s=n(a,["facetName","facetQuery"]);return k(e)(t.indexName,{methods:{searchForFacetValues:R}}).searchForFacetValues(u,i,r(r({},o),s))})))}},I=function(e){return function(t,r,n){return e.transporter.read({method:P,path:f("1/answers/%s/prediction",e.indexName),data:{query:t,queryLanguages:r},cacheable:!0},n)}},F=function(e){return function(t,r){return e.transporter.read({method:P,path:f("1/indexes/%s/query",e.indexName),data:{query:t},cacheable:!0},r)}},R=function(e){return function(t,r,n){return e.transporter.read({method:P,path:f("1/indexes/%s/facets/%s/query",e.indexName,t),data:{facetQuery:r},cacheable:!0},n)}},D=1,W=2,H=3;function Q(e,t,n){var o,a={appId:e,apiKey:t,timeouts:{connect:1,read:2,write:30},requester:{send:function(e){return new Promise((function(t){var r=new XMLHttpRequest;r.open(e.method,e.url,!0),Object.keys(e.headers).forEach((function(t){return r.setRequestHeader(t,e.headers[t])}));var n,o=function(e,n){return setTimeout((function(){r.abort(),t({status:0,content:n,isTimedOut:!0})}),1e3*e)},a=o(e.connectTimeout,"Connection timeout");r.onreadystatechange=function(){r.readyState>r.OPENED&&void 0===n&&(clearTimeout(a),n=o(e.responseTimeout,"Socket timeout"))},r.onerror=function(){0===r.status&&(clearTimeout(a),clearTimeout(n),t({content:r.responseText||"Network request failed",status:r.status,isTimedOut:!1}))},r.onload=function(){clearTimeout(a),clearTimeout(n),t({content:r.responseText,status:r.status,isTimedOut:!1})},r.send(e.data)}))}},logger:(o=H,{debug:function(e,t){return D>=o&&console.debug(e,t),Promise.resolve()},info:function(e,t){return W>=o&&console.info(e,t),Promise.resolve()},error:function(e,t){return console.error(e,t),Promise.resolve()}}),responsesCache:s(),requestsCache:s({serializable:!1}),hostsCache:i({caches:[u({key:"".concat("4.13.0","-").concat(e)}),s()]}),userAgent:j("4.13.0").add({segment:"Browser",version:"lite"}),authMode:h.WithinQueryParameters};return N(r(r(r({},a),n),{},{methods:{search:J,searchForFacetValues:E,multipleQueries:J,multipleSearchForFacetValues:E,customRequest:C,initIndex:function(e){return function(t){return k(e)(t,{methods:{search:F,searchForFacetValues:R,findAnswers:I}})}}}}))}return Q.version="4.13.0",Q}));
 
 
 /***/ }),
@@ -15114,814 +7764,6 @@ module.exports = {
 
 /***/ }),
 
-/***/ "./node_modules/call-bind/callBound.js":
-/*!*********************************************!*\
-  !*** ./node_modules/call-bind/callBound.js ***!
-  \*********************************************/
-/***/ ((module, __unused_webpack_exports, __webpack_require__) => {
-
-"use strict";
-
-
-var GetIntrinsic = __webpack_require__(/*! get-intrinsic */ "./node_modules/get-intrinsic/index.js");
-
-var callBind = __webpack_require__(/*! ./ */ "./node_modules/call-bind/index.js");
-
-var $indexOf = callBind(GetIntrinsic('String.prototype.indexOf'));
-
-module.exports = function callBoundIntrinsic(name, allowMissing) {
-	var intrinsic = GetIntrinsic(name, !!allowMissing);
-	if (typeof intrinsic === 'function' && $indexOf(name, '.prototype.') > -1) {
-		return callBind(intrinsic);
-	}
-	return intrinsic;
-};
-
-
-/***/ }),
-
-/***/ "./node_modules/call-bind/index.js":
-/*!*****************************************!*\
-  !*** ./node_modules/call-bind/index.js ***!
-  \*****************************************/
-/***/ ((module, __unused_webpack_exports, __webpack_require__) => {
-
-"use strict";
-
-
-var bind = __webpack_require__(/*! function-bind */ "./node_modules/function-bind/index.js");
-var GetIntrinsic = __webpack_require__(/*! get-intrinsic */ "./node_modules/get-intrinsic/index.js");
-
-var $apply = GetIntrinsic('%Function.prototype.apply%');
-var $call = GetIntrinsic('%Function.prototype.call%');
-var $reflectApply = GetIntrinsic('%Reflect.apply%', true) || bind.call($call, $apply);
-
-var $gOPD = GetIntrinsic('%Object.getOwnPropertyDescriptor%', true);
-var $defineProperty = GetIntrinsic('%Object.defineProperty%', true);
-var $max = GetIntrinsic('%Math.max%');
-
-if ($defineProperty) {
-	try {
-		$defineProperty({}, 'a', { value: 1 });
-	} catch (e) {
-		// IE 8 has a broken defineProperty
-		$defineProperty = null;
-	}
-}
-
-module.exports = function callBind(originalFunction) {
-	var func = $reflectApply(bind, $call, arguments);
-	if ($gOPD && $defineProperty) {
-		var desc = $gOPD(func, 'length');
-		if (desc.configurable) {
-			// original length, plus the receiver, minus any additional arguments (after the receiver)
-			$defineProperty(
-				func,
-				'length',
-				{ value: 1 + $max(0, originalFunction.length - (arguments.length - 1)) }
-			);
-		}
-	}
-	return func;
-};
-
-var applyBind = function applyBind() {
-	return $reflectApply(bind, $apply, arguments);
-};
-
-if ($defineProperty) {
-	$defineProperty(module.exports, 'apply', { value: applyBind });
-} else {
-	module.exports.apply = applyBind;
-}
-
-
-/***/ }),
-
-/***/ "./node_modules/classnames/index.js":
-/*!******************************************!*\
-  !*** ./node_modules/classnames/index.js ***!
-  \******************************************/
-/***/ ((module, exports) => {
-
-var __WEBPACK_AMD_DEFINE_ARRAY__, __WEBPACK_AMD_DEFINE_RESULT__;/*!
-  Copyright (c) 2018 Jed Watson.
-  Licensed under the MIT License (MIT), see
-  http://jedwatson.github.io/classnames
-*/
-/* global define */
-
-(function () {
-	'use strict';
-
-	var hasOwn = {}.hasOwnProperty;
-
-	function classNames() {
-		var classes = [];
-
-		for (var i = 0; i < arguments.length; i++) {
-			var arg = arguments[i];
-			if (!arg) continue;
-
-			var argType = typeof arg;
-
-			if (argType === 'string' || argType === 'number') {
-				classes.push(arg);
-			} else if (Array.isArray(arg)) {
-				if (arg.length) {
-					var inner = classNames.apply(null, arg);
-					if (inner) {
-						classes.push(inner);
-					}
-				}
-			} else if (argType === 'object') {
-				if (arg.toString === Object.prototype.toString) {
-					for (var key in arg) {
-						if (hasOwn.call(arg, key) && arg[key]) {
-							classes.push(key);
-						}
-					}
-				} else {
-					classes.push(arg.toString());
-				}
-			}
-		}
-
-		return classes.join(' ');
-	}
-
-	if ( true && module.exports) {
-		classNames.default = classNames;
-		module.exports = classNames;
-	} else if (true) {
-		// register as 'classnames', consistent with npm package name
-		!(__WEBPACK_AMD_DEFINE_ARRAY__ = [], __WEBPACK_AMD_DEFINE_RESULT__ = (function () {
-			return classNames;
-		}).apply(exports, __WEBPACK_AMD_DEFINE_ARRAY__),
-		__WEBPACK_AMD_DEFINE_RESULT__ !== undefined && (module.exports = __WEBPACK_AMD_DEFINE_RESULT__));
-	} else {}
-}());
-
-
-/***/ }),
-
-/***/ "./node_modules/deepmerge/dist/cjs.js":
-/*!********************************************!*\
-  !*** ./node_modules/deepmerge/dist/cjs.js ***!
-  \********************************************/
-/***/ ((module) => {
-
-"use strict";
-
-
-var isMergeableObject = function isMergeableObject(value) {
-	return isNonNullObject(value)
-		&& !isSpecial(value)
-};
-
-function isNonNullObject(value) {
-	return !!value && typeof value === 'object'
-}
-
-function isSpecial(value) {
-	var stringValue = Object.prototype.toString.call(value);
-
-	return stringValue === '[object RegExp]'
-		|| stringValue === '[object Date]'
-		|| isReactElement(value)
-}
-
-// see https://github.com/facebook/react/blob/b5ac963fb791d1298e7f396236383bc955f916c1/src/isomorphic/classic/element/ReactElement.js#L21-L25
-var canUseSymbol = typeof Symbol === 'function' && Symbol.for;
-var REACT_ELEMENT_TYPE = canUseSymbol ? Symbol.for('react.element') : 0xeac7;
-
-function isReactElement(value) {
-	return value.$$typeof === REACT_ELEMENT_TYPE
-}
-
-function emptyTarget(val) {
-	return Array.isArray(val) ? [] : {}
-}
-
-function cloneUnlessOtherwiseSpecified(value, options) {
-	return (options.clone !== false && options.isMergeableObject(value))
-		? deepmerge(emptyTarget(value), value, options)
-		: value
-}
-
-function defaultArrayMerge(target, source, options) {
-	return target.concat(source).map(function(element) {
-		return cloneUnlessOtherwiseSpecified(element, options)
-	})
-}
-
-function getMergeFunction(key, options) {
-	if (!options.customMerge) {
-		return deepmerge
-	}
-	var customMerge = options.customMerge(key);
-	return typeof customMerge === 'function' ? customMerge : deepmerge
-}
-
-function getEnumerableOwnPropertySymbols(target) {
-	return Object.getOwnPropertySymbols
-		? Object.getOwnPropertySymbols(target).filter(function(symbol) {
-			return target.propertyIsEnumerable(symbol)
-		})
-		: []
-}
-
-function getKeys(target) {
-	return Object.keys(target).concat(getEnumerableOwnPropertySymbols(target))
-}
-
-function propertyIsOnObject(object, property) {
-	try {
-		return property in object
-	} catch(_) {
-		return false
-	}
-}
-
-// Protects from prototype poisoning and unexpected merging up the prototype chain.
-function propertyIsUnsafe(target, key) {
-	return propertyIsOnObject(target, key) // Properties are safe to merge if they don't exist in the target yet,
-		&& !(Object.hasOwnProperty.call(target, key) // unsafe if they exist up the prototype chain,
-			&& Object.propertyIsEnumerable.call(target, key)) // and also unsafe if they're nonenumerable.
-}
-
-function mergeObject(target, source, options) {
-	var destination = {};
-	if (options.isMergeableObject(target)) {
-		getKeys(target).forEach(function(key) {
-			destination[key] = cloneUnlessOtherwiseSpecified(target[key], options);
-		});
-	}
-	getKeys(source).forEach(function(key) {
-		if (propertyIsUnsafe(target, key)) {
-			return
-		}
-
-		if (propertyIsOnObject(target, key) && options.isMergeableObject(source[key])) {
-			destination[key] = getMergeFunction(key, options)(target[key], source[key], options);
-		} else {
-			destination[key] = cloneUnlessOtherwiseSpecified(source[key], options);
-		}
-	});
-	return destination
-}
-
-function deepmerge(target, source, options) {
-	options = options || {};
-	options.arrayMerge = options.arrayMerge || defaultArrayMerge;
-	options.isMergeableObject = options.isMergeableObject || isMergeableObject;
-	// cloneUnlessOtherwiseSpecified is added to `options` so that custom arrayMerge()
-	// implementations can use it. The caller may not replace it.
-	options.cloneUnlessOtherwiseSpecified = cloneUnlessOtherwiseSpecified;
-
-	var sourceIsArray = Array.isArray(source);
-	var targetIsArray = Array.isArray(target);
-	var sourceAndTargetTypesMatch = sourceIsArray === targetIsArray;
-
-	if (!sourceAndTargetTypesMatch) {
-		return cloneUnlessOtherwiseSpecified(source, options)
-	} else if (sourceIsArray) {
-		return options.arrayMerge(target, source, options)
-	} else {
-		return mergeObject(target, source, options)
-	}
-}
-
-deepmerge.all = function deepmergeAll(array, options) {
-	if (!Array.isArray(array)) {
-		throw new Error('first argument should be an array')
-	}
-
-	return array.reduce(function(prev, next) {
-		return deepmerge(prev, next, options)
-	}, {})
-};
-
-var deepmerge_1 = deepmerge;
-
-module.exports = deepmerge_1;
-
-
-/***/ }),
-
-/***/ "./node_modules/function-bind/implementation.js":
-/*!******************************************************!*\
-  !*** ./node_modules/function-bind/implementation.js ***!
-  \******************************************************/
-/***/ ((module) => {
-
-"use strict";
-
-
-/* eslint no-invalid-this: 1 */
-
-var ERROR_MESSAGE = 'Function.prototype.bind called on incompatible ';
-var slice = Array.prototype.slice;
-var toStr = Object.prototype.toString;
-var funcType = '[object Function]';
-
-module.exports = function bind(that) {
-    var target = this;
-    if (typeof target !== 'function' || toStr.call(target) !== funcType) {
-        throw new TypeError(ERROR_MESSAGE + target);
-    }
-    var args = slice.call(arguments, 1);
-
-    var bound;
-    var binder = function () {
-        if (this instanceof bound) {
-            var result = target.apply(
-                this,
-                args.concat(slice.call(arguments))
-            );
-            if (Object(result) === result) {
-                return result;
-            }
-            return this;
-        } else {
-            return target.apply(
-                that,
-                args.concat(slice.call(arguments))
-            );
-        }
-    };
-
-    var boundLength = Math.max(0, target.length - args.length);
-    var boundArgs = [];
-    for (var i = 0; i < boundLength; i++) {
-        boundArgs.push('$' + i);
-    }
-
-    bound = Function('binder', 'return function (' + boundArgs.join(',') + '){ return binder.apply(this,arguments); }')(binder);
-
-    if (target.prototype) {
-        var Empty = function Empty() {};
-        Empty.prototype = target.prototype;
-        bound.prototype = new Empty();
-        Empty.prototype = null;
-    }
-
-    return bound;
-};
-
-
-/***/ }),
-
-/***/ "./node_modules/function-bind/index.js":
-/*!*********************************************!*\
-  !*** ./node_modules/function-bind/index.js ***!
-  \*********************************************/
-/***/ ((module, __unused_webpack_exports, __webpack_require__) => {
-
-"use strict";
-
-
-var implementation = __webpack_require__(/*! ./implementation */ "./node_modules/function-bind/implementation.js");
-
-module.exports = Function.prototype.bind || implementation;
-
-
-/***/ }),
-
-/***/ "./node_modules/get-intrinsic/index.js":
-/*!*********************************************!*\
-  !*** ./node_modules/get-intrinsic/index.js ***!
-  \*********************************************/
-/***/ ((module, __unused_webpack_exports, __webpack_require__) => {
-
-"use strict";
-
-
-var undefined;
-
-var $SyntaxError = SyntaxError;
-var $Function = Function;
-var $TypeError = TypeError;
-
-// eslint-disable-next-line consistent-return
-var getEvalledConstructor = function (expressionSyntax) {
-	try {
-		return $Function('"use strict"; return (' + expressionSyntax + ').constructor;')();
-	} catch (e) {}
-};
-
-var $gOPD = Object.getOwnPropertyDescriptor;
-if ($gOPD) {
-	try {
-		$gOPD({}, '');
-	} catch (e) {
-		$gOPD = null; // this is IE 8, which has a broken gOPD
-	}
-}
-
-var throwTypeError = function () {
-	throw new $TypeError();
-};
-var ThrowTypeError = $gOPD
-	? (function () {
-		try {
-			// eslint-disable-next-line no-unused-expressions, no-caller, no-restricted-properties
-			arguments.callee; // IE 8 does not throw here
-			return throwTypeError;
-		} catch (calleeThrows) {
-			try {
-				// IE 8 throws on Object.getOwnPropertyDescriptor(arguments, '')
-				return $gOPD(arguments, 'callee').get;
-			} catch (gOPDthrows) {
-				return throwTypeError;
-			}
-		}
-	}())
-	: throwTypeError;
-
-var hasSymbols = __webpack_require__(/*! has-symbols */ "./node_modules/has-symbols/index.js")();
-
-var getProto = Object.getPrototypeOf || function (x) { return x.__proto__; }; // eslint-disable-line no-proto
-
-var needsEval = {};
-
-var TypedArray = typeof Uint8Array === 'undefined' ? undefined : getProto(Uint8Array);
-
-var INTRINSICS = {
-	'%AggregateError%': typeof AggregateError === 'undefined' ? undefined : AggregateError,
-	'%Array%': Array,
-	'%ArrayBuffer%': typeof ArrayBuffer === 'undefined' ? undefined : ArrayBuffer,
-	'%ArrayIteratorPrototype%': hasSymbols ? getProto([][Symbol.iterator]()) : undefined,
-	'%AsyncFromSyncIteratorPrototype%': undefined,
-	'%AsyncFunction%': needsEval,
-	'%AsyncGenerator%': needsEval,
-	'%AsyncGeneratorFunction%': needsEval,
-	'%AsyncIteratorPrototype%': needsEval,
-	'%Atomics%': typeof Atomics === 'undefined' ? undefined : Atomics,
-	'%BigInt%': typeof BigInt === 'undefined' ? undefined : BigInt,
-	'%Boolean%': Boolean,
-	'%DataView%': typeof DataView === 'undefined' ? undefined : DataView,
-	'%Date%': Date,
-	'%decodeURI%': decodeURI,
-	'%decodeURIComponent%': decodeURIComponent,
-	'%encodeURI%': encodeURI,
-	'%encodeURIComponent%': encodeURIComponent,
-	'%Error%': Error,
-	'%eval%': eval, // eslint-disable-line no-eval
-	'%EvalError%': EvalError,
-	'%Float32Array%': typeof Float32Array === 'undefined' ? undefined : Float32Array,
-	'%Float64Array%': typeof Float64Array === 'undefined' ? undefined : Float64Array,
-	'%FinalizationRegistry%': typeof FinalizationRegistry === 'undefined' ? undefined : FinalizationRegistry,
-	'%Function%': $Function,
-	'%GeneratorFunction%': needsEval,
-	'%Int8Array%': typeof Int8Array === 'undefined' ? undefined : Int8Array,
-	'%Int16Array%': typeof Int16Array === 'undefined' ? undefined : Int16Array,
-	'%Int32Array%': typeof Int32Array === 'undefined' ? undefined : Int32Array,
-	'%isFinite%': isFinite,
-	'%isNaN%': isNaN,
-	'%IteratorPrototype%': hasSymbols ? getProto(getProto([][Symbol.iterator]())) : undefined,
-	'%JSON%': typeof JSON === 'object' ? JSON : undefined,
-	'%Map%': typeof Map === 'undefined' ? undefined : Map,
-	'%MapIteratorPrototype%': typeof Map === 'undefined' || !hasSymbols ? undefined : getProto(new Map()[Symbol.iterator]()),
-	'%Math%': Math,
-	'%Number%': Number,
-	'%Object%': Object,
-	'%parseFloat%': parseFloat,
-	'%parseInt%': parseInt,
-	'%Promise%': typeof Promise === 'undefined' ? undefined : Promise,
-	'%Proxy%': typeof Proxy === 'undefined' ? undefined : Proxy,
-	'%RangeError%': RangeError,
-	'%ReferenceError%': ReferenceError,
-	'%Reflect%': typeof Reflect === 'undefined' ? undefined : Reflect,
-	'%RegExp%': RegExp,
-	'%Set%': typeof Set === 'undefined' ? undefined : Set,
-	'%SetIteratorPrototype%': typeof Set === 'undefined' || !hasSymbols ? undefined : getProto(new Set()[Symbol.iterator]()),
-	'%SharedArrayBuffer%': typeof SharedArrayBuffer === 'undefined' ? undefined : SharedArrayBuffer,
-	'%String%': String,
-	'%StringIteratorPrototype%': hasSymbols ? getProto(''[Symbol.iterator]()) : undefined,
-	'%Symbol%': hasSymbols ? Symbol : undefined,
-	'%SyntaxError%': $SyntaxError,
-	'%ThrowTypeError%': ThrowTypeError,
-	'%TypedArray%': TypedArray,
-	'%TypeError%': $TypeError,
-	'%Uint8Array%': typeof Uint8Array === 'undefined' ? undefined : Uint8Array,
-	'%Uint8ClampedArray%': typeof Uint8ClampedArray === 'undefined' ? undefined : Uint8ClampedArray,
-	'%Uint16Array%': typeof Uint16Array === 'undefined' ? undefined : Uint16Array,
-	'%Uint32Array%': typeof Uint32Array === 'undefined' ? undefined : Uint32Array,
-	'%URIError%': URIError,
-	'%WeakMap%': typeof WeakMap === 'undefined' ? undefined : WeakMap,
-	'%WeakRef%': typeof WeakRef === 'undefined' ? undefined : WeakRef,
-	'%WeakSet%': typeof WeakSet === 'undefined' ? undefined : WeakSet
-};
-
-var doEval = function doEval(name) {
-	var value;
-	if (name === '%AsyncFunction%') {
-		value = getEvalledConstructor('async function () {}');
-	} else if (name === '%GeneratorFunction%') {
-		value = getEvalledConstructor('function* () {}');
-	} else if (name === '%AsyncGeneratorFunction%') {
-		value = getEvalledConstructor('async function* () {}');
-	} else if (name === '%AsyncGenerator%') {
-		var fn = doEval('%AsyncGeneratorFunction%');
-		if (fn) {
-			value = fn.prototype;
-		}
-	} else if (name === '%AsyncIteratorPrototype%') {
-		var gen = doEval('%AsyncGenerator%');
-		if (gen) {
-			value = getProto(gen.prototype);
-		}
-	}
-
-	INTRINSICS[name] = value;
-
-	return value;
-};
-
-var LEGACY_ALIASES = {
-	'%ArrayBufferPrototype%': ['ArrayBuffer', 'prototype'],
-	'%ArrayPrototype%': ['Array', 'prototype'],
-	'%ArrayProto_entries%': ['Array', 'prototype', 'entries'],
-	'%ArrayProto_forEach%': ['Array', 'prototype', 'forEach'],
-	'%ArrayProto_keys%': ['Array', 'prototype', 'keys'],
-	'%ArrayProto_values%': ['Array', 'prototype', 'values'],
-	'%AsyncFunctionPrototype%': ['AsyncFunction', 'prototype'],
-	'%AsyncGenerator%': ['AsyncGeneratorFunction', 'prototype'],
-	'%AsyncGeneratorPrototype%': ['AsyncGeneratorFunction', 'prototype', 'prototype'],
-	'%BooleanPrototype%': ['Boolean', 'prototype'],
-	'%DataViewPrototype%': ['DataView', 'prototype'],
-	'%DatePrototype%': ['Date', 'prototype'],
-	'%ErrorPrototype%': ['Error', 'prototype'],
-	'%EvalErrorPrototype%': ['EvalError', 'prototype'],
-	'%Float32ArrayPrototype%': ['Float32Array', 'prototype'],
-	'%Float64ArrayPrototype%': ['Float64Array', 'prototype'],
-	'%FunctionPrototype%': ['Function', 'prototype'],
-	'%Generator%': ['GeneratorFunction', 'prototype'],
-	'%GeneratorPrototype%': ['GeneratorFunction', 'prototype', 'prototype'],
-	'%Int8ArrayPrototype%': ['Int8Array', 'prototype'],
-	'%Int16ArrayPrototype%': ['Int16Array', 'prototype'],
-	'%Int32ArrayPrototype%': ['Int32Array', 'prototype'],
-	'%JSONParse%': ['JSON', 'parse'],
-	'%JSONStringify%': ['JSON', 'stringify'],
-	'%MapPrototype%': ['Map', 'prototype'],
-	'%NumberPrototype%': ['Number', 'prototype'],
-	'%ObjectPrototype%': ['Object', 'prototype'],
-	'%ObjProto_toString%': ['Object', 'prototype', 'toString'],
-	'%ObjProto_valueOf%': ['Object', 'prototype', 'valueOf'],
-	'%PromisePrototype%': ['Promise', 'prototype'],
-	'%PromiseProto_then%': ['Promise', 'prototype', 'then'],
-	'%Promise_all%': ['Promise', 'all'],
-	'%Promise_reject%': ['Promise', 'reject'],
-	'%Promise_resolve%': ['Promise', 'resolve'],
-	'%RangeErrorPrototype%': ['RangeError', 'prototype'],
-	'%ReferenceErrorPrototype%': ['ReferenceError', 'prototype'],
-	'%RegExpPrototype%': ['RegExp', 'prototype'],
-	'%SetPrototype%': ['Set', 'prototype'],
-	'%SharedArrayBufferPrototype%': ['SharedArrayBuffer', 'prototype'],
-	'%StringPrototype%': ['String', 'prototype'],
-	'%SymbolPrototype%': ['Symbol', 'prototype'],
-	'%SyntaxErrorPrototype%': ['SyntaxError', 'prototype'],
-	'%TypedArrayPrototype%': ['TypedArray', 'prototype'],
-	'%TypeErrorPrototype%': ['TypeError', 'prototype'],
-	'%Uint8ArrayPrototype%': ['Uint8Array', 'prototype'],
-	'%Uint8ClampedArrayPrototype%': ['Uint8ClampedArray', 'prototype'],
-	'%Uint16ArrayPrototype%': ['Uint16Array', 'prototype'],
-	'%Uint32ArrayPrototype%': ['Uint32Array', 'prototype'],
-	'%URIErrorPrototype%': ['URIError', 'prototype'],
-	'%WeakMapPrototype%': ['WeakMap', 'prototype'],
-	'%WeakSetPrototype%': ['WeakSet', 'prototype']
-};
-
-var bind = __webpack_require__(/*! function-bind */ "./node_modules/function-bind/index.js");
-var hasOwn = __webpack_require__(/*! has */ "./node_modules/has/src/index.js");
-var $concat = bind.call(Function.call, Array.prototype.concat);
-var $spliceApply = bind.call(Function.apply, Array.prototype.splice);
-var $replace = bind.call(Function.call, String.prototype.replace);
-var $strSlice = bind.call(Function.call, String.prototype.slice);
-
-/* adapted from https://github.com/lodash/lodash/blob/4.17.15/dist/lodash.js#L6735-L6744 */
-var rePropName = /[^%.[\]]+|\[(?:(-?\d+(?:\.\d+)?)|(["'])((?:(?!\2)[^\\]|\\.)*?)\2)\]|(?=(?:\.|\[\])(?:\.|\[\]|%$))/g;
-var reEscapeChar = /\\(\\)?/g; /** Used to match backslashes in property paths. */
-var stringToPath = function stringToPath(string) {
-	var first = $strSlice(string, 0, 1);
-	var last = $strSlice(string, -1);
-	if (first === '%' && last !== '%') {
-		throw new $SyntaxError('invalid intrinsic syntax, expected closing `%`');
-	} else if (last === '%' && first !== '%') {
-		throw new $SyntaxError('invalid intrinsic syntax, expected opening `%`');
-	}
-	var result = [];
-	$replace(string, rePropName, function (match, number, quote, subString) {
-		result[result.length] = quote ? $replace(subString, reEscapeChar, '$1') : number || match;
-	});
-	return result;
-};
-/* end adaptation */
-
-var getBaseIntrinsic = function getBaseIntrinsic(name, allowMissing) {
-	var intrinsicName = name;
-	var alias;
-	if (hasOwn(LEGACY_ALIASES, intrinsicName)) {
-		alias = LEGACY_ALIASES[intrinsicName];
-		intrinsicName = '%' + alias[0] + '%';
-	}
-
-	if (hasOwn(INTRINSICS, intrinsicName)) {
-		var value = INTRINSICS[intrinsicName];
-		if (value === needsEval) {
-			value = doEval(intrinsicName);
-		}
-		if (typeof value === 'undefined' && !allowMissing) {
-			throw new $TypeError('intrinsic ' + name + ' exists, but is not available. Please file an issue!');
-		}
-
-		return {
-			alias: alias,
-			name: intrinsicName,
-			value: value
-		};
-	}
-
-	throw new $SyntaxError('intrinsic ' + name + ' does not exist!');
-};
-
-module.exports = function GetIntrinsic(name, allowMissing) {
-	if (typeof name !== 'string' || name.length === 0) {
-		throw new $TypeError('intrinsic name must be a non-empty string');
-	}
-	if (arguments.length > 1 && typeof allowMissing !== 'boolean') {
-		throw new $TypeError('"allowMissing" argument must be a boolean');
-	}
-
-	var parts = stringToPath(name);
-	var intrinsicBaseName = parts.length > 0 ? parts[0] : '';
-
-	var intrinsic = getBaseIntrinsic('%' + intrinsicBaseName + '%', allowMissing);
-	var intrinsicRealName = intrinsic.name;
-	var value = intrinsic.value;
-	var skipFurtherCaching = false;
-
-	var alias = intrinsic.alias;
-	if (alias) {
-		intrinsicBaseName = alias[0];
-		$spliceApply(parts, $concat([0, 1], alias));
-	}
-
-	for (var i = 1, isOwn = true; i < parts.length; i += 1) {
-		var part = parts[i];
-		var first = $strSlice(part, 0, 1);
-		var last = $strSlice(part, -1);
-		if (
-			(
-				(first === '"' || first === "'" || first === '`')
-				|| (last === '"' || last === "'" || last === '`')
-			)
-			&& first !== last
-		) {
-			throw new $SyntaxError('property names with quotes must have matching quotes');
-		}
-		if (part === 'constructor' || !isOwn) {
-			skipFurtherCaching = true;
-		}
-
-		intrinsicBaseName += '.' + part;
-		intrinsicRealName = '%' + intrinsicBaseName + '%';
-
-		if (hasOwn(INTRINSICS, intrinsicRealName)) {
-			value = INTRINSICS[intrinsicRealName];
-		} else if (value != null) {
-			if (!(part in value)) {
-				if (!allowMissing) {
-					throw new $TypeError('base intrinsic for ' + name + ' exists, but the property is not available.');
-				}
-				return void undefined;
-			}
-			if ($gOPD && (i + 1) >= parts.length) {
-				var desc = $gOPD(value, part);
-				isOwn = !!desc;
-
-				// By convention, when a data property is converted to an accessor
-				// property to emulate a data property that does not suffer from
-				// the override mistake, that accessor's getter is marked with
-				// an `originalValue` property. Here, when we detect this, we
-				// uphold the illusion by pretending to see that original data
-				// property, i.e., returning the value rather than the getter
-				// itself.
-				if (isOwn && 'get' in desc && !('originalValue' in desc.get)) {
-					value = desc.get;
-				} else {
-					value = value[part];
-				}
-			} else {
-				isOwn = hasOwn(value, part);
-				value = value[part];
-			}
-
-			if (isOwn && !skipFurtherCaching) {
-				INTRINSICS[intrinsicRealName] = value;
-			}
-		}
-	}
-	return value;
-};
-
-
-/***/ }),
-
-/***/ "./node_modules/has-symbols/index.js":
-/*!*******************************************!*\
-  !*** ./node_modules/has-symbols/index.js ***!
-  \*******************************************/
-/***/ ((module, __unused_webpack_exports, __webpack_require__) => {
-
-"use strict";
-
-
-var origSymbol = typeof Symbol !== 'undefined' && Symbol;
-var hasSymbolSham = __webpack_require__(/*! ./shams */ "./node_modules/has-symbols/shams.js");
-
-module.exports = function hasNativeSymbols() {
-	if (typeof origSymbol !== 'function') { return false; }
-	if (typeof Symbol !== 'function') { return false; }
-	if (typeof origSymbol('foo') !== 'symbol') { return false; }
-	if (typeof Symbol('bar') !== 'symbol') { return false; }
-
-	return hasSymbolSham();
-};
-
-
-/***/ }),
-
-/***/ "./node_modules/has-symbols/shams.js":
-/*!*******************************************!*\
-  !*** ./node_modules/has-symbols/shams.js ***!
-  \*******************************************/
-/***/ ((module) => {
-
-"use strict";
-
-
-/* eslint complexity: [2, 18], max-statements: [2, 33] */
-module.exports = function hasSymbols() {
-	if (typeof Symbol !== 'function' || typeof Object.getOwnPropertySymbols !== 'function') { return false; }
-	if (typeof Symbol.iterator === 'symbol') { return true; }
-
-	var obj = {};
-	var sym = Symbol('test');
-	var symObj = Object(sym);
-	if (typeof sym === 'string') { return false; }
-
-	if (Object.prototype.toString.call(sym) !== '[object Symbol]') { return false; }
-	if (Object.prototype.toString.call(symObj) !== '[object Symbol]') { return false; }
-
-	// temp disabled per https://github.com/ljharb/object.assign/issues/17
-	// if (sym instanceof Symbol) { return false; }
-	// temp disabled per https://github.com/WebReflection/get-own-property-symbols/issues/4
-	// if (!(symObj instanceof Symbol)) { return false; }
-
-	// if (typeof Symbol.prototype.toString !== 'function') { return false; }
-	// if (String(sym) !== Symbol.prototype.toString.call(sym)) { return false; }
-
-	var symVal = 42;
-	obj[sym] = symVal;
-	for (sym in obj) { return false; } // eslint-disable-line no-restricted-syntax, no-unreachable-loop
-	if (typeof Object.keys === 'function' && Object.keys(obj).length !== 0) { return false; }
-
-	if (typeof Object.getOwnPropertyNames === 'function' && Object.getOwnPropertyNames(obj).length !== 0) { return false; }
-
-	var syms = Object.getOwnPropertySymbols(obj);
-	if (syms.length !== 1 || syms[0] !== sym) { return false; }
-
-	if (!Object.prototype.propertyIsEnumerable.call(obj, sym)) { return false; }
-
-	if (typeof Object.getOwnPropertyDescriptor === 'function') {
-		var descriptor = Object.getOwnPropertyDescriptor(obj, sym);
-		if (descriptor.value !== symVal || descriptor.enumerable !== true) { return false; }
-	}
-
-	return true;
-};
-
-
-/***/ }),
-
-/***/ "./node_modules/has/src/index.js":
-/*!***************************************!*\
-  !*** ./node_modules/has/src/index.js ***!
-  \***************************************/
-/***/ ((module, __unused_webpack_exports, __webpack_require__) => {
-
-"use strict";
-
-
-var bind = __webpack_require__(/*! function-bind */ "./node_modules/function-bind/index.js");
-
-module.exports = bind.call(Function.call, Object.prototype.hasOwnProperty);
-
-
-/***/ }),
-
 /***/ "./resources/js/Components/ActionMessage.tsx":
 /*!***************************************************!*\
   !*** ./resources/js/Components/ActionMessage.tsx ***!
@@ -15941,7 +7783,7 @@ Object.defineProperty(exports, "__esModule", ({
   value: true
 }));
 
-var react_1 = __webpack_require__(/*! @headlessui/react */ "./node_modules/@headlessui/react/dist/index.esm.js");
+var react_1 = __webpack_require__(/*! @headlessui/react */ "./node_modules/@headlessui/react/dist/index.cjs");
 
 var react_2 = __importDefault(__webpack_require__(/*! react */ "./node_modules/react/index.js"));
 
@@ -16186,12 +8028,18 @@ exports["default"] = AuthenticationCardLogo;
 
 var __createBinding = this && this.__createBinding || (Object.create ? function (o, m, k, k2) {
   if (k2 === undefined) k2 = k;
-  Object.defineProperty(o, k2, {
-    enumerable: true,
-    get: function get() {
-      return m[k];
-    }
-  });
+  var desc = Object.getOwnPropertyDescriptor(m, k);
+
+  if (!desc || ("get" in desc ? !m.__esModule : desc.writable || desc.configurable)) {
+    desc = {
+      enumerable: true,
+      get: function get() {
+        return m[k];
+      }
+    };
+  }
+
+  Object.defineProperty(o, k2, desc);
 } : function (o, m, k, k2) {
   if (k2 === undefined) k2 = k;
   o[k2] = m[k];
@@ -16567,12 +8415,18 @@ var __assign = this && this.__assign || function () {
 
 var __createBinding = this && this.__createBinding || (Object.create ? function (o, m, k, k2) {
   if (k2 === undefined) k2 = k;
-  Object.defineProperty(o, k2, {
-    enumerable: true,
-    get: function get() {
-      return m[k];
-    }
-  });
+  var desc = Object.getOwnPropertyDescriptor(m, k);
+
+  if (!desc || ("get" in desc ? !m.__esModule : desc.writable || desc.configurable)) {
+    desc = {
+      enumerable: true,
+      get: function get() {
+        return m[k];
+      }
+    };
+  }
+
+  Object.defineProperty(o, k2, desc);
 } : function (o, m, k, k2) {
   if (k2 === undefined) k2 = k;
   o[k2] = m[k];
@@ -16893,12 +8747,18 @@ exports["default"] = DialogModal;
 
 var __createBinding = this && this.__createBinding || (Object.create ? function (o, m, k, k2) {
   if (k2 === undefined) k2 = k;
-  Object.defineProperty(o, k2, {
-    enumerable: true,
-    get: function get() {
-      return m[k];
-    }
-  });
+  var desc = Object.getOwnPropertyDescriptor(m, k);
+
+  if (!desc || ("get" in desc ? !m.__esModule : desc.writable || desc.configurable)) {
+    desc = {
+      enumerable: true,
+      get: function get() {
+        return m[k];
+      }
+    };
+  }
+
+  Object.defineProperty(o, k2, desc);
 } : function (o, m, k, k2) {
   if (k2 === undefined) k2 = k;
   o[k2] = m[k];
@@ -16935,7 +8795,7 @@ Object.defineProperty(exports, "__esModule", ({
   value: true
 }));
 
-var react_1 = __webpack_require__(/*! @headlessui/react */ "./node_modules/@headlessui/react/dist/index.esm.js");
+var react_1 = __webpack_require__(/*! @headlessui/react */ "./node_modules/@headlessui/react/dist/index.cjs");
 
 var classnames_1 = __importDefault(__webpack_require__(/*! classnames */ "./node_modules/classnames/index.js"));
 
@@ -17513,12 +9373,18 @@ var __assign = this && this.__assign || function () {
 
 var __createBinding = this && this.__createBinding || (Object.create ? function (o, m, k, k2) {
   if (k2 === undefined) k2 = k;
-  Object.defineProperty(o, k2, {
-    enumerable: true,
-    get: function get() {
-      return m[k];
-    }
-  });
+  var desc = Object.getOwnPropertyDescriptor(m, k);
+
+  if (!desc || ("get" in desc ? !m.__esModule : desc.writable || desc.configurable)) {
+    desc = {
+      enumerable: true,
+      get: function get() {
+        return m[k];
+      }
+    };
+  }
+
+  Object.defineProperty(o, k2, desc);
 } : function (o, m, k, k2) {
   if (k2 === undefined) k2 = k;
   o[k2] = m[k];
@@ -17705,7 +9571,7 @@ Object.defineProperty(exports, "__esModule", ({
   value: true
 }));
 
-var react_1 = __webpack_require__(/*! @headlessui/react */ "./node_modules/@headlessui/react/dist/index.esm.js");
+var react_1 = __webpack_require__(/*! @headlessui/react */ "./node_modules/@headlessui/react/dist/index.cjs");
 
 var classnames_1 = __importDefault(__webpack_require__(/*! classnames */ "./node_modules/classnames/index.js"));
 
@@ -17846,12 +9712,18 @@ exports["default"] = NavLink;
 
 var __createBinding = this && this.__createBinding || (Object.create ? function (o, m, k, k2) {
   if (k2 === undefined) k2 = k;
-  Object.defineProperty(o, k2, {
-    enumerable: true,
-    get: function get() {
-      return m[k];
-    }
-  });
+  var desc = Object.getOwnPropertyDescriptor(m, k);
+
+  if (!desc || ("get" in desc ? !m.__esModule : desc.writable || desc.configurable)) {
+    desc = {
+      enumerable: true,
+      get: function get() {
+        return m[k];
+      }
+    };
+  }
+
+  Object.defineProperty(o, k2, desc);
 } : function (o, m, k, k2) {
   if (k2 === undefined) k2 = k;
   o[k2] = m[k];
@@ -17888,7 +9760,7 @@ Object.defineProperty(exports, "__esModule", ({
   value: true
 }));
 
-var react_1 = __webpack_require__(/*! @headlessui/react */ "./node_modules/@headlessui/react/dist/index.esm.js");
+var react_1 = __webpack_require__(/*! @headlessui/react */ "./node_modules/@headlessui/react/dist/index.cjs");
 
 var react_2 = __importStar(__webpack_require__(/*! react */ "./node_modules/react/index.js"));
 
@@ -19277,12 +11149,18 @@ exports["default"] = ResetPassword;
 
 var __createBinding = this && this.__createBinding || (Object.create ? function (o, m, k, k2) {
   if (k2 === undefined) k2 = k;
-  Object.defineProperty(o, k2, {
-    enumerable: true,
-    get: function get() {
-      return m[k];
-    }
-  });
+  var desc = Object.getOwnPropertyDescriptor(m, k);
+
+  if (!desc || ("get" in desc ? !m.__esModule : desc.writable || desc.configurable)) {
+    desc = {
+      enumerable: true,
+      get: function get() {
+        return m[k];
+      }
+    };
+  }
+
+  Object.defineProperty(o, k2, desc);
 } : function (o, m, k, k2) {
   if (k2 === undefined) k2 = k;
   o[k2] = m[k];
@@ -19576,7 +11454,7 @@ var useTypedPage_1 = __importDefault(__webpack_require__(/*! @/Hooks/useTypedPag
 
 var AppLayout_1 = __importDefault(__webpack_require__(/*! @/Layouts/AppLayout */ "./resources/js/Layouts/AppLayout.tsx"));
 
-var react_2 = __webpack_require__(/*! @headlessui/react */ "./node_modules/@headlessui/react/dist/index.esm.js");
+var react_2 = __webpack_require__(/*! @headlessui/react */ "./node_modules/@headlessui/react/dist/index.cjs");
 
 var react_3 = __webpack_require__(/*! react */ "./node_modules/react/index.js");
 
@@ -19990,7 +11868,7 @@ var react_1 = __importDefault(__webpack_require__(/*! react */ "./node_modules/r
 
 var AppLayout_1 = __importDefault(__webpack_require__(/*! @/Layouts/AppLayout */ "./resources/js/Layouts/AppLayout.tsx"));
 
-var react_2 = __webpack_require__(/*! @headlessui/react */ "./node_modules/@headlessui/react/dist/index.esm.js");
+var react_2 = __webpack_require__(/*! @headlessui/react */ "./node_modules/@headlessui/react/dist/index.cjs");
 
 function Dashboard(_a) {
   var userData = _a.userData;
@@ -20204,12 +12082,18 @@ Welcome.layout = function (page) {
 
 var __createBinding = this && this.__createBinding || (Object.create ? function (o, m, k, k2) {
   if (k2 === undefined) k2 = k;
-  Object.defineProperty(o, k2, {
-    enumerable: true,
-    get: function get() {
-      return m[k];
-    }
-  });
+  var desc = Object.getOwnPropertyDescriptor(m, k);
+
+  if (!desc || ("get" in desc ? !m.__esModule : desc.writable || desc.configurable)) {
+    desc = {
+      enumerable: true,
+      get: function get() {
+        return m[k];
+      }
+    };
+  }
+
+  Object.defineProperty(o, k2, desc);
 } : function (o, m, k, k2) {
   if (k2 === undefined) k2 = k;
   o[k2] = m[k];
@@ -20539,12 +12423,18 @@ exports["default"] = APITokenManager;
 
 var __createBinding = this && this.__createBinding || (Object.create ? function (o, m, k, k2) {
   if (k2 === undefined) k2 = k;
-  Object.defineProperty(o, k2, {
-    enumerable: true,
-    get: function get() {
-      return m[k];
-    }
-  });
+  var desc = Object.getOwnPropertyDescriptor(m, k);
+
+  if (!desc || ("get" in desc ? !m.__esModule : desc.writable || desc.configurable)) {
+    desc = {
+      enumerable: true,
+      get: function get() {
+        return m[k];
+      }
+    };
+  }
+
+  Object.defineProperty(o, k2, desc);
 } : function (o, m, k, k2) {
   if (k2 === undefined) k2 = k;
   o[k2] = m[k];
@@ -20701,12 +12591,18 @@ exports["default"] = DeleteUserForm;
 
 var __createBinding = this && this.__createBinding || (Object.create ? function (o, m, k, k2) {
   if (k2 === undefined) k2 = k;
-  Object.defineProperty(o, k2, {
-    enumerable: true,
-    get: function get() {
-      return m[k];
-    }
-  });
+  var desc = Object.getOwnPropertyDescriptor(m, k);
+
+  if (!desc || ("get" in desc ? !m.__esModule : desc.writable || desc.configurable)) {
+    desc = {
+      enumerable: true,
+      get: function get() {
+        return m[k];
+      }
+    };
+  }
+
+  Object.defineProperty(o, k2, desc);
 } : function (o, m, k, k2) {
   if (k2 === undefined) k2 = k;
   o[k2] = m[k];
@@ -20915,12 +12811,18 @@ exports["default"] = LogoutOtherBrowserSessions;
 
 var __createBinding = this && this.__createBinding || (Object.create ? function (o, m, k, k2) {
   if (k2 === undefined) k2 = k;
-  Object.defineProperty(o, k2, {
-    enumerable: true,
-    get: function get() {
-      return m[k];
-    }
-  });
+  var desc = Object.getOwnPropertyDescriptor(m, k);
+
+  if (!desc || ("get" in desc ? !m.__esModule : desc.writable || desc.configurable)) {
+    desc = {
+      enumerable: true,
+      get: function get() {
+        return m[k];
+      }
+    };
+  }
+
+  Object.defineProperty(o, k2, desc);
 } : function (o, m, k, k2) {
   if (k2 === undefined) k2 = k;
   o[k2] = m[k];
@@ -21107,12 +13009,18 @@ exports["default"] = TwoFactorAuthenticationForm;
 
 var __createBinding = this && this.__createBinding || (Object.create ? function (o, m, k, k2) {
   if (k2 === undefined) k2 = k;
-  Object.defineProperty(o, k2, {
-    enumerable: true,
-    get: function get() {
-      return m[k];
-    }
-  });
+  var desc = Object.getOwnPropertyDescriptor(m, k);
+
+  if (!desc || ("get" in desc ? !m.__esModule : desc.writable || desc.configurable)) {
+    desc = {
+      enumerable: true,
+      get: function get() {
+        return m[k];
+      }
+    };
+  }
+
+  Object.defineProperty(o, k2, desc);
 } : function (o, m, k, k2) {
   if (k2 === undefined) k2 = k;
   o[k2] = m[k];
@@ -21283,12 +13191,18 @@ exports["default"] = UpdatePasswordForm;
 
 var __createBinding = this && this.__createBinding || (Object.create ? function (o, m, k, k2) {
   if (k2 === undefined) k2 = k;
-  Object.defineProperty(o, k2, {
-    enumerable: true,
-    get: function get() {
-      return m[k];
-    }
-  });
+  var desc = Object.getOwnPropertyDescriptor(m, k);
+
+  if (!desc || ("get" in desc ? !m.__esModule : desc.writable || desc.configurable)) {
+    desc = {
+      enumerable: true,
+      get: function get() {
+        return m[k];
+      }
+    };
+  }
+
+  Object.defineProperty(o, k2, desc);
 } : function (o, m, k, k2) {
   if (k2 === undefined) k2 = k;
   o[k2] = m[k];
@@ -21869,12 +13783,18 @@ exports["default"] = CreateTeamForm;
 
 var __createBinding = this && this.__createBinding || (Object.create ? function (o, m, k, k2) {
   if (k2 === undefined) k2 = k;
-  Object.defineProperty(o, k2, {
-    enumerable: true,
-    get: function get() {
-      return m[k];
-    }
-  });
+  var desc = Object.getOwnPropertyDescriptor(m, k);
+
+  if (!desc || ("get" in desc ? !m.__esModule : desc.writable || desc.configurable)) {
+    desc = {
+      enumerable: true,
+      get: function get() {
+        return m[k];
+      }
+    };
+  }
+
+  Object.defineProperty(o, k2, desc);
 } : function (o, m, k, k2) {
   if (k2 === undefined) k2 = k;
   o[k2] = m[k];
@@ -21991,12 +13911,18 @@ exports["default"] = DeleteTeamForm;
 
 var __createBinding = this && this.__createBinding || (Object.create ? function (o, m, k, k2) {
   if (k2 === undefined) k2 = k;
-  Object.defineProperty(o, k2, {
-    enumerable: true,
-    get: function get() {
-      return m[k];
-    }
-  });
+  var desc = Object.getOwnPropertyDescriptor(m, k);
+
+  if (!desc || ("get" in desc ? !m.__esModule : desc.writable || desc.configurable)) {
+    desc = {
+      enumerable: true,
+      get: function get() {
+        return m[k];
+      }
+    };
+  }
+
+  Object.defineProperty(o, k2, desc);
 } : function (o, m, k, k2) {
   if (k2 === undefined) k2 = k;
   o[k2] = m[k];
@@ -22610,15 +14536,810 @@ window.axios.defaults.headers.common['X-Requested-With'] = 'XMLHttpRequest';
 
 /***/ }),
 
-/***/ "./resources/css/app.css":
-/*!*******************************!*\
-  !*** ./resources/css/app.css ***!
-  \*******************************/
-/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+/***/ "./node_modules/call-bind/callBound.js":
+/*!*********************************************!*\
+  !*** ./node_modules/call-bind/callBound.js ***!
+  \*********************************************/
+/***/ ((module, __unused_webpack_exports, __webpack_require__) => {
 
 "use strict";
-__webpack_require__.r(__webpack_exports__);
-// extracted by mini-css-extract-plugin
+
+
+var GetIntrinsic = __webpack_require__(/*! get-intrinsic */ "./node_modules/get-intrinsic/index.js");
+
+var callBind = __webpack_require__(/*! ./ */ "./node_modules/call-bind/index.js");
+
+var $indexOf = callBind(GetIntrinsic('String.prototype.indexOf'));
+
+module.exports = function callBoundIntrinsic(name, allowMissing) {
+	var intrinsic = GetIntrinsic(name, !!allowMissing);
+	if (typeof intrinsic === 'function' && $indexOf(name, '.prototype.') > -1) {
+		return callBind(intrinsic);
+	}
+	return intrinsic;
+};
+
+
+/***/ }),
+
+/***/ "./node_modules/call-bind/index.js":
+/*!*****************************************!*\
+  !*** ./node_modules/call-bind/index.js ***!
+  \*****************************************/
+/***/ ((module, __unused_webpack_exports, __webpack_require__) => {
+
+"use strict";
+
+
+var bind = __webpack_require__(/*! function-bind */ "./node_modules/function-bind/index.js");
+var GetIntrinsic = __webpack_require__(/*! get-intrinsic */ "./node_modules/get-intrinsic/index.js");
+
+var $apply = GetIntrinsic('%Function.prototype.apply%');
+var $call = GetIntrinsic('%Function.prototype.call%');
+var $reflectApply = GetIntrinsic('%Reflect.apply%', true) || bind.call($call, $apply);
+
+var $gOPD = GetIntrinsic('%Object.getOwnPropertyDescriptor%', true);
+var $defineProperty = GetIntrinsic('%Object.defineProperty%', true);
+var $max = GetIntrinsic('%Math.max%');
+
+if ($defineProperty) {
+	try {
+		$defineProperty({}, 'a', { value: 1 });
+	} catch (e) {
+		// IE 8 has a broken defineProperty
+		$defineProperty = null;
+	}
+}
+
+module.exports = function callBind(originalFunction) {
+	var func = $reflectApply(bind, $call, arguments);
+	if ($gOPD && $defineProperty) {
+		var desc = $gOPD(func, 'length');
+		if (desc.configurable) {
+			// original length, plus the receiver, minus any additional arguments (after the receiver)
+			$defineProperty(
+				func,
+				'length',
+				{ value: 1 + $max(0, originalFunction.length - (arguments.length - 1)) }
+			);
+		}
+	}
+	return func;
+};
+
+var applyBind = function applyBind() {
+	return $reflectApply(bind, $apply, arguments);
+};
+
+if ($defineProperty) {
+	$defineProperty(module.exports, 'apply', { value: applyBind });
+} else {
+	module.exports.apply = applyBind;
+}
+
+
+/***/ }),
+
+/***/ "./node_modules/classnames/index.js":
+/*!******************************************!*\
+  !*** ./node_modules/classnames/index.js ***!
+  \******************************************/
+/***/ ((module, exports) => {
+
+var __WEBPACK_AMD_DEFINE_ARRAY__, __WEBPACK_AMD_DEFINE_RESULT__;/*!
+  Copyright (c) 2018 Jed Watson.
+  Licensed under the MIT License (MIT), see
+  http://jedwatson.github.io/classnames
+*/
+/* global define */
+
+(function () {
+	'use strict';
+
+	var hasOwn = {}.hasOwnProperty;
+
+	function classNames() {
+		var classes = [];
+
+		for (var i = 0; i < arguments.length; i++) {
+			var arg = arguments[i];
+			if (!arg) continue;
+
+			var argType = typeof arg;
+
+			if (argType === 'string' || argType === 'number') {
+				classes.push(arg);
+			} else if (Array.isArray(arg)) {
+				if (arg.length) {
+					var inner = classNames.apply(null, arg);
+					if (inner) {
+						classes.push(inner);
+					}
+				}
+			} else if (argType === 'object') {
+				if (arg.toString === Object.prototype.toString) {
+					for (var key in arg) {
+						if (hasOwn.call(arg, key) && arg[key]) {
+							classes.push(key);
+						}
+					}
+				} else {
+					classes.push(arg.toString());
+				}
+			}
+		}
+
+		return classes.join(' ');
+	}
+
+	if ( true && module.exports) {
+		classNames.default = classNames;
+		module.exports = classNames;
+	} else if (true) {
+		// register as 'classnames', consistent with npm package name
+		!(__WEBPACK_AMD_DEFINE_ARRAY__ = [], __WEBPACK_AMD_DEFINE_RESULT__ = (function () {
+			return classNames;
+		}).apply(exports, __WEBPACK_AMD_DEFINE_ARRAY__),
+		__WEBPACK_AMD_DEFINE_RESULT__ !== undefined && (module.exports = __WEBPACK_AMD_DEFINE_RESULT__));
+	} else {}
+}());
+
+
+/***/ }),
+
+/***/ "./node_modules/deepmerge/dist/cjs.js":
+/*!********************************************!*\
+  !*** ./node_modules/deepmerge/dist/cjs.js ***!
+  \********************************************/
+/***/ ((module) => {
+
+"use strict";
+
+
+var isMergeableObject = function isMergeableObject(value) {
+	return isNonNullObject(value)
+		&& !isSpecial(value)
+};
+
+function isNonNullObject(value) {
+	return !!value && typeof value === 'object'
+}
+
+function isSpecial(value) {
+	var stringValue = Object.prototype.toString.call(value);
+
+	return stringValue === '[object RegExp]'
+		|| stringValue === '[object Date]'
+		|| isReactElement(value)
+}
+
+// see https://github.com/facebook/react/blob/b5ac963fb791d1298e7f396236383bc955f916c1/src/isomorphic/classic/element/ReactElement.js#L21-L25
+var canUseSymbol = typeof Symbol === 'function' && Symbol.for;
+var REACT_ELEMENT_TYPE = canUseSymbol ? Symbol.for('react.element') : 0xeac7;
+
+function isReactElement(value) {
+	return value.$$typeof === REACT_ELEMENT_TYPE
+}
+
+function emptyTarget(val) {
+	return Array.isArray(val) ? [] : {}
+}
+
+function cloneUnlessOtherwiseSpecified(value, options) {
+	return (options.clone !== false && options.isMergeableObject(value))
+		? deepmerge(emptyTarget(value), value, options)
+		: value
+}
+
+function defaultArrayMerge(target, source, options) {
+	return target.concat(source).map(function(element) {
+		return cloneUnlessOtherwiseSpecified(element, options)
+	})
+}
+
+function getMergeFunction(key, options) {
+	if (!options.customMerge) {
+		return deepmerge
+	}
+	var customMerge = options.customMerge(key);
+	return typeof customMerge === 'function' ? customMerge : deepmerge
+}
+
+function getEnumerableOwnPropertySymbols(target) {
+	return Object.getOwnPropertySymbols
+		? Object.getOwnPropertySymbols(target).filter(function(symbol) {
+			return target.propertyIsEnumerable(symbol)
+		})
+		: []
+}
+
+function getKeys(target) {
+	return Object.keys(target).concat(getEnumerableOwnPropertySymbols(target))
+}
+
+function propertyIsOnObject(object, property) {
+	try {
+		return property in object
+	} catch(_) {
+		return false
+	}
+}
+
+// Protects from prototype poisoning and unexpected merging up the prototype chain.
+function propertyIsUnsafe(target, key) {
+	return propertyIsOnObject(target, key) // Properties are safe to merge if they don't exist in the target yet,
+		&& !(Object.hasOwnProperty.call(target, key) // unsafe if they exist up the prototype chain,
+			&& Object.propertyIsEnumerable.call(target, key)) // and also unsafe if they're nonenumerable.
+}
+
+function mergeObject(target, source, options) {
+	var destination = {};
+	if (options.isMergeableObject(target)) {
+		getKeys(target).forEach(function(key) {
+			destination[key] = cloneUnlessOtherwiseSpecified(target[key], options);
+		});
+	}
+	getKeys(source).forEach(function(key) {
+		if (propertyIsUnsafe(target, key)) {
+			return
+		}
+
+		if (propertyIsOnObject(target, key) && options.isMergeableObject(source[key])) {
+			destination[key] = getMergeFunction(key, options)(target[key], source[key], options);
+		} else {
+			destination[key] = cloneUnlessOtherwiseSpecified(source[key], options);
+		}
+	});
+	return destination
+}
+
+function deepmerge(target, source, options) {
+	options = options || {};
+	options.arrayMerge = options.arrayMerge || defaultArrayMerge;
+	options.isMergeableObject = options.isMergeableObject || isMergeableObject;
+	// cloneUnlessOtherwiseSpecified is added to `options` so that custom arrayMerge()
+	// implementations can use it. The caller may not replace it.
+	options.cloneUnlessOtherwiseSpecified = cloneUnlessOtherwiseSpecified;
+
+	var sourceIsArray = Array.isArray(source);
+	var targetIsArray = Array.isArray(target);
+	var sourceAndTargetTypesMatch = sourceIsArray === targetIsArray;
+
+	if (!sourceAndTargetTypesMatch) {
+		return cloneUnlessOtherwiseSpecified(source, options)
+	} else if (sourceIsArray) {
+		return options.arrayMerge(target, source, options)
+	} else {
+		return mergeObject(target, source, options)
+	}
+}
+
+deepmerge.all = function deepmergeAll(array, options) {
+	if (!Array.isArray(array)) {
+		throw new Error('first argument should be an array')
+	}
+
+	return array.reduce(function(prev, next) {
+		return deepmerge(prev, next, options)
+	}, {})
+};
+
+var deepmerge_1 = deepmerge;
+
+module.exports = deepmerge_1;
+
+
+/***/ }),
+
+/***/ "./node_modules/function-bind/implementation.js":
+/*!******************************************************!*\
+  !*** ./node_modules/function-bind/implementation.js ***!
+  \******************************************************/
+/***/ ((module) => {
+
+"use strict";
+
+
+/* eslint no-invalid-this: 1 */
+
+var ERROR_MESSAGE = 'Function.prototype.bind called on incompatible ';
+var slice = Array.prototype.slice;
+var toStr = Object.prototype.toString;
+var funcType = '[object Function]';
+
+module.exports = function bind(that) {
+    var target = this;
+    if (typeof target !== 'function' || toStr.call(target) !== funcType) {
+        throw new TypeError(ERROR_MESSAGE + target);
+    }
+    var args = slice.call(arguments, 1);
+
+    var bound;
+    var binder = function () {
+        if (this instanceof bound) {
+            var result = target.apply(
+                this,
+                args.concat(slice.call(arguments))
+            );
+            if (Object(result) === result) {
+                return result;
+            }
+            return this;
+        } else {
+            return target.apply(
+                that,
+                args.concat(slice.call(arguments))
+            );
+        }
+    };
+
+    var boundLength = Math.max(0, target.length - args.length);
+    var boundArgs = [];
+    for (var i = 0; i < boundLength; i++) {
+        boundArgs.push('$' + i);
+    }
+
+    bound = Function('binder', 'return function (' + boundArgs.join(',') + '){ return binder.apply(this,arguments); }')(binder);
+
+    if (target.prototype) {
+        var Empty = function Empty() {};
+        Empty.prototype = target.prototype;
+        bound.prototype = new Empty();
+        Empty.prototype = null;
+    }
+
+    return bound;
+};
+
+
+/***/ }),
+
+/***/ "./node_modules/function-bind/index.js":
+/*!*********************************************!*\
+  !*** ./node_modules/function-bind/index.js ***!
+  \*********************************************/
+/***/ ((module, __unused_webpack_exports, __webpack_require__) => {
+
+"use strict";
+
+
+var implementation = __webpack_require__(/*! ./implementation */ "./node_modules/function-bind/implementation.js");
+
+module.exports = Function.prototype.bind || implementation;
+
+
+/***/ }),
+
+/***/ "./node_modules/get-intrinsic/index.js":
+/*!*********************************************!*\
+  !*** ./node_modules/get-intrinsic/index.js ***!
+  \*********************************************/
+/***/ ((module, __unused_webpack_exports, __webpack_require__) => {
+
+"use strict";
+
+
+var undefined;
+
+var $SyntaxError = SyntaxError;
+var $Function = Function;
+var $TypeError = TypeError;
+
+// eslint-disable-next-line consistent-return
+var getEvalledConstructor = function (expressionSyntax) {
+	try {
+		return $Function('"use strict"; return (' + expressionSyntax + ').constructor;')();
+	} catch (e) {}
+};
+
+var $gOPD = Object.getOwnPropertyDescriptor;
+if ($gOPD) {
+	try {
+		$gOPD({}, '');
+	} catch (e) {
+		$gOPD = null; // this is IE 8, which has a broken gOPD
+	}
+}
+
+var throwTypeError = function () {
+	throw new $TypeError();
+};
+var ThrowTypeError = $gOPD
+	? (function () {
+		try {
+			// eslint-disable-next-line no-unused-expressions, no-caller, no-restricted-properties
+			arguments.callee; // IE 8 does not throw here
+			return throwTypeError;
+		} catch (calleeThrows) {
+			try {
+				// IE 8 throws on Object.getOwnPropertyDescriptor(arguments, '')
+				return $gOPD(arguments, 'callee').get;
+			} catch (gOPDthrows) {
+				return throwTypeError;
+			}
+		}
+	}())
+	: throwTypeError;
+
+var hasSymbols = __webpack_require__(/*! has-symbols */ "./node_modules/has-symbols/index.js")();
+
+var getProto = Object.getPrototypeOf || function (x) { return x.__proto__; }; // eslint-disable-line no-proto
+
+var needsEval = {};
+
+var TypedArray = typeof Uint8Array === 'undefined' ? undefined : getProto(Uint8Array);
+
+var INTRINSICS = {
+	'%AggregateError%': typeof AggregateError === 'undefined' ? undefined : AggregateError,
+	'%Array%': Array,
+	'%ArrayBuffer%': typeof ArrayBuffer === 'undefined' ? undefined : ArrayBuffer,
+	'%ArrayIteratorPrototype%': hasSymbols ? getProto([][Symbol.iterator]()) : undefined,
+	'%AsyncFromSyncIteratorPrototype%': undefined,
+	'%AsyncFunction%': needsEval,
+	'%AsyncGenerator%': needsEval,
+	'%AsyncGeneratorFunction%': needsEval,
+	'%AsyncIteratorPrototype%': needsEval,
+	'%Atomics%': typeof Atomics === 'undefined' ? undefined : Atomics,
+	'%BigInt%': typeof BigInt === 'undefined' ? undefined : BigInt,
+	'%Boolean%': Boolean,
+	'%DataView%': typeof DataView === 'undefined' ? undefined : DataView,
+	'%Date%': Date,
+	'%decodeURI%': decodeURI,
+	'%decodeURIComponent%': decodeURIComponent,
+	'%encodeURI%': encodeURI,
+	'%encodeURIComponent%': encodeURIComponent,
+	'%Error%': Error,
+	'%eval%': eval, // eslint-disable-line no-eval
+	'%EvalError%': EvalError,
+	'%Float32Array%': typeof Float32Array === 'undefined' ? undefined : Float32Array,
+	'%Float64Array%': typeof Float64Array === 'undefined' ? undefined : Float64Array,
+	'%FinalizationRegistry%': typeof FinalizationRegistry === 'undefined' ? undefined : FinalizationRegistry,
+	'%Function%': $Function,
+	'%GeneratorFunction%': needsEval,
+	'%Int8Array%': typeof Int8Array === 'undefined' ? undefined : Int8Array,
+	'%Int16Array%': typeof Int16Array === 'undefined' ? undefined : Int16Array,
+	'%Int32Array%': typeof Int32Array === 'undefined' ? undefined : Int32Array,
+	'%isFinite%': isFinite,
+	'%isNaN%': isNaN,
+	'%IteratorPrototype%': hasSymbols ? getProto(getProto([][Symbol.iterator]())) : undefined,
+	'%JSON%': typeof JSON === 'object' ? JSON : undefined,
+	'%Map%': typeof Map === 'undefined' ? undefined : Map,
+	'%MapIteratorPrototype%': typeof Map === 'undefined' || !hasSymbols ? undefined : getProto(new Map()[Symbol.iterator]()),
+	'%Math%': Math,
+	'%Number%': Number,
+	'%Object%': Object,
+	'%parseFloat%': parseFloat,
+	'%parseInt%': parseInt,
+	'%Promise%': typeof Promise === 'undefined' ? undefined : Promise,
+	'%Proxy%': typeof Proxy === 'undefined' ? undefined : Proxy,
+	'%RangeError%': RangeError,
+	'%ReferenceError%': ReferenceError,
+	'%Reflect%': typeof Reflect === 'undefined' ? undefined : Reflect,
+	'%RegExp%': RegExp,
+	'%Set%': typeof Set === 'undefined' ? undefined : Set,
+	'%SetIteratorPrototype%': typeof Set === 'undefined' || !hasSymbols ? undefined : getProto(new Set()[Symbol.iterator]()),
+	'%SharedArrayBuffer%': typeof SharedArrayBuffer === 'undefined' ? undefined : SharedArrayBuffer,
+	'%String%': String,
+	'%StringIteratorPrototype%': hasSymbols ? getProto(''[Symbol.iterator]()) : undefined,
+	'%Symbol%': hasSymbols ? Symbol : undefined,
+	'%SyntaxError%': $SyntaxError,
+	'%ThrowTypeError%': ThrowTypeError,
+	'%TypedArray%': TypedArray,
+	'%TypeError%': $TypeError,
+	'%Uint8Array%': typeof Uint8Array === 'undefined' ? undefined : Uint8Array,
+	'%Uint8ClampedArray%': typeof Uint8ClampedArray === 'undefined' ? undefined : Uint8ClampedArray,
+	'%Uint16Array%': typeof Uint16Array === 'undefined' ? undefined : Uint16Array,
+	'%Uint32Array%': typeof Uint32Array === 'undefined' ? undefined : Uint32Array,
+	'%URIError%': URIError,
+	'%WeakMap%': typeof WeakMap === 'undefined' ? undefined : WeakMap,
+	'%WeakRef%': typeof WeakRef === 'undefined' ? undefined : WeakRef,
+	'%WeakSet%': typeof WeakSet === 'undefined' ? undefined : WeakSet
+};
+
+var doEval = function doEval(name) {
+	var value;
+	if (name === '%AsyncFunction%') {
+		value = getEvalledConstructor('async function () {}');
+	} else if (name === '%GeneratorFunction%') {
+		value = getEvalledConstructor('function* () {}');
+	} else if (name === '%AsyncGeneratorFunction%') {
+		value = getEvalledConstructor('async function* () {}');
+	} else if (name === '%AsyncGenerator%') {
+		var fn = doEval('%AsyncGeneratorFunction%');
+		if (fn) {
+			value = fn.prototype;
+		}
+	} else if (name === '%AsyncIteratorPrototype%') {
+		var gen = doEval('%AsyncGenerator%');
+		if (gen) {
+			value = getProto(gen.prototype);
+		}
+	}
+
+	INTRINSICS[name] = value;
+
+	return value;
+};
+
+var LEGACY_ALIASES = {
+	'%ArrayBufferPrototype%': ['ArrayBuffer', 'prototype'],
+	'%ArrayPrototype%': ['Array', 'prototype'],
+	'%ArrayProto_entries%': ['Array', 'prototype', 'entries'],
+	'%ArrayProto_forEach%': ['Array', 'prototype', 'forEach'],
+	'%ArrayProto_keys%': ['Array', 'prototype', 'keys'],
+	'%ArrayProto_values%': ['Array', 'prototype', 'values'],
+	'%AsyncFunctionPrototype%': ['AsyncFunction', 'prototype'],
+	'%AsyncGenerator%': ['AsyncGeneratorFunction', 'prototype'],
+	'%AsyncGeneratorPrototype%': ['AsyncGeneratorFunction', 'prototype', 'prototype'],
+	'%BooleanPrototype%': ['Boolean', 'prototype'],
+	'%DataViewPrototype%': ['DataView', 'prototype'],
+	'%DatePrototype%': ['Date', 'prototype'],
+	'%ErrorPrototype%': ['Error', 'prototype'],
+	'%EvalErrorPrototype%': ['EvalError', 'prototype'],
+	'%Float32ArrayPrototype%': ['Float32Array', 'prototype'],
+	'%Float64ArrayPrototype%': ['Float64Array', 'prototype'],
+	'%FunctionPrototype%': ['Function', 'prototype'],
+	'%Generator%': ['GeneratorFunction', 'prototype'],
+	'%GeneratorPrototype%': ['GeneratorFunction', 'prototype', 'prototype'],
+	'%Int8ArrayPrototype%': ['Int8Array', 'prototype'],
+	'%Int16ArrayPrototype%': ['Int16Array', 'prototype'],
+	'%Int32ArrayPrototype%': ['Int32Array', 'prototype'],
+	'%JSONParse%': ['JSON', 'parse'],
+	'%JSONStringify%': ['JSON', 'stringify'],
+	'%MapPrototype%': ['Map', 'prototype'],
+	'%NumberPrototype%': ['Number', 'prototype'],
+	'%ObjectPrototype%': ['Object', 'prototype'],
+	'%ObjProto_toString%': ['Object', 'prototype', 'toString'],
+	'%ObjProto_valueOf%': ['Object', 'prototype', 'valueOf'],
+	'%PromisePrototype%': ['Promise', 'prototype'],
+	'%PromiseProto_then%': ['Promise', 'prototype', 'then'],
+	'%Promise_all%': ['Promise', 'all'],
+	'%Promise_reject%': ['Promise', 'reject'],
+	'%Promise_resolve%': ['Promise', 'resolve'],
+	'%RangeErrorPrototype%': ['RangeError', 'prototype'],
+	'%ReferenceErrorPrototype%': ['ReferenceError', 'prototype'],
+	'%RegExpPrototype%': ['RegExp', 'prototype'],
+	'%SetPrototype%': ['Set', 'prototype'],
+	'%SharedArrayBufferPrototype%': ['SharedArrayBuffer', 'prototype'],
+	'%StringPrototype%': ['String', 'prototype'],
+	'%SymbolPrototype%': ['Symbol', 'prototype'],
+	'%SyntaxErrorPrototype%': ['SyntaxError', 'prototype'],
+	'%TypedArrayPrototype%': ['TypedArray', 'prototype'],
+	'%TypeErrorPrototype%': ['TypeError', 'prototype'],
+	'%Uint8ArrayPrototype%': ['Uint8Array', 'prototype'],
+	'%Uint8ClampedArrayPrototype%': ['Uint8ClampedArray', 'prototype'],
+	'%Uint16ArrayPrototype%': ['Uint16Array', 'prototype'],
+	'%Uint32ArrayPrototype%': ['Uint32Array', 'prototype'],
+	'%URIErrorPrototype%': ['URIError', 'prototype'],
+	'%WeakMapPrototype%': ['WeakMap', 'prototype'],
+	'%WeakSetPrototype%': ['WeakSet', 'prototype']
+};
+
+var bind = __webpack_require__(/*! function-bind */ "./node_modules/function-bind/index.js");
+var hasOwn = __webpack_require__(/*! has */ "./node_modules/has/src/index.js");
+var $concat = bind.call(Function.call, Array.prototype.concat);
+var $spliceApply = bind.call(Function.apply, Array.prototype.splice);
+var $replace = bind.call(Function.call, String.prototype.replace);
+var $strSlice = bind.call(Function.call, String.prototype.slice);
+
+/* adapted from https://github.com/lodash/lodash/blob/4.17.15/dist/lodash.js#L6735-L6744 */
+var rePropName = /[^%.[\]]+|\[(?:(-?\d+(?:\.\d+)?)|(["'])((?:(?!\2)[^\\]|\\.)*?)\2)\]|(?=(?:\.|\[\])(?:\.|\[\]|%$))/g;
+var reEscapeChar = /\\(\\)?/g; /** Used to match backslashes in property paths. */
+var stringToPath = function stringToPath(string) {
+	var first = $strSlice(string, 0, 1);
+	var last = $strSlice(string, -1);
+	if (first === '%' && last !== '%') {
+		throw new $SyntaxError('invalid intrinsic syntax, expected closing `%`');
+	} else if (last === '%' && first !== '%') {
+		throw new $SyntaxError('invalid intrinsic syntax, expected opening `%`');
+	}
+	var result = [];
+	$replace(string, rePropName, function (match, number, quote, subString) {
+		result[result.length] = quote ? $replace(subString, reEscapeChar, '$1') : number || match;
+	});
+	return result;
+};
+/* end adaptation */
+
+var getBaseIntrinsic = function getBaseIntrinsic(name, allowMissing) {
+	var intrinsicName = name;
+	var alias;
+	if (hasOwn(LEGACY_ALIASES, intrinsicName)) {
+		alias = LEGACY_ALIASES[intrinsicName];
+		intrinsicName = '%' + alias[0] + '%';
+	}
+
+	if (hasOwn(INTRINSICS, intrinsicName)) {
+		var value = INTRINSICS[intrinsicName];
+		if (value === needsEval) {
+			value = doEval(intrinsicName);
+		}
+		if (typeof value === 'undefined' && !allowMissing) {
+			throw new $TypeError('intrinsic ' + name + ' exists, but is not available. Please file an issue!');
+		}
+
+		return {
+			alias: alias,
+			name: intrinsicName,
+			value: value
+		};
+	}
+
+	throw new $SyntaxError('intrinsic ' + name + ' does not exist!');
+};
+
+module.exports = function GetIntrinsic(name, allowMissing) {
+	if (typeof name !== 'string' || name.length === 0) {
+		throw new $TypeError('intrinsic name must be a non-empty string');
+	}
+	if (arguments.length > 1 && typeof allowMissing !== 'boolean') {
+		throw new $TypeError('"allowMissing" argument must be a boolean');
+	}
+
+	var parts = stringToPath(name);
+	var intrinsicBaseName = parts.length > 0 ? parts[0] : '';
+
+	var intrinsic = getBaseIntrinsic('%' + intrinsicBaseName + '%', allowMissing);
+	var intrinsicRealName = intrinsic.name;
+	var value = intrinsic.value;
+	var skipFurtherCaching = false;
+
+	var alias = intrinsic.alias;
+	if (alias) {
+		intrinsicBaseName = alias[0];
+		$spliceApply(parts, $concat([0, 1], alias));
+	}
+
+	for (var i = 1, isOwn = true; i < parts.length; i += 1) {
+		var part = parts[i];
+		var first = $strSlice(part, 0, 1);
+		var last = $strSlice(part, -1);
+		if (
+			(
+				(first === '"' || first === "'" || first === '`')
+				|| (last === '"' || last === "'" || last === '`')
+			)
+			&& first !== last
+		) {
+			throw new $SyntaxError('property names with quotes must have matching quotes');
+		}
+		if (part === 'constructor' || !isOwn) {
+			skipFurtherCaching = true;
+		}
+
+		intrinsicBaseName += '.' + part;
+		intrinsicRealName = '%' + intrinsicBaseName + '%';
+
+		if (hasOwn(INTRINSICS, intrinsicRealName)) {
+			value = INTRINSICS[intrinsicRealName];
+		} else if (value != null) {
+			if (!(part in value)) {
+				if (!allowMissing) {
+					throw new $TypeError('base intrinsic for ' + name + ' exists, but the property is not available.');
+				}
+				return void undefined;
+			}
+			if ($gOPD && (i + 1) >= parts.length) {
+				var desc = $gOPD(value, part);
+				isOwn = !!desc;
+
+				// By convention, when a data property is converted to an accessor
+				// property to emulate a data property that does not suffer from
+				// the override mistake, that accessor's getter is marked with
+				// an `originalValue` property. Here, when we detect this, we
+				// uphold the illusion by pretending to see that original data
+				// property, i.e., returning the value rather than the getter
+				// itself.
+				if (isOwn && 'get' in desc && !('originalValue' in desc.get)) {
+					value = desc.get;
+				} else {
+					value = value[part];
+				}
+			} else {
+				isOwn = hasOwn(value, part);
+				value = value[part];
+			}
+
+			if (isOwn && !skipFurtherCaching) {
+				INTRINSICS[intrinsicRealName] = value;
+			}
+		}
+	}
+	return value;
+};
+
+
+/***/ }),
+
+/***/ "./node_modules/has-symbols/index.js":
+/*!*******************************************!*\
+  !*** ./node_modules/has-symbols/index.js ***!
+  \*******************************************/
+/***/ ((module, __unused_webpack_exports, __webpack_require__) => {
+
+"use strict";
+
+
+var origSymbol = typeof Symbol !== 'undefined' && Symbol;
+var hasSymbolSham = __webpack_require__(/*! ./shams */ "./node_modules/has-symbols/shams.js");
+
+module.exports = function hasNativeSymbols() {
+	if (typeof origSymbol !== 'function') { return false; }
+	if (typeof Symbol !== 'function') { return false; }
+	if (typeof origSymbol('foo') !== 'symbol') { return false; }
+	if (typeof Symbol('bar') !== 'symbol') { return false; }
+
+	return hasSymbolSham();
+};
+
+
+/***/ }),
+
+/***/ "./node_modules/has-symbols/shams.js":
+/*!*******************************************!*\
+  !*** ./node_modules/has-symbols/shams.js ***!
+  \*******************************************/
+/***/ ((module) => {
+
+"use strict";
+
+
+/* eslint complexity: [2, 18], max-statements: [2, 33] */
+module.exports = function hasSymbols() {
+	if (typeof Symbol !== 'function' || typeof Object.getOwnPropertySymbols !== 'function') { return false; }
+	if (typeof Symbol.iterator === 'symbol') { return true; }
+
+	var obj = {};
+	var sym = Symbol('test');
+	var symObj = Object(sym);
+	if (typeof sym === 'string') { return false; }
+
+	if (Object.prototype.toString.call(sym) !== '[object Symbol]') { return false; }
+	if (Object.prototype.toString.call(symObj) !== '[object Symbol]') { return false; }
+
+	// temp disabled per https://github.com/ljharb/object.assign/issues/17
+	// if (sym instanceof Symbol) { return false; }
+	// temp disabled per https://github.com/WebReflection/get-own-property-symbols/issues/4
+	// if (!(symObj instanceof Symbol)) { return false; }
+
+	// if (typeof Symbol.prototype.toString !== 'function') { return false; }
+	// if (String(sym) !== Symbol.prototype.toString.call(sym)) { return false; }
+
+	var symVal = 42;
+	obj[sym] = symVal;
+	for (sym in obj) { return false; } // eslint-disable-line no-restricted-syntax, no-unreachable-loop
+	if (typeof Object.keys === 'function' && Object.keys(obj).length !== 0) { return false; }
+
+	if (typeof Object.getOwnPropertyNames === 'function' && Object.getOwnPropertyNames(obj).length !== 0) { return false; }
+
+	var syms = Object.getOwnPropertySymbols(obj);
+	if (syms.length !== 1 || syms[0] !== sym) { return false; }
+
+	if (!Object.prototype.propertyIsEnumerable.call(obj, sym)) { return false; }
+
+	if (typeof Object.getOwnPropertyDescriptor === 'function') {
+		var descriptor = Object.getOwnPropertyDescriptor(obj, sym);
+		if (descriptor.value !== symVal || descriptor.enumerable !== true) { return false; }
+	}
+
+	return true;
+};
+
+
+/***/ }),
+
+/***/ "./node_modules/has/src/index.js":
+/*!***************************************!*\
+  !*** ./node_modules/has/src/index.js ***!
+  \***************************************/
+/***/ ((module, __unused_webpack_exports, __webpack_require__) => {
+
+"use strict";
+
+
+var bind = __webpack_require__(/*! function-bind */ "./node_modules/function-bind/index.js");
+
+module.exports = bind.call(Function.call, Object.prototype.hasOwnProperty);
 
 
 /***/ }),
@@ -41694,6 +34415,19 @@ var __WEBPACK_AMD_DEFINE_RESULT__;/**
 
 /***/ }),
 
+/***/ "./resources/css/app.css":
+/*!*******************************!*\
+  !*** ./resources/css/app.css ***!
+  \*******************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+// extracted by mini-css-extract-plugin
+
+
+/***/ }),
+
 /***/ "./node_modules/nprogress/nprogress.js":
 /*!*********************************************!*\
   !*** ./node_modules/nprogress/nprogress.js ***!
@@ -43786,6 +36520,927 @@ module.exports = ReactPropTypesSecret;
 /***/ ((module) => {
 
 module.exports = Function.call.bind(Object.prototype.hasOwnProperty);
+
+
+/***/ }),
+
+/***/ "./node_modules/qs/lib/formats.js":
+/*!****************************************!*\
+  !*** ./node_modules/qs/lib/formats.js ***!
+  \****************************************/
+/***/ ((module) => {
+
+"use strict";
+
+
+var replace = String.prototype.replace;
+var percentTwenties = /%20/g;
+
+var Format = {
+    RFC1738: 'RFC1738',
+    RFC3986: 'RFC3986'
+};
+
+module.exports = {
+    'default': Format.RFC3986,
+    formatters: {
+        RFC1738: function (value) {
+            return replace.call(value, percentTwenties, '+');
+        },
+        RFC3986: function (value) {
+            return String(value);
+        }
+    },
+    RFC1738: Format.RFC1738,
+    RFC3986: Format.RFC3986
+};
+
+
+/***/ }),
+
+/***/ "./node_modules/qs/lib/index.js":
+/*!**************************************!*\
+  !*** ./node_modules/qs/lib/index.js ***!
+  \**************************************/
+/***/ ((module, __unused_webpack_exports, __webpack_require__) => {
+
+"use strict";
+
+
+var stringify = __webpack_require__(/*! ./stringify */ "./node_modules/qs/lib/stringify.js");
+var parse = __webpack_require__(/*! ./parse */ "./node_modules/qs/lib/parse.js");
+var formats = __webpack_require__(/*! ./formats */ "./node_modules/qs/lib/formats.js");
+
+module.exports = {
+    formats: formats,
+    parse: parse,
+    stringify: stringify
+};
+
+
+/***/ }),
+
+/***/ "./node_modules/qs/lib/parse.js":
+/*!**************************************!*\
+  !*** ./node_modules/qs/lib/parse.js ***!
+  \**************************************/
+/***/ ((module, __unused_webpack_exports, __webpack_require__) => {
+
+"use strict";
+
+
+var utils = __webpack_require__(/*! ./utils */ "./node_modules/qs/lib/utils.js");
+
+var has = Object.prototype.hasOwnProperty;
+var isArray = Array.isArray;
+
+var defaults = {
+    allowDots: false,
+    allowPrototypes: false,
+    allowSparse: false,
+    arrayLimit: 20,
+    charset: 'utf-8',
+    charsetSentinel: false,
+    comma: false,
+    decoder: utils.decode,
+    delimiter: '&',
+    depth: 5,
+    ignoreQueryPrefix: false,
+    interpretNumericEntities: false,
+    parameterLimit: 1000,
+    parseArrays: true,
+    plainObjects: false,
+    strictNullHandling: false
+};
+
+var interpretNumericEntities = function (str) {
+    return str.replace(/&#(\d+);/g, function ($0, numberStr) {
+        return String.fromCharCode(parseInt(numberStr, 10));
+    });
+};
+
+var parseArrayValue = function (val, options) {
+    if (val && typeof val === 'string' && options.comma && val.indexOf(',') > -1) {
+        return val.split(',');
+    }
+
+    return val;
+};
+
+// This is what browsers will submit when the ✓ character occurs in an
+// application/x-www-form-urlencoded body and the encoding of the page containing
+// the form is iso-8859-1, or when the submitted form has an accept-charset
+// attribute of iso-8859-1. Presumably also with other charsets that do not contain
+// the ✓ character, such as us-ascii.
+var isoSentinel = 'utf8=%26%2310003%3B'; // encodeURIComponent('&#10003;')
+
+// These are the percent-encoded utf-8 octets representing a checkmark, indicating that the request actually is utf-8 encoded.
+var charsetSentinel = 'utf8=%E2%9C%93'; // encodeURIComponent('✓')
+
+var parseValues = function parseQueryStringValues(str, options) {
+    var obj = {};
+    var cleanStr = options.ignoreQueryPrefix ? str.replace(/^\?/, '') : str;
+    var limit = options.parameterLimit === Infinity ? undefined : options.parameterLimit;
+    var parts = cleanStr.split(options.delimiter, limit);
+    var skipIndex = -1; // Keep track of where the utf8 sentinel was found
+    var i;
+
+    var charset = options.charset;
+    if (options.charsetSentinel) {
+        for (i = 0; i < parts.length; ++i) {
+            if (parts[i].indexOf('utf8=') === 0) {
+                if (parts[i] === charsetSentinel) {
+                    charset = 'utf-8';
+                } else if (parts[i] === isoSentinel) {
+                    charset = 'iso-8859-1';
+                }
+                skipIndex = i;
+                i = parts.length; // The eslint settings do not allow break;
+            }
+        }
+    }
+
+    for (i = 0; i < parts.length; ++i) {
+        if (i === skipIndex) {
+            continue;
+        }
+        var part = parts[i];
+
+        var bracketEqualsPos = part.indexOf(']=');
+        var pos = bracketEqualsPos === -1 ? part.indexOf('=') : bracketEqualsPos + 1;
+
+        var key, val;
+        if (pos === -1) {
+            key = options.decoder(part, defaults.decoder, charset, 'key');
+            val = options.strictNullHandling ? null : '';
+        } else {
+            key = options.decoder(part.slice(0, pos), defaults.decoder, charset, 'key');
+            val = utils.maybeMap(
+                parseArrayValue(part.slice(pos + 1), options),
+                function (encodedVal) {
+                    return options.decoder(encodedVal, defaults.decoder, charset, 'value');
+                }
+            );
+        }
+
+        if (val && options.interpretNumericEntities && charset === 'iso-8859-1') {
+            val = interpretNumericEntities(val);
+        }
+
+        if (part.indexOf('[]=') > -1) {
+            val = isArray(val) ? [val] : val;
+        }
+
+        if (has.call(obj, key)) {
+            obj[key] = utils.combine(obj[key], val);
+        } else {
+            obj[key] = val;
+        }
+    }
+
+    return obj;
+};
+
+var parseObject = function (chain, val, options, valuesParsed) {
+    var leaf = valuesParsed ? val : parseArrayValue(val, options);
+
+    for (var i = chain.length - 1; i >= 0; --i) {
+        var obj;
+        var root = chain[i];
+
+        if (root === '[]' && options.parseArrays) {
+            obj = [].concat(leaf);
+        } else {
+            obj = options.plainObjects ? Object.create(null) : {};
+            var cleanRoot = root.charAt(0) === '[' && root.charAt(root.length - 1) === ']' ? root.slice(1, -1) : root;
+            var index = parseInt(cleanRoot, 10);
+            if (!options.parseArrays && cleanRoot === '') {
+                obj = { 0: leaf };
+            } else if (
+                !isNaN(index)
+                && root !== cleanRoot
+                && String(index) === cleanRoot
+                && index >= 0
+                && (options.parseArrays && index <= options.arrayLimit)
+            ) {
+                obj = [];
+                obj[index] = leaf;
+            } else if (cleanRoot !== '__proto__') {
+                obj[cleanRoot] = leaf;
+            }
+        }
+
+        leaf = obj;
+    }
+
+    return leaf;
+};
+
+var parseKeys = function parseQueryStringKeys(givenKey, val, options, valuesParsed) {
+    if (!givenKey) {
+        return;
+    }
+
+    // Transform dot notation to bracket notation
+    var key = options.allowDots ? givenKey.replace(/\.([^.[]+)/g, '[$1]') : givenKey;
+
+    // The regex chunks
+
+    var brackets = /(\[[^[\]]*])/;
+    var child = /(\[[^[\]]*])/g;
+
+    // Get the parent
+
+    var segment = options.depth > 0 && brackets.exec(key);
+    var parent = segment ? key.slice(0, segment.index) : key;
+
+    // Stash the parent if it exists
+
+    var keys = [];
+    if (parent) {
+        // If we aren't using plain objects, optionally prefix keys that would overwrite object prototype properties
+        if (!options.plainObjects && has.call(Object.prototype, parent)) {
+            if (!options.allowPrototypes) {
+                return;
+            }
+        }
+
+        keys.push(parent);
+    }
+
+    // Loop through children appending to the array until we hit depth
+
+    var i = 0;
+    while (options.depth > 0 && (segment = child.exec(key)) !== null && i < options.depth) {
+        i += 1;
+        if (!options.plainObjects && has.call(Object.prototype, segment[1].slice(1, -1))) {
+            if (!options.allowPrototypes) {
+                return;
+            }
+        }
+        keys.push(segment[1]);
+    }
+
+    // If there's a remainder, just add whatever is left
+
+    if (segment) {
+        keys.push('[' + key.slice(segment.index) + ']');
+    }
+
+    return parseObject(keys, val, options, valuesParsed);
+};
+
+var normalizeParseOptions = function normalizeParseOptions(opts) {
+    if (!opts) {
+        return defaults;
+    }
+
+    if (opts.decoder !== null && opts.decoder !== undefined && typeof opts.decoder !== 'function') {
+        throw new TypeError('Decoder has to be a function.');
+    }
+
+    if (typeof opts.charset !== 'undefined' && opts.charset !== 'utf-8' && opts.charset !== 'iso-8859-1') {
+        throw new TypeError('The charset option must be either utf-8, iso-8859-1, or undefined');
+    }
+    var charset = typeof opts.charset === 'undefined' ? defaults.charset : opts.charset;
+
+    return {
+        allowDots: typeof opts.allowDots === 'undefined' ? defaults.allowDots : !!opts.allowDots,
+        allowPrototypes: typeof opts.allowPrototypes === 'boolean' ? opts.allowPrototypes : defaults.allowPrototypes,
+        allowSparse: typeof opts.allowSparse === 'boolean' ? opts.allowSparse : defaults.allowSparse,
+        arrayLimit: typeof opts.arrayLimit === 'number' ? opts.arrayLimit : defaults.arrayLimit,
+        charset: charset,
+        charsetSentinel: typeof opts.charsetSentinel === 'boolean' ? opts.charsetSentinel : defaults.charsetSentinel,
+        comma: typeof opts.comma === 'boolean' ? opts.comma : defaults.comma,
+        decoder: typeof opts.decoder === 'function' ? opts.decoder : defaults.decoder,
+        delimiter: typeof opts.delimiter === 'string' || utils.isRegExp(opts.delimiter) ? opts.delimiter : defaults.delimiter,
+        // eslint-disable-next-line no-implicit-coercion, no-extra-parens
+        depth: (typeof opts.depth === 'number' || opts.depth === false) ? +opts.depth : defaults.depth,
+        ignoreQueryPrefix: opts.ignoreQueryPrefix === true,
+        interpretNumericEntities: typeof opts.interpretNumericEntities === 'boolean' ? opts.interpretNumericEntities : defaults.interpretNumericEntities,
+        parameterLimit: typeof opts.parameterLimit === 'number' ? opts.parameterLimit : defaults.parameterLimit,
+        parseArrays: opts.parseArrays !== false,
+        plainObjects: typeof opts.plainObjects === 'boolean' ? opts.plainObjects : defaults.plainObjects,
+        strictNullHandling: typeof opts.strictNullHandling === 'boolean' ? opts.strictNullHandling : defaults.strictNullHandling
+    };
+};
+
+module.exports = function (str, opts) {
+    var options = normalizeParseOptions(opts);
+
+    if (str === '' || str === null || typeof str === 'undefined') {
+        return options.plainObjects ? Object.create(null) : {};
+    }
+
+    var tempObj = typeof str === 'string' ? parseValues(str, options) : str;
+    var obj = options.plainObjects ? Object.create(null) : {};
+
+    // Iterate over the keys and setup the new object
+
+    var keys = Object.keys(tempObj);
+    for (var i = 0; i < keys.length; ++i) {
+        var key = keys[i];
+        var newObj = parseKeys(key, tempObj[key], options, typeof str === 'string');
+        obj = utils.merge(obj, newObj, options);
+    }
+
+    if (options.allowSparse === true) {
+        return obj;
+    }
+
+    return utils.compact(obj);
+};
+
+
+/***/ }),
+
+/***/ "./node_modules/qs/lib/stringify.js":
+/*!******************************************!*\
+  !*** ./node_modules/qs/lib/stringify.js ***!
+  \******************************************/
+/***/ ((module, __unused_webpack_exports, __webpack_require__) => {
+
+"use strict";
+
+
+var getSideChannel = __webpack_require__(/*! side-channel */ "./node_modules/side-channel/index.js");
+var utils = __webpack_require__(/*! ./utils */ "./node_modules/qs/lib/utils.js");
+var formats = __webpack_require__(/*! ./formats */ "./node_modules/qs/lib/formats.js");
+var has = Object.prototype.hasOwnProperty;
+
+var arrayPrefixGenerators = {
+    brackets: function brackets(prefix) {
+        return prefix + '[]';
+    },
+    comma: 'comma',
+    indices: function indices(prefix, key) {
+        return prefix + '[' + key + ']';
+    },
+    repeat: function repeat(prefix) {
+        return prefix;
+    }
+};
+
+var isArray = Array.isArray;
+var split = String.prototype.split;
+var push = Array.prototype.push;
+var pushToArray = function (arr, valueOrArray) {
+    push.apply(arr, isArray(valueOrArray) ? valueOrArray : [valueOrArray]);
+};
+
+var toISO = Date.prototype.toISOString;
+
+var defaultFormat = formats['default'];
+var defaults = {
+    addQueryPrefix: false,
+    allowDots: false,
+    charset: 'utf-8',
+    charsetSentinel: false,
+    delimiter: '&',
+    encode: true,
+    encoder: utils.encode,
+    encodeValuesOnly: false,
+    format: defaultFormat,
+    formatter: formats.formatters[defaultFormat],
+    // deprecated
+    indices: false,
+    serializeDate: function serializeDate(date) {
+        return toISO.call(date);
+    },
+    skipNulls: false,
+    strictNullHandling: false
+};
+
+var isNonNullishPrimitive = function isNonNullishPrimitive(v) {
+    return typeof v === 'string'
+        || typeof v === 'number'
+        || typeof v === 'boolean'
+        || typeof v === 'symbol'
+        || typeof v === 'bigint';
+};
+
+var sentinel = {};
+
+var stringify = function stringify(
+    object,
+    prefix,
+    generateArrayPrefix,
+    strictNullHandling,
+    skipNulls,
+    encoder,
+    filter,
+    sort,
+    allowDots,
+    serializeDate,
+    format,
+    formatter,
+    encodeValuesOnly,
+    charset,
+    sideChannel
+) {
+    var obj = object;
+
+    var tmpSc = sideChannel;
+    var step = 0;
+    var findFlag = false;
+    while ((tmpSc = tmpSc.get(sentinel)) !== void undefined && !findFlag) {
+        // Where object last appeared in the ref tree
+        var pos = tmpSc.get(object);
+        step += 1;
+        if (typeof pos !== 'undefined') {
+            if (pos === step) {
+                throw new RangeError('Cyclic object value');
+            } else {
+                findFlag = true; // Break while
+            }
+        }
+        if (typeof tmpSc.get(sentinel) === 'undefined') {
+            step = 0;
+        }
+    }
+
+    if (typeof filter === 'function') {
+        obj = filter(prefix, obj);
+    } else if (obj instanceof Date) {
+        obj = serializeDate(obj);
+    } else if (generateArrayPrefix === 'comma' && isArray(obj)) {
+        obj = utils.maybeMap(obj, function (value) {
+            if (value instanceof Date) {
+                return serializeDate(value);
+            }
+            return value;
+        });
+    }
+
+    if (obj === null) {
+        if (strictNullHandling) {
+            return encoder && !encodeValuesOnly ? encoder(prefix, defaults.encoder, charset, 'key', format) : prefix;
+        }
+
+        obj = '';
+    }
+
+    if (isNonNullishPrimitive(obj) || utils.isBuffer(obj)) {
+        if (encoder) {
+            var keyValue = encodeValuesOnly ? prefix : encoder(prefix, defaults.encoder, charset, 'key', format);
+            if (generateArrayPrefix === 'comma' && encodeValuesOnly) {
+                var valuesArray = split.call(String(obj), ',');
+                var valuesJoined = '';
+                for (var i = 0; i < valuesArray.length; ++i) {
+                    valuesJoined += (i === 0 ? '' : ',') + formatter(encoder(valuesArray[i], defaults.encoder, charset, 'value', format));
+                }
+                return [formatter(keyValue) + '=' + valuesJoined];
+            }
+            return [formatter(keyValue) + '=' + formatter(encoder(obj, defaults.encoder, charset, 'value', format))];
+        }
+        return [formatter(prefix) + '=' + formatter(String(obj))];
+    }
+
+    var values = [];
+
+    if (typeof obj === 'undefined') {
+        return values;
+    }
+
+    var objKeys;
+    if (generateArrayPrefix === 'comma' && isArray(obj)) {
+        // we need to join elements in
+        objKeys = [{ value: obj.length > 0 ? obj.join(',') || null : void undefined }];
+    } else if (isArray(filter)) {
+        objKeys = filter;
+    } else {
+        var keys = Object.keys(obj);
+        objKeys = sort ? keys.sort(sort) : keys;
+    }
+
+    for (var j = 0; j < objKeys.length; ++j) {
+        var key = objKeys[j];
+        var value = typeof key === 'object' && typeof key.value !== 'undefined' ? key.value : obj[key];
+
+        if (skipNulls && value === null) {
+            continue;
+        }
+
+        var keyPrefix = isArray(obj)
+            ? typeof generateArrayPrefix === 'function' ? generateArrayPrefix(prefix, key) : prefix
+            : prefix + (allowDots ? '.' + key : '[' + key + ']');
+
+        sideChannel.set(object, step);
+        var valueSideChannel = getSideChannel();
+        valueSideChannel.set(sentinel, sideChannel);
+        pushToArray(values, stringify(
+            value,
+            keyPrefix,
+            generateArrayPrefix,
+            strictNullHandling,
+            skipNulls,
+            encoder,
+            filter,
+            sort,
+            allowDots,
+            serializeDate,
+            format,
+            formatter,
+            encodeValuesOnly,
+            charset,
+            valueSideChannel
+        ));
+    }
+
+    return values;
+};
+
+var normalizeStringifyOptions = function normalizeStringifyOptions(opts) {
+    if (!opts) {
+        return defaults;
+    }
+
+    if (opts.encoder !== null && typeof opts.encoder !== 'undefined' && typeof opts.encoder !== 'function') {
+        throw new TypeError('Encoder has to be a function.');
+    }
+
+    var charset = opts.charset || defaults.charset;
+    if (typeof opts.charset !== 'undefined' && opts.charset !== 'utf-8' && opts.charset !== 'iso-8859-1') {
+        throw new TypeError('The charset option must be either utf-8, iso-8859-1, or undefined');
+    }
+
+    var format = formats['default'];
+    if (typeof opts.format !== 'undefined') {
+        if (!has.call(formats.formatters, opts.format)) {
+            throw new TypeError('Unknown format option provided.');
+        }
+        format = opts.format;
+    }
+    var formatter = formats.formatters[format];
+
+    var filter = defaults.filter;
+    if (typeof opts.filter === 'function' || isArray(opts.filter)) {
+        filter = opts.filter;
+    }
+
+    return {
+        addQueryPrefix: typeof opts.addQueryPrefix === 'boolean' ? opts.addQueryPrefix : defaults.addQueryPrefix,
+        allowDots: typeof opts.allowDots === 'undefined' ? defaults.allowDots : !!opts.allowDots,
+        charset: charset,
+        charsetSentinel: typeof opts.charsetSentinel === 'boolean' ? opts.charsetSentinel : defaults.charsetSentinel,
+        delimiter: typeof opts.delimiter === 'undefined' ? defaults.delimiter : opts.delimiter,
+        encode: typeof opts.encode === 'boolean' ? opts.encode : defaults.encode,
+        encoder: typeof opts.encoder === 'function' ? opts.encoder : defaults.encoder,
+        encodeValuesOnly: typeof opts.encodeValuesOnly === 'boolean' ? opts.encodeValuesOnly : defaults.encodeValuesOnly,
+        filter: filter,
+        format: format,
+        formatter: formatter,
+        serializeDate: typeof opts.serializeDate === 'function' ? opts.serializeDate : defaults.serializeDate,
+        skipNulls: typeof opts.skipNulls === 'boolean' ? opts.skipNulls : defaults.skipNulls,
+        sort: typeof opts.sort === 'function' ? opts.sort : null,
+        strictNullHandling: typeof opts.strictNullHandling === 'boolean' ? opts.strictNullHandling : defaults.strictNullHandling
+    };
+};
+
+module.exports = function (object, opts) {
+    var obj = object;
+    var options = normalizeStringifyOptions(opts);
+
+    var objKeys;
+    var filter;
+
+    if (typeof options.filter === 'function') {
+        filter = options.filter;
+        obj = filter('', obj);
+    } else if (isArray(options.filter)) {
+        filter = options.filter;
+        objKeys = filter;
+    }
+
+    var keys = [];
+
+    if (typeof obj !== 'object' || obj === null) {
+        return '';
+    }
+
+    var arrayFormat;
+    if (opts && opts.arrayFormat in arrayPrefixGenerators) {
+        arrayFormat = opts.arrayFormat;
+    } else if (opts && 'indices' in opts) {
+        arrayFormat = opts.indices ? 'indices' : 'repeat';
+    } else {
+        arrayFormat = 'indices';
+    }
+
+    var generateArrayPrefix = arrayPrefixGenerators[arrayFormat];
+
+    if (!objKeys) {
+        objKeys = Object.keys(obj);
+    }
+
+    if (options.sort) {
+        objKeys.sort(options.sort);
+    }
+
+    var sideChannel = getSideChannel();
+    for (var i = 0; i < objKeys.length; ++i) {
+        var key = objKeys[i];
+
+        if (options.skipNulls && obj[key] === null) {
+            continue;
+        }
+        pushToArray(keys, stringify(
+            obj[key],
+            key,
+            generateArrayPrefix,
+            options.strictNullHandling,
+            options.skipNulls,
+            options.encode ? options.encoder : null,
+            options.filter,
+            options.sort,
+            options.allowDots,
+            options.serializeDate,
+            options.format,
+            options.formatter,
+            options.encodeValuesOnly,
+            options.charset,
+            sideChannel
+        ));
+    }
+
+    var joined = keys.join(options.delimiter);
+    var prefix = options.addQueryPrefix === true ? '?' : '';
+
+    if (options.charsetSentinel) {
+        if (options.charset === 'iso-8859-1') {
+            // encodeURIComponent('&#10003;'), the "numeric entity" representation of a checkmark
+            prefix += 'utf8=%26%2310003%3B&';
+        } else {
+            // encodeURIComponent('✓')
+            prefix += 'utf8=%E2%9C%93&';
+        }
+    }
+
+    return joined.length > 0 ? prefix + joined : '';
+};
+
+
+/***/ }),
+
+/***/ "./node_modules/qs/lib/utils.js":
+/*!**************************************!*\
+  !*** ./node_modules/qs/lib/utils.js ***!
+  \**************************************/
+/***/ ((module, __unused_webpack_exports, __webpack_require__) => {
+
+"use strict";
+
+
+var formats = __webpack_require__(/*! ./formats */ "./node_modules/qs/lib/formats.js");
+
+var has = Object.prototype.hasOwnProperty;
+var isArray = Array.isArray;
+
+var hexTable = (function () {
+    var array = [];
+    for (var i = 0; i < 256; ++i) {
+        array.push('%' + ((i < 16 ? '0' : '') + i.toString(16)).toUpperCase());
+    }
+
+    return array;
+}());
+
+var compactQueue = function compactQueue(queue) {
+    while (queue.length > 1) {
+        var item = queue.pop();
+        var obj = item.obj[item.prop];
+
+        if (isArray(obj)) {
+            var compacted = [];
+
+            for (var j = 0; j < obj.length; ++j) {
+                if (typeof obj[j] !== 'undefined') {
+                    compacted.push(obj[j]);
+                }
+            }
+
+            item.obj[item.prop] = compacted;
+        }
+    }
+};
+
+var arrayToObject = function arrayToObject(source, options) {
+    var obj = options && options.plainObjects ? Object.create(null) : {};
+    for (var i = 0; i < source.length; ++i) {
+        if (typeof source[i] !== 'undefined') {
+            obj[i] = source[i];
+        }
+    }
+
+    return obj;
+};
+
+var merge = function merge(target, source, options) {
+    /* eslint no-param-reassign: 0 */
+    if (!source) {
+        return target;
+    }
+
+    if (typeof source !== 'object') {
+        if (isArray(target)) {
+            target.push(source);
+        } else if (target && typeof target === 'object') {
+            if ((options && (options.plainObjects || options.allowPrototypes)) || !has.call(Object.prototype, source)) {
+                target[source] = true;
+            }
+        } else {
+            return [target, source];
+        }
+
+        return target;
+    }
+
+    if (!target || typeof target !== 'object') {
+        return [target].concat(source);
+    }
+
+    var mergeTarget = target;
+    if (isArray(target) && !isArray(source)) {
+        mergeTarget = arrayToObject(target, options);
+    }
+
+    if (isArray(target) && isArray(source)) {
+        source.forEach(function (item, i) {
+            if (has.call(target, i)) {
+                var targetItem = target[i];
+                if (targetItem && typeof targetItem === 'object' && item && typeof item === 'object') {
+                    target[i] = merge(targetItem, item, options);
+                } else {
+                    target.push(item);
+                }
+            } else {
+                target[i] = item;
+            }
+        });
+        return target;
+    }
+
+    return Object.keys(source).reduce(function (acc, key) {
+        var value = source[key];
+
+        if (has.call(acc, key)) {
+            acc[key] = merge(acc[key], value, options);
+        } else {
+            acc[key] = value;
+        }
+        return acc;
+    }, mergeTarget);
+};
+
+var assign = function assignSingleSource(target, source) {
+    return Object.keys(source).reduce(function (acc, key) {
+        acc[key] = source[key];
+        return acc;
+    }, target);
+};
+
+var decode = function (str, decoder, charset) {
+    var strWithoutPlus = str.replace(/\+/g, ' ');
+    if (charset === 'iso-8859-1') {
+        // unescape never throws, no try...catch needed:
+        return strWithoutPlus.replace(/%[0-9a-f]{2}/gi, unescape);
+    }
+    // utf-8
+    try {
+        return decodeURIComponent(strWithoutPlus);
+    } catch (e) {
+        return strWithoutPlus;
+    }
+};
+
+var encode = function encode(str, defaultEncoder, charset, kind, format) {
+    // This code was originally written by Brian White (mscdex) for the io.js core querystring library.
+    // It has been adapted here for stricter adherence to RFC 3986
+    if (str.length === 0) {
+        return str;
+    }
+
+    var string = str;
+    if (typeof str === 'symbol') {
+        string = Symbol.prototype.toString.call(str);
+    } else if (typeof str !== 'string') {
+        string = String(str);
+    }
+
+    if (charset === 'iso-8859-1') {
+        return escape(string).replace(/%u[0-9a-f]{4}/gi, function ($0) {
+            return '%26%23' + parseInt($0.slice(2), 16) + '%3B';
+        });
+    }
+
+    var out = '';
+    for (var i = 0; i < string.length; ++i) {
+        var c = string.charCodeAt(i);
+
+        if (
+            c === 0x2D // -
+            || c === 0x2E // .
+            || c === 0x5F // _
+            || c === 0x7E // ~
+            || (c >= 0x30 && c <= 0x39) // 0-9
+            || (c >= 0x41 && c <= 0x5A) // a-z
+            || (c >= 0x61 && c <= 0x7A) // A-Z
+            || (format === formats.RFC1738 && (c === 0x28 || c === 0x29)) // ( )
+        ) {
+            out += string.charAt(i);
+            continue;
+        }
+
+        if (c < 0x80) {
+            out = out + hexTable[c];
+            continue;
+        }
+
+        if (c < 0x800) {
+            out = out + (hexTable[0xC0 | (c >> 6)] + hexTable[0x80 | (c & 0x3F)]);
+            continue;
+        }
+
+        if (c < 0xD800 || c >= 0xE000) {
+            out = out + (hexTable[0xE0 | (c >> 12)] + hexTable[0x80 | ((c >> 6) & 0x3F)] + hexTable[0x80 | (c & 0x3F)]);
+            continue;
+        }
+
+        i += 1;
+        c = 0x10000 + (((c & 0x3FF) << 10) | (string.charCodeAt(i) & 0x3FF));
+        /* eslint operator-linebreak: [2, "before"] */
+        out += hexTable[0xF0 | (c >> 18)]
+            + hexTable[0x80 | ((c >> 12) & 0x3F)]
+            + hexTable[0x80 | ((c >> 6) & 0x3F)]
+            + hexTable[0x80 | (c & 0x3F)];
+    }
+
+    return out;
+};
+
+var compact = function compact(value) {
+    var queue = [{ obj: { o: value }, prop: 'o' }];
+    var refs = [];
+
+    for (var i = 0; i < queue.length; ++i) {
+        var item = queue[i];
+        var obj = item.obj[item.prop];
+
+        var keys = Object.keys(obj);
+        for (var j = 0; j < keys.length; ++j) {
+            var key = keys[j];
+            var val = obj[key];
+            if (typeof val === 'object' && val !== null && refs.indexOf(val) === -1) {
+                queue.push({ obj: obj, prop: key });
+                refs.push(val);
+            }
+        }
+    }
+
+    compactQueue(queue);
+
+    return value;
+};
+
+var isRegExp = function isRegExp(obj) {
+    return Object.prototype.toString.call(obj) === '[object RegExp]';
+};
+
+var isBuffer = function isBuffer(obj) {
+    if (!obj || typeof obj !== 'object') {
+        return false;
+    }
+
+    return !!(obj.constructor && obj.constructor.isBuffer && obj.constructor.isBuffer(obj));
+};
+
+var combine = function combine(a, b) {
+    return [].concat(a, b);
+};
+
+var maybeMap = function maybeMap(val, fn) {
+    if (isArray(val)) {
+        var mapped = [];
+        for (var i = 0; i < val.length; i += 1) {
+            mapped.push(fn(val[i]));
+        }
+        return mapped;
+    }
+    return fn(val);
+};
+
+module.exports = {
+    arrayToObject: arrayToObject,
+    assign: assign,
+    combine: combine,
+    compact: compact,
+    decode: decode,
+    encode: encode,
+    isBuffer: isBuffer,
+    isRegExp: isRegExp,
+    maybeMap: maybeMap,
+    merge: merge
+};
 
 
 /***/ }),
@@ -70255,20 +63910,20 @@ module.exports = function isEqual(a, b) {
 "use strict";
 __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
-/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__),
 /* harmony export */   "CheckmarkIcon": () => (/* binding */ CheckmarkIcon),
 /* harmony export */   "ErrorIcon": () => (/* binding */ ErrorIcon),
 /* harmony export */   "LoaderIcon": () => (/* binding */ LoaderIcon),
 /* harmony export */   "ToastBar": () => (/* binding */ ToastBar),
 /* harmony export */   "ToastIcon": () => (/* binding */ ToastIcon),
 /* harmony export */   "Toaster": () => (/* binding */ Toaster),
+/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__),
 /* harmony export */   "resolveValue": () => (/* binding */ resolveValue),
 /* harmony export */   "toast": () => (/* binding */ toast),
 /* harmony export */   "useToaster": () => (/* binding */ useToaster),
 /* harmony export */   "useToasterStore": () => (/* binding */ useStore)
 /* harmony export */ });
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
-/* harmony import */ var goober__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! goober */ "./node_modules/goober/dist/goober.modern.js");
+/* harmony import */ var goober__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! goober */ "./node_modules/react-hot-toast/node_modules/goober/dist/goober.modern.js");
 
 
 
@@ -71141,8 +64796,8 @@ function _cleanUp(props, searchState, context) {
 "use strict";
 __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
-/* harmony export */   "getId": () => (/* binding */ getId),
-/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
+/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__),
+/* harmony export */   "getId": () => (/* binding */ getId)
 /* harmony export */ });
 /* harmony import */ var _babel_runtime_helpers_esm_defineProperty__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @babel/runtime/helpers/esm/defineProperty */ "./node_modules/@babel/runtime/helpers/esm/defineProperty.js");
 /* harmony import */ var prop_types__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! prop-types */ "./node_modules/prop-types/index.js");
@@ -71899,8 +65554,8 @@ var _refine = function refine(searchState, nextValue, context) {
 "use strict";
 __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
-/* harmony export */   "getId": () => (/* binding */ getId),
-/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
+/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__),
+/* harmony export */   "getId": () => (/* binding */ getId)
 /* harmony export */ });
 /* harmony import */ var _babel_runtime_helpers_esm_defineProperty__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @babel/runtime/helpers/esm/defineProperty */ "./node_modules/@babel/runtime/helpers/esm/defineProperty.js");
 /* harmony import */ var prop_types__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! prop-types */ "./node_modules/prop-types/index.js");
@@ -75009,11 +68664,11 @@ function _cleanUp(props, searchState, context) {
 "use strict";
 __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
-/* harmony export */   "instantSearchContext": () => (/* binding */ instantSearchContext),
+/* harmony export */   "IndexConsumer": () => (/* binding */ IndexConsumer),
+/* harmony export */   "IndexProvider": () => (/* binding */ IndexProvider),
 /* harmony export */   "InstantSearchConsumer": () => (/* binding */ InstantSearchConsumer),
 /* harmony export */   "InstantSearchProvider": () => (/* binding */ InstantSearchProvider),
-/* harmony export */   "IndexConsumer": () => (/* binding */ IndexConsumer),
-/* harmony export */   "IndexProvider": () => (/* binding */ IndexProvider)
+/* harmony export */   "instantSearchContext": () => (/* binding */ instantSearchContext)
 /* harmony export */ });
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
 
@@ -76174,12 +69829,12 @@ function parseAlgoliaHit(_ref2) {
 "use strict";
 __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "cleanUpValue": () => (/* binding */ cleanUpValue),
+/* harmony export */   "getCurrentRefinementValue": () => (/* binding */ getCurrentRefinementValue),
 /* harmony export */   "getIndexId": () => (/* binding */ getIndexId),
 /* harmony export */   "getResults": () => (/* binding */ getResults),
 /* harmony export */   "hasMultipleIndices": () => (/* binding */ hasMultipleIndices),
-/* harmony export */   "refineValue": () => (/* binding */ refineValue),
-/* harmony export */   "getCurrentRefinementValue": () => (/* binding */ getCurrentRefinementValue),
-/* harmony export */   "cleanUpValue": () => (/* binding */ cleanUpValue)
+/* harmony export */   "refineValue": () => (/* binding */ refineValue)
 /* harmony export */ });
 /* harmony import */ var _babel_runtime_helpers_esm_defineProperty__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @babel/runtime/helpers/esm/defineProperty */ "./node_modules/@babel/runtime/helpers/esm/defineProperty.js");
 /* harmony import */ var _utils_js__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./utils.js */ "./node_modules/react-instantsearch-core/dist/es/core/utils.js");
@@ -76433,9 +70088,9 @@ function cleanUpValueWithMultiIndex(_ref4) {
 "use strict";
 __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
-/* harmony export */   "isMetadataEnabled": () => (/* binding */ isMetadataEnabled),
 /* harmony export */   "getMetadataPayload": () => (/* binding */ getMetadataPayload),
-/* harmony export */   "injectMetadata": () => (/* binding */ injectMetadata)
+/* harmony export */   "injectMetadata": () => (/* binding */ injectMetadata),
+/* harmony export */   "isMetadataEnabled": () => (/* binding */ isMetadataEnabled)
 /* harmony export */ });
 /* harmony import */ var _babel_runtime_helpers_esm_typeof__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @babel/runtime/helpers/esm/typeof */ "./node_modules/@babel/runtime/helpers/esm/typeof.js");
 
@@ -76601,18 +70256,18 @@ function translatable(defaultTranslations) {
 "use strict";
 __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
-/* harmony export */   "shallowEqual": () => (/* binding */ shallowEqual),
-/* harmony export */   "getDisplayName": () => (/* binding */ getDisplayName),
-/* harmony export */   "defer": () => (/* binding */ defer),
-/* harmony export */   "removeEmptyKey": () => (/* binding */ removeEmptyKey),
-/* harmony export */   "removeEmptyArraysFromObject": () => (/* binding */ removeEmptyArraysFromObject),
 /* harmony export */   "addAbsolutePositions": () => (/* binding */ addAbsolutePositions),
 /* harmony export */   "addQueryID": () => (/* binding */ addQueryID),
+/* harmony export */   "defer": () => (/* binding */ defer),
 /* harmony export */   "find": () => (/* binding */ find),
+/* harmony export */   "getDisplayName": () => (/* binding */ getDisplayName),
+/* harmony export */   "getObjectType": () => (/* binding */ getObjectType),
+/* harmony export */   "getPropertyByPath": () => (/* binding */ getPropertyByPath),
 /* harmony export */   "objectHasKeys": () => (/* binding */ objectHasKeys),
 /* harmony export */   "omit": () => (/* binding */ omit),
-/* harmony export */   "getPropertyByPath": () => (/* binding */ getPropertyByPath),
-/* harmony export */   "getObjectType": () => (/* binding */ getObjectType)
+/* harmony export */   "removeEmptyArraysFromObject": () => (/* binding */ removeEmptyArraysFromObject),
+/* harmony export */   "removeEmptyKey": () => (/* binding */ removeEmptyKey),
+/* harmony export */   "shallowEqual": () => (/* binding */ shallowEqual)
 /* harmony export */ });
 /* harmony import */ var _babel_runtime_helpers_esm_defineProperty__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @babel/runtime/helpers/esm/defineProperty */ "./node_modules/@babel/runtime/helpers/esm/defineProperty.js");
 /* harmony import */ var _babel_runtime_helpers_esm_typeof__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @babel/runtime/helpers/esm/typeof */ "./node_modules/@babel/runtime/helpers/esm/typeof.js");
@@ -76781,7 +70436,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
 /* harmony export */ });
-/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ('6.22.0');
+/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ('6.23.1');
 
 /***/ }),
 
@@ -76794,30 +70449,27 @@ __webpack_require__.r(__webpack_exports__);
 "use strict";
 __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
-/* harmony export */   "createConnector": () => (/* reexport safe */ _core_createConnector_js__WEBPACK_IMPORTED_MODULE_0__["default"]),
-/* harmony export */   "instantSearchContext": () => (/* reexport safe */ _core_context_js__WEBPACK_IMPORTED_MODULE_1__.instantSearchContext),
-/* harmony export */   "InstantSearchConsumer": () => (/* reexport safe */ _core_context_js__WEBPACK_IMPORTED_MODULE_1__.InstantSearchConsumer),
-/* harmony export */   "InstantSearchProvider": () => (/* reexport safe */ _core_context_js__WEBPACK_IMPORTED_MODULE_1__.InstantSearchProvider),
-/* harmony export */   "HIGHLIGHT_TAGS": () => (/* reexport safe */ _core_highlight_js__WEBPACK_IMPORTED_MODULE_2__.HIGHLIGHT_TAGS),
-/* harmony export */   "version": () => (/* reexport safe */ _core_version_js__WEBPACK_IMPORTED_MODULE_3__["default"]),
-/* harmony export */   "translatable": () => (/* reexport safe */ _core_translatable_js__WEBPACK_IMPORTED_MODULE_4__["default"]),
 /* harmony export */   "Configure": () => (/* reexport safe */ _widgets_Configure_js__WEBPACK_IMPORTED_MODULE_5__["default"]),
+/* harmony export */   "DynamicWidgets": () => (/* reexport safe */ _widgets_DynamicWidgets_js__WEBPACK_IMPORTED_MODULE_7__["default"]),
+/* harmony export */   "EXPERIMENTAL_connectConfigureRelatedItems": () => (/* reexport safe */ _connectors_connectConfigureRelatedItems_js__WEBPACK_IMPORTED_MODULE_14__["default"]),
+/* harmony export */   "EXPERIMENTAL_connectDynamicWidgets": () => (/* binding */ EXPERIMENTAL_connectDynamicWidgets),
 /* harmony export */   "ExperimentalConfigureRelatedItems": () => (/* reexport safe */ _widgets_ConfigureRelatedItems_js__WEBPACK_IMPORTED_MODULE_6__["default"]),
 /* harmony export */   "ExperimentalDynamicWidgets": () => (/* binding */ ExperimentalDynamicWidgets),
-/* harmony export */   "DynamicWidgets": () => (/* reexport safe */ _widgets_DynamicWidgets_js__WEBPACK_IMPORTED_MODULE_7__["default"]),
-/* harmony export */   "QueryRuleContext": () => (/* reexport safe */ _widgets_QueryRuleContext_js__WEBPACK_IMPORTED_MODULE_8__["default"]),
+/* harmony export */   "HIGHLIGHT_TAGS": () => (/* reexport safe */ _core_highlight_js__WEBPACK_IMPORTED_MODULE_2__.HIGHLIGHT_TAGS),
 /* harmony export */   "Index": () => (/* reexport safe */ _widgets_Index_js__WEBPACK_IMPORTED_MODULE_9__["default"]),
 /* harmony export */   "InstantSearch": () => (/* reexport safe */ _widgets_InstantSearch_js__WEBPACK_IMPORTED_MODULE_10__["default"]),
+/* harmony export */   "InstantSearchConsumer": () => (/* reexport safe */ _core_context_js__WEBPACK_IMPORTED_MODULE_1__.InstantSearchConsumer),
+/* harmony export */   "InstantSearchProvider": () => (/* reexport safe */ _core_context_js__WEBPACK_IMPORTED_MODULE_1__.InstantSearchProvider),
+/* harmony export */   "QueryRuleContext": () => (/* reexport safe */ _widgets_QueryRuleContext_js__WEBPACK_IMPORTED_MODULE_8__["default"]),
 /* harmony export */   "connectAutoComplete": () => (/* reexport safe */ _connectors_connectAutoComplete_js__WEBPACK_IMPORTED_MODULE_11__["default"]),
 /* harmony export */   "connectBreadcrumb": () => (/* reexport safe */ _connectors_connectBreadcrumb_js__WEBPACK_IMPORTED_MODULE_12__["default"]),
 /* harmony export */   "connectConfigure": () => (/* reexport safe */ _connectors_connectConfigure_js__WEBPACK_IMPORTED_MODULE_13__["default"]),
-/* harmony export */   "EXPERIMENTAL_connectConfigureRelatedItems": () => (/* reexport safe */ _connectors_connectConfigureRelatedItems_js__WEBPACK_IMPORTED_MODULE_14__["default"]),
 /* harmony export */   "connectCurrentRefinements": () => (/* reexport safe */ _connectors_connectCurrentRefinements_js__WEBPACK_IMPORTED_MODULE_15__["default"]),
 /* harmony export */   "connectDynamicWidgets": () => (/* reexport safe */ _connectors_connectDynamicWidgets_js__WEBPACK_IMPORTED_MODULE_16__["default"]),
-/* harmony export */   "EXPERIMENTAL_connectDynamicWidgets": () => (/* binding */ EXPERIMENTAL_connectDynamicWidgets),
 /* harmony export */   "connectGeoSearch": () => (/* reexport safe */ _connectors_connectGeoSearch_js__WEBPACK_IMPORTED_MODULE_17__["default"]),
 /* harmony export */   "connectHierarchicalMenu": () => (/* reexport safe */ _connectors_connectHierarchicalMenu_js__WEBPACK_IMPORTED_MODULE_18__["default"]),
 /* harmony export */   "connectHighlight": () => (/* reexport safe */ _connectors_connectHighlight_js__WEBPACK_IMPORTED_MODULE_19__["default"]),
+/* harmony export */   "connectHitInsights": () => (/* reexport safe */ _connectors_connectHitInsights_js__WEBPACK_IMPORTED_MODULE_37__["default"]),
 /* harmony export */   "connectHits": () => (/* reexport safe */ _connectors_connectHits_js__WEBPACK_IMPORTED_MODULE_20__["default"]),
 /* harmony export */   "connectHitsPerPage": () => (/* reexport safe */ _connectors_connectHitsPerPage_js__WEBPACK_IMPORTED_MODULE_21__["default"]),
 /* harmony export */   "connectInfiniteHits": () => (/* reexport safe */ _connectors_connectInfiniteHits_js__WEBPACK_IMPORTED_MODULE_22__["default"]),
@@ -76828,15 +70480,18 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */   "connectQueryRules": () => (/* reexport safe */ _connectors_connectQueryRules_js__WEBPACK_IMPORTED_MODULE_27__["default"]),
 /* harmony export */   "connectRange": () => (/* reexport safe */ _connectors_connectRange_js__WEBPACK_IMPORTED_MODULE_28__["default"]),
 /* harmony export */   "connectRefinementList": () => (/* reexport safe */ _connectors_connectRefinementList_js__WEBPACK_IMPORTED_MODULE_29__["default"]),
+/* harmony export */   "connectRelevantSort": () => (/* reexport safe */ _connectors_connectRelevantSort_js__WEBPACK_IMPORTED_MODULE_32__["default"]),
 /* harmony export */   "connectScrollTo": () => (/* reexport safe */ _connectors_connectScrollTo_js__WEBPACK_IMPORTED_MODULE_30__["default"]),
 /* harmony export */   "connectSearchBox": () => (/* reexport safe */ _connectors_connectSearchBox_js__WEBPACK_IMPORTED_MODULE_31__["default"]),
-/* harmony export */   "connectRelevantSort": () => (/* reexport safe */ _connectors_connectRelevantSort_js__WEBPACK_IMPORTED_MODULE_32__["default"]),
 /* harmony export */   "connectSortBy": () => (/* reexport safe */ _connectors_connectSortBy_js__WEBPACK_IMPORTED_MODULE_33__["default"]),
 /* harmony export */   "connectStateResults": () => (/* reexport safe */ _connectors_connectStateResults_js__WEBPACK_IMPORTED_MODULE_34__["default"]),
 /* harmony export */   "connectStats": () => (/* reexport safe */ _connectors_connectStats_js__WEBPACK_IMPORTED_MODULE_35__["default"]),
 /* harmony export */   "connectToggleRefinement": () => (/* reexport safe */ _connectors_connectToggleRefinement_js__WEBPACK_IMPORTED_MODULE_36__["default"]),
-/* harmony export */   "connectHitInsights": () => (/* reexport safe */ _connectors_connectHitInsights_js__WEBPACK_IMPORTED_MODULE_37__["default"]),
-/* harmony export */   "connectVoiceSearch": () => (/* reexport safe */ _connectors_connectVoiceSearch_js__WEBPACK_IMPORTED_MODULE_38__["default"])
+/* harmony export */   "connectVoiceSearch": () => (/* reexport safe */ _connectors_connectVoiceSearch_js__WEBPACK_IMPORTED_MODULE_38__["default"]),
+/* harmony export */   "createConnector": () => (/* reexport safe */ _core_createConnector_js__WEBPACK_IMPORTED_MODULE_0__["default"]),
+/* harmony export */   "instantSearchContext": () => (/* reexport safe */ _core_context_js__WEBPACK_IMPORTED_MODULE_1__.instantSearchContext),
+/* harmony export */   "translatable": () => (/* reexport safe */ _core_translatable_js__WEBPACK_IMPORTED_MODULE_4__["default"]),
+/* harmony export */   "version": () => (/* reexport safe */ _core_version_js__WEBPACK_IMPORTED_MODULE_3__["default"])
 /* harmony export */ });
 /* harmony import */ var _core_createConnector_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./core/createConnector.js */ "./node_modules/react-instantsearch-core/dist/es/core/createConnector.js");
 /* harmony import */ var _core_context_js__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./core/context.js */ "./node_modules/react-instantsearch-core/dist/es/core/context.js");
@@ -81640,11 +75295,11 @@ function getInsightsAnonymousUserToken() {
 "use strict";
 __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
-/* harmony export */   "createClassNames": () => (/* binding */ createClassNames),
-/* harmony export */   "isSpecialClick": () => (/* binding */ isSpecialClick),
 /* harmony export */   "capitalize": () => (/* binding */ capitalize),
-/* harmony export */   "range": () => (/* binding */ range),
-/* harmony export */   "find": () => (/* binding */ find)
+/* harmony export */   "createClassNames": () => (/* binding */ createClassNames),
+/* harmony export */   "find": () => (/* binding */ find),
+/* harmony export */   "isSpecialClick": () => (/* binding */ isSpecialClick),
+/* harmony export */   "range": () => (/* binding */ range)
 /* harmony export */ });
 /* harmony import */ var _babel_runtime_helpers_esm_toConsumableArray__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @babel/runtime/helpers/esm/toConsumableArray */ "./node_modules/@babel/runtime/helpers/esm/toConsumableArray.js");
 /* harmony import */ var classnames__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! classnames */ "./node_modules/classnames/index.js");
@@ -81860,21 +75515,50 @@ function useAnswers(_ref) {
 "use strict";
 __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
-/* harmony export */   "createConnector": () => (/* reexport safe */ react_instantsearch_core__WEBPACK_IMPORTED_MODULE_0__["default"]),
-/* harmony export */   "HIGHLIGHT_TAGS": () => (/* reexport safe */ react_instantsearch_core__WEBPACK_IMPORTED_MODULE_1__.HIGHLIGHT_TAGS),
-/* harmony export */   "translatable": () => (/* reexport safe */ react_instantsearch_core__WEBPACK_IMPORTED_MODULE_2__["default"]),
+/* harmony export */   "Breadcrumb": () => (/* reexport safe */ _widgets_Breadcrumb_js__WEBPACK_IMPORTED_MODULE_36__["default"]),
+/* harmony export */   "ClearRefinements": () => (/* reexport safe */ _widgets_ClearRefinements_js__WEBPACK_IMPORTED_MODULE_37__["default"]),
 /* harmony export */   "Configure": () => (/* reexport safe */ react_instantsearch_core__WEBPACK_IMPORTED_MODULE_3__["default"]),
+/* harmony export */   "CurrentRefinements": () => (/* reexport safe */ _widgets_CurrentRefinements_js__WEBPACK_IMPORTED_MODULE_38__["default"]),
+/* harmony export */   "DynamicWidgets": () => (/* reexport safe */ _widgets_DynamicWidgets_js__WEBPACK_IMPORTED_MODULE_64__["default"]),
+/* harmony export */   "EXPERIMENTAL_Answers": () => (/* reexport safe */ _widgets_Answers_js__WEBPACK_IMPORTED_MODULE_63__["default"]),
+/* harmony export */   "EXPERIMENTAL_connectConfigureRelatedItems": () => (/* reexport safe */ react_instantsearch_core__WEBPACK_IMPORTED_MODULE_11__["default"]),
+/* harmony export */   "EXPERIMENTAL_connectDynamicWidgets": () => (/* reexport safe */ react_instantsearch_core__WEBPACK_IMPORTED_MODULE_14__.EXPERIMENTAL_connectDynamicWidgets),
+/* harmony export */   "EXPERIMENTAL_useAnswers": () => (/* reexport safe */ _hooks_useAnswers_js__WEBPACK_IMPORTED_MODULE_65__["default"]),
 /* harmony export */   "ExperimentalConfigureRelatedItems": () => (/* reexport safe */ react_instantsearch_core__WEBPACK_IMPORTED_MODULE_4__["default"]),
-/* harmony export */   "QueryRuleContext": () => (/* reexport safe */ react_instantsearch_core__WEBPACK_IMPORTED_MODULE_5__["default"]),
+/* harmony export */   "ExperimentalDynamicWidgets": () => (/* binding */ ExperimentalDynamicWidgets),
+/* harmony export */   "HIGHLIGHT_TAGS": () => (/* reexport safe */ react_instantsearch_core__WEBPACK_IMPORTED_MODULE_1__.HIGHLIGHT_TAGS),
+/* harmony export */   "HierarchicalMenu": () => (/* reexport safe */ _widgets_HierarchicalMenu_js__WEBPACK_IMPORTED_MODULE_39__["default"]),
+/* harmony export */   "Highlight": () => (/* reexport safe */ _widgets_Highlight_js__WEBPACK_IMPORTED_MODULE_40__["default"]),
+/* harmony export */   "Hits": () => (/* reexport safe */ _widgets_Hits_js__WEBPACK_IMPORTED_MODULE_41__["default"]),
+/* harmony export */   "HitsPerPage": () => (/* reexport safe */ _widgets_HitsPerPage_js__WEBPACK_IMPORTED_MODULE_42__["default"]),
 /* harmony export */   "Index": () => (/* reexport safe */ react_instantsearch_core__WEBPACK_IMPORTED_MODULE_6__["default"]),
+/* harmony export */   "InfiniteHits": () => (/* reexport safe */ _widgets_InfiniteHits_js__WEBPACK_IMPORTED_MODULE_43__["default"]),
 /* harmony export */   "InstantSearch": () => (/* reexport safe */ react_instantsearch_core__WEBPACK_IMPORTED_MODULE_7__["default"]),
+/* harmony export */   "Menu": () => (/* reexport safe */ _widgets_Menu_js__WEBPACK_IMPORTED_MODULE_44__["default"]),
+/* harmony export */   "MenuSelect": () => (/* reexport safe */ _widgets_MenuSelect_js__WEBPACK_IMPORTED_MODULE_45__["default"]),
+/* harmony export */   "NumericMenu": () => (/* reexport safe */ _widgets_NumericMenu_js__WEBPACK_IMPORTED_MODULE_46__["default"]),
+/* harmony export */   "Pagination": () => (/* reexport safe */ _widgets_Pagination_js__WEBPACK_IMPORTED_MODULE_47__["default"]),
+/* harmony export */   "Panel": () => (/* reexport safe */ _widgets_Panel_js__WEBPACK_IMPORTED_MODULE_48__["default"]),
+/* harmony export */   "PoweredBy": () => (/* reexport safe */ _widgets_PoweredBy_js__WEBPACK_IMPORTED_MODULE_49__["default"]),
+/* harmony export */   "QueryRuleContext": () => (/* reexport safe */ react_instantsearch_core__WEBPACK_IMPORTED_MODULE_5__["default"]),
+/* harmony export */   "QueryRuleCustomData": () => (/* reexport safe */ _widgets_QueryRuleCustomData_js__WEBPACK_IMPORTED_MODULE_62__["default"]),
+/* harmony export */   "RangeInput": () => (/* reexport safe */ _widgets_RangeInput_js__WEBPACK_IMPORTED_MODULE_50__["default"]),
+/* harmony export */   "RangeSlider": () => (/* reexport safe */ _widgets_RangeSlider_js__WEBPACK_IMPORTED_MODULE_51__["default"]),
+/* harmony export */   "RatingMenu": () => (/* reexport safe */ _widgets_RatingMenu_js__WEBPACK_IMPORTED_MODULE_52__["default"]),
+/* harmony export */   "RefinementList": () => (/* reexport safe */ _widgets_RefinementList_js__WEBPACK_IMPORTED_MODULE_53__["default"]),
+/* harmony export */   "RelevantSort": () => (/* reexport safe */ _widgets_RelevantSort_js__WEBPACK_IMPORTED_MODULE_57__["default"]),
+/* harmony export */   "ScrollTo": () => (/* reexport safe */ _widgets_ScrollTo_js__WEBPACK_IMPORTED_MODULE_54__["default"]),
+/* harmony export */   "SearchBox": () => (/* reexport safe */ _widgets_SearchBox_js__WEBPACK_IMPORTED_MODULE_55__["default"]),
+/* harmony export */   "Snippet": () => (/* reexport safe */ _widgets_Snippet_js__WEBPACK_IMPORTED_MODULE_56__["default"]),
+/* harmony export */   "SortBy": () => (/* reexport safe */ _widgets_SortBy_js__WEBPACK_IMPORTED_MODULE_58__["default"]),
+/* harmony export */   "Stats": () => (/* reexport safe */ _widgets_Stats_js__WEBPACK_IMPORTED_MODULE_59__["default"]),
+/* harmony export */   "ToggleRefinement": () => (/* reexport safe */ _widgets_ToggleRefinement_js__WEBPACK_IMPORTED_MODULE_60__["default"]),
+/* harmony export */   "VoiceSearch": () => (/* reexport safe */ _widgets_VoiceSearch_js__WEBPACK_IMPORTED_MODULE_61__["default"]),
 /* harmony export */   "connectAutoComplete": () => (/* reexport safe */ react_instantsearch_core__WEBPACK_IMPORTED_MODULE_8__["default"]),
 /* harmony export */   "connectBreadcrumb": () => (/* reexport safe */ react_instantsearch_core__WEBPACK_IMPORTED_MODULE_9__["default"]),
 /* harmony export */   "connectConfigure": () => (/* reexport safe */ react_instantsearch_core__WEBPACK_IMPORTED_MODULE_10__["default"]),
-/* harmony export */   "EXPERIMENTAL_connectConfigureRelatedItems": () => (/* reexport safe */ react_instantsearch_core__WEBPACK_IMPORTED_MODULE_11__["default"]),
 /* harmony export */   "connectCurrentRefinements": () => (/* reexport safe */ react_instantsearch_core__WEBPACK_IMPORTED_MODULE_12__["default"]),
 /* harmony export */   "connectDynamicWidgets": () => (/* reexport safe */ react_instantsearch_core__WEBPACK_IMPORTED_MODULE_13__["default"]),
-/* harmony export */   "EXPERIMENTAL_connectDynamicWidgets": () => (/* reexport safe */ react_instantsearch_core__WEBPACK_IMPORTED_MODULE_14__.EXPERIMENTAL_connectDynamicWidgets),
 /* harmony export */   "connectGeoSearch": () => (/* reexport safe */ react_instantsearch_core__WEBPACK_IMPORTED_MODULE_15__["default"]),
 /* harmony export */   "connectHierarchicalMenu": () => (/* reexport safe */ react_instantsearch_core__WEBPACK_IMPORTED_MODULE_16__["default"]),
 /* harmony export */   "connectHighlight": () => (/* reexport safe */ react_instantsearch_core__WEBPACK_IMPORTED_MODULE_17__["default"]),
@@ -81889,48 +75573,19 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */   "connectQueryRules": () => (/* reexport safe */ react_instantsearch_core__WEBPACK_IMPORTED_MODULE_26__["default"]),
 /* harmony export */   "connectRange": () => (/* reexport safe */ react_instantsearch_core__WEBPACK_IMPORTED_MODULE_27__["default"]),
 /* harmony export */   "connectRefinementList": () => (/* reexport safe */ react_instantsearch_core__WEBPACK_IMPORTED_MODULE_28__["default"]),
+/* harmony export */   "connectRelevantSort": () => (/* reexport safe */ react_instantsearch_core__WEBPACK_IMPORTED_MODULE_31__["default"]),
 /* harmony export */   "connectScrollTo": () => (/* reexport safe */ react_instantsearch_core__WEBPACK_IMPORTED_MODULE_29__["default"]),
 /* harmony export */   "connectSearchBox": () => (/* reexport safe */ react_instantsearch_core__WEBPACK_IMPORTED_MODULE_30__["default"]),
-/* harmony export */   "connectRelevantSort": () => (/* reexport safe */ react_instantsearch_core__WEBPACK_IMPORTED_MODULE_31__["default"]),
 /* harmony export */   "connectSortBy": () => (/* reexport safe */ react_instantsearch_core__WEBPACK_IMPORTED_MODULE_32__["default"]),
 /* harmony export */   "connectStateResults": () => (/* reexport safe */ react_instantsearch_core__WEBPACK_IMPORTED_MODULE_33__["default"]),
 /* harmony export */   "connectStats": () => (/* reexport safe */ react_instantsearch_core__WEBPACK_IMPORTED_MODULE_34__["default"]),
 /* harmony export */   "connectToggleRefinement": () => (/* reexport safe */ react_instantsearch_core__WEBPACK_IMPORTED_MODULE_35__["default"]),
-/* harmony export */   "Breadcrumb": () => (/* reexport safe */ _widgets_Breadcrumb_js__WEBPACK_IMPORTED_MODULE_36__["default"]),
-/* harmony export */   "ClearRefinements": () => (/* reexport safe */ _widgets_ClearRefinements_js__WEBPACK_IMPORTED_MODULE_37__["default"]),
-/* harmony export */   "CurrentRefinements": () => (/* reexport safe */ _widgets_CurrentRefinements_js__WEBPACK_IMPORTED_MODULE_38__["default"]),
-/* harmony export */   "HierarchicalMenu": () => (/* reexport safe */ _widgets_HierarchicalMenu_js__WEBPACK_IMPORTED_MODULE_39__["default"]),
-/* harmony export */   "Highlight": () => (/* reexport safe */ _widgets_Highlight_js__WEBPACK_IMPORTED_MODULE_40__["default"]),
-/* harmony export */   "Hits": () => (/* reexport safe */ _widgets_Hits_js__WEBPACK_IMPORTED_MODULE_41__["default"]),
-/* harmony export */   "HitsPerPage": () => (/* reexport safe */ _widgets_HitsPerPage_js__WEBPACK_IMPORTED_MODULE_42__["default"]),
-/* harmony export */   "InfiniteHits": () => (/* reexport safe */ _widgets_InfiniteHits_js__WEBPACK_IMPORTED_MODULE_43__["default"]),
-/* harmony export */   "Menu": () => (/* reexport safe */ _widgets_Menu_js__WEBPACK_IMPORTED_MODULE_44__["default"]),
-/* harmony export */   "MenuSelect": () => (/* reexport safe */ _widgets_MenuSelect_js__WEBPACK_IMPORTED_MODULE_45__["default"]),
-/* harmony export */   "NumericMenu": () => (/* reexport safe */ _widgets_NumericMenu_js__WEBPACK_IMPORTED_MODULE_46__["default"]),
-/* harmony export */   "Pagination": () => (/* reexport safe */ _widgets_Pagination_js__WEBPACK_IMPORTED_MODULE_47__["default"]),
-/* harmony export */   "Panel": () => (/* reexport safe */ _widgets_Panel_js__WEBPACK_IMPORTED_MODULE_48__["default"]),
-/* harmony export */   "PoweredBy": () => (/* reexport safe */ _widgets_PoweredBy_js__WEBPACK_IMPORTED_MODULE_49__["default"]),
-/* harmony export */   "RangeInput": () => (/* reexport safe */ _widgets_RangeInput_js__WEBPACK_IMPORTED_MODULE_50__["default"]),
-/* harmony export */   "RangeSlider": () => (/* reexport safe */ _widgets_RangeSlider_js__WEBPACK_IMPORTED_MODULE_51__["default"]),
-/* harmony export */   "RatingMenu": () => (/* reexport safe */ _widgets_RatingMenu_js__WEBPACK_IMPORTED_MODULE_52__["default"]),
-/* harmony export */   "RefinementList": () => (/* reexport safe */ _widgets_RefinementList_js__WEBPACK_IMPORTED_MODULE_53__["default"]),
-/* harmony export */   "ScrollTo": () => (/* reexport safe */ _widgets_ScrollTo_js__WEBPACK_IMPORTED_MODULE_54__["default"]),
-/* harmony export */   "SearchBox": () => (/* reexport safe */ _widgets_SearchBox_js__WEBPACK_IMPORTED_MODULE_55__["default"]),
-/* harmony export */   "Snippet": () => (/* reexport safe */ _widgets_Snippet_js__WEBPACK_IMPORTED_MODULE_56__["default"]),
-/* harmony export */   "RelevantSort": () => (/* reexport safe */ _widgets_RelevantSort_js__WEBPACK_IMPORTED_MODULE_57__["default"]),
-/* harmony export */   "SortBy": () => (/* reexport safe */ _widgets_SortBy_js__WEBPACK_IMPORTED_MODULE_58__["default"]),
-/* harmony export */   "Stats": () => (/* reexport safe */ _widgets_Stats_js__WEBPACK_IMPORTED_MODULE_59__["default"]),
-/* harmony export */   "ToggleRefinement": () => (/* reexport safe */ _widgets_ToggleRefinement_js__WEBPACK_IMPORTED_MODULE_60__["default"]),
-/* harmony export */   "VoiceSearch": () => (/* reexport safe */ _widgets_VoiceSearch_js__WEBPACK_IMPORTED_MODULE_61__["default"]),
-/* harmony export */   "QueryRuleCustomData": () => (/* reexport safe */ _widgets_QueryRuleCustomData_js__WEBPACK_IMPORTED_MODULE_62__["default"]),
-/* harmony export */   "EXPERIMENTAL_Answers": () => (/* reexport safe */ _widgets_Answers_js__WEBPACK_IMPORTED_MODULE_63__["default"]),
-/* harmony export */   "DynamicWidgets": () => (/* reexport safe */ _widgets_DynamicWidgets_js__WEBPACK_IMPORTED_MODULE_64__["default"]),
-/* harmony export */   "ExperimentalDynamicWidgets": () => (/* binding */ ExperimentalDynamicWidgets),
-/* harmony export */   "EXPERIMENTAL_useAnswers": () => (/* reexport safe */ _hooks_useAnswers_js__WEBPACK_IMPORTED_MODULE_65__["default"]),
 /* harmony export */   "createClassNames": () => (/* reexport safe */ _core_utils_js__WEBPACK_IMPORTED_MODULE_66__.createClassNames),
+/* harmony export */   "createConnector": () => (/* reexport safe */ react_instantsearch_core__WEBPACK_IMPORTED_MODULE_0__["default"]),
+/* harmony export */   "createInfiniteHitsSessionStorageCache": () => (/* reexport safe */ _lib_infiniteHitsCache_index_js__WEBPACK_IMPORTED_MODULE_69__["default"]),
 /* harmony export */   "createVoiceSearchHelper": () => (/* reexport safe */ _lib_voiceSearchHelper_index_js__WEBPACK_IMPORTED_MODULE_67__["default"]),
 /* harmony export */   "getInsightsAnonymousUserToken": () => (/* reexport safe */ _core_getInsightsAnonymousUserToken_js__WEBPACK_IMPORTED_MODULE_68__["default"]),
-/* harmony export */   "createInfiniteHitsSessionStorageCache": () => (/* reexport safe */ _lib_infiniteHitsCache_index_js__WEBPACK_IMPORTED_MODULE_69__["default"])
+/* harmony export */   "translatable": () => (/* reexport safe */ react_instantsearch_core__WEBPACK_IMPORTED_MODULE_2__["default"])
 /* harmony export */ });
 /* harmony import */ var react_instantsearch_core__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react-instantsearch-core */ "./node_modules/react-instantsearch-core/dist/es/core/createConnector.js");
 /* harmony import */ var react_instantsearch_core__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! react-instantsearch-core */ "./node_modules/react-instantsearch-core/dist/es/core/highlight.js");
@@ -88085,6 +81740,4397 @@ webpackContext.id = "./resources/js/Pages sync recursive ^\\.\\/.*\\.tsx$";
 
 /***/ }),
 
+/***/ "./node_modules/@headlessui/react/dist/headlessui.dev.cjs":
+/*!****************************************************************!*\
+  !*** ./node_modules/@headlessui/react/dist/headlessui.dev.cjs ***!
+  \****************************************************************/
+/***/ ((module, __unused_webpack_exports, __webpack_require__) => {
+
+var __create = Object.create;
+var __defProp = Object.defineProperty;
+var __getOwnPropDesc = Object.getOwnPropertyDescriptor;
+var __getOwnPropNames = Object.getOwnPropertyNames;
+var __getProtoOf = Object.getPrototypeOf;
+var __hasOwnProp = Object.prototype.hasOwnProperty;
+var __markAsModule = (target) => __defProp(target, "__esModule", { value: true });
+var __export = (target, all) => {
+  for (var name in all)
+    __defProp(target, name, { get: all[name], enumerable: true });
+};
+var __reExport = (target, module2, copyDefault, desc) => {
+  if (module2 && typeof module2 === "object" || typeof module2 === "function") {
+    for (let key of __getOwnPropNames(module2))
+      if (!__hasOwnProp.call(target, key) && (copyDefault || key !== "default"))
+        __defProp(target, key, { get: () => module2[key], enumerable: !(desc = __getOwnPropDesc(module2, key)) || desc.enumerable });
+  }
+  return target;
+};
+var __toESM = (module2, isNodeMode) => {
+  return __reExport(__markAsModule(__defProp(module2 != null ? __create(__getProtoOf(module2)) : {}, "default", !isNodeMode && module2 && module2.__esModule ? { get: () => module2.default, enumerable: true } : { value: module2, enumerable: true })), module2);
+};
+var __toCommonJS = /* @__PURE__ */ ((cache) => {
+  return (module2, temp) => {
+    return cache && cache.get(module2) || (temp = __reExport(__markAsModule({}), module2, 1), cache && cache.set(module2, temp), temp);
+  };
+})(typeof WeakMap !== "undefined" ? /* @__PURE__ */ new WeakMap() : 0);
+
+// src/index.ts
+var src_exports = {};
+__export(src_exports, {
+  Combobox: () => Combobox2,
+  Dialog: () => Dialog2,
+  Disclosure: () => Disclosure,
+  FocusTrap: () => FocusTrap,
+  Listbox: () => Listbox,
+  Menu: () => Menu,
+  Popover: () => Popover,
+  Portal: () => Portal,
+  RadioGroup: () => RadioGroup,
+  Switch: () => Switch,
+  Tab: () => Tab,
+  Transition: () => Transition
+});
+
+// src/components/combobox/combobox.tsx
+var import_react13 = __toESM(__webpack_require__(/*! react */ "./node_modules/react/index.js"), 1);
+
+// src/hooks/use-disposables.ts
+var import_react = __webpack_require__(/*! react */ "./node_modules/react/index.js");
+
+// src/utils/disposables.ts
+function disposables() {
+  let disposables2 = [];
+  let queue = [];
+  let api = {
+    enqueue(fn) {
+      queue.push(fn);
+    },
+    requestAnimationFrame(...args) {
+      let raf = requestAnimationFrame(...args);
+      api.add(() => cancelAnimationFrame(raf));
+    },
+    nextFrame(...args) {
+      api.requestAnimationFrame(() => {
+        api.requestAnimationFrame(...args);
+      });
+    },
+    setTimeout(...args) {
+      let timer = setTimeout(...args);
+      api.add(() => clearTimeout(timer));
+    },
+    add(cb) {
+      disposables2.push(cb);
+    },
+    dispose() {
+      for (let dispose of disposables2.splice(0)) {
+        dispose();
+      }
+    },
+    async workQueue() {
+      for (let handle of queue.splice(0)) {
+        await handle();
+      }
+    }
+  };
+  return api;
+}
+
+// src/hooks/use-disposables.ts
+function useDisposables() {
+  let [d] = (0, import_react.useState)(disposables);
+  (0, import_react.useEffect)(() => () => d.dispose(), [d]);
+  return d;
+}
+
+// src/hooks/use-id.ts
+var import_react4 = __webpack_require__(/*! react */ "./node_modules/react/index.js");
+
+// src/hooks/use-iso-morphic-effect.ts
+var import_react2 = __webpack_require__(/*! react */ "./node_modules/react/index.js");
+var useIsoMorphicEffect = typeof window !== "undefined" ? import_react2.useLayoutEffect : import_react2.useEffect;
+
+// src/hooks/use-server-handoff-complete.ts
+var import_react3 = __webpack_require__(/*! react */ "./node_modules/react/index.js");
+var state = { serverHandoffComplete: false };
+function useServerHandoffComplete() {
+  let [serverHandoffComplete, setServerHandoffComplete] = (0, import_react3.useState)(state.serverHandoffComplete);
+  (0, import_react3.useEffect)(() => {
+    if (serverHandoffComplete === true)
+      return;
+    setServerHandoffComplete(true);
+  }, [serverHandoffComplete]);
+  (0, import_react3.useEffect)(() => {
+    if (state.serverHandoffComplete === false)
+      state.serverHandoffComplete = true;
+  }, []);
+  return serverHandoffComplete;
+}
+
+// src/hooks/use-id.ts
+var id = 0;
+function generateId() {
+  return ++id;
+}
+function useId() {
+  let ready = useServerHandoffComplete();
+  let [id2, setId] = (0, import_react4.useState)(ready ? generateId : null);
+  useIsoMorphicEffect(() => {
+    if (id2 === null)
+      setId(generateId());
+  }, [id2]);
+  return id2 != null ? "" + id2 : void 0;
+}
+
+// src/hooks/use-computed.ts
+var import_react6 = __webpack_require__(/*! react */ "./node_modules/react/index.js");
+
+// src/hooks/use-latest-value.ts
+var import_react5 = __webpack_require__(/*! react */ "./node_modules/react/index.js");
+function useLatestValue(value) {
+  let cache = (0, import_react5.useRef)(value);
+  (0, import_react5.useEffect)(() => {
+    cache.current = value;
+  }, [value]);
+  return cache;
+}
+
+// src/hooks/use-computed.ts
+function useComputed(cb, dependencies) {
+  let [value, setValue] = (0, import_react6.useState)(cb);
+  let cbRef = useLatestValue(cb);
+  useIsoMorphicEffect(() => setValue(cbRef.current), [cbRef, setValue, ...dependencies]);
+  return value;
+}
+
+// src/hooks/use-sync-refs.ts
+var import_react7 = __webpack_require__(/*! react */ "./node_modules/react/index.js");
+function useSyncRefs(...refs) {
+  let cache = (0, import_react7.useRef)(refs);
+  (0, import_react7.useEffect)(() => {
+    cache.current = refs;
+  }, [refs]);
+  return (0, import_react7.useCallback)((value) => {
+    for (let ref of cache.current) {
+      if (ref == null)
+        continue;
+      if (typeof ref === "function")
+        ref(value);
+      else
+        ref.current = value;
+    }
+  }, [cache]);
+}
+
+// src/utils/render.ts
+var import_react8 = __webpack_require__(/*! react */ "./node_modules/react/index.js");
+
+// src/utils/match.ts
+function match(value, lookup, ...args) {
+  if (value in lookup) {
+    let returnValue = lookup[value];
+    return typeof returnValue === "function" ? returnValue(...args) : returnValue;
+  }
+  let error = new Error(`Tried to handle "${value}" but there is no handler defined. Only defined handlers are: ${Object.keys(lookup).map((key) => `"${key}"`).join(", ")}.`);
+  if (Error.captureStackTrace)
+    Error.captureStackTrace(error, match);
+  throw error;
+}
+
+// src/utils/render.ts
+function render({
+  props,
+  slot,
+  defaultTag,
+  features,
+  visible = true,
+  name
+}) {
+  if (visible)
+    return _render(props, slot, defaultTag, name);
+  let featureFlags = features != null ? features : 0 /* None */;
+  if (featureFlags & 2 /* Static */) {
+    let { static: isStatic = false, ...rest } = props;
+    if (isStatic)
+      return _render(rest, slot, defaultTag, name);
+  }
+  if (featureFlags & 1 /* RenderStrategy */) {
+    let { unmount = true, ...rest } = props;
+    let strategy = unmount ? 0 /* Unmount */ : 1 /* Hidden */;
+    return match(strategy, {
+      [0 /* Unmount */]() {
+        return null;
+      },
+      [1 /* Hidden */]() {
+        return _render({ ...rest, ...{ hidden: true, style: { display: "none" } } }, slot, defaultTag, name);
+      }
+    });
+  }
+  return _render(props, slot, defaultTag, name);
+}
+function _render(props, slot = {}, tag, name) {
+  let {
+    as: Component = tag,
+    children,
+    refName = "ref",
+    ...passThroughProps
+  } = omit(props, ["unmount", "static"]);
+  let refRelatedProps = props.ref !== void 0 ? { [refName]: props.ref } : {};
+  let resolvedChildren = typeof children === "function" ? children(slot) : children;
+  if (passThroughProps.className && typeof passThroughProps.className === "function") {
+    ;
+    passThroughProps.className = passThroughProps.className(slot);
+  }
+  if (Component === import_react8.Fragment) {
+    if (Object.keys(passThroughProps).length > 0) {
+      if (!(0, import_react8.isValidElement)(resolvedChildren) || Array.isArray(resolvedChildren) && resolvedChildren.length > 1) {
+        throw new Error([
+          'Passing props on "Fragment"!',
+          "",
+          `The current component <${name} /> is rendering a "Fragment".`,
+          `However we need to passthrough the following props:`,
+          Object.keys(passThroughProps).map((line) => `  - ${line}`).join("\n"),
+          "",
+          "You can apply a few solutions:",
+          [
+            'Add an `as="..."` prop, to ensure that we render an actual element instead of a "Fragment".',
+            "Render a single element as the child so that we can forward the props onto that element."
+          ].map((line) => `  - ${line}`).join("\n")
+        ].join("\n"));
+      }
+      return (0, import_react8.cloneElement)(resolvedChildren, Object.assign({}, mergeEventFunctions(compact(omit(passThroughProps, ["ref"])), resolvedChildren.props, [
+        "onClick"
+      ]), refRelatedProps));
+    }
+  }
+  return (0, import_react8.createElement)(Component, Object.assign({}, omit(passThroughProps, ["ref"]), Component !== import_react8.Fragment && refRelatedProps), resolvedChildren);
+}
+function mergeEventFunctions(passThroughProps, existingProps, functionsToMerge) {
+  let clone = Object.assign({}, passThroughProps);
+  for (let func of functionsToMerge) {
+    if (passThroughProps[func] !== void 0 && existingProps[func] !== void 0) {
+      Object.assign(clone, {
+        [func](event) {
+          if (!event.defaultPrevented)
+            passThroughProps[func](event);
+          if (!event.defaultPrevented)
+            existingProps[func](event);
+        }
+      });
+    }
+  }
+  return clone;
+}
+function forwardRefWithAs(component) {
+  var _a;
+  return Object.assign((0, import_react8.forwardRef)(component), {
+    displayName: (_a = component.displayName) != null ? _a : component.name
+  });
+}
+function compact(object) {
+  let clone = Object.assign({}, object);
+  for (let key in clone) {
+    if (clone[key] === void 0)
+      delete clone[key];
+  }
+  return clone;
+}
+function omit(object, keysToOmit = []) {
+  let clone = Object.assign({}, object);
+  for (let key of keysToOmit) {
+    if (key in clone)
+      delete clone[key];
+  }
+  return clone;
+}
+
+// src/utils/calculate-active-index.ts
+function assertNever(x) {
+  throw new Error("Unexpected object: " + x);
+}
+function calculateActiveIndex(action, resolvers) {
+  let items = resolvers.resolveItems();
+  if (items.length <= 0)
+    return null;
+  let currentActiveIndex = resolvers.resolveActiveIndex();
+  let activeIndex = currentActiveIndex != null ? currentActiveIndex : -1;
+  let nextActiveIndex = (() => {
+    switch (action.focus) {
+      case 0 /* First */:
+        return items.findIndex((item) => !resolvers.resolveDisabled(item));
+      case 1 /* Previous */: {
+        let idx = items.slice().reverse().findIndex((item, idx2, all) => {
+          if (activeIndex !== -1 && all.length - idx2 - 1 >= activeIndex)
+            return false;
+          return !resolvers.resolveDisabled(item);
+        });
+        if (idx === -1)
+          return idx;
+        return items.length - 1 - idx;
+      }
+      case 2 /* Next */:
+        return items.findIndex((item, idx) => {
+          if (idx <= activeIndex)
+            return false;
+          return !resolvers.resolveDisabled(item);
+        });
+      case 3 /* Last */: {
+        let idx = items.slice().reverse().findIndex((item) => !resolvers.resolveDisabled(item));
+        if (idx === -1)
+          return idx;
+        return items.length - 1 - idx;
+      }
+      case 4 /* Specific */:
+        return items.findIndex((item) => resolvers.resolveId(item) === action.id);
+      case 5 /* Nothing */:
+        return null;
+      default:
+        assertNever(action);
+    }
+  })();
+  return nextActiveIndex === -1 ? currentActiveIndex : nextActiveIndex;
+}
+
+// src/utils/bugs.ts
+function isDisabledReactIssue7711(element) {
+  let parent = element.parentElement;
+  let legend = null;
+  while (parent && !(parent instanceof HTMLFieldSetElement)) {
+    if (parent instanceof HTMLLegendElement)
+      legend = parent;
+    parent = parent.parentElement;
+  }
+  let isParentDisabled = (parent == null ? void 0 : parent.getAttribute("disabled")) === "";
+  if (isParentDisabled && isFirstLegend(legend))
+    return false;
+  return isParentDisabled;
+}
+function isFirstLegend(element) {
+  if (!element)
+    return false;
+  let previous = element.previousElementSibling;
+  while (previous !== null) {
+    if (previous instanceof HTMLLegendElement)
+      return false;
+    previous = previous.previousElementSibling;
+  }
+  return true;
+}
+
+// src/hooks/use-window-event.ts
+var import_react9 = __webpack_require__(/*! react */ "./node_modules/react/index.js");
+function useWindowEvent(type, listener, options) {
+  let listenerRef = (0, import_react9.useRef)(listener);
+  listenerRef.current = listener;
+  (0, import_react9.useEffect)(() => {
+    function handler(event) {
+      listenerRef.current.call(window, event);
+    }
+    window.addEventListener(type, handler, options);
+    return () => window.removeEventListener(type, handler, options);
+  }, [type, options]);
+}
+
+// src/internal/open-closed.tsx
+var import_react10 = __toESM(__webpack_require__(/*! react */ "./node_modules/react/index.js"), 1);
+var Context = (0, import_react10.createContext)(null);
+Context.displayName = "OpenClosedContext";
+function useOpenClosed() {
+  return (0, import_react10.useContext)(Context);
+}
+function OpenClosedProvider({ value, children }) {
+  return /* @__PURE__ */ import_react10.default.createElement(Context.Provider, {
+    value
+  }, children);
+}
+
+// src/hooks/use-resolve-button-type.ts
+var import_react11 = __webpack_require__(/*! react */ "./node_modules/react/index.js");
+function resolveType(props) {
+  var _a;
+  if (props.type)
+    return props.type;
+  let tag = (_a = props.as) != null ? _a : "button";
+  if (typeof tag === "string" && tag.toLowerCase() === "button")
+    return "button";
+  return void 0;
+}
+function useResolveButtonType(props, ref) {
+  let [type, setType] = (0, import_react11.useState)(() => resolveType(props));
+  useIsoMorphicEffect(() => {
+    setType(resolveType(props));
+  }, [props.type, props.as]);
+  useIsoMorphicEffect(() => {
+    if (type)
+      return;
+    if (!ref.current)
+      return;
+    if (ref.current instanceof HTMLButtonElement && !ref.current.hasAttribute("type")) {
+      setType("button");
+    }
+  }, [type, ref]);
+  return type;
+}
+
+// src/hooks/use-tree-walker.ts
+var import_react12 = __webpack_require__(/*! react */ "./node_modules/react/index.js");
+function useTreeWalker({
+  container,
+  accept,
+  walk,
+  enabled = true
+}) {
+  let acceptRef = (0, import_react12.useRef)(accept);
+  let walkRef = (0, import_react12.useRef)(walk);
+  (0, import_react12.useEffect)(() => {
+    acceptRef.current = accept;
+    walkRef.current = walk;
+  }, [accept, walk]);
+  useIsoMorphicEffect(() => {
+    if (!container)
+      return;
+    if (!enabled)
+      return;
+    let accept2 = acceptRef.current;
+    let walk2 = walkRef.current;
+    let acceptNode = Object.assign((node) => accept2(node), { acceptNode: accept2 });
+    let walker = document.createTreeWalker(container, NodeFilter.SHOW_ELEMENT, acceptNode, false);
+    while (walker.nextNode())
+      walk2(walker.currentNode);
+  }, [container, enabled, acceptRef, walkRef]);
+}
+
+// src/components/combobox/combobox.tsx
+var reducers = {
+  [1 /* CloseCombobox */](state2) {
+    if (state2.disabled)
+      return state2;
+    if (state2.comboboxState === 1 /* Closed */)
+      return state2;
+    return { ...state2, activeOptionIndex: null, comboboxState: 1 /* Closed */ };
+  },
+  [0 /* OpenCombobox */](state2) {
+    if (state2.disabled)
+      return state2;
+    if (state2.comboboxState === 0 /* Open */)
+      return state2;
+    return { ...state2, comboboxState: 0 /* Open */ };
+  },
+  [2 /* SetDisabled */](state2, action) {
+    if (state2.disabled === action.disabled)
+      return state2;
+    return { ...state2, disabled: action.disabled };
+  },
+  [3 /* GoToOption */](state2, action) {
+    if (state2.disabled)
+      return state2;
+    if (state2.optionsRef.current && !state2.optionsPropsRef.current.static && state2.comboboxState === 1 /* Closed */)
+      return state2;
+    let activeOptionIndex = calculateActiveIndex(action, {
+      resolveItems: () => state2.options,
+      resolveActiveIndex: () => state2.activeOptionIndex,
+      resolveId: (item) => item.id,
+      resolveDisabled: (item) => item.dataRef.current.disabled
+    });
+    if (state2.activeOptionIndex === activeOptionIndex)
+      return state2;
+    return { ...state2, activeOptionIndex };
+  },
+  [4 /* RegisterOption */]: (state2, action) => {
+    var _a;
+    let currentActiveOption = state2.activeOptionIndex !== null ? state2.options[state2.activeOptionIndex] : null;
+    let orderMap = Array.from((_a = state2.optionsRef.current) == null ? void 0 : _a.querySelectorAll('[id^="headlessui-combobox-option-"]')).reduce((lookup, element, index) => Object.assign(lookup, { [element.id]: index }), {});
+    let options = [...state2.options, { id: action.id, dataRef: action.dataRef }].sort((a, z) => orderMap[a.id] - orderMap[z.id]);
+    return {
+      ...state2,
+      options,
+      activeOptionIndex: (() => {
+        if (currentActiveOption === null)
+          return null;
+        return options.indexOf(currentActiveOption);
+      })()
+    };
+  },
+  [5 /* UnregisterOption */]: (state2, action) => {
+    let nextOptions = state2.options.slice();
+    let currentActiveOption = state2.activeOptionIndex !== null ? nextOptions[state2.activeOptionIndex] : null;
+    let idx = nextOptions.findIndex((a) => a.id === action.id);
+    if (idx !== -1)
+      nextOptions.splice(idx, 1);
+    return {
+      ...state2,
+      options: nextOptions,
+      activeOptionIndex: (() => {
+        if (idx === state2.activeOptionIndex)
+          return null;
+        if (currentActiveOption === null)
+          return null;
+        return nextOptions.indexOf(currentActiveOption);
+      })()
+    };
+  }
+};
+var ComboboxContext = (0, import_react13.createContext)(null);
+ComboboxContext.displayName = "ComboboxContext";
+function useComboboxContext(component) {
+  let context = (0, import_react13.useContext)(ComboboxContext);
+  if (context === null) {
+    let err = new Error(`<${component} /> is missing a parent <Combobox /> component.`);
+    if (Error.captureStackTrace)
+      Error.captureStackTrace(err, useComboboxContext);
+    throw err;
+  }
+  return context;
+}
+var ComboboxActions = (0, import_react13.createContext)(null);
+ComboboxActions.displayName = "ComboboxActions";
+function useComboboxActions() {
+  let context = (0, import_react13.useContext)(ComboboxActions);
+  if (context === null) {
+    let err = new Error(`ComboboxActions is missing a parent <Combobox /> component.`);
+    if (Error.captureStackTrace)
+      Error.captureStackTrace(err, useComboboxActions);
+    throw err;
+  }
+  return context;
+}
+function stateReducer(state2, action) {
+  return match(action.type, reducers, state2, action);
+}
+var DEFAULT_COMBOBOX_TAG = import_react13.Fragment;
+var ComboboxRoot = forwardRefWithAs(function Combobox(props, ref) {
+  let { value, onChange, disabled = false, ...passThroughProps } = props;
+  let comboboxPropsRef = (0, import_react13.useRef)({
+    value,
+    onChange
+  });
+  let optionsPropsRef = (0, import_react13.useRef)({
+    static: false,
+    hold: false
+  });
+  let inputPropsRef = (0, import_react13.useRef)({
+    displayValue: void 0
+  });
+  let reducerBag = (0, import_react13.useReducer)(stateReducer, {
+    comboboxState: 1 /* Closed */,
+    comboboxPropsRef,
+    optionsPropsRef,
+    inputPropsRef,
+    labelRef: (0, import_react13.createRef)(),
+    inputRef: (0, import_react13.createRef)(),
+    buttonRef: (0, import_react13.createRef)(),
+    optionsRef: (0, import_react13.createRef)(),
+    disabled,
+    options: [],
+    activeOptionIndex: null
+  });
+  let [{ comboboxState, options, activeOptionIndex, optionsRef, inputRef, buttonRef }, dispatch] = reducerBag;
+  useIsoMorphicEffect(() => {
+    comboboxPropsRef.current.value = value;
+  }, [value, comboboxPropsRef]);
+  useIsoMorphicEffect(() => {
+    comboboxPropsRef.current.onChange = onChange;
+  }, [onChange, comboboxPropsRef]);
+  useIsoMorphicEffect(() => dispatch({ type: 2 /* SetDisabled */, disabled }), [disabled]);
+  useWindowEvent("mousedown", (event) => {
+    var _a, _b, _c;
+    let target = event.target;
+    if (comboboxState !== 0 /* Open */)
+      return;
+    if ((_a = buttonRef.current) == null ? void 0 : _a.contains(target))
+      return;
+    if ((_b = inputRef.current) == null ? void 0 : _b.contains(target))
+      return;
+    if ((_c = optionsRef.current) == null ? void 0 : _c.contains(target))
+      return;
+    dispatch({ type: 1 /* CloseCombobox */ });
+  });
+  let activeOption = activeOptionIndex === null ? null : options[activeOptionIndex].dataRef.current.value;
+  let slot = (0, import_react13.useMemo)(() => ({
+    open: comboboxState === 0 /* Open */,
+    disabled,
+    activeIndex: activeOptionIndex,
+    activeOption
+  }), [comboboxState, disabled, options, activeOptionIndex]);
+  let syncInputValue = (0, import_react13.useCallback)(() => {
+    if (!inputRef.current)
+      return;
+    if (value === void 0)
+      return;
+    let displayValue = inputPropsRef.current.displayValue;
+    if (typeof displayValue === "function") {
+      inputRef.current.value = displayValue(value);
+    } else if (typeof value === "string") {
+      inputRef.current.value = value;
+    }
+  }, [value, inputRef, inputPropsRef]);
+  let selectOption = (0, import_react13.useCallback)((id2) => {
+    let option = options.find((item) => item.id === id2);
+    if (!option)
+      return;
+    let { dataRef } = option;
+    comboboxPropsRef.current.onChange(dataRef.current.value);
+    syncInputValue();
+  }, [options, comboboxPropsRef, inputRef]);
+  let selectActiveOption = (0, import_react13.useCallback)(() => {
+    if (activeOptionIndex !== null) {
+      let { dataRef } = options[activeOptionIndex];
+      comboboxPropsRef.current.onChange(dataRef.current.value);
+      syncInputValue();
+    }
+  }, [activeOptionIndex, options, comboboxPropsRef, inputRef]);
+  let actionsBag = (0, import_react13.useMemo)(() => ({ selectOption, selectActiveOption }), [selectOption, selectActiveOption]);
+  useIsoMorphicEffect(() => {
+    if (comboboxState !== 1 /* Closed */)
+      return;
+    syncInputValue();
+  }, [syncInputValue, comboboxState]);
+  useIsoMorphicEffect(syncInputValue, [syncInputValue]);
+  return /* @__PURE__ */ import_react13.default.createElement(ComboboxActions.Provider, {
+    value: actionsBag
+  }, /* @__PURE__ */ import_react13.default.createElement(ComboboxContext.Provider, {
+    value: reducerBag
+  }, /* @__PURE__ */ import_react13.default.createElement(OpenClosedProvider, {
+    value: match(comboboxState, {
+      [0 /* Open */]: 0 /* Open */,
+      [1 /* Closed */]: 1 /* Closed */
+    })
+  }, render({
+    props: ref === null ? passThroughProps : { ...passThroughProps, ref },
+    slot,
+    defaultTag: DEFAULT_COMBOBOX_TAG,
+    name: "Combobox"
+  }))));
+});
+var DEFAULT_INPUT_TAG = "input";
+var Input = forwardRefWithAs(function Input2(props, ref) {
+  var _a, _b;
+  let { value, onChange, displayValue, ...passThroughProps } = props;
+  let [state2, dispatch] = useComboboxContext("Combobox.Input");
+  let actions = useComboboxActions();
+  let inputRef = useSyncRefs(state2.inputRef, ref);
+  let inputPropsRef = state2.inputPropsRef;
+  let id2 = `headlessui-combobox-input-${useId()}`;
+  let d = useDisposables();
+  let onChangeRef = useLatestValue(onChange);
+  useIsoMorphicEffect(() => {
+    inputPropsRef.current.displayValue = displayValue;
+  }, [displayValue, inputPropsRef]);
+  let handleKeyDown = (0, import_react13.useCallback)((event) => {
+    switch (event.key) {
+      case "Enter" /* Enter */:
+        event.preventDefault();
+        event.stopPropagation();
+        actions.selectActiveOption();
+        dispatch({ type: 1 /* CloseCombobox */ });
+        break;
+      case "ArrowDown" /* ArrowDown */:
+        event.preventDefault();
+        event.stopPropagation();
+        return match(state2.comboboxState, {
+          [0 /* Open */]: () => {
+            return dispatch({ type: 3 /* GoToOption */, focus: 2 /* Next */ });
+          },
+          [1 /* Closed */]: () => {
+            dispatch({ type: 0 /* OpenCombobox */ });
+            d.nextFrame(() => {
+              if (!state2.comboboxPropsRef.current.value) {
+                dispatch({ type: 3 /* GoToOption */, focus: 0 /* First */ });
+              }
+            });
+          }
+        });
+      case "ArrowUp" /* ArrowUp */:
+        event.preventDefault();
+        event.stopPropagation();
+        return match(state2.comboboxState, {
+          [0 /* Open */]: () => {
+            return dispatch({ type: 3 /* GoToOption */, focus: 1 /* Previous */ });
+          },
+          [1 /* Closed */]: () => {
+            dispatch({ type: 0 /* OpenCombobox */ });
+            d.nextFrame(() => {
+              if (!state2.comboboxPropsRef.current.value) {
+                dispatch({ type: 3 /* GoToOption */, focus: 3 /* Last */ });
+              }
+            });
+          }
+        });
+      case "Home" /* Home */:
+      case "PageUp" /* PageUp */:
+        event.preventDefault();
+        event.stopPropagation();
+        return dispatch({ type: 3 /* GoToOption */, focus: 0 /* First */ });
+      case "End" /* End */:
+      case "PageDown" /* PageDown */:
+        event.preventDefault();
+        event.stopPropagation();
+        return dispatch({ type: 3 /* GoToOption */, focus: 3 /* Last */ });
+      case "Escape" /* Escape */:
+        event.preventDefault();
+        if (state2.optionsRef.current && !state2.optionsPropsRef.current.static) {
+          event.stopPropagation();
+        }
+        return dispatch({ type: 1 /* CloseCombobox */ });
+      case "Tab" /* Tab */:
+        actions.selectActiveOption();
+        dispatch({ type: 1 /* CloseCombobox */ });
+        break;
+    }
+  }, [d, dispatch, state2, actions]);
+  let handleChange = (0, import_react13.useCallback)((event) => {
+    var _a2;
+    dispatch({ type: 0 /* OpenCombobox */ });
+    (_a2 = onChangeRef.current) == null ? void 0 : _a2.call(onChangeRef, event);
+  }, [dispatch, onChangeRef]);
+  let labelledby = useComputed(() => {
+    if (!state2.labelRef.current)
+      return void 0;
+    return [state2.labelRef.current.id].join(" ");
+  }, [state2.labelRef.current]);
+  let slot = (0, import_react13.useMemo)(() => ({ open: state2.comboboxState === 0 /* Open */, disabled: state2.disabled }), [state2]);
+  let propsWeControl = {
+    ref: inputRef,
+    id: id2,
+    role: "combobox",
+    type: "text",
+    "aria-controls": (_a = state2.optionsRef.current) == null ? void 0 : _a.id,
+    "aria-expanded": state2.disabled ? void 0 : state2.comboboxState === 0 /* Open */,
+    "aria-activedescendant": state2.activeOptionIndex === null ? void 0 : (_b = state2.options[state2.activeOptionIndex]) == null ? void 0 : _b.id,
+    "aria-labelledby": labelledby,
+    disabled: state2.disabled,
+    onKeyDown: handleKeyDown,
+    onChange: handleChange
+  };
+  return render({
+    props: { ...passThroughProps, ...propsWeControl },
+    slot,
+    defaultTag: DEFAULT_INPUT_TAG,
+    name: "Combobox.Input"
+  });
+});
+var DEFAULT_BUTTON_TAG = "button";
+var Button = forwardRefWithAs(function Button2(props, ref) {
+  var _a;
+  let [state2, dispatch] = useComboboxContext("Combobox.Button");
+  let actions = useComboboxActions();
+  let buttonRef = useSyncRefs(state2.buttonRef, ref);
+  let id2 = `headlessui-combobox-button-${useId()}`;
+  let d = useDisposables();
+  let handleKeyDown = (0, import_react13.useCallback)((event) => {
+    switch (event.key) {
+      case "ArrowDown" /* ArrowDown */:
+        event.preventDefault();
+        event.stopPropagation();
+        if (state2.comboboxState === 1 /* Closed */) {
+          dispatch({ type: 0 /* OpenCombobox */ });
+          d.nextFrame(() => {
+            if (!state2.comboboxPropsRef.current.value) {
+              dispatch({ type: 3 /* GoToOption */, focus: 0 /* First */ });
+            }
+          });
+        }
+        return d.nextFrame(() => {
+          var _a2;
+          return (_a2 = state2.inputRef.current) == null ? void 0 : _a2.focus({ preventScroll: true });
+        });
+      case "ArrowUp" /* ArrowUp */:
+        event.preventDefault();
+        event.stopPropagation();
+        if (state2.comboboxState === 1 /* Closed */) {
+          dispatch({ type: 0 /* OpenCombobox */ });
+          d.nextFrame(() => {
+            if (!state2.comboboxPropsRef.current.value) {
+              dispatch({ type: 3 /* GoToOption */, focus: 3 /* Last */ });
+            }
+          });
+        }
+        return d.nextFrame(() => {
+          var _a2;
+          return (_a2 = state2.inputRef.current) == null ? void 0 : _a2.focus({ preventScroll: true });
+        });
+      case "Escape" /* Escape */:
+        event.preventDefault();
+        if (state2.optionsRef.current && !state2.optionsPropsRef.current.static) {
+          event.stopPropagation();
+        }
+        dispatch({ type: 1 /* CloseCombobox */ });
+        return d.nextFrame(() => {
+          var _a2;
+          return (_a2 = state2.inputRef.current) == null ? void 0 : _a2.focus({ preventScroll: true });
+        });
+    }
+  }, [d, dispatch, state2, actions]);
+  let handleClick = (0, import_react13.useCallback)((event) => {
+    if (isDisabledReactIssue7711(event.currentTarget))
+      return event.preventDefault();
+    if (state2.comboboxState === 0 /* Open */) {
+      dispatch({ type: 1 /* CloseCombobox */ });
+    } else {
+      event.preventDefault();
+      dispatch({ type: 0 /* OpenCombobox */ });
+    }
+    d.nextFrame(() => {
+      var _a2;
+      return (_a2 = state2.inputRef.current) == null ? void 0 : _a2.focus({ preventScroll: true });
+    });
+  }, [dispatch, d, state2]);
+  let labelledby = useComputed(() => {
+    if (!state2.labelRef.current)
+      return void 0;
+    return [state2.labelRef.current.id, id2].join(" ");
+  }, [state2.labelRef.current, id2]);
+  let slot = (0, import_react13.useMemo)(() => ({ open: state2.comboboxState === 0 /* Open */, disabled: state2.disabled }), [state2]);
+  let passthroughProps = props;
+  let propsWeControl = {
+    ref: buttonRef,
+    id: id2,
+    type: useResolveButtonType(props, state2.buttonRef),
+    tabIndex: -1,
+    "aria-haspopup": true,
+    "aria-controls": (_a = state2.optionsRef.current) == null ? void 0 : _a.id,
+    "aria-expanded": state2.disabled ? void 0 : state2.comboboxState === 0 /* Open */,
+    "aria-labelledby": labelledby,
+    disabled: state2.disabled,
+    onClick: handleClick,
+    onKeyDown: handleKeyDown
+  };
+  return render({
+    props: { ...passthroughProps, ...propsWeControl },
+    slot,
+    defaultTag: DEFAULT_BUTTON_TAG,
+    name: "Combobox.Button"
+  });
+});
+var DEFAULT_LABEL_TAG = "label";
+function Label(props) {
+  let [state2] = useComboboxContext("Combobox.Label");
+  let id2 = `headlessui-combobox-label-${useId()}`;
+  let handleClick = (0, import_react13.useCallback)(() => {
+    var _a;
+    return (_a = state2.inputRef.current) == null ? void 0 : _a.focus({ preventScroll: true });
+  }, [state2.inputRef]);
+  let slot = (0, import_react13.useMemo)(() => ({ open: state2.comboboxState === 0 /* Open */, disabled: state2.disabled }), [state2]);
+  let propsWeControl = { ref: state2.labelRef, id: id2, onClick: handleClick };
+  return render({
+    props: { ...props, ...propsWeControl },
+    slot,
+    defaultTag: DEFAULT_LABEL_TAG,
+    name: "Combobox.Label"
+  });
+}
+var DEFAULT_OPTIONS_TAG = "ul";
+var OptionsRenderFeatures = 1 /* RenderStrategy */ | 2 /* Static */;
+var Options = forwardRefWithAs(function Options2(props, ref) {
+  var _a;
+  let { hold = false, ...passthroughProps } = props;
+  let [state2] = useComboboxContext("Combobox.Options");
+  let { optionsPropsRef } = state2;
+  let optionsRef = useSyncRefs(state2.optionsRef, ref);
+  let id2 = `headlessui-combobox-options-${useId()}`;
+  let usesOpenClosedState = useOpenClosed();
+  let visible = (() => {
+    if (usesOpenClosedState !== null) {
+      return usesOpenClosedState === 0 /* Open */;
+    }
+    return state2.comboboxState === 0 /* Open */;
+  })();
+  useIsoMorphicEffect(() => {
+    var _a2;
+    optionsPropsRef.current.static = (_a2 = props.static) != null ? _a2 : false;
+  }, [optionsPropsRef, props.static]);
+  useIsoMorphicEffect(() => {
+    optionsPropsRef.current.hold = hold;
+  }, [hold, optionsPropsRef]);
+  useTreeWalker({
+    container: state2.optionsRef.current,
+    enabled: state2.comboboxState === 0 /* Open */,
+    accept(node) {
+      if (node.getAttribute("role") === "option")
+        return NodeFilter.FILTER_REJECT;
+      if (node.hasAttribute("role"))
+        return NodeFilter.FILTER_SKIP;
+      return NodeFilter.FILTER_ACCEPT;
+    },
+    walk(node) {
+      node.setAttribute("role", "none");
+    }
+  });
+  let labelledby = useComputed(() => {
+    var _a2, _b, _c;
+    return (_c = (_a2 = state2.labelRef.current) == null ? void 0 : _a2.id) != null ? _c : (_b = state2.buttonRef.current) == null ? void 0 : _b.id;
+  }, [state2.labelRef.current, state2.buttonRef.current]);
+  let slot = (0, import_react13.useMemo)(() => ({ open: state2.comboboxState === 0 /* Open */ }), [state2]);
+  let propsWeControl = {
+    "aria-activedescendant": state2.activeOptionIndex === null ? void 0 : (_a = state2.options[state2.activeOptionIndex]) == null ? void 0 : _a.id,
+    "aria-labelledby": labelledby,
+    role: "listbox",
+    id: id2,
+    ref: optionsRef
+  };
+  return render({
+    props: { ...passthroughProps, ...propsWeControl },
+    slot,
+    defaultTag: DEFAULT_OPTIONS_TAG,
+    features: OptionsRenderFeatures,
+    visible,
+    name: "Combobox.Options"
+  });
+});
+var DEFAULT_OPTION_TAG = "li";
+function Option(props) {
+  let { disabled = false, value, ...passthroughProps } = props;
+  let [state2, dispatch] = useComboboxContext("Combobox.Option");
+  let actions = useComboboxActions();
+  let id2 = `headlessui-combobox-option-${useId()}`;
+  let active = state2.activeOptionIndex !== null ? state2.options[state2.activeOptionIndex].id === id2 : false;
+  let selected = state2.comboboxPropsRef.current.value === value;
+  let bag = (0, import_react13.useRef)({ disabled, value });
+  useIsoMorphicEffect(() => {
+    bag.current.disabled = disabled;
+  }, [bag, disabled]);
+  useIsoMorphicEffect(() => {
+    bag.current.value = value;
+  }, [bag, value]);
+  useIsoMorphicEffect(() => {
+    var _a, _b;
+    bag.current.textValue = (_b = (_a = document.getElementById(id2)) == null ? void 0 : _a.textContent) == null ? void 0 : _b.toLowerCase();
+  }, [bag, id2]);
+  let select = (0, import_react13.useCallback)(() => actions.selectOption(id2), [actions, id2]);
+  useIsoMorphicEffect(() => {
+    dispatch({ type: 4 /* RegisterOption */, id: id2, dataRef: bag });
+    return () => dispatch({ type: 5 /* UnregisterOption */, id: id2 });
+  }, [bag, id2]);
+  useIsoMorphicEffect(() => {
+    if (state2.comboboxState !== 0 /* Open */)
+      return;
+    if (!selected)
+      return;
+    dispatch({ type: 3 /* GoToOption */, focus: 4 /* Specific */, id: id2 });
+  }, [state2.comboboxState, selected, id2]);
+  useIsoMorphicEffect(() => {
+    if (state2.comboboxState !== 0 /* Open */)
+      return;
+    if (!active)
+      return;
+    let d = disposables();
+    d.requestAnimationFrame(() => {
+      var _a, _b;
+      (_b = (_a = document.getElementById(id2)) == null ? void 0 : _a.scrollIntoView) == null ? void 0 : _b.call(_a, { block: "nearest" });
+    });
+    return d.dispose;
+  }, [
+    id2,
+    active,
+    state2.comboboxState,
+    state2.activeOptionIndex
+  ]);
+  let handleClick = (0, import_react13.useCallback)((event) => {
+    if (disabled)
+      return event.preventDefault();
+    select();
+    dispatch({ type: 1 /* CloseCombobox */ });
+    disposables().nextFrame(() => {
+      var _a;
+      return (_a = state2.inputRef.current) == null ? void 0 : _a.focus({ preventScroll: true });
+    });
+  }, [dispatch, state2.inputRef, disabled, select]);
+  let handleFocus = (0, import_react13.useCallback)(() => {
+    if (disabled)
+      return dispatch({ type: 3 /* GoToOption */, focus: 5 /* Nothing */ });
+    dispatch({ type: 3 /* GoToOption */, focus: 4 /* Specific */, id: id2 });
+  }, [disabled, id2, dispatch]);
+  let handleMove = (0, import_react13.useCallback)(() => {
+    if (disabled)
+      return;
+    if (active)
+      return;
+    dispatch({ type: 3 /* GoToOption */, focus: 4 /* Specific */, id: id2 });
+  }, [disabled, active, id2, dispatch]);
+  let handleLeave = (0, import_react13.useCallback)(() => {
+    if (disabled)
+      return;
+    if (!active)
+      return;
+    if (state2.optionsPropsRef.current.hold)
+      return;
+    dispatch({ type: 3 /* GoToOption */, focus: 5 /* Nothing */ });
+  }, [disabled, active, dispatch, state2.comboboxState, state2.comboboxPropsRef]);
+  let slot = (0, import_react13.useMemo)(() => ({ active, selected, disabled }), [active, selected, disabled]);
+  let propsWeControl = {
+    id: id2,
+    role: "option",
+    tabIndex: disabled === true ? void 0 : -1,
+    "aria-disabled": disabled === true ? true : void 0,
+    "aria-selected": selected === true ? true : void 0,
+    disabled: void 0,
+    onClick: handleClick,
+    onFocus: handleFocus,
+    onPointerMove: handleMove,
+    onMouseMove: handleMove,
+    onPointerLeave: handleLeave,
+    onMouseLeave: handleLeave
+  };
+  return render({
+    props: { ...passthroughProps, ...propsWeControl },
+    slot,
+    defaultTag: DEFAULT_OPTION_TAG,
+    name: "Combobox.Option"
+  });
+}
+var Combobox2 = Object.assign(ComboboxRoot, {
+  Input,
+  Button,
+  Label,
+  Options,
+  Option
+});
+
+// src/components/dialog/dialog.tsx
+var import_react20 = __toESM(__webpack_require__(/*! react */ "./node_modules/react/index.js"), 1);
+
+// src/hooks/use-focus-trap.ts
+var import_react15 = __webpack_require__(/*! react */ "./node_modules/react/index.js");
+
+// src/utils/focus-management.ts
+var focusableSelector = [
+  "[contentEditable=true]",
+  "[tabindex]",
+  "a[href]",
+  "area[href]",
+  "button:not([disabled])",
+  "iframe",
+  "input:not([disabled])",
+  "select:not([disabled])",
+  "textarea:not([disabled])"
+].map( false ? 0 : (selector) => `${selector}:not([tabindex='-1'])`).join(",");
+function getFocusableElements(container = document.body) {
+  if (container == null)
+    return [];
+  return Array.from(container.querySelectorAll(focusableSelector));
+}
+function isFocusableElement(element, mode = 0 /* Strict */) {
+  if (element === document.body)
+    return false;
+  return match(mode, {
+    [0 /* Strict */]() {
+      return element.matches(focusableSelector);
+    },
+    [1 /* Loose */]() {
+      let next = element;
+      while (next !== null) {
+        if (next.matches(focusableSelector))
+          return true;
+        next = next.parentElement;
+      }
+      return false;
+    }
+  });
+}
+function focusElement(element) {
+  element == null ? void 0 : element.focus({ preventScroll: true });
+}
+function focusIn(container, focus) {
+  let elements = Array.isArray(container) ? container.slice().sort((a, z) => {
+    let position = a.compareDocumentPosition(z);
+    if (position & Node.DOCUMENT_POSITION_FOLLOWING)
+      return -1;
+    if (position & Node.DOCUMENT_POSITION_PRECEDING)
+      return 1;
+    return 0;
+  }) : getFocusableElements(container);
+  let active = document.activeElement;
+  let direction = (() => {
+    if (focus & (1 /* First */ | 4 /* Next */))
+      return 1 /* Next */;
+    if (focus & (2 /* Previous */ | 8 /* Last */))
+      return -1 /* Previous */;
+    throw new Error("Missing Focus.First, Focus.Previous, Focus.Next or Focus.Last");
+  })();
+  let startIndex = (() => {
+    if (focus & 1 /* First */)
+      return 0;
+    if (focus & 2 /* Previous */)
+      return Math.max(0, elements.indexOf(active)) - 1;
+    if (focus & 4 /* Next */)
+      return Math.max(0, elements.indexOf(active)) + 1;
+    if (focus & 8 /* Last */)
+      return elements.length - 1;
+    throw new Error("Missing Focus.First, Focus.Previous, Focus.Next or Focus.Last");
+  })();
+  let focusOptions = focus & 32 /* NoScroll */ ? { preventScroll: true } : {};
+  let offset = 0;
+  let total = elements.length;
+  let next = void 0;
+  do {
+    if (offset >= total || offset + total <= 0)
+      return 0 /* Error */;
+    let nextIdx = startIndex + offset;
+    if (focus & 16 /* WrapAround */) {
+      nextIdx = (nextIdx + total) % total;
+    } else {
+      if (nextIdx < 0)
+        return 3 /* Underflow */;
+      if (nextIdx >= total)
+        return 1 /* Overflow */;
+    }
+    next = elements[nextIdx];
+    next == null ? void 0 : next.focus(focusOptions);
+    offset += direction;
+  } while (next !== document.activeElement);
+  if (!next.hasAttribute("tabindex"))
+    next.setAttribute("tabindex", "0");
+  return 2 /* Success */;
+}
+
+// src/hooks/use-is-mounted.ts
+var import_react14 = __webpack_require__(/*! react */ "./node_modules/react/index.js");
+function useIsMounted() {
+  let mounted = (0, import_react14.useRef)(false);
+  (0, import_react14.useEffect)(() => {
+    mounted.current = true;
+    return () => {
+      mounted.current = false;
+    };
+  }, []);
+  return mounted;
+}
+
+// src/hooks/use-focus-trap.ts
+function useFocusTrap(container, features = 30 /* All */, {
+  initialFocus,
+  containers
+} = {}) {
+  let restoreElement = (0, import_react15.useRef)(typeof window !== "undefined" ? document.activeElement : null);
+  let previousActiveElement = (0, import_react15.useRef)(null);
+  let mounted = useIsMounted();
+  let featuresRestoreFocus = Boolean(features & 16 /* RestoreFocus */);
+  let featuresInitialFocus = Boolean(features & 2 /* InitialFocus */);
+  (0, import_react15.useEffect)(() => {
+    if (!featuresRestoreFocus)
+      return;
+    restoreElement.current = document.activeElement;
+  }, [featuresRestoreFocus]);
+  (0, import_react15.useEffect)(() => {
+    if (!featuresRestoreFocus)
+      return;
+    return () => {
+      focusElement(restoreElement.current);
+      restoreElement.current = null;
+    };
+  }, [featuresRestoreFocus]);
+  (0, import_react15.useEffect)(() => {
+    if (!featuresInitialFocus)
+      return;
+    if (!container.current)
+      return;
+    let activeElement = document.activeElement;
+    if (initialFocus == null ? void 0 : initialFocus.current) {
+      if ((initialFocus == null ? void 0 : initialFocus.current) === activeElement) {
+        previousActiveElement.current = activeElement;
+        return;
+      }
+    } else if (container.current.contains(activeElement)) {
+      previousActiveElement.current = activeElement;
+      return;
+    }
+    if (initialFocus == null ? void 0 : initialFocus.current) {
+      focusElement(initialFocus.current);
+    } else {
+      if (focusIn(container.current, 1 /* First */) === 0 /* Error */) {
+        console.warn("There are no focusable elements inside the <FocusTrap />");
+      }
+    }
+    previousActiveElement.current = document.activeElement;
+  }, [container, initialFocus, featuresInitialFocus]);
+  useWindowEvent("keydown", (event) => {
+    if (!(features & 4 /* TabLock */))
+      return;
+    if (!container.current)
+      return;
+    if (event.key !== "Tab" /* Tab */)
+      return;
+    event.preventDefault();
+    if (focusIn(container.current, (event.shiftKey ? 2 /* Previous */ : 4 /* Next */) | 16 /* WrapAround */) === 2 /* Success */) {
+      previousActiveElement.current = document.activeElement;
+    }
+  });
+  useWindowEvent("focus", (event) => {
+    if (!(features & 8 /* FocusLock */))
+      return;
+    let allContainers = new Set(containers == null ? void 0 : containers.current);
+    allContainers.add(container);
+    if (!allContainers.size)
+      return;
+    let previous = previousActiveElement.current;
+    if (!previous)
+      return;
+    if (!mounted.current)
+      return;
+    let toElement = event.target;
+    if (toElement && toElement instanceof HTMLElement) {
+      if (!contains(allContainers, toElement)) {
+        event.preventDefault();
+        event.stopPropagation();
+        focusElement(previous);
+      } else {
+        previousActiveElement.current = toElement;
+        focusElement(toElement);
+      }
+    } else {
+      focusElement(previousActiveElement.current);
+    }
+  }, true);
+}
+function contains(containers, element) {
+  var _a;
+  for (let container of containers) {
+    if ((_a = container.current) == null ? void 0 : _a.contains(element))
+      return true;
+  }
+  return false;
+}
+
+// src/hooks/use-inert-others.ts
+var interactables = /* @__PURE__ */ new Set();
+var originals = /* @__PURE__ */ new Map();
+function inert(element) {
+  element.setAttribute("aria-hidden", "true");
+  element.inert = true;
+}
+function restore(element) {
+  let original = originals.get(element);
+  if (!original)
+    return;
+  if (original["aria-hidden"] === null)
+    element.removeAttribute("aria-hidden");
+  else
+    element.setAttribute("aria-hidden", original["aria-hidden"]);
+  element.inert = original.inert;
+}
+function useInertOthers(container, enabled = true) {
+  useIsoMorphicEffect(() => {
+    if (!enabled)
+      return;
+    if (!container.current)
+      return;
+    let element = container.current;
+    interactables.add(element);
+    for (let original of originals.keys()) {
+      if (original.contains(element)) {
+        restore(original);
+        originals.delete(original);
+      }
+    }
+    document.querySelectorAll("body > *").forEach((child) => {
+      if (!(child instanceof HTMLElement))
+        return;
+      for (let interactable of interactables) {
+        if (child.contains(interactable))
+          return;
+      }
+      if (interactables.size === 1) {
+        originals.set(child, {
+          "aria-hidden": child.getAttribute("aria-hidden"),
+          inert: child.inert
+        });
+        inert(child);
+      }
+    });
+    return () => {
+      interactables.delete(element);
+      if (interactables.size > 0) {
+        document.querySelectorAll("body > *").forEach((child) => {
+          if (!(child instanceof HTMLElement))
+            return;
+          if (originals.has(child))
+            return;
+          for (let interactable of interactables) {
+            if (child.contains(interactable))
+              return;
+          }
+          originals.set(child, {
+            "aria-hidden": child.getAttribute("aria-hidden"),
+            inert: child.inert
+          });
+          inert(child);
+        });
+      } else {
+        for (let element2 of originals.keys()) {
+          restore(element2);
+          originals.delete(element2);
+        }
+      }
+    };
+  }, [enabled]);
+}
+
+// src/components/portal/portal.tsx
+var import_react17 = __toESM(__webpack_require__(/*! react */ "./node_modules/react/index.js"), 1);
+var import_react_dom = __webpack_require__(/*! react-dom */ "./node_modules/react-dom/index.js");
+
+// src/internal/portal-force-root.tsx
+var import_react16 = __toESM(__webpack_require__(/*! react */ "./node_modules/react/index.js"), 1);
+var ForcePortalRootContext = (0, import_react16.createContext)(false);
+function usePortalRoot() {
+  return (0, import_react16.useContext)(ForcePortalRootContext);
+}
+function ForcePortalRoot(props) {
+  return /* @__PURE__ */ import_react16.default.createElement(ForcePortalRootContext.Provider, {
+    value: props.force
+  }, props.children);
+}
+
+// src/components/portal/portal.tsx
+function usePortalTarget() {
+  let forceInRoot = usePortalRoot();
+  let groupTarget = (0, import_react17.useContext)(PortalGroupContext);
+  let [target, setTarget] = (0, import_react17.useState)(() => {
+    if (!forceInRoot && groupTarget !== null)
+      return null;
+    if (typeof window === "undefined")
+      return null;
+    let existingRoot = document.getElementById("headlessui-portal-root");
+    if (existingRoot)
+      return existingRoot;
+    let root = document.createElement("div");
+    root.setAttribute("id", "headlessui-portal-root");
+    return document.body.appendChild(root);
+  });
+  (0, import_react17.useEffect)(() => {
+    if (target === null)
+      return;
+    if (!document.body.contains(target)) {
+      document.body.appendChild(target);
+    }
+  }, [target]);
+  (0, import_react17.useEffect)(() => {
+    if (forceInRoot)
+      return;
+    if (groupTarget === null)
+      return;
+    setTarget(groupTarget.current);
+  }, [groupTarget, setTarget, forceInRoot]);
+  return target;
+}
+var DEFAULT_PORTAL_TAG = import_react17.Fragment;
+function Portal(props) {
+  let passthroughProps = props;
+  let target = usePortalTarget();
+  let [element] = (0, import_react17.useState)(() => typeof window === "undefined" ? null : document.createElement("div"));
+  let ready = useServerHandoffComplete();
+  useIsoMorphicEffect(() => {
+    if (!target)
+      return;
+    if (!element)
+      return;
+    target.appendChild(element);
+    return () => {
+      var _a;
+      if (!target)
+        return;
+      if (!element)
+        return;
+      target.removeChild(element);
+      if (target.childNodes.length <= 0) {
+        (_a = target.parentElement) == null ? void 0 : _a.removeChild(target);
+      }
+    };
+  }, [target, element]);
+  if (!ready)
+    return null;
+  return !target || !element ? null : (0, import_react_dom.createPortal)(render({ props: passthroughProps, defaultTag: DEFAULT_PORTAL_TAG, name: "Portal" }), element);
+}
+var DEFAULT_GROUP_TAG = import_react17.Fragment;
+var PortalGroupContext = (0, import_react17.createContext)(null);
+function Group(props) {
+  let { target, ...passthroughProps } = props;
+  return /* @__PURE__ */ import_react17.default.createElement(PortalGroupContext.Provider, {
+    value: target
+  }, render({
+    props: passthroughProps,
+    defaultTag: DEFAULT_GROUP_TAG,
+    name: "Popover.Group"
+  }));
+}
+Portal.Group = Group;
+
+// src/components/description/description.tsx
+var import_react18 = __toESM(__webpack_require__(/*! react */ "./node_modules/react/index.js"), 1);
+var DescriptionContext = (0, import_react18.createContext)(null);
+function useDescriptionContext() {
+  let context = (0, import_react18.useContext)(DescriptionContext);
+  if (context === null) {
+    let err = new Error("You used a <Description /> component, but it is not inside a relevant parent.");
+    if (Error.captureStackTrace)
+      Error.captureStackTrace(err, useDescriptionContext);
+    throw err;
+  }
+  return context;
+}
+function useDescriptions() {
+  let [descriptionIds, setDescriptionIds] = (0, import_react18.useState)([]);
+  return [
+    descriptionIds.length > 0 ? descriptionIds.join(" ") : void 0,
+    (0, import_react18.useMemo)(() => {
+      return function DescriptionProvider(props) {
+        let register = (0, import_react18.useCallback)((value) => {
+          setDescriptionIds((existing) => [...existing, value]);
+          return () => setDescriptionIds((existing) => {
+            let clone = existing.slice();
+            let idx = clone.indexOf(value);
+            if (idx !== -1)
+              clone.splice(idx, 1);
+            return clone;
+          });
+        }, []);
+        let contextBag = (0, import_react18.useMemo)(() => ({ register, slot: props.slot, name: props.name, props: props.props }), [register, props.slot, props.name, props.props]);
+        return /* @__PURE__ */ import_react18.default.createElement(DescriptionContext.Provider, {
+          value: contextBag
+        }, props.children);
+      };
+    }, [setDescriptionIds])
+  ];
+}
+var DEFAULT_DESCRIPTION_TAG = "p";
+function Description(props) {
+  let context = useDescriptionContext();
+  let id2 = `headlessui-description-${useId()}`;
+  useIsoMorphicEffect(() => context.register(id2), [id2, context.register]);
+  let passThroughProps = props;
+  let propsWeControl = { ...context.props, id: id2 };
+  return render({
+    props: { ...passThroughProps, ...propsWeControl },
+    slot: context.slot || {},
+    defaultTag: DEFAULT_DESCRIPTION_TAG,
+    name: context.name || "Description"
+  });
+}
+
+// src/internal/stack-context.tsx
+var import_react19 = __toESM(__webpack_require__(/*! react */ "./node_modules/react/index.js"), 1);
+var StackContext = (0, import_react19.createContext)(() => {
+});
+StackContext.displayName = "StackContext";
+function useStackContext() {
+  return (0, import_react19.useContext)(StackContext);
+}
+function StackProvider({
+  children,
+  onUpdate,
+  type,
+  element
+}) {
+  let parentUpdate = useStackContext();
+  let notify = (0, import_react19.useCallback)((...args) => {
+    onUpdate == null ? void 0 : onUpdate(...args);
+    parentUpdate(...args);
+  }, [parentUpdate, onUpdate]);
+  useIsoMorphicEffect(() => {
+    notify(0 /* Add */, type, element);
+    return () => notify(1 /* Remove */, type, element);
+  }, [notify, type, element]);
+  return /* @__PURE__ */ import_react19.default.createElement(StackContext.Provider, {
+    value: notify
+  }, children);
+}
+
+// src/components/dialog/dialog.tsx
+var reducers2 = {
+  [0 /* SetTitleId */](state2, action) {
+    if (state2.titleId === action.id)
+      return state2;
+    return { ...state2, titleId: action.id };
+  }
+};
+var DialogContext = (0, import_react20.createContext)(null);
+DialogContext.displayName = "DialogContext";
+function useDialogContext(component) {
+  let context = (0, import_react20.useContext)(DialogContext);
+  if (context === null) {
+    let err = new Error(`<${component} /> is missing a parent <${Dialog2.displayName} /> component.`);
+    if (Error.captureStackTrace)
+      Error.captureStackTrace(err, useDialogContext);
+    throw err;
+  }
+  return context;
+}
+function stateReducer2(state2, action) {
+  return match(action.type, reducers2, state2, action);
+}
+var DEFAULT_DIALOG_TAG = "div";
+var DialogRenderFeatures = 1 /* RenderStrategy */ | 2 /* Static */;
+var DialogRoot = forwardRefWithAs(function Dialog(props, ref) {
+  let { open, onClose, initialFocus, ...rest } = props;
+  let [nestedDialogCount, setNestedDialogCount] = (0, import_react20.useState)(0);
+  let usesOpenClosedState = useOpenClosed();
+  if (open === void 0 && usesOpenClosedState !== null) {
+    open = match(usesOpenClosedState, {
+      [0 /* Open */]: true,
+      [1 /* Closed */]: false
+    });
+  }
+  let containers = (0, import_react20.useRef)(/* @__PURE__ */ new Set());
+  let internalDialogRef = (0, import_react20.useRef)(null);
+  let dialogRef = useSyncRefs(internalDialogRef, ref);
+  let hasOpen = props.hasOwnProperty("open") || usesOpenClosedState !== null;
+  let hasOnClose = props.hasOwnProperty("onClose");
+  if (!hasOpen && !hasOnClose) {
+    throw new Error(`You have to provide an \`open\` and an \`onClose\` prop to the \`Dialog\` component.`);
+  }
+  if (!hasOpen) {
+    throw new Error(`You provided an \`onClose\` prop to the \`Dialog\`, but forgot an \`open\` prop.`);
+  }
+  if (!hasOnClose) {
+    throw new Error(`You provided an \`open\` prop to the \`Dialog\`, but forgot an \`onClose\` prop.`);
+  }
+  if (typeof open !== "boolean") {
+    throw new Error(`You provided an \`open\` prop to the \`Dialog\`, but the value is not a boolean. Received: ${open}`);
+  }
+  if (typeof onClose !== "function") {
+    throw new Error(`You provided an \`onClose\` prop to the \`Dialog\`, but the value is not a function. Received: ${onClose}`);
+  }
+  let dialogState = open ? 0 /* Open */ : 1 /* Closed */;
+  let visible = (() => {
+    if (usesOpenClosedState !== null) {
+      return usesOpenClosedState === 0 /* Open */;
+    }
+    return dialogState === 0 /* Open */;
+  })();
+  let [state2, dispatch] = (0, import_react20.useReducer)(stateReducer2, {
+    titleId: null,
+    descriptionId: null
+  });
+  let close = (0, import_react20.useCallback)(() => onClose(false), [onClose]);
+  let setTitleId = (0, import_react20.useCallback)((id3) => dispatch({ type: 0 /* SetTitleId */, id: id3 }), [dispatch]);
+  let ready = useServerHandoffComplete();
+  let enabled = ready && dialogState === 0 /* Open */;
+  let hasNestedDialogs = nestedDialogCount > 1;
+  let hasParentDialog = (0, import_react20.useContext)(DialogContext) !== null;
+  let position = !hasNestedDialogs ? "leaf" : "parent";
+  useFocusTrap(internalDialogRef, enabled ? match(position, {
+    parent: 16 /* RestoreFocus */,
+    leaf: 30 /* All */
+  }) : 1 /* None */, { initialFocus, containers });
+  useInertOthers(internalDialogRef, hasNestedDialogs ? enabled : false);
+  useWindowEvent("mousedown", (event) => {
+    var _a;
+    let target = event.target;
+    if (dialogState !== 0 /* Open */)
+      return;
+    if (hasNestedDialogs)
+      return;
+    if ((_a = internalDialogRef.current) == null ? void 0 : _a.contains(target))
+      return;
+    close();
+  });
+  useWindowEvent("keydown", (event) => {
+    if (event.key !== "Escape" /* Escape */)
+      return;
+    if (dialogState !== 0 /* Open */)
+      return;
+    if (hasNestedDialogs)
+      return;
+    event.preventDefault();
+    event.stopPropagation();
+    close();
+  });
+  (0, import_react20.useEffect)(() => {
+    if (dialogState !== 0 /* Open */)
+      return;
+    if (hasParentDialog)
+      return;
+    let overflow = document.documentElement.style.overflow;
+    let paddingRight = document.documentElement.style.paddingRight;
+    let scrollbarWidth = window.innerWidth - document.documentElement.clientWidth;
+    document.documentElement.style.overflow = "hidden";
+    document.documentElement.style.paddingRight = `${scrollbarWidth}px`;
+    return () => {
+      document.documentElement.style.overflow = overflow;
+      document.documentElement.style.paddingRight = paddingRight;
+    };
+  }, [dialogState, hasParentDialog]);
+  (0, import_react20.useEffect)(() => {
+    if (dialogState !== 0 /* Open */)
+      return;
+    if (!internalDialogRef.current)
+      return;
+    let observer = new IntersectionObserver((entries) => {
+      for (let entry of entries) {
+        if (entry.boundingClientRect.x === 0 && entry.boundingClientRect.y === 0 && entry.boundingClientRect.width === 0 && entry.boundingClientRect.height === 0) {
+          close();
+        }
+      }
+    });
+    observer.observe(internalDialogRef.current);
+    return () => observer.disconnect();
+  }, [dialogState, internalDialogRef, close]);
+  let [describedby, DescriptionProvider] = useDescriptions();
+  let id2 = `headlessui-dialog-${useId()}`;
+  let contextBag = (0, import_react20.useMemo)(() => [{ dialogState, close, setTitleId }, state2], [dialogState, state2, close, setTitleId]);
+  let slot = (0, import_react20.useMemo)(() => ({ open: dialogState === 0 /* Open */ }), [dialogState]);
+  let propsWeControl = {
+    ref: dialogRef,
+    id: id2,
+    role: "dialog",
+    "aria-modal": dialogState === 0 /* Open */ ? true : void 0,
+    "aria-labelledby": state2.titleId,
+    "aria-describedby": describedby,
+    onClick(event) {
+      event.stopPropagation();
+    }
+  };
+  let passthroughProps = rest;
+  return /* @__PURE__ */ import_react20.default.createElement(StackProvider, {
+    type: "Dialog",
+    element: internalDialogRef,
+    onUpdate: (0, import_react20.useCallback)((message, type, element) => {
+      if (type !== "Dialog")
+        return;
+      match(message, {
+        [0 /* Add */]() {
+          containers.current.add(element);
+          setNestedDialogCount((count) => count + 1);
+        },
+        [1 /* Remove */]() {
+          containers.current.add(element);
+          setNestedDialogCount((count) => count - 1);
+        }
+      });
+    }, [])
+  }, /* @__PURE__ */ import_react20.default.createElement(ForcePortalRoot, {
+    force: true
+  }, /* @__PURE__ */ import_react20.default.createElement(Portal, null, /* @__PURE__ */ import_react20.default.createElement(DialogContext.Provider, {
+    value: contextBag
+  }, /* @__PURE__ */ import_react20.default.createElement(Portal.Group, {
+    target: internalDialogRef
+  }, /* @__PURE__ */ import_react20.default.createElement(ForcePortalRoot, {
+    force: false
+  }, /* @__PURE__ */ import_react20.default.createElement(DescriptionProvider, {
+    slot,
+    name: "Dialog.Description"
+  }, render({
+    props: { ...passthroughProps, ...propsWeControl },
+    slot,
+    defaultTag: DEFAULT_DIALOG_TAG,
+    features: DialogRenderFeatures,
+    visible,
+    name: "Dialog"
+  }))))))));
+});
+var DEFAULT_OVERLAY_TAG = "div";
+var Overlay = forwardRefWithAs(function Overlay2(props, ref) {
+  let [{ dialogState, close }] = useDialogContext("Dialog.Overlay");
+  let overlayRef = useSyncRefs(ref);
+  let id2 = `headlessui-dialog-overlay-${useId()}`;
+  let handleClick = (0, import_react20.useCallback)((event) => {
+    if (event.target !== event.currentTarget)
+      return;
+    if (isDisabledReactIssue7711(event.currentTarget))
+      return event.preventDefault();
+    event.preventDefault();
+    event.stopPropagation();
+    close();
+  }, [close]);
+  let slot = (0, import_react20.useMemo)(() => ({ open: dialogState === 0 /* Open */ }), [dialogState]);
+  let propsWeControl = {
+    ref: overlayRef,
+    id: id2,
+    "aria-hidden": true,
+    onClick: handleClick
+  };
+  let passthroughProps = props;
+  return render({
+    props: { ...passthroughProps, ...propsWeControl },
+    slot,
+    defaultTag: DEFAULT_OVERLAY_TAG,
+    name: "Dialog.Overlay"
+  });
+});
+var DEFAULT_TITLE_TAG = "h2";
+function Title(props) {
+  let [{ dialogState, setTitleId }] = useDialogContext("Dialog.Title");
+  let id2 = `headlessui-dialog-title-${useId()}`;
+  (0, import_react20.useEffect)(() => {
+    setTitleId(id2);
+    return () => setTitleId(null);
+  }, [id2, setTitleId]);
+  let slot = (0, import_react20.useMemo)(() => ({ open: dialogState === 0 /* Open */ }), [dialogState]);
+  let propsWeControl = { id: id2 };
+  let passthroughProps = props;
+  return render({
+    props: { ...passthroughProps, ...propsWeControl },
+    slot,
+    defaultTag: DEFAULT_TITLE_TAG,
+    name: "Dialog.Title"
+  });
+}
+var Dialog2 = Object.assign(DialogRoot, { Overlay, Title, Description });
+
+// src/components/disclosure/disclosure.tsx
+var import_react21 = __toESM(__webpack_require__(/*! react */ "./node_modules/react/index.js"), 1);
+var reducers3 = {
+  [0 /* ToggleDisclosure */]: (state2) => ({
+    ...state2,
+    disclosureState: match(state2.disclosureState, {
+      [0 /* Open */]: 1 /* Closed */,
+      [1 /* Closed */]: 0 /* Open */
+    })
+  }),
+  [1 /* CloseDisclosure */]: (state2) => {
+    if (state2.disclosureState === 1 /* Closed */)
+      return state2;
+    return { ...state2, disclosureState: 1 /* Closed */ };
+  },
+  [4 /* LinkPanel */](state2) {
+    if (state2.linkedPanel === true)
+      return state2;
+    return { ...state2, linkedPanel: true };
+  },
+  [5 /* UnlinkPanel */](state2) {
+    if (state2.linkedPanel === false)
+      return state2;
+    return { ...state2, linkedPanel: false };
+  },
+  [2 /* SetButtonId */](state2, action) {
+    if (state2.buttonId === action.buttonId)
+      return state2;
+    return { ...state2, buttonId: action.buttonId };
+  },
+  [3 /* SetPanelId */](state2, action) {
+    if (state2.panelId === action.panelId)
+      return state2;
+    return { ...state2, panelId: action.panelId };
+  }
+};
+var DisclosureContext = (0, import_react21.createContext)(null);
+DisclosureContext.displayName = "DisclosureContext";
+function useDisclosureContext(component) {
+  let context = (0, import_react21.useContext)(DisclosureContext);
+  if (context === null) {
+    let err = new Error(`<${component} /> is missing a parent <${Disclosure.name} /> component.`);
+    if (Error.captureStackTrace)
+      Error.captureStackTrace(err, useDisclosureContext);
+    throw err;
+  }
+  return context;
+}
+var DisclosureAPIContext = (0, import_react21.createContext)(null);
+DisclosureAPIContext.displayName = "DisclosureAPIContext";
+function useDisclosureAPIContext(component) {
+  let context = (0, import_react21.useContext)(DisclosureAPIContext);
+  if (context === null) {
+    let err = new Error(`<${component} /> is missing a parent <${Disclosure.name} /> component.`);
+    if (Error.captureStackTrace)
+      Error.captureStackTrace(err, useDisclosureAPIContext);
+    throw err;
+  }
+  return context;
+}
+var DisclosurePanelContext = (0, import_react21.createContext)(null);
+DisclosurePanelContext.displayName = "DisclosurePanelContext";
+function useDisclosurePanelContext() {
+  return (0, import_react21.useContext)(DisclosurePanelContext);
+}
+function stateReducer3(state2, action) {
+  return match(action.type, reducers3, state2, action);
+}
+var DEFAULT_DISCLOSURE_TAG = import_react21.Fragment;
+function Disclosure(props) {
+  let { defaultOpen = false, ...passthroughProps } = props;
+  let buttonId = `headlessui-disclosure-button-${useId()}`;
+  let panelId = `headlessui-disclosure-panel-${useId()}`;
+  let reducerBag = (0, import_react21.useReducer)(stateReducer3, {
+    disclosureState: defaultOpen ? 0 /* Open */ : 1 /* Closed */,
+    linkedPanel: false,
+    buttonId,
+    panelId
+  });
+  let [{ disclosureState }, dispatch] = reducerBag;
+  (0, import_react21.useEffect)(() => dispatch({ type: 2 /* SetButtonId */, buttonId }), [buttonId, dispatch]);
+  (0, import_react21.useEffect)(() => dispatch({ type: 3 /* SetPanelId */, panelId }), [panelId, dispatch]);
+  let close = (0, import_react21.useCallback)((focusableElement) => {
+    dispatch({ type: 1 /* CloseDisclosure */ });
+    let restoreElement = (() => {
+      if (!focusableElement)
+        return document.getElementById(buttonId);
+      if (focusableElement instanceof HTMLElement)
+        return focusableElement;
+      if (focusableElement.current instanceof HTMLElement)
+        return focusableElement.current;
+      return document.getElementById(buttonId);
+    })();
+    restoreElement == null ? void 0 : restoreElement.focus();
+  }, [dispatch, buttonId]);
+  let api = (0, import_react21.useMemo)(() => ({ close }), [close]);
+  let slot = (0, import_react21.useMemo)(() => ({ open: disclosureState === 0 /* Open */, close }), [disclosureState, close]);
+  return /* @__PURE__ */ import_react21.default.createElement(DisclosureContext.Provider, {
+    value: reducerBag
+  }, /* @__PURE__ */ import_react21.default.createElement(DisclosureAPIContext.Provider, {
+    value: api
+  }, /* @__PURE__ */ import_react21.default.createElement(OpenClosedProvider, {
+    value: match(disclosureState, {
+      [0 /* Open */]: 0 /* Open */,
+      [1 /* Closed */]: 1 /* Closed */
+    })
+  }, render({
+    props: passthroughProps,
+    slot,
+    defaultTag: DEFAULT_DISCLOSURE_TAG,
+    name: "Disclosure"
+  }))));
+}
+var DEFAULT_BUTTON_TAG2 = "button";
+var Button3 = forwardRefWithAs(function Button4(props, ref) {
+  let [state2, dispatch] = useDisclosureContext("Disclosure.Button");
+  let internalButtonRef = (0, import_react21.useRef)(null);
+  let buttonRef = useSyncRefs(internalButtonRef, ref);
+  let panelContext = useDisclosurePanelContext();
+  let isWithinPanel = panelContext === null ? false : panelContext === state2.panelId;
+  let handleKeyDown = (0, import_react21.useCallback)((event) => {
+    var _a;
+    if (isWithinPanel) {
+      if (state2.disclosureState === 1 /* Closed */)
+        return;
+      switch (event.key) {
+        case " " /* Space */:
+        case "Enter" /* Enter */:
+          event.preventDefault();
+          event.stopPropagation();
+          dispatch({ type: 0 /* ToggleDisclosure */ });
+          (_a = document.getElementById(state2.buttonId)) == null ? void 0 : _a.focus();
+          break;
+      }
+    } else {
+      switch (event.key) {
+        case " " /* Space */:
+        case "Enter" /* Enter */:
+          event.preventDefault();
+          event.stopPropagation();
+          dispatch({ type: 0 /* ToggleDisclosure */ });
+          break;
+      }
+    }
+  }, [dispatch, isWithinPanel, state2.disclosureState, state2.buttonId]);
+  let handleKeyUp = (0, import_react21.useCallback)((event) => {
+    switch (event.key) {
+      case " " /* Space */:
+        event.preventDefault();
+        break;
+    }
+  }, []);
+  let handleClick = (0, import_react21.useCallback)((event) => {
+    var _a;
+    if (isDisabledReactIssue7711(event.currentTarget))
+      return;
+    if (props.disabled)
+      return;
+    if (isWithinPanel) {
+      dispatch({ type: 0 /* ToggleDisclosure */ });
+      (_a = document.getElementById(state2.buttonId)) == null ? void 0 : _a.focus();
+    } else {
+      dispatch({ type: 0 /* ToggleDisclosure */ });
+    }
+  }, [dispatch, props.disabled, state2.buttonId, isWithinPanel]);
+  let slot = (0, import_react21.useMemo)(() => ({ open: state2.disclosureState === 0 /* Open */ }), [state2]);
+  let type = useResolveButtonType(props, internalButtonRef);
+  let passthroughProps = props;
+  let propsWeControl = isWithinPanel ? { ref: buttonRef, type, onKeyDown: handleKeyDown, onClick: handleClick } : {
+    ref: buttonRef,
+    id: state2.buttonId,
+    type,
+    "aria-expanded": props.disabled ? void 0 : state2.disclosureState === 0 /* Open */,
+    "aria-controls": state2.linkedPanel ? state2.panelId : void 0,
+    onKeyDown: handleKeyDown,
+    onKeyUp: handleKeyUp,
+    onClick: handleClick
+  };
+  return render({
+    props: { ...passthroughProps, ...propsWeControl },
+    slot,
+    defaultTag: DEFAULT_BUTTON_TAG2,
+    name: "Disclosure.Button"
+  });
+});
+var DEFAULT_PANEL_TAG = "div";
+var PanelRenderFeatures = 1 /* RenderStrategy */ | 2 /* Static */;
+var Panel = forwardRefWithAs(function Panel2(props, ref) {
+  let [state2, dispatch] = useDisclosureContext("Disclosure.Panel");
+  let { close } = useDisclosureAPIContext("Disclosure.Panel");
+  let panelRef = useSyncRefs(ref, () => {
+    if (state2.linkedPanel)
+      return;
+    dispatch({ type: 4 /* LinkPanel */ });
+  });
+  let usesOpenClosedState = useOpenClosed();
+  let visible = (() => {
+    if (usesOpenClosedState !== null) {
+      return usesOpenClosedState === 0 /* Open */;
+    }
+    return state2.disclosureState === 0 /* Open */;
+  })();
+  (0, import_react21.useEffect)(() => () => dispatch({ type: 5 /* UnlinkPanel */ }), [dispatch]);
+  (0, import_react21.useEffect)(() => {
+    var _a;
+    if (state2.disclosureState === 1 /* Closed */ && ((_a = props.unmount) != null ? _a : true)) {
+      dispatch({ type: 5 /* UnlinkPanel */ });
+    }
+  }, [state2.disclosureState, props.unmount, dispatch]);
+  let slot = (0, import_react21.useMemo)(() => ({ open: state2.disclosureState === 0 /* Open */, close }), [state2, close]);
+  let propsWeControl = {
+    ref: panelRef,
+    id: state2.panelId
+  };
+  let passthroughProps = props;
+  return /* @__PURE__ */ import_react21.default.createElement(DisclosurePanelContext.Provider, {
+    value: state2.panelId
+  }, render({
+    props: { ...passthroughProps, ...propsWeControl },
+    slot,
+    defaultTag: DEFAULT_PANEL_TAG,
+    features: PanelRenderFeatures,
+    visible,
+    name: "Disclosure.Panel"
+  }));
+});
+Disclosure.Button = Button3;
+Disclosure.Panel = Panel;
+
+// src/components/focus-trap/focus-trap.tsx
+var import_react22 = __webpack_require__(/*! react */ "./node_modules/react/index.js");
+var DEFAULT_FOCUS_TRAP_TAG = "div";
+function FocusTrap(props) {
+  let container = (0, import_react22.useRef)(null);
+  let { initialFocus, ...passthroughProps } = props;
+  let ready = useServerHandoffComplete();
+  useFocusTrap(container, ready ? 30 /* All */ : 1 /* None */, { initialFocus });
+  let propsWeControl = {
+    ref: container
+  };
+  return render({
+    props: { ...passthroughProps, ...propsWeControl },
+    defaultTag: DEFAULT_FOCUS_TRAP_TAG,
+    name: "FocusTrap"
+  });
+}
+
+// src/components/listbox/listbox.tsx
+var import_react23 = __toESM(__webpack_require__(/*! react */ "./node_modules/react/index.js"), 1);
+var reducers4 = {
+  [1 /* CloseListbox */](state2) {
+    if (state2.disabled)
+      return state2;
+    if (state2.listboxState === 1 /* Closed */)
+      return state2;
+    return { ...state2, activeOptionIndex: null, listboxState: 1 /* Closed */ };
+  },
+  [0 /* OpenListbox */](state2) {
+    if (state2.disabled)
+      return state2;
+    if (state2.listboxState === 0 /* Open */)
+      return state2;
+    return { ...state2, listboxState: 0 /* Open */ };
+  },
+  [2 /* SetDisabled */](state2, action) {
+    if (state2.disabled === action.disabled)
+      return state2;
+    return { ...state2, disabled: action.disabled };
+  },
+  [3 /* SetOrientation */](state2, action) {
+    if (state2.orientation === action.orientation)
+      return state2;
+    return { ...state2, orientation: action.orientation };
+  },
+  [4 /* GoToOption */](state2, action) {
+    if (state2.disabled)
+      return state2;
+    if (state2.listboxState === 1 /* Closed */)
+      return state2;
+    let activeOptionIndex = calculateActiveIndex(action, {
+      resolveItems: () => state2.options,
+      resolveActiveIndex: () => state2.activeOptionIndex,
+      resolveId: (item) => item.id,
+      resolveDisabled: (item) => item.dataRef.current.disabled
+    });
+    if (state2.searchQuery === "" && state2.activeOptionIndex === activeOptionIndex)
+      return state2;
+    return { ...state2, searchQuery: "", activeOptionIndex };
+  },
+  [5 /* Search */]: (state2, action) => {
+    if (state2.disabled)
+      return state2;
+    if (state2.listboxState === 1 /* Closed */)
+      return state2;
+    let wasAlreadySearching = state2.searchQuery !== "";
+    let offset = wasAlreadySearching ? 0 : 1;
+    let searchQuery = state2.searchQuery + action.value.toLowerCase();
+    let reOrderedOptions = state2.activeOptionIndex !== null ? state2.options.slice(state2.activeOptionIndex + offset).concat(state2.options.slice(0, state2.activeOptionIndex + offset)) : state2.options;
+    let matchingOption = reOrderedOptions.find((option) => {
+      var _a;
+      return !option.dataRef.current.disabled && ((_a = option.dataRef.current.textValue) == null ? void 0 : _a.startsWith(searchQuery));
+    });
+    let matchIdx = matchingOption ? state2.options.indexOf(matchingOption) : -1;
+    if (matchIdx === -1 || matchIdx === state2.activeOptionIndex)
+      return { ...state2, searchQuery };
+    return { ...state2, searchQuery, activeOptionIndex: matchIdx };
+  },
+  [6 /* ClearSearch */](state2) {
+    if (state2.disabled)
+      return state2;
+    if (state2.listboxState === 1 /* Closed */)
+      return state2;
+    if (state2.searchQuery === "")
+      return state2;
+    return { ...state2, searchQuery: "" };
+  },
+  [7 /* RegisterOption */]: (state2, action) => {
+    var _a;
+    let orderMap = Array.from((_a = state2.optionsRef.current) == null ? void 0 : _a.querySelectorAll('[id^="headlessui-listbox-option-"]')).reduce((lookup, element, index) => Object.assign(lookup, { [element.id]: index }), {});
+    let options = [...state2.options, { id: action.id, dataRef: action.dataRef }].sort((a, z) => orderMap[a.id] - orderMap[z.id]);
+    return { ...state2, options };
+  },
+  [8 /* UnregisterOption */]: (state2, action) => {
+    let nextOptions = state2.options.slice();
+    let currentActiveOption = state2.activeOptionIndex !== null ? nextOptions[state2.activeOptionIndex] : null;
+    let idx = nextOptions.findIndex((a) => a.id === action.id);
+    if (idx !== -1)
+      nextOptions.splice(idx, 1);
+    return {
+      ...state2,
+      options: nextOptions,
+      activeOptionIndex: (() => {
+        if (idx === state2.activeOptionIndex)
+          return null;
+        if (currentActiveOption === null)
+          return null;
+        return nextOptions.indexOf(currentActiveOption);
+      })()
+    };
+  }
+};
+var ListboxContext = (0, import_react23.createContext)(null);
+ListboxContext.displayName = "ListboxContext";
+function useListboxContext(component) {
+  let context = (0, import_react23.useContext)(ListboxContext);
+  if (context === null) {
+    let err = new Error(`<${component} /> is missing a parent <${Listbox.name} /> component.`);
+    if (Error.captureStackTrace)
+      Error.captureStackTrace(err, useListboxContext);
+    throw err;
+  }
+  return context;
+}
+function stateReducer4(state2, action) {
+  return match(action.type, reducers4, state2, action);
+}
+var DEFAULT_LISTBOX_TAG = import_react23.Fragment;
+function Listbox(props) {
+  let { value, onChange, disabled = false, horizontal = false, ...passThroughProps } = props;
+  const orientation = horizontal ? "horizontal" : "vertical";
+  let reducerBag = (0, import_react23.useReducer)(stateReducer4, {
+    listboxState: 1 /* Closed */,
+    propsRef: { current: { value, onChange } },
+    labelRef: (0, import_react23.createRef)(),
+    buttonRef: (0, import_react23.createRef)(),
+    optionsRef: (0, import_react23.createRef)(),
+    disabled,
+    orientation,
+    options: [],
+    searchQuery: "",
+    activeOptionIndex: null
+  });
+  let [{ listboxState, propsRef, optionsRef, buttonRef }, dispatch] = reducerBag;
+  useIsoMorphicEffect(() => {
+    propsRef.current.value = value;
+  }, [value, propsRef]);
+  useIsoMorphicEffect(() => {
+    propsRef.current.onChange = onChange;
+  }, [onChange, propsRef]);
+  useIsoMorphicEffect(() => dispatch({ type: 2 /* SetDisabled */, disabled }), [disabled]);
+  useIsoMorphicEffect(() => dispatch({ type: 3 /* SetOrientation */, orientation }), [orientation]);
+  useWindowEvent("mousedown", (event) => {
+    var _a, _b, _c;
+    let target = event.target;
+    if (listboxState !== 0 /* Open */)
+      return;
+    if ((_a = buttonRef.current) == null ? void 0 : _a.contains(target))
+      return;
+    if ((_b = optionsRef.current) == null ? void 0 : _b.contains(target))
+      return;
+    dispatch({ type: 1 /* CloseListbox */ });
+    if (!isFocusableElement(target, 1 /* Loose */)) {
+      event.preventDefault();
+      (_c = buttonRef.current) == null ? void 0 : _c.focus();
+    }
+  });
+  let slot = (0, import_react23.useMemo)(() => ({ open: listboxState === 0 /* Open */, disabled }), [listboxState, disabled]);
+  return /* @__PURE__ */ import_react23.default.createElement(ListboxContext.Provider, {
+    value: reducerBag
+  }, /* @__PURE__ */ import_react23.default.createElement(OpenClosedProvider, {
+    value: match(listboxState, {
+      [0 /* Open */]: 0 /* Open */,
+      [1 /* Closed */]: 1 /* Closed */
+    })
+  }, render({
+    props: passThroughProps,
+    slot,
+    defaultTag: DEFAULT_LISTBOX_TAG,
+    name: "Listbox"
+  })));
+}
+var DEFAULT_BUTTON_TAG3 = "button";
+var Button5 = forwardRefWithAs(function Button6(props, ref) {
+  var _a;
+  let [state2, dispatch] = useListboxContext("Listbox.Button");
+  let buttonRef = useSyncRefs(state2.buttonRef, ref);
+  let id2 = `headlessui-listbox-button-${useId()}`;
+  let d = useDisposables();
+  let handleKeyDown = (0, import_react23.useCallback)((event) => {
+    switch (event.key) {
+      case " " /* Space */:
+      case "Enter" /* Enter */:
+      case "ArrowDown" /* ArrowDown */:
+        event.preventDefault();
+        dispatch({ type: 0 /* OpenListbox */ });
+        d.nextFrame(() => {
+          if (!state2.propsRef.current.value)
+            dispatch({ type: 4 /* GoToOption */, focus: 0 /* First */ });
+        });
+        break;
+      case "ArrowUp" /* ArrowUp */:
+        event.preventDefault();
+        dispatch({ type: 0 /* OpenListbox */ });
+        d.nextFrame(() => {
+          if (!state2.propsRef.current.value)
+            dispatch({ type: 4 /* GoToOption */, focus: 3 /* Last */ });
+        });
+        break;
+    }
+  }, [dispatch, state2, d]);
+  let handleKeyUp = (0, import_react23.useCallback)((event) => {
+    switch (event.key) {
+      case " " /* Space */:
+        event.preventDefault();
+        break;
+    }
+  }, []);
+  let handleClick = (0, import_react23.useCallback)((event) => {
+    if (isDisabledReactIssue7711(event.currentTarget))
+      return event.preventDefault();
+    if (state2.listboxState === 0 /* Open */) {
+      dispatch({ type: 1 /* CloseListbox */ });
+      d.nextFrame(() => {
+        var _a2;
+        return (_a2 = state2.buttonRef.current) == null ? void 0 : _a2.focus({ preventScroll: true });
+      });
+    } else {
+      event.preventDefault();
+      dispatch({ type: 0 /* OpenListbox */ });
+    }
+  }, [dispatch, d, state2]);
+  let labelledby = useComputed(() => {
+    if (!state2.labelRef.current)
+      return void 0;
+    return [state2.labelRef.current.id, id2].join(" ");
+  }, [state2.labelRef.current, id2]);
+  let slot = (0, import_react23.useMemo)(() => ({ open: state2.listboxState === 0 /* Open */, disabled: state2.disabled }), [state2]);
+  let passthroughProps = props;
+  let propsWeControl = {
+    ref: buttonRef,
+    id: id2,
+    type: useResolveButtonType(props, state2.buttonRef),
+    "aria-haspopup": true,
+    "aria-controls": (_a = state2.optionsRef.current) == null ? void 0 : _a.id,
+    "aria-expanded": state2.disabled ? void 0 : state2.listboxState === 0 /* Open */,
+    "aria-labelledby": labelledby,
+    disabled: state2.disabled,
+    onKeyDown: handleKeyDown,
+    onKeyUp: handleKeyUp,
+    onClick: handleClick
+  };
+  return render({
+    props: { ...passthroughProps, ...propsWeControl },
+    slot,
+    defaultTag: DEFAULT_BUTTON_TAG3,
+    name: "Listbox.Button"
+  });
+});
+var DEFAULT_LABEL_TAG2 = "label";
+function Label2(props) {
+  let [state2] = useListboxContext("Listbox.Label");
+  let id2 = `headlessui-listbox-label-${useId()}`;
+  let handleClick = (0, import_react23.useCallback)(() => {
+    var _a;
+    return (_a = state2.buttonRef.current) == null ? void 0 : _a.focus({ preventScroll: true });
+  }, [state2.buttonRef]);
+  let slot = (0, import_react23.useMemo)(() => ({ open: state2.listboxState === 0 /* Open */, disabled: state2.disabled }), [state2]);
+  let propsWeControl = { ref: state2.labelRef, id: id2, onClick: handleClick };
+  return render({
+    props: { ...props, ...propsWeControl },
+    slot,
+    defaultTag: DEFAULT_LABEL_TAG2,
+    name: "Listbox.Label"
+  });
+}
+var DEFAULT_OPTIONS_TAG2 = "ul";
+var OptionsRenderFeatures2 = 1 /* RenderStrategy */ | 2 /* Static */;
+var Options3 = forwardRefWithAs(function Options4(props, ref) {
+  var _a;
+  let [state2, dispatch] = useListboxContext("Listbox.Options");
+  let optionsRef = useSyncRefs(state2.optionsRef, ref);
+  let id2 = `headlessui-listbox-options-${useId()}`;
+  let d = useDisposables();
+  let searchDisposables = useDisposables();
+  let usesOpenClosedState = useOpenClosed();
+  let visible = (() => {
+    if (usesOpenClosedState !== null) {
+      return usesOpenClosedState === 0 /* Open */;
+    }
+    return state2.listboxState === 0 /* Open */;
+  })();
+  useIsoMorphicEffect(() => {
+    let container = state2.optionsRef.current;
+    if (!container)
+      return;
+    if (state2.listboxState !== 0 /* Open */)
+      return;
+    if (container === document.activeElement)
+      return;
+    container.focus({ preventScroll: true });
+  }, [state2.listboxState, state2.optionsRef]);
+  let handleKeyDown = (0, import_react23.useCallback)((event) => {
+    searchDisposables.dispose();
+    switch (event.key) {
+      case " " /* Space */:
+        if (state2.searchQuery !== "") {
+          event.preventDefault();
+          event.stopPropagation();
+          return dispatch({ type: 5 /* Search */, value: event.key });
+        }
+      case "Enter" /* Enter */:
+        event.preventDefault();
+        event.stopPropagation();
+        dispatch({ type: 1 /* CloseListbox */ });
+        if (state2.activeOptionIndex !== null) {
+          let { dataRef } = state2.options[state2.activeOptionIndex];
+          state2.propsRef.current.onChange(dataRef.current.value);
+        }
+        disposables().nextFrame(() => {
+          var _a2;
+          return (_a2 = state2.buttonRef.current) == null ? void 0 : _a2.focus({ preventScroll: true });
+        });
+        break;
+      case match(state2.orientation, { vertical: "ArrowDown" /* ArrowDown */, horizontal: "ArrowRight" /* ArrowRight */ }):
+        event.preventDefault();
+        event.stopPropagation();
+        return dispatch({ type: 4 /* GoToOption */, focus: 2 /* Next */ });
+      case match(state2.orientation, { vertical: "ArrowUp" /* ArrowUp */, horizontal: "ArrowLeft" /* ArrowLeft */ }):
+        event.preventDefault();
+        event.stopPropagation();
+        return dispatch({ type: 4 /* GoToOption */, focus: 1 /* Previous */ });
+      case "Home" /* Home */:
+      case "PageUp" /* PageUp */:
+        event.preventDefault();
+        event.stopPropagation();
+        return dispatch({ type: 4 /* GoToOption */, focus: 0 /* First */ });
+      case "End" /* End */:
+      case "PageDown" /* PageDown */:
+        event.preventDefault();
+        event.stopPropagation();
+        return dispatch({ type: 4 /* GoToOption */, focus: 3 /* Last */ });
+      case "Escape" /* Escape */:
+        event.preventDefault();
+        event.stopPropagation();
+        dispatch({ type: 1 /* CloseListbox */ });
+        return d.nextFrame(() => {
+          var _a2;
+          return (_a2 = state2.buttonRef.current) == null ? void 0 : _a2.focus({ preventScroll: true });
+        });
+      case "Tab" /* Tab */:
+        event.preventDefault();
+        event.stopPropagation();
+        break;
+      default:
+        if (event.key.length === 1) {
+          dispatch({ type: 5 /* Search */, value: event.key });
+          searchDisposables.setTimeout(() => dispatch({ type: 6 /* ClearSearch */ }), 350);
+        }
+        break;
+    }
+  }, [d, dispatch, searchDisposables, state2]);
+  let labelledby = useComputed(() => {
+    var _a2, _b, _c;
+    return (_c = (_a2 = state2.labelRef.current) == null ? void 0 : _a2.id) != null ? _c : (_b = state2.buttonRef.current) == null ? void 0 : _b.id;
+  }, [state2.labelRef.current, state2.buttonRef.current]);
+  let slot = (0, import_react23.useMemo)(() => ({ open: state2.listboxState === 0 /* Open */ }), [state2]);
+  let propsWeControl = {
+    "aria-activedescendant": state2.activeOptionIndex === null ? void 0 : (_a = state2.options[state2.activeOptionIndex]) == null ? void 0 : _a.id,
+    "aria-labelledby": labelledby,
+    "aria-orientation": state2.orientation,
+    id: id2,
+    onKeyDown: handleKeyDown,
+    role: "listbox",
+    tabIndex: 0,
+    ref: optionsRef
+  };
+  let passthroughProps = props;
+  return render({
+    props: { ...passthroughProps, ...propsWeControl },
+    slot,
+    defaultTag: DEFAULT_OPTIONS_TAG2,
+    features: OptionsRenderFeatures2,
+    visible,
+    name: "Listbox.Options"
+  });
+});
+var DEFAULT_OPTION_TAG2 = "li";
+function Option2(props) {
+  let { disabled = false, value, ...passthroughProps } = props;
+  let [state2, dispatch] = useListboxContext("Listbox.Option");
+  let id2 = `headlessui-listbox-option-${useId()}`;
+  let active = state2.activeOptionIndex !== null ? state2.options[state2.activeOptionIndex].id === id2 : false;
+  let selected = state2.propsRef.current.value === value;
+  let bag = (0, import_react23.useRef)({ disabled, value });
+  useIsoMorphicEffect(() => {
+    bag.current.disabled = disabled;
+  }, [bag, disabled]);
+  useIsoMorphicEffect(() => {
+    bag.current.value = value;
+  }, [bag, value]);
+  useIsoMorphicEffect(() => {
+    var _a, _b;
+    bag.current.textValue = (_b = (_a = document.getElementById(id2)) == null ? void 0 : _a.textContent) == null ? void 0 : _b.toLowerCase();
+  }, [bag, id2]);
+  let select = (0, import_react23.useCallback)(() => state2.propsRef.current.onChange(value), [state2.propsRef, value]);
+  useIsoMorphicEffect(() => {
+    dispatch({ type: 7 /* RegisterOption */, id: id2, dataRef: bag });
+    return () => dispatch({ type: 8 /* UnregisterOption */, id: id2 });
+  }, [bag, id2]);
+  useIsoMorphicEffect(() => {
+    var _a, _b;
+    if (state2.listboxState !== 0 /* Open */)
+      return;
+    if (!selected)
+      return;
+    dispatch({ type: 4 /* GoToOption */, focus: 4 /* Specific */, id: id2 });
+    (_b = (_a = document.getElementById(id2)) == null ? void 0 : _a.focus) == null ? void 0 : _b.call(_a);
+  }, [state2.listboxState]);
+  useIsoMorphicEffect(() => {
+    if (state2.listboxState !== 0 /* Open */)
+      return;
+    if (!active)
+      return;
+    let d = disposables();
+    d.requestAnimationFrame(() => {
+      var _a, _b;
+      (_b = (_a = document.getElementById(id2)) == null ? void 0 : _a.scrollIntoView) == null ? void 0 : _b.call(_a, { block: "nearest" });
+    });
+    return d.dispose;
+  }, [
+    id2,
+    active,
+    state2.listboxState,
+    state2.activeOptionIndex
+  ]);
+  let handleClick = (0, import_react23.useCallback)((event) => {
+    if (disabled)
+      return event.preventDefault();
+    select();
+    dispatch({ type: 1 /* CloseListbox */ });
+    disposables().nextFrame(() => {
+      var _a;
+      return (_a = state2.buttonRef.current) == null ? void 0 : _a.focus({ preventScroll: true });
+    });
+  }, [dispatch, state2.buttonRef, disabled, select]);
+  let handleFocus = (0, import_react23.useCallback)(() => {
+    if (disabled)
+      return dispatch({ type: 4 /* GoToOption */, focus: 5 /* Nothing */ });
+    dispatch({ type: 4 /* GoToOption */, focus: 4 /* Specific */, id: id2 });
+  }, [disabled, id2, dispatch]);
+  let handleMove = (0, import_react23.useCallback)(() => {
+    if (disabled)
+      return;
+    if (active)
+      return;
+    dispatch({ type: 4 /* GoToOption */, focus: 4 /* Specific */, id: id2 });
+  }, [disabled, active, id2, dispatch]);
+  let handleLeave = (0, import_react23.useCallback)(() => {
+    if (disabled)
+      return;
+    if (!active)
+      return;
+    dispatch({ type: 4 /* GoToOption */, focus: 5 /* Nothing */ });
+  }, [disabled, active, dispatch]);
+  let slot = (0, import_react23.useMemo)(() => ({ active, selected, disabled }), [active, selected, disabled]);
+  let propsWeControl = {
+    id: id2,
+    role: "option",
+    tabIndex: disabled === true ? void 0 : -1,
+    "aria-disabled": disabled === true ? true : void 0,
+    "aria-selected": selected === true ? true : void 0,
+    disabled: void 0,
+    onClick: handleClick,
+    onFocus: handleFocus,
+    onPointerMove: handleMove,
+    onMouseMove: handleMove,
+    onPointerLeave: handleLeave,
+    onMouseLeave: handleLeave
+  };
+  return render({
+    props: { ...passthroughProps, ...propsWeControl },
+    slot,
+    defaultTag: DEFAULT_OPTION_TAG2,
+    name: "Listbox.Option"
+  });
+}
+Listbox.Button = Button5;
+Listbox.Label = Label2;
+Listbox.Options = Options3;
+Listbox.Option = Option2;
+
+// src/components/menu/menu.tsx
+var import_react24 = __toESM(__webpack_require__(/*! react */ "./node_modules/react/index.js"), 1);
+var reducers5 = {
+  [1 /* CloseMenu */](state2) {
+    if (state2.menuState === 1 /* Closed */)
+      return state2;
+    return { ...state2, activeItemIndex: null, menuState: 1 /* Closed */ };
+  },
+  [0 /* OpenMenu */](state2) {
+    if (state2.menuState === 0 /* Open */)
+      return state2;
+    return { ...state2, menuState: 0 /* Open */ };
+  },
+  [2 /* GoToItem */]: (state2, action) => {
+    let activeItemIndex = calculateActiveIndex(action, {
+      resolveItems: () => state2.items,
+      resolveActiveIndex: () => state2.activeItemIndex,
+      resolveId: (item) => item.id,
+      resolveDisabled: (item) => item.dataRef.current.disabled
+    });
+    if (state2.searchQuery === "" && state2.activeItemIndex === activeItemIndex)
+      return state2;
+    return { ...state2, searchQuery: "", activeItemIndex };
+  },
+  [3 /* Search */]: (state2, action) => {
+    let wasAlreadySearching = state2.searchQuery !== "";
+    let offset = wasAlreadySearching ? 0 : 1;
+    let searchQuery = state2.searchQuery + action.value.toLowerCase();
+    let reOrderedItems = state2.activeItemIndex !== null ? state2.items.slice(state2.activeItemIndex + offset).concat(state2.items.slice(0, state2.activeItemIndex + offset)) : state2.items;
+    let matchingItem = reOrderedItems.find((item) => {
+      var _a;
+      return ((_a = item.dataRef.current.textValue) == null ? void 0 : _a.startsWith(searchQuery)) && !item.dataRef.current.disabled;
+    });
+    let matchIdx = matchingItem ? state2.items.indexOf(matchingItem) : -1;
+    if (matchIdx === -1 || matchIdx === state2.activeItemIndex)
+      return { ...state2, searchQuery };
+    return { ...state2, searchQuery, activeItemIndex: matchIdx };
+  },
+  [4 /* ClearSearch */](state2) {
+    if (state2.searchQuery === "")
+      return state2;
+    return { ...state2, searchQuery: "", searchActiveItemIndex: null };
+  },
+  [5 /* RegisterItem */]: (state2, action) => {
+    var _a;
+    let orderMap = Array.from((_a = state2.itemsRef.current) == null ? void 0 : _a.querySelectorAll('[id^="headlessui-menu-item-"]')).reduce((lookup, element, index) => Object.assign(lookup, { [element.id]: index }), {});
+    let items = [...state2.items, { id: action.id, dataRef: action.dataRef }].sort((a, z) => orderMap[a.id] - orderMap[z.id]);
+    return { ...state2, items };
+  },
+  [6 /* UnregisterItem */]: (state2, action) => {
+    let nextItems = state2.items.slice();
+    let currentActiveItem = state2.activeItemIndex !== null ? nextItems[state2.activeItemIndex] : null;
+    let idx = nextItems.findIndex((a) => a.id === action.id);
+    if (idx !== -1)
+      nextItems.splice(idx, 1);
+    return {
+      ...state2,
+      items: nextItems,
+      activeItemIndex: (() => {
+        if (idx === state2.activeItemIndex)
+          return null;
+        if (currentActiveItem === null)
+          return null;
+        return nextItems.indexOf(currentActiveItem);
+      })()
+    };
+  }
+};
+var MenuContext = (0, import_react24.createContext)(null);
+MenuContext.displayName = "MenuContext";
+function useMenuContext(component) {
+  let context = (0, import_react24.useContext)(MenuContext);
+  if (context === null) {
+    let err = new Error(`<${component} /> is missing a parent <${Menu.name} /> component.`);
+    if (Error.captureStackTrace)
+      Error.captureStackTrace(err, useMenuContext);
+    throw err;
+  }
+  return context;
+}
+function stateReducer5(state2, action) {
+  return match(action.type, reducers5, state2, action);
+}
+var DEFAULT_MENU_TAG = import_react24.Fragment;
+function Menu(props) {
+  let reducerBag = (0, import_react24.useReducer)(stateReducer5, {
+    menuState: 1 /* Closed */,
+    buttonRef: (0, import_react24.createRef)(),
+    itemsRef: (0, import_react24.createRef)(),
+    items: [],
+    searchQuery: "",
+    activeItemIndex: null
+  });
+  let [{ menuState, itemsRef, buttonRef }, dispatch] = reducerBag;
+  useWindowEvent("mousedown", (event) => {
+    var _a, _b, _c;
+    let target = event.target;
+    if (menuState !== 0 /* Open */)
+      return;
+    if ((_a = buttonRef.current) == null ? void 0 : _a.contains(target))
+      return;
+    if ((_b = itemsRef.current) == null ? void 0 : _b.contains(target))
+      return;
+    dispatch({ type: 1 /* CloseMenu */ });
+    if (!isFocusableElement(target, 1 /* Loose */)) {
+      event.preventDefault();
+      (_c = buttonRef.current) == null ? void 0 : _c.focus();
+    }
+  });
+  let slot = (0, import_react24.useMemo)(() => ({ open: menuState === 0 /* Open */ }), [menuState]);
+  return /* @__PURE__ */ import_react24.default.createElement(MenuContext.Provider, {
+    value: reducerBag
+  }, /* @__PURE__ */ import_react24.default.createElement(OpenClosedProvider, {
+    value: match(menuState, {
+      [0 /* Open */]: 0 /* Open */,
+      [1 /* Closed */]: 1 /* Closed */
+    })
+  }, render({ props, slot, defaultTag: DEFAULT_MENU_TAG, name: "Menu" })));
+}
+var DEFAULT_BUTTON_TAG4 = "button";
+var Button7 = forwardRefWithAs(function Button8(props, ref) {
+  var _a;
+  let [state2, dispatch] = useMenuContext("Menu.Button");
+  let buttonRef = useSyncRefs(state2.buttonRef, ref);
+  let id2 = `headlessui-menu-button-${useId()}`;
+  let d = useDisposables();
+  let handleKeyDown = (0, import_react24.useCallback)((event) => {
+    switch (event.key) {
+      case " " /* Space */:
+      case "Enter" /* Enter */:
+      case "ArrowDown" /* ArrowDown */:
+        event.preventDefault();
+        event.stopPropagation();
+        dispatch({ type: 0 /* OpenMenu */ });
+        d.nextFrame(() => dispatch({ type: 2 /* GoToItem */, focus: 0 /* First */ }));
+        break;
+      case "ArrowUp" /* ArrowUp */:
+        event.preventDefault();
+        event.stopPropagation();
+        dispatch({ type: 0 /* OpenMenu */ });
+        d.nextFrame(() => dispatch({ type: 2 /* GoToItem */, focus: 3 /* Last */ }));
+        break;
+    }
+  }, [dispatch, d]);
+  let handleKeyUp = (0, import_react24.useCallback)((event) => {
+    switch (event.key) {
+      case " " /* Space */:
+        event.preventDefault();
+        break;
+    }
+  }, []);
+  let handleClick = (0, import_react24.useCallback)((event) => {
+    if (isDisabledReactIssue7711(event.currentTarget))
+      return event.preventDefault();
+    if (props.disabled)
+      return;
+    if (state2.menuState === 0 /* Open */) {
+      dispatch({ type: 1 /* CloseMenu */ });
+      d.nextFrame(() => {
+        var _a2;
+        return (_a2 = state2.buttonRef.current) == null ? void 0 : _a2.focus({ preventScroll: true });
+      });
+    } else {
+      event.preventDefault();
+      event.stopPropagation();
+      dispatch({ type: 0 /* OpenMenu */ });
+    }
+  }, [dispatch, d, state2, props.disabled]);
+  let slot = (0, import_react24.useMemo)(() => ({ open: state2.menuState === 0 /* Open */ }), [state2]);
+  let passthroughProps = props;
+  let propsWeControl = {
+    ref: buttonRef,
+    id: id2,
+    type: useResolveButtonType(props, state2.buttonRef),
+    "aria-haspopup": true,
+    "aria-controls": (_a = state2.itemsRef.current) == null ? void 0 : _a.id,
+    "aria-expanded": props.disabled ? void 0 : state2.menuState === 0 /* Open */,
+    onKeyDown: handleKeyDown,
+    onKeyUp: handleKeyUp,
+    onClick: handleClick
+  };
+  return render({
+    props: { ...passthroughProps, ...propsWeControl },
+    slot,
+    defaultTag: DEFAULT_BUTTON_TAG4,
+    name: "Menu.Button"
+  });
+});
+var DEFAULT_ITEMS_TAG = "div";
+var ItemsRenderFeatures = 1 /* RenderStrategy */ | 2 /* Static */;
+var Items = forwardRefWithAs(function Items2(props, ref) {
+  var _a, _b;
+  let [state2, dispatch] = useMenuContext("Menu.Items");
+  let itemsRef = useSyncRefs(state2.itemsRef, ref);
+  let id2 = `headlessui-menu-items-${useId()}`;
+  let searchDisposables = useDisposables();
+  let usesOpenClosedState = useOpenClosed();
+  let visible = (() => {
+    if (usesOpenClosedState !== null) {
+      return usesOpenClosedState === 0 /* Open */;
+    }
+    return state2.menuState === 0 /* Open */;
+  })();
+  (0, import_react24.useEffect)(() => {
+    let container = state2.itemsRef.current;
+    if (!container)
+      return;
+    if (state2.menuState !== 0 /* Open */)
+      return;
+    if (container === document.activeElement)
+      return;
+    container.focus({ preventScroll: true });
+  }, [state2.menuState, state2.itemsRef]);
+  useTreeWalker({
+    container: state2.itemsRef.current,
+    enabled: state2.menuState === 0 /* Open */,
+    accept(node) {
+      if (node.getAttribute("role") === "menuitem")
+        return NodeFilter.FILTER_REJECT;
+      if (node.hasAttribute("role"))
+        return NodeFilter.FILTER_SKIP;
+      return NodeFilter.FILTER_ACCEPT;
+    },
+    walk(node) {
+      node.setAttribute("role", "none");
+    }
+  });
+  let handleKeyDown = (0, import_react24.useCallback)((event) => {
+    var _a2;
+    searchDisposables.dispose();
+    switch (event.key) {
+      case " " /* Space */:
+        if (state2.searchQuery !== "") {
+          event.preventDefault();
+          event.stopPropagation();
+          return dispatch({ type: 3 /* Search */, value: event.key });
+        }
+      case "Enter" /* Enter */:
+        event.preventDefault();
+        event.stopPropagation();
+        dispatch({ type: 1 /* CloseMenu */ });
+        if (state2.activeItemIndex !== null) {
+          let { id: id3 } = state2.items[state2.activeItemIndex];
+          (_a2 = document.getElementById(id3)) == null ? void 0 : _a2.click();
+        }
+        disposables().nextFrame(() => {
+          var _a3;
+          return (_a3 = state2.buttonRef.current) == null ? void 0 : _a3.focus({ preventScroll: true });
+        });
+        break;
+      case "ArrowDown" /* ArrowDown */:
+        event.preventDefault();
+        event.stopPropagation();
+        return dispatch({ type: 2 /* GoToItem */, focus: 2 /* Next */ });
+      case "ArrowUp" /* ArrowUp */:
+        event.preventDefault();
+        event.stopPropagation();
+        return dispatch({ type: 2 /* GoToItem */, focus: 1 /* Previous */ });
+      case "Home" /* Home */:
+      case "PageUp" /* PageUp */:
+        event.preventDefault();
+        event.stopPropagation();
+        return dispatch({ type: 2 /* GoToItem */, focus: 0 /* First */ });
+      case "End" /* End */:
+      case "PageDown" /* PageDown */:
+        event.preventDefault();
+        event.stopPropagation();
+        return dispatch({ type: 2 /* GoToItem */, focus: 3 /* Last */ });
+      case "Escape" /* Escape */:
+        event.preventDefault();
+        event.stopPropagation();
+        dispatch({ type: 1 /* CloseMenu */ });
+        disposables().nextFrame(() => {
+          var _a3;
+          return (_a3 = state2.buttonRef.current) == null ? void 0 : _a3.focus({ preventScroll: true });
+        });
+        break;
+      case "Tab" /* Tab */:
+        event.preventDefault();
+        event.stopPropagation();
+        break;
+      default:
+        if (event.key.length === 1) {
+          dispatch({ type: 3 /* Search */, value: event.key });
+          searchDisposables.setTimeout(() => dispatch({ type: 4 /* ClearSearch */ }), 350);
+        }
+        break;
+    }
+  }, [dispatch, searchDisposables, state2]);
+  let handleKeyUp = (0, import_react24.useCallback)((event) => {
+    switch (event.key) {
+      case " " /* Space */:
+        event.preventDefault();
+        break;
+    }
+  }, []);
+  let slot = (0, import_react24.useMemo)(() => ({ open: state2.menuState === 0 /* Open */ }), [state2]);
+  let propsWeControl = {
+    "aria-activedescendant": state2.activeItemIndex === null ? void 0 : (_a = state2.items[state2.activeItemIndex]) == null ? void 0 : _a.id,
+    "aria-labelledby": (_b = state2.buttonRef.current) == null ? void 0 : _b.id,
+    id: id2,
+    onKeyDown: handleKeyDown,
+    onKeyUp: handleKeyUp,
+    role: "menu",
+    tabIndex: 0,
+    ref: itemsRef
+  };
+  let passthroughProps = props;
+  return render({
+    props: { ...passthroughProps, ...propsWeControl },
+    slot,
+    defaultTag: DEFAULT_ITEMS_TAG,
+    features: ItemsRenderFeatures,
+    visible,
+    name: "Menu.Items"
+  });
+});
+var DEFAULT_ITEM_TAG = import_react24.Fragment;
+function Item(props) {
+  let { disabled = false, onClick, ...passthroughProps } = props;
+  let [state2, dispatch] = useMenuContext("Menu.Item");
+  let id2 = `headlessui-menu-item-${useId()}`;
+  let active = state2.activeItemIndex !== null ? state2.items[state2.activeItemIndex].id === id2 : false;
+  useIsoMorphicEffect(() => {
+    if (state2.menuState !== 0 /* Open */)
+      return;
+    if (!active)
+      return;
+    let d = disposables();
+    d.requestAnimationFrame(() => {
+      var _a, _b;
+      (_b = (_a = document.getElementById(id2)) == null ? void 0 : _a.scrollIntoView) == null ? void 0 : _b.call(_a, { block: "nearest" });
+    });
+    return d.dispose;
+  }, [
+    id2,
+    active,
+    state2.menuState,
+    state2.activeItemIndex
+  ]);
+  let bag = (0, import_react24.useRef)({ disabled });
+  useIsoMorphicEffect(() => {
+    bag.current.disabled = disabled;
+  }, [bag, disabled]);
+  useIsoMorphicEffect(() => {
+    var _a, _b;
+    bag.current.textValue = (_b = (_a = document.getElementById(id2)) == null ? void 0 : _a.textContent) == null ? void 0 : _b.toLowerCase();
+  }, [bag, id2]);
+  useIsoMorphicEffect(() => {
+    dispatch({ type: 5 /* RegisterItem */, id: id2, dataRef: bag });
+    return () => dispatch({ type: 6 /* UnregisterItem */, id: id2 });
+  }, [bag, id2]);
+  let handleClick = (0, import_react24.useCallback)((event) => {
+    if (disabled)
+      return event.preventDefault();
+    dispatch({ type: 1 /* CloseMenu */ });
+    disposables().nextFrame(() => {
+      var _a;
+      return (_a = state2.buttonRef.current) == null ? void 0 : _a.focus({ preventScroll: true });
+    });
+    if (onClick)
+      return onClick(event);
+  }, [dispatch, state2.buttonRef, disabled, onClick]);
+  let handleFocus = (0, import_react24.useCallback)(() => {
+    if (disabled)
+      return dispatch({ type: 2 /* GoToItem */, focus: 5 /* Nothing */ });
+    dispatch({ type: 2 /* GoToItem */, focus: 4 /* Specific */, id: id2 });
+  }, [disabled, id2, dispatch]);
+  let handleMove = (0, import_react24.useCallback)(() => {
+    if (disabled)
+      return;
+    if (active)
+      return;
+    dispatch({ type: 2 /* GoToItem */, focus: 4 /* Specific */, id: id2 });
+  }, [disabled, active, id2, dispatch]);
+  let handleLeave = (0, import_react24.useCallback)(() => {
+    if (disabled)
+      return;
+    if (!active)
+      return;
+    dispatch({ type: 2 /* GoToItem */, focus: 5 /* Nothing */ });
+  }, [disabled, active, dispatch]);
+  let slot = (0, import_react24.useMemo)(() => ({ active, disabled }), [active, disabled]);
+  let propsWeControl = {
+    id: id2,
+    role: "menuitem",
+    tabIndex: disabled === true ? void 0 : -1,
+    "aria-disabled": disabled === true ? true : void 0,
+    disabled: void 0,
+    onClick: handleClick,
+    onFocus: handleFocus,
+    onPointerMove: handleMove,
+    onMouseMove: handleMove,
+    onPointerLeave: handleLeave,
+    onMouseLeave: handleLeave
+  };
+  return render({
+    props: { ...passthroughProps, ...propsWeControl },
+    slot,
+    defaultTag: DEFAULT_ITEM_TAG,
+    name: "Menu.Item"
+  });
+}
+Menu.Button = Button7;
+Menu.Items = Items;
+Menu.Item = Item;
+
+// src/components/popover/popover.tsx
+var import_react25 = __toESM(__webpack_require__(/*! react */ "./node_modules/react/index.js"), 1);
+var reducers6 = {
+  [0 /* TogglePopover */]: (state2) => ({
+    ...state2,
+    popoverState: match(state2.popoverState, {
+      [0 /* Open */]: 1 /* Closed */,
+      [1 /* Closed */]: 0 /* Open */
+    })
+  }),
+  [1 /* ClosePopover */](state2) {
+    if (state2.popoverState === 1 /* Closed */)
+      return state2;
+    return { ...state2, popoverState: 1 /* Closed */ };
+  },
+  [2 /* SetButton */](state2, action) {
+    if (state2.button === action.button)
+      return state2;
+    return { ...state2, button: action.button };
+  },
+  [3 /* SetButtonId */](state2, action) {
+    if (state2.buttonId === action.buttonId)
+      return state2;
+    return { ...state2, buttonId: action.buttonId };
+  },
+  [4 /* SetPanel */](state2, action) {
+    if (state2.panel === action.panel)
+      return state2;
+    return { ...state2, panel: action.panel };
+  },
+  [5 /* SetPanelId */](state2, action) {
+    if (state2.panelId === action.panelId)
+      return state2;
+    return { ...state2, panelId: action.panelId };
+  }
+};
+var PopoverContext = (0, import_react25.createContext)(null);
+PopoverContext.displayName = "PopoverContext";
+function usePopoverContext(component) {
+  let context = (0, import_react25.useContext)(PopoverContext);
+  if (context === null) {
+    let err = new Error(`<${component} /> is missing a parent <${Popover.name} /> component.`);
+    if (Error.captureStackTrace)
+      Error.captureStackTrace(err, usePopoverContext);
+    throw err;
+  }
+  return context;
+}
+var PopoverAPIContext = (0, import_react25.createContext)(null);
+PopoverAPIContext.displayName = "PopoverAPIContext";
+function usePopoverAPIContext(component) {
+  let context = (0, import_react25.useContext)(PopoverAPIContext);
+  if (context === null) {
+    let err = new Error(`<${component} /> is missing a parent <${Popover.name} /> component.`);
+    if (Error.captureStackTrace)
+      Error.captureStackTrace(err, usePopoverAPIContext);
+    throw err;
+  }
+  return context;
+}
+var PopoverGroupContext = (0, import_react25.createContext)(null);
+PopoverGroupContext.displayName = "PopoverGroupContext";
+function usePopoverGroupContext() {
+  return (0, import_react25.useContext)(PopoverGroupContext);
+}
+var PopoverPanelContext = (0, import_react25.createContext)(null);
+PopoverPanelContext.displayName = "PopoverPanelContext";
+function usePopoverPanelContext() {
+  return (0, import_react25.useContext)(PopoverPanelContext);
+}
+function stateReducer6(state2, action) {
+  return match(action.type, reducers6, state2, action);
+}
+var DEFAULT_POPOVER_TAG = "div";
+function Popover(props) {
+  let buttonId = `headlessui-popover-button-${useId()}`;
+  let panelId = `headlessui-popover-panel-${useId()}`;
+  let reducerBag = (0, import_react25.useReducer)(stateReducer6, {
+    popoverState: 1 /* Closed */,
+    button: null,
+    buttonId,
+    panel: null,
+    panelId
+  });
+  let [{ popoverState, button, panel }, dispatch] = reducerBag;
+  (0, import_react25.useEffect)(() => dispatch({ type: 3 /* SetButtonId */, buttonId }), [buttonId, dispatch]);
+  (0, import_react25.useEffect)(() => dispatch({ type: 5 /* SetPanelId */, panelId }), [panelId, dispatch]);
+  let registerBag = (0, import_react25.useMemo)(() => ({ buttonId, panelId, close: () => dispatch({ type: 1 /* ClosePopover */ }) }), [buttonId, panelId, dispatch]);
+  let groupContext = usePopoverGroupContext();
+  let registerPopover = groupContext == null ? void 0 : groupContext.registerPopover;
+  let isFocusWithinPopoverGroup = (0, import_react25.useCallback)(() => {
+    var _a;
+    return (_a = groupContext == null ? void 0 : groupContext.isFocusWithinPopoverGroup()) != null ? _a : (button == null ? void 0 : button.contains(document.activeElement)) || (panel == null ? void 0 : panel.contains(document.activeElement));
+  }, [groupContext, button, panel]);
+  (0, import_react25.useEffect)(() => registerPopover == null ? void 0 : registerPopover(registerBag), [registerPopover, registerBag]);
+  useWindowEvent("focus", () => {
+    if (popoverState !== 0 /* Open */)
+      return;
+    if (isFocusWithinPopoverGroup())
+      return;
+    if (!button)
+      return;
+    if (!panel)
+      return;
+    dispatch({ type: 1 /* ClosePopover */ });
+  }, true);
+  useWindowEvent("mousedown", (event) => {
+    let target = event.target;
+    if (popoverState !== 0 /* Open */)
+      return;
+    if (button == null ? void 0 : button.contains(target))
+      return;
+    if (panel == null ? void 0 : panel.contains(target))
+      return;
+    dispatch({ type: 1 /* ClosePopover */ });
+    if (!isFocusableElement(target, 1 /* Loose */)) {
+      event.preventDefault();
+      button == null ? void 0 : button.focus();
+    }
+  });
+  let close = (0, import_react25.useCallback)((focusableElement) => {
+    dispatch({ type: 1 /* ClosePopover */ });
+    let restoreElement = (() => {
+      if (!focusableElement)
+        return button;
+      if (focusableElement instanceof HTMLElement)
+        return focusableElement;
+      if (focusableElement.current instanceof HTMLElement)
+        return focusableElement.current;
+      return button;
+    })();
+    restoreElement == null ? void 0 : restoreElement.focus();
+  }, [dispatch, button]);
+  let api = (0, import_react25.useMemo)(() => ({ close }), [close]);
+  let slot = (0, import_react25.useMemo)(() => ({ open: popoverState === 0 /* Open */, close }), [popoverState, close]);
+  return /* @__PURE__ */ import_react25.default.createElement(PopoverContext.Provider, {
+    value: reducerBag
+  }, /* @__PURE__ */ import_react25.default.createElement(PopoverAPIContext.Provider, {
+    value: api
+  }, /* @__PURE__ */ import_react25.default.createElement(OpenClosedProvider, {
+    value: match(popoverState, {
+      [0 /* Open */]: 0 /* Open */,
+      [1 /* Closed */]: 1 /* Closed */
+    })
+  }, render({
+    props,
+    slot,
+    defaultTag: DEFAULT_POPOVER_TAG,
+    name: "Popover"
+  }))));
+}
+var DEFAULT_BUTTON_TAG5 = "button";
+var Button9 = forwardRefWithAs(function Button10(props, ref) {
+  let [state2, dispatch] = usePopoverContext("Popover.Button");
+  let internalButtonRef = (0, import_react25.useRef)(null);
+  let groupContext = usePopoverGroupContext();
+  let closeOthers = groupContext == null ? void 0 : groupContext.closeOthers;
+  let panelContext = usePopoverPanelContext();
+  let isWithinPanel = panelContext === null ? false : panelContext === state2.panelId;
+  let buttonRef = useSyncRefs(internalButtonRef, ref, isWithinPanel ? null : (button) => dispatch({ type: 2 /* SetButton */, button }));
+  let withinPanelButtonRef = useSyncRefs(internalButtonRef, ref);
+  let activeElementRef = (0, import_react25.useRef)(null);
+  let previousActiveElementRef = (0, import_react25.useRef)(typeof window === "undefined" ? null : document.activeElement);
+  useWindowEvent("focus", () => {
+    previousActiveElementRef.current = activeElementRef.current;
+    activeElementRef.current = document.activeElement;
+  }, true);
+  let handleKeyDown = (0, import_react25.useCallback)((event) => {
+    var _a, _b;
+    if (isWithinPanel) {
+      if (state2.popoverState === 1 /* Closed */)
+        return;
+      switch (event.key) {
+        case " " /* Space */:
+        case "Enter" /* Enter */:
+          event.preventDefault();
+          event.stopPropagation();
+          dispatch({ type: 1 /* ClosePopover */ });
+          (_a = state2.button) == null ? void 0 : _a.focus();
+          break;
+      }
+    } else {
+      switch (event.key) {
+        case " " /* Space */:
+        case "Enter" /* Enter */:
+          event.preventDefault();
+          event.stopPropagation();
+          if (state2.popoverState === 1 /* Closed */)
+            closeOthers == null ? void 0 : closeOthers(state2.buttonId);
+          dispatch({ type: 0 /* TogglePopover */ });
+          break;
+        case "Escape" /* Escape */:
+          if (state2.popoverState !== 0 /* Open */)
+            return closeOthers == null ? void 0 : closeOthers(state2.buttonId);
+          if (!internalButtonRef.current)
+            return;
+          if (!internalButtonRef.current.contains(document.activeElement))
+            return;
+          event.preventDefault();
+          event.stopPropagation();
+          dispatch({ type: 1 /* ClosePopover */ });
+          break;
+        case "Tab" /* Tab */:
+          if (state2.popoverState !== 0 /* Open */)
+            return;
+          if (!state2.panel)
+            return;
+          if (!state2.button)
+            return;
+          if (event.shiftKey) {
+            if (!previousActiveElementRef.current)
+              return;
+            if ((_b = state2.button) == null ? void 0 : _b.contains(previousActiveElementRef.current))
+              return;
+            if (state2.panel.contains(previousActiveElementRef.current))
+              return;
+            let focusableElements = getFocusableElements();
+            let previousIdx = focusableElements.indexOf(previousActiveElementRef.current);
+            let buttonIdx = focusableElements.indexOf(state2.button);
+            if (buttonIdx > previousIdx)
+              return;
+            event.preventDefault();
+            event.stopPropagation();
+            focusIn(state2.panel, 8 /* Last */);
+          } else {
+            event.preventDefault();
+            event.stopPropagation();
+            focusIn(state2.panel, 1 /* First */);
+          }
+          break;
+      }
+    }
+  }, [
+    dispatch,
+    state2.popoverState,
+    state2.buttonId,
+    state2.button,
+    state2.panel,
+    internalButtonRef,
+    closeOthers,
+    isWithinPanel
+  ]);
+  let handleKeyUp = (0, import_react25.useCallback)((event) => {
+    var _a;
+    if (isWithinPanel)
+      return;
+    if (event.key === " " /* Space */) {
+      event.preventDefault();
+    }
+    if (state2.popoverState !== 0 /* Open */)
+      return;
+    if (!state2.panel)
+      return;
+    if (!state2.button)
+      return;
+    switch (event.key) {
+      case "Tab" /* Tab */:
+        if (!previousActiveElementRef.current)
+          return;
+        if ((_a = state2.button) == null ? void 0 : _a.contains(previousActiveElementRef.current))
+          return;
+        if (state2.panel.contains(previousActiveElementRef.current))
+          return;
+        let focusableElements = getFocusableElements();
+        let previousIdx = focusableElements.indexOf(previousActiveElementRef.current);
+        let buttonIdx = focusableElements.indexOf(state2.button);
+        if (buttonIdx > previousIdx)
+          return;
+        event.preventDefault();
+        event.stopPropagation();
+        focusIn(state2.panel, 8 /* Last */);
+        break;
+    }
+  }, [state2.popoverState, state2.panel, state2.button, isWithinPanel]);
+  let handleClick = (0, import_react25.useCallback)((event) => {
+    var _a, _b;
+    if (isDisabledReactIssue7711(event.currentTarget))
+      return;
+    if (props.disabled)
+      return;
+    if (isWithinPanel) {
+      dispatch({ type: 1 /* ClosePopover */ });
+      (_a = state2.button) == null ? void 0 : _a.focus();
+    } else {
+      if (state2.popoverState === 1 /* Closed */)
+        closeOthers == null ? void 0 : closeOthers(state2.buttonId);
+      (_b = state2.button) == null ? void 0 : _b.focus();
+      dispatch({ type: 0 /* TogglePopover */ });
+    }
+  }, [
+    dispatch,
+    state2.button,
+    state2.popoverState,
+    state2.buttonId,
+    props.disabled,
+    closeOthers,
+    isWithinPanel
+  ]);
+  let slot = (0, import_react25.useMemo)(() => ({ open: state2.popoverState === 0 /* Open */ }), [state2]);
+  let type = useResolveButtonType(props, internalButtonRef);
+  let passthroughProps = props;
+  let propsWeControl = isWithinPanel ? {
+    ref: withinPanelButtonRef,
+    type,
+    onKeyDown: handleKeyDown,
+    onClick: handleClick
+  } : {
+    ref: buttonRef,
+    id: state2.buttonId,
+    type,
+    "aria-expanded": props.disabled ? void 0 : state2.popoverState === 0 /* Open */,
+    "aria-controls": state2.panel ? state2.panelId : void 0,
+    onKeyDown: handleKeyDown,
+    onKeyUp: handleKeyUp,
+    onClick: handleClick
+  };
+  return render({
+    props: { ...passthroughProps, ...propsWeControl },
+    slot,
+    defaultTag: DEFAULT_BUTTON_TAG5,
+    name: "Popover.Button"
+  });
+});
+var DEFAULT_OVERLAY_TAG2 = "div";
+var OverlayRenderFeatures = 1 /* RenderStrategy */ | 2 /* Static */;
+var Overlay3 = forwardRefWithAs(function Overlay4(props, ref) {
+  let [{ popoverState }, dispatch] = usePopoverContext("Popover.Overlay");
+  let overlayRef = useSyncRefs(ref);
+  let id2 = `headlessui-popover-overlay-${useId()}`;
+  let usesOpenClosedState = useOpenClosed();
+  let visible = (() => {
+    if (usesOpenClosedState !== null) {
+      return usesOpenClosedState === 0 /* Open */;
+    }
+    return popoverState === 0 /* Open */;
+  })();
+  let handleClick = (0, import_react25.useCallback)((event) => {
+    if (isDisabledReactIssue7711(event.currentTarget))
+      return event.preventDefault();
+    dispatch({ type: 1 /* ClosePopover */ });
+  }, [dispatch]);
+  let slot = (0, import_react25.useMemo)(() => ({ open: popoverState === 0 /* Open */ }), [popoverState]);
+  let propsWeControl = {
+    ref: overlayRef,
+    id: id2,
+    "aria-hidden": true,
+    onClick: handleClick
+  };
+  let passthroughProps = props;
+  return render({
+    props: { ...passthroughProps, ...propsWeControl },
+    slot,
+    defaultTag: DEFAULT_OVERLAY_TAG2,
+    features: OverlayRenderFeatures,
+    visible,
+    name: "Popover.Overlay"
+  });
+});
+var DEFAULT_PANEL_TAG2 = "div";
+var PanelRenderFeatures2 = 1 /* RenderStrategy */ | 2 /* Static */;
+var Panel3 = forwardRefWithAs(function Panel4(props, ref) {
+  let { focus = false, ...passthroughProps } = props;
+  let [state2, dispatch] = usePopoverContext("Popover.Panel");
+  let { close } = usePopoverAPIContext("Popover.Panel");
+  let internalPanelRef = (0, import_react25.useRef)(null);
+  let panelRef = useSyncRefs(internalPanelRef, ref, (panel) => {
+    dispatch({ type: 4 /* SetPanel */, panel });
+  });
+  let usesOpenClosedState = useOpenClosed();
+  let visible = (() => {
+    if (usesOpenClosedState !== null) {
+      return usesOpenClosedState === 0 /* Open */;
+    }
+    return state2.popoverState === 0 /* Open */;
+  })();
+  let handleKeyDown = (0, import_react25.useCallback)((event) => {
+    var _a;
+    switch (event.key) {
+      case "Escape" /* Escape */:
+        if (state2.popoverState !== 0 /* Open */)
+          return;
+        if (!internalPanelRef.current)
+          return;
+        if (!internalPanelRef.current.contains(document.activeElement))
+          return;
+        event.preventDefault();
+        event.stopPropagation();
+        dispatch({ type: 1 /* ClosePopover */ });
+        (_a = state2.button) == null ? void 0 : _a.focus();
+        break;
+    }
+  }, [state2, internalPanelRef, dispatch]);
+  (0, import_react25.useEffect)(() => () => dispatch({ type: 4 /* SetPanel */, panel: null }), [dispatch]);
+  (0, import_react25.useEffect)(() => {
+    var _a;
+    if (props.static)
+      return;
+    if (state2.popoverState === 1 /* Closed */ && ((_a = props.unmount) != null ? _a : true)) {
+      dispatch({ type: 4 /* SetPanel */, panel: null });
+    }
+  }, [state2.popoverState, props.unmount, props.static, dispatch]);
+  (0, import_react25.useEffect)(() => {
+    if (!focus)
+      return;
+    if (state2.popoverState !== 0 /* Open */)
+      return;
+    if (!internalPanelRef.current)
+      return;
+    let activeElement = document.activeElement;
+    if (internalPanelRef.current.contains(activeElement))
+      return;
+    focusIn(internalPanelRef.current, 1 /* First */);
+  }, [focus, internalPanelRef, state2.popoverState]);
+  useWindowEvent("keydown", (event) => {
+    var _a;
+    if (state2.popoverState !== 0 /* Open */)
+      return;
+    if (!internalPanelRef.current)
+      return;
+    if (event.key !== "Tab" /* Tab */)
+      return;
+    if (!document.activeElement)
+      return;
+    if (!internalPanelRef.current)
+      return;
+    if (!internalPanelRef.current.contains(document.activeElement))
+      return;
+    event.preventDefault();
+    let result = focusIn(internalPanelRef.current, event.shiftKey ? 2 /* Previous */ : 4 /* Next */);
+    if (result === 3 /* Underflow */) {
+      return (_a = state2.button) == null ? void 0 : _a.focus();
+    } else if (result === 1 /* Overflow */) {
+      if (!state2.button)
+        return;
+      let elements = getFocusableElements();
+      let buttonIdx = elements.indexOf(state2.button);
+      let nextElements = elements.splice(buttonIdx + 1).filter((element) => {
+        var _a2;
+        return !((_a2 = internalPanelRef.current) == null ? void 0 : _a2.contains(element));
+      });
+      if (focusIn(nextElements, 1 /* First */) === 0 /* Error */) {
+        focusIn(document.body, 1 /* First */);
+      }
+    }
+  });
+  useWindowEvent("focus", () => {
+    var _a;
+    if (!focus)
+      return;
+    if (state2.popoverState !== 0 /* Open */)
+      return;
+    if (!internalPanelRef.current)
+      return;
+    if ((_a = internalPanelRef.current) == null ? void 0 : _a.contains(document.activeElement))
+      return;
+    dispatch({ type: 1 /* ClosePopover */ });
+  }, true);
+  let slot = (0, import_react25.useMemo)(() => ({ open: state2.popoverState === 0 /* Open */, close }), [state2, close]);
+  let propsWeControl = {
+    ref: panelRef,
+    id: state2.panelId,
+    onKeyDown: handleKeyDown
+  };
+  return /* @__PURE__ */ import_react25.default.createElement(PopoverPanelContext.Provider, {
+    value: state2.panelId
+  }, render({
+    props: { ...passthroughProps, ...propsWeControl },
+    slot,
+    defaultTag: DEFAULT_PANEL_TAG2,
+    features: PanelRenderFeatures2,
+    visible,
+    name: "Popover.Panel"
+  }));
+});
+var DEFAULT_GROUP_TAG2 = "div";
+function Group2(props) {
+  let groupRef = (0, import_react25.useRef)(null);
+  let [popovers, setPopovers] = (0, import_react25.useState)([]);
+  let unregisterPopover = (0, import_react25.useCallback)((registerbag) => {
+    setPopovers((existing) => {
+      let idx = existing.indexOf(registerbag);
+      if (idx !== -1) {
+        let clone = existing.slice();
+        clone.splice(idx, 1);
+        return clone;
+      }
+      return existing;
+    });
+  }, [setPopovers]);
+  let registerPopover = (0, import_react25.useCallback)((registerbag) => {
+    setPopovers((existing) => [...existing, registerbag]);
+    return () => unregisterPopover(registerbag);
+  }, [setPopovers, unregisterPopover]);
+  let isFocusWithinPopoverGroup = (0, import_react25.useCallback)(() => {
+    var _a;
+    let element = document.activeElement;
+    if ((_a = groupRef.current) == null ? void 0 : _a.contains(element))
+      return true;
+    return popovers.some((bag) => {
+      var _a2, _b;
+      return ((_a2 = document.getElementById(bag.buttonId)) == null ? void 0 : _a2.contains(element)) || ((_b = document.getElementById(bag.panelId)) == null ? void 0 : _b.contains(element));
+    });
+  }, [groupRef, popovers]);
+  let closeOthers = (0, import_react25.useCallback)((buttonId) => {
+    for (let popover of popovers) {
+      if (popover.buttonId !== buttonId)
+        popover.close();
+    }
+  }, [popovers]);
+  let contextBag = (0, import_react25.useMemo)(() => ({
+    registerPopover,
+    unregisterPopover,
+    isFocusWithinPopoverGroup,
+    closeOthers
+  }), [registerPopover, unregisterPopover, isFocusWithinPopoverGroup, closeOthers]);
+  let slot = (0, import_react25.useMemo)(() => ({}), []);
+  let propsWeControl = { ref: groupRef };
+  let passthroughProps = props;
+  return /* @__PURE__ */ import_react25.default.createElement(PopoverGroupContext.Provider, {
+    value: contextBag
+  }, render({
+    props: { ...passthroughProps, ...propsWeControl },
+    slot,
+    defaultTag: DEFAULT_GROUP_TAG2,
+    name: "Popover.Group"
+  }));
+}
+Popover.Button = Button9;
+Popover.Overlay = Overlay3;
+Popover.Panel = Panel3;
+Popover.Group = Group2;
+
+// src/components/radio-group/radio-group.tsx
+var import_react28 = __toESM(__webpack_require__(/*! react */ "./node_modules/react/index.js"), 1);
+
+// src/hooks/use-flags.ts
+var import_react26 = __webpack_require__(/*! react */ "./node_modules/react/index.js");
+function useFlags(initialFlags = 0) {
+  let [flags, setFlags] = (0, import_react26.useState)(initialFlags);
+  let addFlag = (0, import_react26.useCallback)((flag) => setFlags((flags2) => flags2 | flag), [setFlags]);
+  let hasFlag = (0, import_react26.useCallback)((flag) => Boolean(flags & flag), [flags]);
+  let removeFlag = (0, import_react26.useCallback)((flag) => setFlags((flags2) => flags2 & ~flag), [setFlags]);
+  let toggleFlag = (0, import_react26.useCallback)((flag) => setFlags((flags2) => flags2 ^ flag), [setFlags]);
+  return { addFlag, hasFlag, removeFlag, toggleFlag };
+}
+
+// src/components/label/label.tsx
+var import_react27 = __toESM(__webpack_require__(/*! react */ "./node_modules/react/index.js"), 1);
+var LabelContext = (0, import_react27.createContext)(null);
+function useLabelContext() {
+  let context = (0, import_react27.useContext)(LabelContext);
+  if (context === null) {
+    let err = new Error("You used a <Label /> component, but it is not inside a relevant parent.");
+    if (Error.captureStackTrace)
+      Error.captureStackTrace(err, useLabelContext);
+    throw err;
+  }
+  return context;
+}
+function useLabels() {
+  let [labelIds, setLabelIds] = (0, import_react27.useState)([]);
+  return [
+    labelIds.length > 0 ? labelIds.join(" ") : void 0,
+    (0, import_react27.useMemo)(() => {
+      return function LabelProvider(props) {
+        let register = (0, import_react27.useCallback)((value) => {
+          setLabelIds((existing) => [...existing, value]);
+          return () => setLabelIds((existing) => {
+            let clone = existing.slice();
+            let idx = clone.indexOf(value);
+            if (idx !== -1)
+              clone.splice(idx, 1);
+            return clone;
+          });
+        }, []);
+        let contextBag = (0, import_react27.useMemo)(() => ({ register, slot: props.slot, name: props.name, props: props.props }), [register, props.slot, props.name, props.props]);
+        return /* @__PURE__ */ import_react27.default.createElement(LabelContext.Provider, {
+          value: contextBag
+        }, props.children);
+      };
+    }, [setLabelIds])
+  ];
+}
+var DEFAULT_LABEL_TAG3 = "label";
+function Label3(props) {
+  let { passive = false, ...passThroughProps } = props;
+  let context = useLabelContext();
+  let id2 = `headlessui-label-${useId()}`;
+  useIsoMorphicEffect(() => context.register(id2), [id2, context.register]);
+  let propsWeControl = { ...context.props, id: id2 };
+  let allProps = { ...passThroughProps, ...propsWeControl };
+  if (passive)
+    delete allProps["onClick"];
+  return render({
+    props: allProps,
+    slot: context.slot || {},
+    defaultTag: DEFAULT_LABEL_TAG3,
+    name: context.name || "Label"
+  });
+}
+
+// src/components/radio-group/radio-group.tsx
+var reducers7 = {
+  [0 /* RegisterOption */](state2, action) {
+    return {
+      ...state2,
+      options: [
+        ...state2.options,
+        { id: action.id, element: action.element, propsRef: action.propsRef }
+      ]
+    };
+  },
+  [1 /* UnregisterOption */](state2, action) {
+    let options = state2.options.slice();
+    let idx = state2.options.findIndex((radio) => radio.id === action.id);
+    if (idx === -1)
+      return state2;
+    options.splice(idx, 1);
+    return { ...state2, options };
+  }
+};
+var RadioGroupContext = (0, import_react28.createContext)(null);
+RadioGroupContext.displayName = "RadioGroupContext";
+function useRadioGroupContext(component) {
+  let context = (0, import_react28.useContext)(RadioGroupContext);
+  if (context === null) {
+    let err = new Error(`<${component} /> is missing a parent <${RadioGroup.name} /> component.`);
+    if (Error.captureStackTrace)
+      Error.captureStackTrace(err, useRadioGroupContext);
+    throw err;
+  }
+  return context;
+}
+function stateReducer7(state2, action) {
+  return match(action.type, reducers7, state2, action);
+}
+var DEFAULT_RADIO_GROUP_TAG = "div";
+function RadioGroup(props) {
+  let { value, onChange, disabled = false, ...passThroughProps } = props;
+  let [{ options }, dispatch] = (0, import_react28.useReducer)(stateReducer7, {
+    options: []
+  });
+  let [labelledby, LabelProvider] = useLabels();
+  let [describedby, DescriptionProvider] = useDescriptions();
+  let id2 = `headlessui-radiogroup-${useId()}`;
+  let radioGroupRef = (0, import_react28.useRef)(null);
+  let firstOption = (0, import_react28.useMemo)(() => options.find((option) => {
+    if (option.propsRef.current.disabled)
+      return false;
+    return true;
+  }), [options]);
+  let containsCheckedOption = (0, import_react28.useMemo)(() => options.some((option) => option.propsRef.current.value === value), [options, value]);
+  let triggerChange = (0, import_react28.useCallback)((nextValue) => {
+    var _a;
+    if (disabled)
+      return false;
+    if (nextValue === value)
+      return false;
+    let nextOption = (_a = options.find((option) => option.propsRef.current.value === nextValue)) == null ? void 0 : _a.propsRef.current;
+    if (nextOption == null ? void 0 : nextOption.disabled)
+      return false;
+    onChange(nextValue);
+    return true;
+  }, [onChange, value, disabled, options]);
+  useTreeWalker({
+    container: radioGroupRef.current,
+    accept(node) {
+      if (node.getAttribute("role") === "radio")
+        return NodeFilter.FILTER_REJECT;
+      if (node.hasAttribute("role"))
+        return NodeFilter.FILTER_SKIP;
+      return NodeFilter.FILTER_ACCEPT;
+    },
+    walk(node) {
+      node.setAttribute("role", "none");
+    }
+  });
+  let handleKeyDown = (0, import_react28.useCallback)((event) => {
+    let container = radioGroupRef.current;
+    if (!container)
+      return;
+    let all = options.filter((option) => option.propsRef.current.disabled === false).map((radio) => radio.element.current);
+    switch (event.key) {
+      case "ArrowLeft" /* ArrowLeft */:
+      case "ArrowUp" /* ArrowUp */:
+        {
+          event.preventDefault();
+          event.stopPropagation();
+          let result = focusIn(all, 2 /* Previous */ | 16 /* WrapAround */);
+          if (result === 2 /* Success */) {
+            let activeOption = options.find((option) => option.element.current === document.activeElement);
+            if (activeOption)
+              triggerChange(activeOption.propsRef.current.value);
+          }
+        }
+        break;
+      case "ArrowRight" /* ArrowRight */:
+      case "ArrowDown" /* ArrowDown */:
+        {
+          event.preventDefault();
+          event.stopPropagation();
+          let result = focusIn(all, 4 /* Next */ | 16 /* WrapAround */);
+          if (result === 2 /* Success */) {
+            let activeOption = options.find((option) => option.element.current === document.activeElement);
+            if (activeOption)
+              triggerChange(activeOption.propsRef.current.value);
+          }
+        }
+        break;
+      case " " /* Space */:
+        {
+          event.preventDefault();
+          event.stopPropagation();
+          let activeOption = options.find((option) => option.element.current === document.activeElement);
+          if (activeOption)
+            triggerChange(activeOption.propsRef.current.value);
+        }
+        break;
+    }
+  }, [radioGroupRef, options, triggerChange]);
+  let registerOption = (0, import_react28.useCallback)((option) => {
+    dispatch({ type: 0 /* RegisterOption */, ...option });
+    return () => dispatch({ type: 1 /* UnregisterOption */, id: option.id });
+  }, [dispatch]);
+  let api = (0, import_react28.useMemo)(() => ({
+    registerOption,
+    firstOption,
+    containsCheckedOption,
+    change: triggerChange,
+    disabled,
+    value
+  }), [registerOption, firstOption, containsCheckedOption, triggerChange, disabled, value]);
+  let propsWeControl = {
+    ref: radioGroupRef,
+    id: id2,
+    role: "radiogroup",
+    "aria-labelledby": labelledby,
+    "aria-describedby": describedby,
+    onKeyDown: handleKeyDown
+  };
+  return /* @__PURE__ */ import_react28.default.createElement(DescriptionProvider, {
+    name: "RadioGroup.Description"
+  }, /* @__PURE__ */ import_react28.default.createElement(LabelProvider, {
+    name: "RadioGroup.Label"
+  }, /* @__PURE__ */ import_react28.default.createElement(RadioGroupContext.Provider, {
+    value: api
+  }, render({
+    props: { ...passThroughProps, ...propsWeControl },
+    defaultTag: DEFAULT_RADIO_GROUP_TAG,
+    name: "RadioGroup"
+  }))));
+}
+var DEFAULT_OPTION_TAG3 = "div";
+function Option3(props) {
+  let optionRef = (0, import_react28.useRef)(null);
+  let id2 = `headlessui-radiogroup-option-${useId()}`;
+  let [labelledby, LabelProvider] = useLabels();
+  let [describedby, DescriptionProvider] = useDescriptions();
+  let { addFlag, removeFlag, hasFlag } = useFlags(1 /* Empty */);
+  let { value, disabled = false, ...passThroughProps } = props;
+  let propsRef = (0, import_react28.useRef)({ value, disabled });
+  useIsoMorphicEffect(() => {
+    propsRef.current.value = value;
+  }, [value, propsRef]);
+  useIsoMorphicEffect(() => {
+    propsRef.current.disabled = disabled;
+  }, [disabled, propsRef]);
+  let {
+    registerOption,
+    disabled: radioGroupDisabled,
+    change,
+    firstOption,
+    containsCheckedOption,
+    value: radioGroupValue
+  } = useRadioGroupContext("RadioGroup.Option");
+  useIsoMorphicEffect(() => registerOption({ id: id2, element: optionRef, propsRef }), [id2, registerOption, optionRef, props]);
+  let handleClick = (0, import_react28.useCallback)(() => {
+    var _a;
+    if (!change(value))
+      return;
+    addFlag(2 /* Active */);
+    (_a = optionRef.current) == null ? void 0 : _a.focus();
+  }, [addFlag, change, value]);
+  let handleFocus = (0, import_react28.useCallback)(() => addFlag(2 /* Active */), [addFlag]);
+  let handleBlur = (0, import_react28.useCallback)(() => removeFlag(2 /* Active */), [removeFlag]);
+  let isFirstOption = (firstOption == null ? void 0 : firstOption.id) === id2;
+  let isDisabled = radioGroupDisabled || disabled;
+  let checked = radioGroupValue === value;
+  let propsWeControl = {
+    ref: optionRef,
+    id: id2,
+    role: "radio",
+    "aria-checked": checked ? "true" : "false",
+    "aria-labelledby": labelledby,
+    "aria-describedby": describedby,
+    "aria-disabled": isDisabled ? true : void 0,
+    tabIndex: (() => {
+      if (isDisabled)
+        return -1;
+      if (checked)
+        return 0;
+      if (!containsCheckedOption && isFirstOption)
+        return 0;
+      return -1;
+    })(),
+    onClick: isDisabled ? void 0 : handleClick,
+    onFocus: isDisabled ? void 0 : handleFocus,
+    onBlur: isDisabled ? void 0 : handleBlur
+  };
+  let slot = (0, import_react28.useMemo)(() => ({ checked, disabled: isDisabled, active: hasFlag(2 /* Active */) }), [checked, isDisabled, hasFlag]);
+  return /* @__PURE__ */ import_react28.default.createElement(DescriptionProvider, {
+    name: "RadioGroup.Description"
+  }, /* @__PURE__ */ import_react28.default.createElement(LabelProvider, {
+    name: "RadioGroup.Label"
+  }, render({
+    props: { ...passThroughProps, ...propsWeControl },
+    slot,
+    defaultTag: DEFAULT_OPTION_TAG3,
+    name: "RadioGroup.Option"
+  })));
+}
+RadioGroup.Option = Option3;
+RadioGroup.Label = Label3;
+RadioGroup.Description = Description;
+
+// src/components/switch/switch.tsx
+var import_react29 = __toESM(__webpack_require__(/*! react */ "./node_modules/react/index.js"), 1);
+var GroupContext = (0, import_react29.createContext)(null);
+GroupContext.displayName = "GroupContext";
+var DEFAULT_GROUP_TAG3 = import_react29.Fragment;
+function Group3(props) {
+  let [switchElement, setSwitchElement] = (0, import_react29.useState)(null);
+  let [labelledby, LabelProvider] = useLabels();
+  let [describedby, DescriptionProvider] = useDescriptions();
+  let context = (0, import_react29.useMemo)(() => ({ switch: switchElement, setSwitch: setSwitchElement, labelledby, describedby }), [switchElement, setSwitchElement, labelledby, describedby]);
+  return /* @__PURE__ */ import_react29.default.createElement(DescriptionProvider, {
+    name: "Switch.Description"
+  }, /* @__PURE__ */ import_react29.default.createElement(LabelProvider, {
+    name: "Switch.Label",
+    props: {
+      onClick() {
+        if (!switchElement)
+          return;
+        switchElement.click();
+        switchElement.focus({ preventScroll: true });
+      }
+    }
+  }, /* @__PURE__ */ import_react29.default.createElement(GroupContext.Provider, {
+    value: context
+  }, render({ props, defaultTag: DEFAULT_GROUP_TAG3, name: "Switch.Group" }))));
+}
+var DEFAULT_SWITCH_TAG = "button";
+function Switch(props) {
+  let { checked, onChange, ...passThroughProps } = props;
+  let id2 = `headlessui-switch-${useId()}`;
+  let groupContext = (0, import_react29.useContext)(GroupContext);
+  let internalSwitchRef = (0, import_react29.useRef)(null);
+  let switchRef = useSyncRefs(internalSwitchRef, groupContext === null ? null : groupContext.setSwitch);
+  let toggle = (0, import_react29.useCallback)(() => onChange(!checked), [onChange, checked]);
+  let handleClick = (0, import_react29.useCallback)((event) => {
+    if (isDisabledReactIssue7711(event.currentTarget))
+      return event.preventDefault();
+    event.preventDefault();
+    toggle();
+  }, [toggle]);
+  let handleKeyUp = (0, import_react29.useCallback)((event) => {
+    if (event.key !== "Tab" /* Tab */)
+      event.preventDefault();
+    if (event.key === " " /* Space */)
+      toggle();
+  }, [toggle]);
+  let handleKeyPress = (0, import_react29.useCallback)((event) => event.preventDefault(), []);
+  let slot = (0, import_react29.useMemo)(() => ({ checked }), [checked]);
+  let propsWeControl = {
+    id: id2,
+    ref: switchRef,
+    role: "switch",
+    type: useResolveButtonType(props, internalSwitchRef),
+    tabIndex: 0,
+    "aria-checked": checked,
+    "aria-labelledby": groupContext == null ? void 0 : groupContext.labelledby,
+    "aria-describedby": groupContext == null ? void 0 : groupContext.describedby,
+    onClick: handleClick,
+    onKeyUp: handleKeyUp,
+    onKeyPress: handleKeyPress
+  };
+  return render({
+    props: { ...passThroughProps, ...propsWeControl },
+    slot,
+    defaultTag: DEFAULT_SWITCH_TAG,
+    name: "Switch"
+  });
+}
+Switch.Group = Group3;
+Switch.Label = Label3;
+Switch.Description = Description;
+
+// src/components/tabs/tabs.tsx
+var import_react30 = __toESM(__webpack_require__(/*! react */ "./node_modules/react/index.js"), 1);
+var reducers8 = {
+  [0 /* SetSelectedIndex */](state2, action) {
+    if (state2.selectedIndex === action.index)
+      return state2;
+    return { ...state2, selectedIndex: action.index };
+  },
+  [1 /* SetOrientation */](state2, action) {
+    if (state2.orientation === action.orientation)
+      return state2;
+    return { ...state2, orientation: action.orientation };
+  },
+  [2 /* SetActivation */](state2, action) {
+    if (state2.activation === action.activation)
+      return state2;
+    return { ...state2, activation: action.activation };
+  },
+  [3 /* RegisterTab */](state2, action) {
+    if (state2.tabs.includes(action.tab))
+      return state2;
+    return { ...state2, tabs: [...state2.tabs, action.tab] };
+  },
+  [4 /* UnregisterTab */](state2, action) {
+    return { ...state2, tabs: state2.tabs.filter((tab) => tab !== action.tab) };
+  },
+  [5 /* RegisterPanel */](state2, action) {
+    if (state2.panels.includes(action.panel))
+      return state2;
+    return { ...state2, panels: [...state2.panels, action.panel] };
+  },
+  [6 /* UnregisterPanel */](state2, action) {
+    return { ...state2, panels: state2.panels.filter((panel) => panel !== action.panel) };
+  },
+  [7 /* ForceRerender */](state2) {
+    return { ...state2 };
+  }
+};
+var TabsContext = (0, import_react30.createContext)(null);
+TabsContext.displayName = "TabsContext";
+function useTabsContext(component) {
+  let context = (0, import_react30.useContext)(TabsContext);
+  if (context === null) {
+    let err = new Error(`<${component} /> is missing a parent <Tab.Group /> component.`);
+    if (Error.captureStackTrace)
+      Error.captureStackTrace(err, useTabsContext);
+    throw err;
+  }
+  return context;
+}
+function stateReducer8(state2, action) {
+  return match(action.type, reducers8, state2, action);
+}
+var DEFAULT_TABS_TAG = import_react30.Fragment;
+function Tabs(props) {
+  let {
+    defaultIndex = 0,
+    vertical = false,
+    manual = false,
+    onChange,
+    selectedIndex = null,
+    ...passThroughProps
+  } = props;
+  const orientation = vertical ? "vertical" : "horizontal";
+  const activation = manual ? "manual" : "auto";
+  let [state2, dispatch] = (0, import_react30.useReducer)(stateReducer8, {
+    selectedIndex: null,
+    tabs: [],
+    panels: [],
+    orientation,
+    activation
+  });
+  let slot = (0, import_react30.useMemo)(() => ({ selectedIndex: state2.selectedIndex }), [state2.selectedIndex]);
+  let onChangeRef = (0, import_react30.useRef)(() => {
+  });
+  (0, import_react30.useEffect)(() => {
+    dispatch({ type: 1 /* SetOrientation */, orientation });
+  }, [orientation]);
+  (0, import_react30.useEffect)(() => {
+    dispatch({ type: 2 /* SetActivation */, activation });
+  }, [activation]);
+  (0, import_react30.useEffect)(() => {
+    if (typeof onChange === "function") {
+      onChangeRef.current = onChange;
+    }
+  }, [onChange]);
+  (0, import_react30.useEffect)(() => {
+    if (state2.tabs.length <= 0)
+      return;
+    if (selectedIndex === null && state2.selectedIndex !== null)
+      return;
+    let tabs = state2.tabs.map((tab) => tab.current).filter(Boolean);
+    let focusableTabs = tabs.filter((tab) => !tab.hasAttribute("disabled"));
+    let indexToSet = selectedIndex != null ? selectedIndex : defaultIndex;
+    if (indexToSet < 0) {
+      dispatch({ type: 0 /* SetSelectedIndex */, index: tabs.indexOf(focusableTabs[0]) });
+    } else if (indexToSet > state2.tabs.length) {
+      dispatch({
+        type: 0 /* SetSelectedIndex */,
+        index: tabs.indexOf(focusableTabs[focusableTabs.length - 1])
+      });
+    } else {
+      let before = tabs.slice(0, indexToSet);
+      let after = tabs.slice(indexToSet);
+      let next = [...after, ...before].find((tab) => focusableTabs.includes(tab));
+      if (!next)
+        return;
+      dispatch({ type: 0 /* SetSelectedIndex */, index: tabs.indexOf(next) });
+    }
+  }, [defaultIndex, selectedIndex, state2.tabs, state2.selectedIndex]);
+  let lastChangedIndex = (0, import_react30.useRef)(state2.selectedIndex);
+  (0, import_react30.useEffect)(() => {
+    lastChangedIndex.current = state2.selectedIndex;
+  }, [state2.selectedIndex]);
+  let providerBag = (0, import_react30.useMemo)(() => [
+    state2,
+    {
+      dispatch,
+      change(index) {
+        if (lastChangedIndex.current !== index)
+          onChangeRef.current(index);
+        lastChangedIndex.current = index;
+        dispatch({ type: 0 /* SetSelectedIndex */, index });
+      }
+    }
+  ], [state2, dispatch]);
+  return /* @__PURE__ */ import_react30.default.createElement(TabsContext.Provider, {
+    value: providerBag
+  }, render({
+    props: { ...passThroughProps },
+    slot,
+    defaultTag: DEFAULT_TABS_TAG,
+    name: "Tabs"
+  }));
+}
+var DEFAULT_LIST_TAG = "div";
+function List(props) {
+  let [{ selectedIndex, orientation }] = useTabsContext("Tab.List");
+  let slot = { selectedIndex };
+  let propsWeControl = {
+    role: "tablist",
+    "aria-orientation": orientation
+  };
+  let passThroughProps = props;
+  return render({
+    props: { ...passThroughProps, ...propsWeControl },
+    slot,
+    defaultTag: DEFAULT_LIST_TAG,
+    name: "Tabs.List"
+  });
+}
+var DEFAULT_TAB_TAG = "button";
+function Tab(props) {
+  var _a, _b;
+  let id2 = `headlessui-tabs-tab-${useId()}`;
+  let [{ selectedIndex, tabs, panels, orientation, activation }, { dispatch, change }] = useTabsContext(Tab.name);
+  let internalTabRef = (0, import_react30.useRef)(null);
+  let tabRef = useSyncRefs(internalTabRef, (element) => {
+    if (!element)
+      return;
+    dispatch({ type: 7 /* ForceRerender */ });
+  });
+  useIsoMorphicEffect(() => {
+    dispatch({ type: 3 /* RegisterTab */, tab: internalTabRef });
+    return () => dispatch({ type: 4 /* UnregisterTab */, tab: internalTabRef });
+  }, [dispatch, internalTabRef]);
+  let myIndex = tabs.indexOf(internalTabRef);
+  let selected = myIndex === selectedIndex;
+  let handleKeyDown = (0, import_react30.useCallback)((event) => {
+    let list = tabs.map((tab) => tab.current).filter(Boolean);
+    if (event.key === " " /* Space */ || event.key === "Enter" /* Enter */) {
+      event.preventDefault();
+      event.stopPropagation();
+      change(myIndex);
+      return;
+    }
+    switch (event.key) {
+      case "Home" /* Home */:
+      case "PageUp" /* PageUp */:
+        event.preventDefault();
+        event.stopPropagation();
+        return focusIn(list, 1 /* First */);
+      case "End" /* End */:
+      case "PageDown" /* PageDown */:
+        event.preventDefault();
+        event.stopPropagation();
+        return focusIn(list, 8 /* Last */);
+    }
+    return match(orientation, {
+      vertical() {
+        if (event.key === "ArrowUp" /* ArrowUp */)
+          return focusIn(list, 2 /* Previous */ | 16 /* WrapAround */);
+        if (event.key === "ArrowDown" /* ArrowDown */)
+          return focusIn(list, 4 /* Next */ | 16 /* WrapAround */);
+        return;
+      },
+      horizontal() {
+        if (event.key === "ArrowLeft" /* ArrowLeft */)
+          return focusIn(list, 2 /* Previous */ | 16 /* WrapAround */);
+        if (event.key === "ArrowRight" /* ArrowRight */)
+          return focusIn(list, 4 /* Next */ | 16 /* WrapAround */);
+        return;
+      }
+    });
+  }, [tabs, orientation, myIndex, change]);
+  let handleFocus = (0, import_react30.useCallback)(() => {
+    var _a2;
+    (_a2 = internalTabRef.current) == null ? void 0 : _a2.focus();
+  }, [internalTabRef]);
+  let handleSelection = (0, import_react30.useCallback)(() => {
+    var _a2;
+    (_a2 = internalTabRef.current) == null ? void 0 : _a2.focus();
+    change(myIndex);
+  }, [change, myIndex, internalTabRef]);
+  let slot = (0, import_react30.useMemo)(() => ({ selected }), [selected]);
+  let propsWeControl = {
+    ref: tabRef,
+    onKeyDown: handleKeyDown,
+    onFocus: activation === "manual" ? handleFocus : handleSelection,
+    onClick: handleSelection,
+    id: id2,
+    role: "tab",
+    type: useResolveButtonType(props, internalTabRef),
+    "aria-controls": (_b = (_a = panels[myIndex]) == null ? void 0 : _a.current) == null ? void 0 : _b.id,
+    "aria-selected": selected,
+    tabIndex: selected ? 0 : -1
+  };
+  let passThroughProps = props;
+  return render({
+    props: { ...passThroughProps, ...propsWeControl },
+    slot,
+    defaultTag: DEFAULT_TAB_TAG,
+    name: "Tabs.Tab"
+  });
+}
+var DEFAULT_PANELS_TAG = "div";
+function Panels(props) {
+  let [{ selectedIndex }] = useTabsContext("Tab.Panels");
+  let slot = (0, import_react30.useMemo)(() => ({ selectedIndex }), [selectedIndex]);
+  return render({
+    props,
+    slot,
+    defaultTag: DEFAULT_PANELS_TAG,
+    name: "Tabs.Panels"
+  });
+}
+var DEFAULT_PANEL_TAG3 = "div";
+var PanelRenderFeatures3 = 1 /* RenderStrategy */ | 2 /* Static */;
+function Panel5(props) {
+  var _a, _b;
+  let [{ selectedIndex, tabs, panels }, { dispatch }] = useTabsContext("Tab.Panel");
+  let id2 = `headlessui-tabs-panel-${useId()}`;
+  let internalPanelRef = (0, import_react30.useRef)(null);
+  let panelRef = useSyncRefs(internalPanelRef, (element) => {
+    if (!element)
+      return;
+    dispatch({ type: 7 /* ForceRerender */ });
+  });
+  useIsoMorphicEffect(() => {
+    dispatch({ type: 5 /* RegisterPanel */, panel: internalPanelRef });
+    return () => dispatch({ type: 6 /* UnregisterPanel */, panel: internalPanelRef });
+  }, [dispatch, internalPanelRef]);
+  let myIndex = panels.indexOf(internalPanelRef);
+  let selected = myIndex === selectedIndex;
+  let slot = (0, import_react30.useMemo)(() => ({ selected }), [selected]);
+  let propsWeControl = {
+    ref: panelRef,
+    id: id2,
+    role: "tabpanel",
+    "aria-labelledby": (_b = (_a = tabs[myIndex]) == null ? void 0 : _a.current) == null ? void 0 : _b.id,
+    tabIndex: selected ? 0 : -1
+  };
+  let passThroughProps = props;
+  return render({
+    props: { ...passThroughProps, ...propsWeControl },
+    slot,
+    defaultTag: DEFAULT_PANEL_TAG3,
+    features: PanelRenderFeatures3,
+    visible: selected,
+    name: "Tabs.Panel"
+  });
+}
+Tab.Group = Tabs;
+Tab.List = List;
+Tab.Panels = Panels;
+Tab.Panel = Panel5;
+
+// src/components/transitions/transition.tsx
+var import_react32 = __toESM(__webpack_require__(/*! react */ "./node_modules/react/index.js"), 1);
+
+// src/hooks/use-is-initial-render.ts
+var import_react31 = __webpack_require__(/*! react */ "./node_modules/react/index.js");
+function useIsInitialRender() {
+  let initial = (0, import_react31.useRef)(true);
+  (0, import_react31.useEffect)(() => {
+    initial.current = false;
+  }, []);
+  return initial.current;
+}
+
+// src/utils/once.ts
+function once(cb) {
+  let state2 = { called: false };
+  return (...args) => {
+    if (state2.called)
+      return;
+    state2.called = true;
+    return cb(...args);
+  };
+}
+
+// src/components/transitions/utils/transition.ts
+function addClasses(node, ...classes) {
+  node && classes.length > 0 && node.classList.add(...classes);
+}
+function removeClasses(node, ...classes) {
+  node && classes.length > 0 && node.classList.remove(...classes);
+}
+function waitForTransition(node, done) {
+  let d = disposables();
+  if (!node)
+    return d.dispose;
+  let { transitionDuration, transitionDelay } = getComputedStyle(node);
+  let [durationMs, delaysMs] = [transitionDuration, transitionDelay].map((value) => {
+    let [resolvedValue = 0] = value.split(",").filter(Boolean).map((v) => v.includes("ms") ? parseFloat(v) : parseFloat(v) * 1e3).sort((a, z) => z - a);
+    return resolvedValue;
+  });
+  if (durationMs !== 0) {
+    d.setTimeout(() => {
+      done("finished" /* Finished */);
+    }, durationMs + delaysMs);
+  } else {
+    done("finished" /* Finished */);
+  }
+  d.add(() => done("cancelled" /* Cancelled */));
+  return d.dispose;
+}
+function transition(node, base, from, to, entered, done) {
+  let d = disposables();
+  let _done = done !== void 0 ? once(done) : () => {
+  };
+  removeClasses(node, ...entered);
+  addClasses(node, ...base, ...from);
+  d.nextFrame(() => {
+    removeClasses(node, ...from);
+    addClasses(node, ...to);
+    d.add(waitForTransition(node, (reason) => {
+      removeClasses(node, ...to, ...base);
+      addClasses(node, ...entered);
+      return _done(reason);
+    }));
+  });
+  d.add(() => removeClasses(node, ...base, ...from, ...to, ...entered));
+  d.add(() => _done("cancelled" /* Cancelled */));
+  return d.dispose;
+}
+
+// src/components/transitions/transition.tsx
+function useSplitClasses(classes = "") {
+  return (0, import_react32.useMemo)(() => classes.split(" ").filter((className) => className.trim().length > 1), [classes]);
+}
+var TransitionContext = (0, import_react32.createContext)(null);
+TransitionContext.displayName = "TransitionContext";
+function useTransitionContext() {
+  let context = (0, import_react32.useContext)(TransitionContext);
+  if (context === null) {
+    throw new Error("A <Transition.Child /> is used but it is missing a parent <Transition /> or <Transition.Root />.");
+  }
+  return context;
+}
+function useParentNesting() {
+  let context = (0, import_react32.useContext)(NestingContext);
+  if (context === null) {
+    throw new Error("A <Transition.Child /> is used but it is missing a parent <Transition /> or <Transition.Root />.");
+  }
+  return context;
+}
+var NestingContext = (0, import_react32.createContext)(null);
+NestingContext.displayName = "NestingContext";
+function hasChildren(bag) {
+  if ("children" in bag)
+    return hasChildren(bag.children);
+  return bag.current.filter(({ state: state2 }) => state2 === "visible" /* Visible */).length > 0;
+}
+function useNesting(done) {
+  let doneRef = (0, import_react32.useRef)(done);
+  let transitionableChildren = (0, import_react32.useRef)([]);
+  let mounted = useIsMounted();
+  (0, import_react32.useEffect)(() => {
+    doneRef.current = done;
+  }, [done]);
+  let unregister = (0, import_react32.useCallback)((childId, strategy = 1 /* Hidden */) => {
+    var _a;
+    let idx = transitionableChildren.current.findIndex(({ id: id2 }) => id2 === childId);
+    if (idx === -1)
+      return;
+    match(strategy, {
+      [0 /* Unmount */]() {
+        transitionableChildren.current.splice(idx, 1);
+      },
+      [1 /* Hidden */]() {
+        transitionableChildren.current[idx].state = "hidden" /* Hidden */;
+      }
+    });
+    if (!hasChildren(transitionableChildren) && mounted.current) {
+      (_a = doneRef.current) == null ? void 0 : _a.call(doneRef);
+    }
+  }, [doneRef, mounted, transitionableChildren]);
+  let register = (0, import_react32.useCallback)((childId) => {
+    let child = transitionableChildren.current.find(({ id: id2 }) => id2 === childId);
+    if (!child) {
+      transitionableChildren.current.push({ id: childId, state: "visible" /* Visible */ });
+    } else if (child.state !== "visible" /* Visible */) {
+      child.state = "visible" /* Visible */;
+    }
+    return () => unregister(childId, 0 /* Unmount */);
+  }, [transitionableChildren, unregister]);
+  return (0, import_react32.useMemo)(() => ({
+    children: transitionableChildren,
+    register,
+    unregister
+  }), [register, unregister, transitionableChildren]);
+}
+function noop() {
+}
+var eventNames = ["beforeEnter", "afterEnter", "beforeLeave", "afterLeave"];
+function ensureEventHooksExist(events) {
+  var _a;
+  let result = {};
+  for (let name of eventNames) {
+    result[name] = (_a = events[name]) != null ? _a : noop;
+  }
+  return result;
+}
+function useEvents(events) {
+  let eventsRef = (0, import_react32.useRef)(ensureEventHooksExist(events));
+  (0, import_react32.useEffect)(() => {
+    eventsRef.current = ensureEventHooksExist(events);
+  }, [events]);
+  return eventsRef;
+}
+var DEFAULT_TRANSITION_CHILD_TAG = "div";
+var TransitionChildRenderFeatures = 1 /* RenderStrategy */;
+function TransitionChild(props) {
+  let {
+    beforeEnter,
+    afterEnter,
+    beforeLeave,
+    afterLeave,
+    enter,
+    enterFrom,
+    enterTo,
+    entered,
+    leave,
+    leaveFrom,
+    leaveTo,
+    ...rest
+  } = props;
+  let container = (0, import_react32.useRef)(null);
+  let [state2, setState] = (0, import_react32.useState)("visible" /* Visible */);
+  let strategy = rest.unmount ? 0 /* Unmount */ : 1 /* Hidden */;
+  let { show, appear, initial } = useTransitionContext();
+  let { register, unregister } = useParentNesting();
+  let id2 = useId();
+  let isTransitioning = (0, import_react32.useRef)(false);
+  let nesting = useNesting(() => {
+    if (!isTransitioning.current) {
+      setState("hidden" /* Hidden */);
+      unregister(id2);
+      events.current.afterLeave();
+    }
+  });
+  useIsoMorphicEffect(() => {
+    if (!id2)
+      return;
+    return register(id2);
+  }, [register, id2]);
+  useIsoMorphicEffect(() => {
+    if (strategy !== 1 /* Hidden */)
+      return;
+    if (!id2)
+      return;
+    if (show && state2 !== "visible" /* Visible */) {
+      setState("visible" /* Visible */);
+      return;
+    }
+    match(state2, {
+      ["hidden" /* Hidden */]: () => unregister(id2),
+      ["visible" /* Visible */]: () => register(id2)
+    });
+  }, [state2, id2, register, unregister, show, strategy]);
+  let enterClasses = useSplitClasses(enter);
+  let enterFromClasses = useSplitClasses(enterFrom);
+  let enterToClasses = useSplitClasses(enterTo);
+  let enteredClasses = useSplitClasses(entered);
+  let leaveClasses = useSplitClasses(leave);
+  let leaveFromClasses = useSplitClasses(leaveFrom);
+  let leaveToClasses = useSplitClasses(leaveTo);
+  let events = useEvents({ beforeEnter, afterEnter, beforeLeave, afterLeave });
+  let ready = useServerHandoffComplete();
+  (0, import_react32.useEffect)(() => {
+    if (ready && state2 === "visible" /* Visible */ && container.current === null) {
+      throw new Error("Did you forget to passthrough the `ref` to the actual DOM node?");
+    }
+  }, [container, state2, ready]);
+  let skip = initial && !appear;
+  useIsoMorphicEffect(() => {
+    let node = container.current;
+    if (!node)
+      return;
+    if (skip)
+      return;
+    isTransitioning.current = true;
+    if (show)
+      events.current.beforeEnter();
+    if (!show)
+      events.current.beforeLeave();
+    return show ? transition(node, enterClasses, enterFromClasses, enterToClasses, enteredClasses, (reason) => {
+      isTransitioning.current = false;
+      if (reason === "finished" /* Finished */)
+        events.current.afterEnter();
+    }) : transition(node, leaveClasses, leaveFromClasses, leaveToClasses, enteredClasses, (reason) => {
+      isTransitioning.current = false;
+      if (reason !== "finished" /* Finished */)
+        return;
+      if (!hasChildren(nesting)) {
+        setState("hidden" /* Hidden */);
+        unregister(id2);
+        events.current.afterLeave();
+      }
+    });
+  }, [
+    events,
+    id2,
+    isTransitioning,
+    unregister,
+    nesting,
+    container,
+    skip,
+    show,
+    enterClasses,
+    enterFromClasses,
+    enterToClasses,
+    leaveClasses,
+    leaveFromClasses,
+    leaveToClasses
+  ]);
+  let propsWeControl = { ref: container };
+  let passthroughProps = rest;
+  return /* @__PURE__ */ import_react32.default.createElement(NestingContext.Provider, {
+    value: nesting
+  }, /* @__PURE__ */ import_react32.default.createElement(OpenClosedProvider, {
+    value: match(state2, {
+      ["visible" /* Visible */]: 0 /* Open */,
+      ["hidden" /* Hidden */]: 1 /* Closed */
+    })
+  }, render({
+    props: { ...passthroughProps, ...propsWeControl },
+    defaultTag: DEFAULT_TRANSITION_CHILD_TAG,
+    features: TransitionChildRenderFeatures,
+    visible: state2 === "visible" /* Visible */,
+    name: "Transition.Child"
+  })));
+}
+function Transition(props) {
+  let { show, appear = false, unmount, ...passthroughProps } = props;
+  let usesOpenClosedState = useOpenClosed();
+  if (show === void 0 && usesOpenClosedState !== null) {
+    show = match(usesOpenClosedState, {
+      [0 /* Open */]: true,
+      [1 /* Closed */]: false
+    });
+  }
+  if (![true, false].includes(show)) {
+    throw new Error("A <Transition /> is used but it is missing a `show={true | false}` prop.");
+  }
+  let [state2, setState] = (0, import_react32.useState)(show ? "visible" /* Visible */ : "hidden" /* Hidden */);
+  let nestingBag = useNesting(() => {
+    setState("hidden" /* Hidden */);
+  });
+  let initial = useIsInitialRender();
+  let transitionBag = (0, import_react32.useMemo)(() => ({ show, appear: appear || !initial, initial }), [show, appear, initial]);
+  (0, import_react32.useEffect)(() => {
+    if (show) {
+      setState("visible" /* Visible */);
+    } else if (!hasChildren(nestingBag)) {
+      setState("hidden" /* Hidden */);
+    }
+  }, [show, nestingBag]);
+  let sharedProps = { unmount };
+  return /* @__PURE__ */ import_react32.default.createElement(NestingContext.Provider, {
+    value: nestingBag
+  }, /* @__PURE__ */ import_react32.default.createElement(TransitionContext.Provider, {
+    value: transitionBag
+  }, render({
+    props: {
+      ...sharedProps,
+      as: import_react32.Fragment,
+      children: /* @__PURE__ */ import_react32.default.createElement(TransitionChild, {
+        ...sharedProps,
+        ...passthroughProps
+      })
+    },
+    defaultTag: import_react32.Fragment,
+    features: TransitionChildRenderFeatures,
+    visible: state2 === "visible" /* Visible */,
+    name: "Transition"
+  })));
+}
+Transition.Child = function Child(props) {
+  let hasTransitionContext = (0, import_react32.useContext)(TransitionContext) !== null;
+  let hasOpenClosedContext = useOpenClosed() !== null;
+  return !hasTransitionContext && hasOpenClosedContext ? /* @__PURE__ */ import_react32.default.createElement(Transition, {
+    ...props
+  }) : /* @__PURE__ */ import_react32.default.createElement(TransitionChild, {
+    ...props
+  });
+};
+Transition.Root = Transition;
+module.exports = __toCommonJS(src_exports);
+
+
+/***/ }),
+
+/***/ "./node_modules/@headlessui/react/dist/index.cjs":
+/*!*******************************************************!*\
+  !*** ./node_modules/@headlessui/react/dist/index.cjs ***!
+  \*******************************************************/
+/***/ ((module, __unused_webpack_exports, __webpack_require__) => {
+
+"use strict";
+
+
+if (false) {} else {
+  module.exports = __webpack_require__(/*! ./headlessui.dev.cjs */ "./node_modules/@headlessui/react/dist/headlessui.dev.cjs")
+}
+
+
+/***/ }),
+
 /***/ "./node_modules/@babel/runtime/helpers/esm/arrayLikeToArray.js":
 /*!*********************************************************************!*\
   !*** ./node_modules/@babel/runtime/helpers/esm/arrayLikeToArray.js ***!
@@ -88630,10 +86676,10 @@ function _unsupportedIterableToArray(o, minLen) {
 
 /***/ }),
 
-/***/ "./node_modules/goober/dist/goober.modern.js":
-/*!***************************************************!*\
-  !*** ./node_modules/goober/dist/goober.modern.js ***!
-  \***************************************************/
+/***/ "./node_modules/react-hot-toast/node_modules/goober/dist/goober.modern.js":
+/*!********************************************************************************!*\
+  !*** ./node_modules/react-hot-toast/node_modules/goober/dist/goober.modern.js ***!
+  \********************************************************************************/
 /***/ ((__unused_webpack___webpack_module__, __webpack_exports__, __webpack_require__) => {
 
 "use strict";
@@ -88646,7 +86692,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */   "setup": () => (/* binding */ h),
 /* harmony export */   "styled": () => (/* binding */ m)
 /* harmony export */ });
-let e={data:""},t=t=>"object"==typeof window?((t?t.querySelector("#_goober"):window._goober)||Object.assign((t||document.head).appendChild(document.createElement("style")),{innerHTML:" ",id:"_goober"})).firstChild:t||e,r=e=>{let r=t(e),l=r.data;return r.data="",l},l=/(?:([\u0080-\uFFFF\w-%@]+) *:? *([^{;]+?);|([^;}{]*?) *{)|(}\s*)/g,a=/\/\*[^]*?\*\/|\s\s+|\n/g,n=(e,t)=>{let r="",l="",a="";for(let o in e){let s=e[o];"@"==o[0]?"i"==o[1]?r=o+" "+s+";":l+="f"==o[1]?n(s,o):o+"{"+n(s,"k"==o[1]?"":t)+"}":"object"==typeof s?l+=n(s,t?t.replace(/([^,])+/g,e=>o.replace(/(^:.*)|([^,])+/g,t=>/&/.test(t)?t.replace(/&/g,e):e?e+" "+t:t)):o):null!=s&&(o=o.replace(/[A-Z]/g,"-$&").toLowerCase(),a+=n.p?n.p(o,s):o+":"+s+";")}return r+(t&&a?t+"{"+a+"}":a)+l},o={},s=e=>{if("object"==typeof e){let t="";for(let r in e)t+=r+s(e[r]);return t}return e},c=(e,t,r,c,i)=>{let u=s(e),p=o[u]||(o[u]=(e=>{let t=0,r=11;for(;t<e.length;)r=101*r+e.charCodeAt(t++)>>>0;return"go"+r})(u));if(!o[p]){let t=u!==e?e:(e=>{let t,r=[{}];for(;t=l.exec(e.replace(a,""));)t[4]?r.shift():t[3]?r.unshift(r[0][t[3]]=r[0][t[3]]||{}):r[0][t[1]]=t[2];return r[0]})(e);o[p]=n(i?{["@keyframes "+p]:t}:t,r?"":"."+p)}return((e,t,r)=>{-1==t.data.indexOf(e)&&(t.data=r?e+t.data:t.data+e)})(o[p],t,c),p},i=(e,t,r)=>e.reduce((e,l,a)=>{let o=t[a];if(o&&o.call){let e=o(r),t=e&&e.props&&e.props.className||/^go/.test(e)&&e;o=t?"."+t:e&&"object"==typeof e?e.props?"":n(e,""):!1===e?"":e}return e+l+(null==o?"":o)},"");function u(e){let r=this||{},l=e.call?e(r.p):e;return c(l.unshift?l.raw?i(l,[].slice.call(arguments,1),r.p):l.reduce((e,t)=>Object.assign(e,t&&t.call?t(r.p):t),{}):l,t(r.target),r.g,r.o,r.k)}let p,d,f,g=u.bind({g:1}),b=u.bind({k:1});function h(e,t,r,l){n.p=t,p=e,d=r,f=l}function m(e,t){let r=this||{};return function(){let l=arguments;function a(n,o){let s=Object.assign({},n),c=s.className||a.className;r.p=Object.assign({theme:d&&d()},s),r.o=/ *go\d+/.test(c),s.className=u.apply(r,l)+(c?" "+c:""),t&&(s.ref=o);let i=e;return e[0]&&(i=s.as||e,delete s.as),f&&i[0]&&f(s),p(i,s)}return t?t(a):a}}
+let e={data:""},t=t=>"object"==typeof window?((t?t.querySelector("#_goober"):window._goober)||Object.assign((t||document.head).appendChild(document.createElement("style")),{innerHTML:" ",id:"_goober"})).firstChild:t||e,r=e=>{let r=t(e),l=r.data;return r.data="",l},l=/(?:([\u0080-\uFFFF\w-%@]+) *:? *([^{;]+?);|([^;}{]*?) *{)|(}\s*)/g,a=/\/\*[^]*?\*\/|\s\s+|\n/g,n=(e,t)=>{let r="",l="",a="";for(let o in e){let s=e[o];"@"==o[0]?"i"==o[1]?r=o+" "+s+";":l+="f"==o[1]?n(s,o):o+"{"+n(s,"k"==o[1]?"":t)+"}":"object"==typeof s?l+=n(s,t?t.replace(/([^,])+/g,e=>o.replace(/(^:.*)|([^,])+/g,t=>/&/.test(t)?t.replace(/&/g,e):e?e+" "+t:t)):o):null!=s&&(o=/^--/.test(o)?o:o.replace(/[A-Z]/g,"-$&").toLowerCase(),a+=n.p?n.p(o,s):o+":"+s+";")}return r+(t&&a?t+"{"+a+"}":a)+l},o={},s=e=>{if("object"==typeof e){let t="";for(let r in e)t+=r+s(e[r]);return t}return e},c=(e,t,r,c,i)=>{let u=s(e),p=o[u]||(o[u]=(e=>{let t=0,r=11;for(;t<e.length;)r=101*r+e.charCodeAt(t++)>>>0;return"go"+r})(u));if(!o[p]){let t=u!==e?e:(e=>{let t,r=[{}];for(;t=l.exec(e.replace(a,""));)t[4]?r.shift():t[3]?r.unshift(r[0][t[3]]=r[0][t[3]]||{}):r[0][t[1]]=t[2];return r[0]})(e);o[p]=n(i?{["@keyframes "+p]:t}:t,r?"":"."+p)}return((e,t,r)=>{-1==t.data.indexOf(e)&&(t.data=r?e+t.data:t.data+e)})(o[p],t,c),p},i=(e,t,r)=>e.reduce((e,l,a)=>{let o=t[a];if(o&&o.call){let e=o(r),t=e&&e.props&&e.props.className||/^go/.test(e)&&e;o=t?"."+t:e&&"object"==typeof e?e.props?"":n(e,""):!1===e?"":e}return e+l+(null==o?"":o)},"");function u(e){let r=this||{},l=e.call?e(r.p):e;return c(l.unshift?l.raw?i(l,[].slice.call(arguments,1),r.p):l.reduce((e,t)=>Object.assign(e,t&&t.call?t(r.p):t),{}):l,t(r.target),r.g,r.o,r.k)}let p,d,f,g=u.bind({g:1}),b=u.bind({k:1});function h(e,t,r,l){n.p=t,p=e,d=r,f=l}function m(e,t){let r=this||{};return function(){let l=arguments;function a(n,o){let s=Object.assign({},n),c=s.className||a.className;r.p=Object.assign({theme:d&&d()},s),r.o=/ *go\d+/.test(c),s.className=u.apply(r,l)+(c?" "+c:""),t&&(s.ref=o);let i=e;return e[0]&&(i=s.as||e,delete s.as),f&&i[0]&&f(s),p(i,s)}return t?t(a):a}}
 
 
 /***/ }),
